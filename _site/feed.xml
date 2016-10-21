@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Leonids</title>
+    <description>A simple and awesome blog theme powered by jekyll.</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 21 Oct 2016 13:59:01 +0200</pubDate>
+    <lastBuildDate>Fri, 21 Oct 2016 13:59:01 +0200</lastBuildDate>
+    <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>수포자가 필요해서 정리하는 수학공식 -호도법, 라디안-</title>
+        <description>&lt;p&gt;&lt;strong&gt;DEGREE&lt;/strong&gt;: 360도를 표현하며 60분법으로도 표현이 가능합니다.&lt;br /&gt;
+우리가 일반적으로 사용하는 각도의 개념이라고 보면 됩니다.&lt;/p&gt;
+
+&lt;p&gt;그렇지만, 보통의 컴퓨터 프로그램들은 우리가 사용하는 DEGREE를 읽어 들여 계산하지 않고 &lt;strong&gt;RADIAN&lt;/strong&gt; 이라는 값을 사용하여 계산하게 됩니다.&lt;/p&gt;
+
+&lt;p&gt;결국 호도법을 하게 된 이유는 &lt;strong&gt;RADIAN&lt;/strong&gt;값을 구하기 위해서에요 !&lt;/p&gt;
+
+&lt;p&gt;그럼 한번 구해볼까요 ?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/resources/images/math/hodo_1.jpeg&quot; alt=&quot;이미지&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;π(원주율)&lt;/strong&gt;: 원주율이란 &lt;strong&gt;원의둘레&lt;/strong&gt;가 &lt;strong&gt;지름&lt;/strong&gt;보다 몇배나 큰지를 나타난 비례값이에요. 그걸 공식으로 나타내본다면 &lt;strong&gt;π = 원의둘레 / 지름&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;이라는 결론이 나오겠지요.&lt;/p&gt;
+
+&lt;p&gt;그런데 우리는 이걸 알아둘 필요가 있어요. &lt;strong&gt;1/3 == 3/9 //true&lt;/strong&gt; 라는 것을요&lt;/p&gt;
+
+&lt;p&gt;그렇다는 이야기는 &lt;strong&gt;π = 반원의둘레 / 반지름&lt;/strong&gt; 이기도 하다는 이야기가 되요.&lt;/p&gt;
+
+&lt;p&gt;호도법은 여기에서 시작 됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/resources/images/math/hodo_2.jpeg&quot; alt=&quot;이미지&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위의 그림을 보면 원뿔이 하나 있는데요, 반지름을 &lt;strong&gt;r&lt;/strong&gt;이라고 하고 원뿔의 둘레를 &lt;strong&gt;l&lt;/strong&gt;이라고 명명해요.&lt;/p&gt;
+
+&lt;p&gt;반지름 &lt;strong&gt;r&lt;/strong&gt;과 &lt;strong&gt;l&lt;/strong&gt;이 같을때 호안의 &lt;strong&gt;Θ(세타)&lt;/strong&gt;를 &lt;strong&gt;1radian&lt;/strong&gt; 이라고 부르기로 했어요.&lt;/p&gt;
+
+&lt;p&gt;이제 이 논리를 앞서 나왔던 &lt;strong&gt;π&lt;/strong&gt;의 개념에 적용해볼까요 ?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;π = 반원의둘레 / 반지름&lt;/strong&gt; 일때 양변에 &lt;strong&gt;반지름&lt;/strong&gt;을 곱해주면 이런 결과가 나옵니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;π * 반지름 = 반원의 둘레&lt;/strong&gt; 라는 공식이 되요.&lt;/p&gt;
+
+&lt;p&gt;이로써 우리는 위의 공식과 합칠 수 있게 되었습니다&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Θ * r = l&lt;/strong&gt; 이 되는것이죠. 이걸 꼭 기억하셔야 합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/resources/images/math/hodo_3.jpeg&quot; alt=&quot;이미지&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;그리고 위 이미지를 볼까요 ? 거의 다 왔습니다. :)&lt;/p&gt;
+
+&lt;p&gt;우리는 호도법을 공부하면서 라디안값이 어떻게 구해지는지에 대해서 배웠고&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Θ * r = l&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;위와 같은 공식을 얻어낼 수 있었지요 ?&lt;/p&gt;
+
+&lt;p&gt;그러면 반원의 기준으로 돌아와서 다시 한번 생각해 보시면 &lt;strong&gt;180(degree)&lt;/strong&gt;일때의 &lt;strong&gt;반지름&lt;/strong&gt;과 &lt;strong&gt;반원의 둘레&lt;/strong&gt;를 생각해보자구요.&lt;/p&gt;
+
+&lt;p&gt;결국 이건 &lt;strong&gt;Θ(180deg) * r(반지름) = l(반원의길이)&lt;/strong&gt; 와 같게 됩니다.&lt;/p&gt;
+
+&lt;p&gt;다시 맨 처음으로 돌아가볼까요 ??&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;π = 반원의둘레 / 반지름&lt;/strong&gt; 이었지요 ?&lt;/p&gt;
+
+&lt;p&gt;이를 해 보았더니 &lt;strong&gt;π * 반지름 = 반원의 둘레&lt;/strong&gt;  이렇게 되었지요 ?&lt;/p&gt;
+
+&lt;p&gt;결국은 &lt;strong&gt;180(deg)&lt;/strong&gt;일때 &lt;strong&gt;π = 180(deg)&lt;/strong&gt;의 &lt;strong&gt;Θ(세타)&lt;/strong&gt; 값이 됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;π&lt;/strong&gt;는 180도의 &lt;strong&gt;radian&lt;/strong&gt;값이 된다는 이야기입니다.&lt;/p&gt;
+
+&lt;p&gt;그럼 최종적으로 정리해볼까요 ?&lt;/p&gt;
+
+&lt;p&gt;** π = 180(deg)의 Θ(세타) 값이다.**&lt;/p&gt;
+
+&lt;p&gt;특정 &lt;strong&gt;DEGREE&lt;/strong&gt;를 입력받았을때 그 &lt;strong&gt;DEGREE&lt;/strong&gt;의 &lt;strong&gt;RADIAN&lt;/strong&gt;값을 구하는 방법은 다음과 같습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;deg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rad&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PI&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;deg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;즉 &lt;strong&gt;π&lt;/strong&gt;를 180으로 나누면 &lt;strong&gt;1deg&lt;/strong&gt;에 대한 &lt;strong&gt;radian&lt;/strong&gt;값이 구해지죠. 그럼 내가 원래 구하고자했던 &lt;strong&gt;degree&lt;/strong&gt;만큼 곱해주면 되는거죠 !&lt;/p&gt;
+
+&lt;p&gt;그럼 &lt;strong&gt;RADIAN&lt;/strong&gt;값을 &lt;strong&gt;DEGREE&lt;/strong&gt;로 바꾸는 방법은 어떻게 될까요 ?&lt;/p&gt;
+
+&lt;p&gt;역산 하면 됩니다. :)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;양변에 180 / Math.PI를 곱해주면 되겠지요 ?!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rad&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;90&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;deg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PI&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;deg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;이로써 &lt;strong&gt;호도법 및 RADIAN&lt;/strong&gt;에 대한 정리를 마칩니다.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 21 Oct 2016 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/articles/2016-10/%ED%98%B8%EB%8F%84%EB%B2%95</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2016-10/%ED%98%B8%EB%8F%84%EB%B2%95</guid>
+        
+        
+        <category>Math</category>
+        
+      </item>
+    
+      <item>
+        <title>수포자가 필요해서 정리하는 수학공식 -호도법, 라디안-</title>
+        <description>&lt;p&gt;&lt;strong&gt;DEGREE&lt;/strong&gt;: 360도를 표현하며 60분법으로도 표현이 가능합니다.&lt;br /&gt;
+우리가 일반적으로 사용하는 각도의 개념이라고 보면 됩니다.&lt;/p&gt;
+
+&lt;p&gt;그렇지만, 보통의 컴퓨터 프로그램들은 우리가 사용하는 DEGREE를 읽어 들여 계산하지 않고 &lt;strong&gt;RADIAN&lt;/strong&gt; 이라는 값을 사용하여 계산하게 됩니다.&lt;/p&gt;
+
+&lt;p&gt;결국 호도법을 하게 된 이유는 &lt;strong&gt;RADIAN&lt;/strong&gt;값을 구하기 위해서에요 !&lt;/p&gt;
+
+&lt;p&gt;그럼 한번 구해볼까요 ?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/resources/images/math/hodo_1.jpeg&quot; alt=&quot;이미지&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;π(원주율)&lt;/strong&gt;: 원주율이란 &lt;strong&gt;원의둘레&lt;/strong&gt;가 &lt;strong&gt;지름&lt;/strong&gt;보다 몇배나 큰지를 나타난 비례값이에요. 그걸 공식으로 나타내본다면 &lt;strong&gt;π = 원의둘레 / 지름&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;이라는 결론이 나오겠지요.&lt;/p&gt;
+
+&lt;p&gt;그런데 우리는 이걸 알아둘 필요가 있어요. &lt;strong&gt;1/3 == 3/9 //true&lt;/strong&gt; 라는 것을요&lt;/p&gt;
+
+&lt;p&gt;그렇다는 이야기는 &lt;strong&gt;π = 반원의둘레 / 반지름&lt;/strong&gt; 이기도 하다는 이야기가 되요.&lt;/p&gt;
+
+&lt;p&gt;호도법은 여기에서 시작 됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/resources/images/math/hodo_2.jpeg&quot; alt=&quot;이미지&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위의 그림을 보면 원뿔이 하나 있는데요, 반지름을 &lt;strong&gt;r&lt;/strong&gt;이라고 하고 원뿔의 둘레를 &lt;strong&gt;l&lt;/strong&gt;이라고 명명해요.&lt;/p&gt;
+
+&lt;p&gt;반지름 &lt;strong&gt;r&lt;/strong&gt;과 &lt;strong&gt;l&lt;/strong&gt;이 같을때 호안의 &lt;strong&gt;Θ(세타)&lt;/strong&gt;를 &lt;strong&gt;1radian&lt;/strong&gt; 이라고 부르기로 했어요.&lt;/p&gt;
+
+&lt;p&gt;이제 이 논리를 앞서 나왔던 &lt;strong&gt;π&lt;/strong&gt;의 개념에 적용해볼까요 ?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;π = 반원의둘레 / 반지름&lt;/strong&gt; 일때 양변에 &lt;strong&gt;반지름&lt;/strong&gt;을 곱해주면 이런 결과가 나옵니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;π * 반지름 = 반원의 둘레&lt;/strong&gt; 라는 공식이 되요.&lt;/p&gt;
+
+&lt;p&gt;이로써 우리는 위의 공식과 합칠 수 있게 되었습니다&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Θ * r = l&lt;/strong&gt; 이 되는것이죠. 이걸 꼭 기억하셔야 합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/resources/images/math/hodo_3.jpeg&quot; alt=&quot;이미지&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;그리고 위 이미지를 볼까요 ? 거의 다 왔습니다. :)&lt;/p&gt;
+
+&lt;p&gt;우리는 호도법을 공부하면서 라디안값이 어떻게 구해지는지에 대해서 배웠고&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Θ * r = l&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;위와 같은 공식을 얻어낼 수 있었지요 ?&lt;/p&gt;
+
+&lt;p&gt;그러면 반원의 기준으로 돌아와서 다시 한번 생각해 보시면 &lt;strong&gt;180(degree)&lt;/strong&gt;일때의 &lt;strong&gt;반지름&lt;/strong&gt;과 &lt;strong&gt;반원의 둘레&lt;/strong&gt;를 생각해보자구요.&lt;/p&gt;
+
+&lt;p&gt;결국 이건 &lt;strong&gt;Θ(180deg) * r(반지름) = l(반원의길이)&lt;/strong&gt; 와 같게 됩니다.&lt;/p&gt;
+
+&lt;p&gt;다시 맨 처음으로 돌아가볼까요 ??&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;π = 반원의둘레 / 반지름&lt;/strong&gt; 이었지요 ?&lt;/p&gt;
+
+&lt;p&gt;이를 해 보았더니 &lt;strong&gt;π * 반지름 = 반원의 둘레&lt;/strong&gt;  이렇게 되었지요 ?&lt;/p&gt;
+
+&lt;p&gt;결국은 &lt;strong&gt;180(deg)&lt;/strong&gt;일때 &lt;strong&gt;π = 180(deg)&lt;/strong&gt;의 &lt;strong&gt;Θ(세타)&lt;/strong&gt; 값이 됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;π&lt;/strong&gt;는 180도의 &lt;strong&gt;radian&lt;/strong&gt;값이 된다는 이야기입니다.&lt;/p&gt;
+
+&lt;p&gt;그럼 최종적으로 정리해볼까요 ?&lt;/p&gt;
+
+&lt;p&gt;** π = 180(deg)의 Θ(세타) 값이다.**&lt;/p&gt;
+
+&lt;p&gt;특정 &lt;strong&gt;DEGREE&lt;/strong&gt;를 입력받았을때 그 &lt;strong&gt;DEGREE&lt;/strong&gt;의 &lt;strong&gt;RADIAN&lt;/strong&gt;값을 구하는 방법은 다음과 같습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;deg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rad&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PI&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;deg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;즉 &lt;strong&gt;π&lt;/strong&gt;를 180으로 나누면 &lt;strong&gt;1deg&lt;/strong&gt;에 대한 &lt;strong&gt;radian&lt;/strong&gt;값이 구해지죠. 그럼 내가 원래 구하고자했던 &lt;strong&gt;degree&lt;/strong&gt;만큼 곱해주면 되는거죠 !&lt;/p&gt;
+
+&lt;p&gt;그럼 &lt;strong&gt;RADIAN&lt;/strong&gt;값을 &lt;strong&gt;DEGREE&lt;/strong&gt;로 바꾸는 방법은 어떻게 될까요 ?&lt;/p&gt;
+
+&lt;p&gt;역산 하면 됩니다. :)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;양변에 180 / Math.PI를 곱해주면 되겠지요 ?!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rad&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;90&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;deg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PI&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;deg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;이로써 &lt;strong&gt;호도법 및 RADIAN&lt;/strong&gt;에 대한 정리를 마칩니다.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 20 Oct 2016 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/articles/2016-10/math-hodobub</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2016-10/math-hodobub</guid>
+        
+        
+        <category>Math</category>
+        
+      </item>
+    
+  </channel>
+</rss>
