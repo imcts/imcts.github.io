@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 수포자가 필요해서 정리하는 수학공식 -비례식- 
+title: 수포자가 필요해서 정리하는 수학공식 -비례식, 이미지 정렬- 
 categories: [Math]
 tags: [비례식]
 comments: true

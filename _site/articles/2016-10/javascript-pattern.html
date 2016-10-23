@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>자바스크립트 디자인 패턴에 관하여.</title>
+  <meta name="description" content="패턴에 관해서 정리해 볼까요 ?- SingleTon Pattern싱글톤 패턴이란 전역적으로 단 하나의 객체만을 두고 사용하는 방식을 말합니다.var obj = {};var obj2 = {};console.log(obj === obj2); //false console.log(obj ...">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/2016-10/javascript-pattern">
+  <link rel="alternate" type="application/rss+xml" title="Leonids" href="http://localhost:4000/feed.xml" />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="http://localhost:4000/img/profile.jpeg" alt="" class="avatar">
+  
+  <a href="http://localhost:4000/" class="author_name">dolen</a>
+  <span class="author_job">Developer</span>
+  <span class="author_bio mbm">Front-End</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/">home</a>
+        <span>/</span>
+      </li>
+       
+      <li class="nav-item">
+        <a href="http://localhost:4000/archive/">Archive</a>
+        
+          <span>/</span>
+        
+      </li>
+          
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+        
+          <span>/</span>
+        
+      </li>
+            
+      <li class="nav-item">
+        <a href="http://localhost:4000/tags/">Tags</a>
+        
+      </li>
+       
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('imcts@coupang.com', 'Hello from website');</script>
+      </li>
+    
+    
+    <li><a href="http://facebook.com/taesan.choi" class="social-link-item" target="_blank"><i class="fa fa-fw fa-facebook"></i></a></li>
+    
+    <li><a href="http://linkedin.com/in/태산-최-a904a9119?trk=hp-identity-photo" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    
+    
+    
+    
+    <li><a href="http://github.com/imcts" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "http://localhost:4000/" >
+    Home
+</a>
+
+
+
+<div id="post">
+    <header class="post-header">
+        <h1 title="자바스크립트 디자인 패턴에 관하여.">자바스크립트 디자인 패턴에 관하여.</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        1 OCT 2016
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    10 mins read
+  
+</span>
+
+    </span>
+
+    </header>
+
+    <article class="post-content">
+        <p><strong>패턴에 관해서</strong> 정리해 볼까요 ?</p>
+
+<h3 id="singleton-pattern">- SingleTon Pattern</h3>
+
+<p><strong>싱글톤 패턴</strong>이란 전역적으로 단 하나의 객체만을 두고 사용하는 방식을 말합니다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="kd">var</span> <span class="nx">obj2</span> <span class="o">=</span> <span class="p">{};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span> <span class="o">===</span> <span class="nx">obj2</span><span class="p">);</span> <span class="c1">//false </span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span> <span class="o">==</span> <span class="nx">obj2</span><span class="p">);</span> <span class="c1">//false</span>
+
+
+
+
+<span class="kd">function</span> <span class="nx">Single</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nx">instance</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">'test'</span><span class="p">;</span>
+
+    <span class="nx">Single</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">instance</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">instance</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Single</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">s1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Single</span><span class="p">();</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">s</span> <span class="o">===</span> <span class="nx">s1</span><span class="p">);</span> <span class="c1">// true</span>
+
+</code></pre>
+</div>
+
+<p>자바스크립트는 이미 객체 그 자체만으로도 싱글톤 입니다.</p>
+
+<p>그런데 왜 싱글톤을 사용하느냐면 함수가 일급 객체가 아닌 정적이고 엄격한 자료형 언어에서 설계상의 문제를 우회하기 위해 고안해 낸 이론적인 해결책을 자바스크립트로 구현해서 사용한다고 생각하시면 됩니다.</p>
+
+<p>말이 좀 어려웁지만.. 음…. 공부한다고 생각하면 된다는 뜻이겠지요 ㅎ!</p>
+
+<p>어쨌든 싱글톤 패턴은 위처럼 사용하면 아무 문제없이 작동하지만, prototype을 사용함에 있어서는 문제가 될 소지가 있습니다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Single</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">instance</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">'test'</span><span class="p">;</span>
+
+    <span class="nx">Single</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">instance</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">instance</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">Single</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">test</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Single</span><span class="p">();</span>
+
+<span class="nx">Single</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">test2</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">s1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Single</span><span class="p">();</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">test</span><span class="p">);</span> <span class="c1">//true</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">s1</span><span class="p">.</span><span class="nx">test</span><span class="p">);</span> <span class="c1">//true;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">test1</span><span class="p">);</span> <span class="c1">//undefined</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">s1</span><span class="p">.</span><span class="nx">test1</span><span class="p">);</span> <span class="c1">//undefined</span>
+</code></pre>
+</div>
+
+<p>즉, 한번 생성된 객체는 추가된 프로토타입을 참조할 수가 없다는게 문제가 된다는것이죠.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Single</span><span class="p">()</span> <span class="p">{</span>
+ 
+<span class="kd">var</span> <span class="nx">instance</span><span class="p">;</span>
+
+<span class="nx">Single</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">instance</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">Single</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+
+<span class="nx">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Single</span><span class="p">();</span>
+
+<span class="nx">instance</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">=</span> <span class="nx">Single</span><span class="p">;</span>
+
+<span class="k">return</span> <span class="nx">instance</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">Single</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">test</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="nx">Single</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">test1</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Single</span><span class="p">();</span>
+
+
+<span class="nx">Single</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">test2</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">test2</span><span class="p">);</span>
+
+</code></pre>
+</div>
+
+<p>prototype을 놓치게 되었던 원인은 함수를 재정의하기 때문인데요.</p>
+
+<p>위처럼 생성자 안에서 prototype을 연결해 주면 됩니다.</p>
+
+<h3 id="factory-pattern">- Factory Pattern</h3>
+
+<p><strong>팩토리 패턴</strong>이란 공장을 생각하시면 편합니다.</p>
+
+<p>자동차를 만들고 싶은데, 어떤 자동차를 만들것인지만 지정해주면 공장안에서 물건을 만들어주는 거라고 생각하시면 되지요. :)</p>
+
+<p>우리는 매번 어떤 자동차라는 것을 계속 만들어낼 필요 없이, 해당 자동차의 생산라인만 추가해주면 되는겁니다 !</p>
+
+<p>해볼까요 ?</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Car</span><span class="p">()</span> <span class="p">{}</span>
+
+<span class="nx">Car</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">drive</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">door</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">Car</span><span class="p">.</span><span class="nx">factory</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">Car</span><span class="p">[</span><span class="nx">type</span><span class="p">])</span>
+        <span class="k">throw</span> <span class="nb">Error</span><span class="p">(</span><span class="nx">type</span> <span class="o">+</span> <span class="s1">'is not exist'</span><span class="p">);</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">Car</span><span class="p">[</span><span class="nx">type</span><span class="p">].</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">drive</span> <span class="o">!==</span> <span class="s1">'function'</span><span class="p">)</span>
+        <span class="nx">Car</span><span class="p">[</span><span class="nx">type</span><span class="p">].</span><span class="nx">prototype</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Car</span><span class="p">();</span>
+
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">Car</span><span class="p">[</span><span class="nx">type</span><span class="p">]();</span>
+<span class="p">}</span>
+
+<span class="nx">Car</span><span class="p">.</span><span class="nx">four</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">door</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">Car</span><span class="p">.</span><span class="nx">five</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">door</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">Car</span><span class="p">.</span><span class="nx">ten</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">door</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">car</span> <span class="o">=</span> <span class="nx">Car</span><span class="p">.</span><span class="nx">factory</span><span class="p">(</span><span class="s1">'ten'</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>팩토리 패턴에서 중요한점은 생성자 함수를 호출해주는 거에요 !</p>
+
+<h3 id="decoration-pattern">- Decoration Pattern</h3>
+
+<p><strong>데코레이션 패턴</strong>이란 생산라인을 만들어두고, 필요한 옵션들을 데코레이션 한다고 생각하시면 편합니다 !</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Sale</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">price</span> <span class="o">=</span> <span class="nx">p</span> <span class="o">||</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">decorationList</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="p">}</span>
+
+<span class="nx">Sale</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">constructor</span> <span class="p">:</span> <span class="nx">Sale</span><span class="p">,</span>
+
+    <span class="na">decorator</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="na">jibang</span> <span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">jibangMoney</span> <span class="o">=</span> <span class="mi">300</span><span class="p">;</span>
+
+            <span class="k">this</span><span class="p">.</span><span class="nx">price</span> <span class="o">+=</span> <span class="nx">jibangMoney</span><span class="p">;</span>
+        <span class="p">},</span>
+
+        <span class="na">yunbang</span> <span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">yunbangMoney</span> <span class="o">=</span> <span class="mi">500</span><span class="p">;</span>
+
+            <span class="k">this</span><span class="p">.</span><span class="nx">price</span> <span class="o">+=</span> <span class="nx">yunbangMoney</span><span class="p">;</span>
+        <span class="p">},</span>
+
+        <span class="na">dollar</span> <span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">price</span> <span class="o">=</span> <span class="s1">'$'</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">price</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    
+    <span class="na">decorate</span> <span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">decorationList</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
+    <span class="p">},</span>
+
+    <span class="na">getPrice</span> <span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">decorationList</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">decorator</span><span class="p">[</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]].</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">price</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span> 
+
+
+
+<span class="kd">var</span> <span class="nx">sale</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Sale</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="nx">sale</span><span class="p">.</span><span class="nx">decorate</span><span class="p">(</span><span class="s1">'jibang'</span><span class="p">);</span>
+<span class="nx">sale</span><span class="p">.</span><span class="nx">decorate</span><span class="p">(</span><span class="s1">'dollar'</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sale</span><span class="p">.</span><span class="nx">getPrice</span><span class="p">());</span>
+</code></pre>
+</div>
+
+<p>이런식으로 말이죠 ! 어떤 것을 데코레이팅 할 것인가만 지정해주면 결과는 자연스레 도출되는거죠 !</p>
+
+<h3 id="validator-pattern">- Validator Pattern</h3>
+
+<p><strong>유효성 검사</strong>패턴은 form작업을 할때 정말 많이 사용되는 작업들 입니다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Validator</span><span class="p">()</span> <span class="p">{}</span>
+ 
+<span class="nx">Validator</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">constructor</span> <span class="p">:</span> <span class="nx">Validator</span><span class="p">,</span>
+
+    <span class="na">fncs</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="na">isNotEmpty</span> <span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">str</span> <span class="o">===</span> <span class="s1">''</span><span class="p">;</span>
+        <span class="p">},</span>
+
+        <span class="na">isNumber</span> <span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nb">Number</span><span class="p">.</span><span class="nx">isInteger</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+
+    <span class="na">config</span> <span class="p">:</span> <span class="p">{},</span>
+
+    <span class="na">validate</span> <span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">type</span><span class="p">,</span>
+            <span class="nx">validate</span><span class="p">,</span>
+            <span class="nx">val</span><span class="p">;</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="nx">i</span> <span class="k">in</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">type</span>     <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+            <span class="nx">validate</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">fncs</span><span class="p">[</span><span class="nx">type</span><span class="p">];</span>
+            <span class="nx">val</span>      <span class="o">=</span> <span class="nx">data</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">validate</span><span class="p">);</span>
+
+            <span class="k">if</span><span class="p">(</span><span class="nx">validate</span><span class="p">(</span><span class="nx">val</span><span class="p">))</span> 
+                <span class="k">return</span> <span class="p">{</span>
+                    <span class="na">type</span> <span class="p">:</span> <span class="nx">type</span><span class="p">,</span> 
+                    <span class="na">val</span> <span class="p">:</span> <span class="nx">i</span>
+                <span class="p">};</span>
+            
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">validator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Validator</span><span class="p">();</span>
+
+<span class="nx">validator</span><span class="p">.</span><span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">first</span> <span class="p">:</span> <span class="s1">'isNotEmpty'</span><span class="p">,</span>
+    <span class="na">age</span> <span class="p">:</span> <span class="s1">'isNumber'</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">first</span> <span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
+    <span class="na">age</span> <span class="p">:</span> <span class="mi">333</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">index</span> <span class="o">=</span> <span class="nx">validator</span><span class="p">.</span><span class="nx">validate</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nx">index</span><span class="p">)</span> 
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">index</span><span class="p">);</span>
+    
+    
+<span class="c1">//clear. do somthing..!!    </span>
+</code></pre>
+</div>
+
+<p>위처럼 사용하게 되면 어떤 validation을 처리할 것인지만 정의해주면 되니까 정말 편리하겠죠 ?</p>
+
+<p>만약 if문 안에서 정합성에서 걸리게 되었다면 어떤 타입에 해당되는것인지가 나오게 되니까 디버깅도 편리해집니다. :)</p>
+
+<h3 id="facade-pattern">- Facade Pattern</h3>
+
+<p><strong><a href="https://ko.wikipedia.org/wiki/%ED%8D%BC%EC%82%AC%EB%93%9C_%ED%8C%A8%ED%84%B4">퍼사드 패턴</a></strong>이란 건물의 정면이라는 뜻을 가지고 있어요 !</p>
+
+<p>예를 들어 건물에 들어가서 어떤곳으로 진입하게 된다는 의미로도 쓰일 수 있는거죠.</p>
+
+<p>퍼사드는 클래스 라이브러리 같은 어떤 소프트웨어의 다른 커다란 코드 부분에 대한 간략화된 인터페이스를 제공하는 객체이며</p>
+
+<p>어떠한 공통 작업들을 하나에 몰아서 그 안에서 처리하게 된다 라고 생각하시면 되겠습니다.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">stop</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">stopImmediatePropagation</span><span class="p">();</span> <span class="c1">//현재 레벨의 다른 이벤트도 동작하지 않도록 !</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span> <span class="c1">//현재 이벤트의 기본동작 중지 !</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span> <span class="c1">//이벤트 버블링 금지 !</span>
+    
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span> 
+    <span class="c1">// jquery 사용시 -&gt; stopPropagation + preventDefault와 동일하며</span>
+    <span class="c1">// 미사용시 preventDefault와 같은 의미를 갖습니다.</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>이런식으로 사용할 수 있겠네요 !!</p>
+
+<h3 id="observer-pattern">- Observer Pattern</h3>
+
+<p><strong>옵저버 패턴</strong>입니다.</p>
+
+<p>웹 서비스를 제공하는 프로그래머라면 반드시 알고 있어야만 하는 패턴입니다.</p>
+
+<p>별표 다섯개 ! 돼지꼬리 땡땡입니다 !</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Observer</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">subscriber</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="p">}</span>
+
+<span class="nx">Observer</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">constructor</span> <span class="p">:</span> <span class="nx">Observer</span><span class="p">,</span>
+
+    <span class="na">subscribe</span> <span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">cbf</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="k">typeof</span> <span class="k">this</span><span class="p">.</span><span class="nx">subscriber</span><span class="p">[</span><span class="nx">type</span><span class="p">]</span> <span class="o">===</span> <span class="s1">'undefined'</span><span class="p">)</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">subscriber</span><span class="p">[</span><span class="nx">type</span><span class="p">]</span> <span class="o">=</span> <span class="p">[];</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">subscriber</span><span class="p">[</span><span class="nx">type</span><span class="p">].</span><span class="nx">push</span><span class="p">(</span><span class="nx">cbf</span><span class="p">);</span>
+    <span class="p">},</span>
+
+    <span class="na">publish</span> <span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">o</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">subscriberFnc</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">subscriber</span><span class="p">[</span><span class="nx">type</span><span class="p">];</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">subscriberFnc</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">--</span><span class="p">;)</span> 
+            <span class="nx">subscriberFnc</span><span class="p">[</span><span class="nx">i</span><span class="p">](</span><span class="nx">o</span><span class="p">);</span>
+    <span class="p">},</span>
+
+    <span class="na">unsubscribe</span> <span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">cbf</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">subscriberFnc</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">subscriber</span><span class="p">[</span><span class="nx">type</span><span class="p">];</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">subscriberFnc</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">--</span><span class="p">;)</span> 
+            <span class="k">if</span><span class="p">(</span><span class="nx">subscriberFnc</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">==</span> <span class="nx">cbf</span><span class="p">)</span>
+                <span class="nx">subscriberFnc</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">paper</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Observer</span><span class="p">();</span>
+
+<span class="kd">var</span> <span class="nx">joe</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">daily</span> <span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">o</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'joe가 paper의'</span> <span class="o">+</span> <span class="nx">o</span> <span class="o">+</span> <span class="s1">'를 구독하였습니다.'</span><span class="p">);</span>
+    <span class="p">},</span>
+
+    <span class="na">weekly</span> <span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">o</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">o</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">tay</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">daily</span> <span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">o</span><span class="p">)</span> <span class="p">{</span>   
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'tay가 paper의'</span> <span class="o">+</span> <span class="nx">o</span> <span class="o">+</span> <span class="s1">'를 구독하였습니다.'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+
+<span class="nx">paper</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="s1">'daily'</span><span class="p">,</span> <span class="nx">joe</span><span class="p">.</span><span class="nx">daily</span><span class="p">);</span>
+<span class="nx">paper</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="s1">'daily'</span><span class="p">,</span> <span class="nx">tay</span><span class="p">.</span><span class="nx">daily</span><span class="p">);</span>
+
+<span class="nx">paper</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="s1">'daily'</span><span class="p">,</span> <span class="s1">'조간신문을 발간 하였습니다!!'</span><span class="p">);</span>
+
+<span class="nx">paper</span><span class="p">.</span><span class="nx">unsubscribe</span><span class="p">(</span><span class="s1">'daily'</span><span class="p">,</span> <span class="nx">joe</span><span class="p">.</span><span class="nx">daily</span><span class="p">);</span>
+
+<span class="nx">paper</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="s1">'daily'</span><span class="p">,</span> <span class="s1">'조간신문을 발간 하였습니다!!'</span><span class="p">);</span>  
+</code></pre>
+</div>
+
+<p>이렇게 구독자와 발행자로 나누어지게 됩니다 :)</p>
+
+<p>신문사는 신문을 발행하고, 단순히 구독자들에게 발행하는것으로 자신의 행동을 종료합니다.</p>
+
+<p>구독자들은 언제든 자기가 구독하고 싶을때에 구독하고, 구독하고 싶지 않을때엔 구독하지 않습니다.</p>
+
+<p>이상 자주 사용되는 패턴들이었습니다 !</p>
+
+    </article>
+</div>
+
+
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'dolen';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+<div class="share-buttons">
+    <h6>Share on: </h6>
+    <ul>
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2016-10/javascript-pattern" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+        </li>
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2016-10/javascript-pattern" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+        </li>
+        <li>
+            <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2016-10/javascript-pattern" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+        </li>
+        <li>
+            <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2016-10/javascript-pattern" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+        </li>
+        <li>
+            <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2016-10/javascript-pattern" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+        </li>
+    </ul>
+</div><!-- end share-buttons -->
+
+
+
+        <footer>
+  &copy; 2016 dolen. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-heart heart-icon"></i>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+
+
+</body>
+</html>
