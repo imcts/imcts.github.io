@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>JAVA 람다 표현식 (Lambda Expression)</title>
+  <meta name="description" content="- 람다 표현식에 관하여@FunctionalInterfaceinterface compareFunction&lt;T, F, Z&gt; {    public Z myFunction(T o, F z);}  @FunctionalInterface가 정의되어있어야 합니다.  1개의 인터페이스...">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/2016-10/java-lambda">
+  <link rel="alternate" type="application/rss+xml" title="Leonids" href="http://localhost:4000/feed.xml" />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="http://localhost:4000/img/profile.jpeg" alt="" class="avatar">
+  
+  <a href="http://localhost:4000/" class="author_name">dolen</a>
+  <span class="author_job">Developer</span>
+  <span class="author_bio mbm">Front-End</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/">home</a>
+        <span>/</span>
+      </li>
+       
+      <li class="nav-item">
+        <a href="http://localhost:4000/archive/">Archive</a>
+        
+          <span>/</span>
+        
+      </li>
+          
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+        
+          <span>/</span>
+        
+      </li>
+            
+      <li class="nav-item">
+        <a href="http://localhost:4000/tags/">Tags</a>
+        
+      </li>
+       
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('imcts@coupang.com', 'Hello from website');</script>
+      </li>
+    
+    
+    <li><a href="http://facebook.com/taesan.choi" class="social-link-item" target="_blank"><i class="fa fa-fw fa-facebook"></i></a></li>
+    
+    <li><a href="http://linkedin.com/in/태산-최-a904a9119?trk=hp-identity-photo" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    
+    
+    
+    
+    <li><a href="http://github.com/imcts" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "http://localhost:4000/" >
+    Home
+</a>
+
+
+
+<div id="post">
+    <header class="post-header">
+        <h1 title="JAVA 람다 표현식 (Lambda Expression)">JAVA 람다 표현식 (Lambda Expression)</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        4 OCT 2016
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    7 mins read
+  
+</span>
+
+    </span>
+
+    </header>
+
+    <article class="post-content">
+        <h3 id="section">- 람다 표현식에 관하여</h3>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="nd">@FunctionalInterface</span>
+<span class="kd">interface</span> <span class="nc">compareFunction</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="n">F</span><span class="o">,</span> <span class="n">Z</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">Z</span> <span class="nf">myFunction</span><span class="o">(</span><span class="n">T</span> <span class="n">o</span><span class="o">,</span> <span class="n">F</span> <span class="n">z</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<ol>
+  <li>@FunctionalInterface가 정의되어있어야 합니다.</li>
+  <li>1개의 인터페이스에 1개의 메서드만 구현되어 있어야 합니다.</li>
+</ol>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="k">new</span> <span class="n">Thread</span><span class="o">(</span>
+    <span class="k">new</span> <span class="nf">Runnable</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"다시 스레드 시작"</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+<span class="o">).</span><span class="na">start</span><span class="o">();</span>
+</code></pre>
+</div>
+
+<p>원래 기존 스레드를 선언하고 실행하기 위해서는, 쓰레드 생성자에 매개변수로, Runnable Interface를 구현한 객체를 넘겨야했었지요.</p>
+
+<p>하지만, 람다 표현식으로 표현하고자 한다면,</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="k">new</span> <span class="n">Thread</span><span class="o">(</span>
+    <span class="o">()</span> <span class="o">-&gt;</span> <span class="o">{</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"쓰레드 시작"</span><span class="o">);</span>
+<span class="o">}).</span><span class="na">start</span><span class="o">();</span>
+</code></pre>
+</div>
+
+<p>이렇게 표현이 가능 합니다.</p>
+
+<p>람다 표현식의 경우 단 하나의 인터페이스와 단 하나의 메소드를 가져야 하는데 Runnable의 경우 인터페이스를 구현한 클래스이고 해당 클래스는 Runnable 인터페이스를 implements하였고</p>
+
+<p>Runnable 인터페이스는 run 메소드 하나만 구축하고 있으므로 람다 표현식으로서의 조건이 충족됩니다.(<strong>하나의 인터페이스에 하나의메소드</strong>)</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="nd">@FunctionalInterface</span>
+<span class="kd">interface</span> <span class="nc">arrayFunction</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">T</span> <span class="nf">myFunction</span><span class="o">(</span><span class="n">T</span><span class="o">...</span> <span class="n">t</span><span class="o">);</span>
+    
+    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">myStaticFunction</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"인터페이스안에 static으로 정의할 수 있어요."</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<p>위 코드를 보면 하나의 람다 표현식을 사용하기 위한 메소드를 정의하였습니다.</p>
+
+<p>@FunctionalInterface의 조건은 1개의 인터페이스와 1개의 메소드이다.</p>
+
+<p><strong>JAVA8</strong>의 기능으로 static 메소드가 인터페이스 안에서 구현될 수 있게 되었습니다. static 메소드는 람다 조건에 무시됩니다.</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">test</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">arrayFunction</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">integerFunction</span> <span class="o">=</span> <span class="o">(</span><span class="n">Integer</span><span class="o">...</span> <span class="n">arr</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> 
+        
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> 
+            <span class="n">sum</span> <span class="o">+=</span> <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+        
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+        <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">10</span><span class="o">);</span>
+        <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">12</span><span class="o">);</span>
+        <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+        
+        <span class="k">return</span> <span class="n">sum</span><span class="o">;</span>
+    <span class="o">};</span>
+    
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span>
+        <span class="n">integerFunction</span><span class="o">.</span><span class="na">myFunction</span><span class="o">(</span><span class="k">new</span> <span class="n">Integer</span><span class="o">[]</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">})</span>
+    <span class="o">);</span>
+<span class="o">}</span>
+
+</code></pre>
+</div>
+
+<p>사용할때에는 정의해서 사용하면 되는거죠.</p>
+
+<p>일단 기초적인 방법입니다.</p>
+
+<p>integerFunction interface 에 선언해둔 myFunction을 재정의하여 사용하는 방식이지요.</p>
+
+<p>일단은 사용법만 알아둘 예정이기 때문에 여러가지 더 좋은 응용방법은 찾아보며 공부하시길 바랍니다.</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="nd">@FunctionalInterface</span>
+<span class="kd">interface</span> <span class="nc">compareFunction</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="n">F</span><span class="o">,</span> <span class="n">Z</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">Z</span> <span class="nf">myFunction</span><span class="o">(</span><span class="n">T</span> <span class="n">o</span><span class="o">,</span> <span class="n">F</span> <span class="n">z</span><span class="o">);</span>
+<span class="o">}</span>
+
+
+<span class="nd">@FunctionalInterface</span>
+<span class="kd">interface</span> <span class="nc">arrayFunction</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">T</span> <span class="nf">myFunction</span><span class="o">(</span><span class="n">T</span><span class="o">...</span> <span class="n">t</span><span class="o">);</span>
+    
+    <span class="c1">//인터페이스명으로 메소드를 접근할 수 있습니다.</span>
+    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">myStaticFunction</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"인터페이스안에 static으로 정의할 수 있습니다."</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">test3</span><span class="o">()</span> <span class="o">{</span>
+    <span class="c1">//매개변수가 여러개지만, 리터럴이 1번에 해결될때. 중괄호와 리턴구문을 생략가능합니다.</span>
+    <span class="n">compareFunction</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">customFunction</span> <span class="o">=</span> <span class="o">(</span><span class="n">str</span><span class="o">,</span> <span class="n">num</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">str</span> <span class="o">+</span> <span class="n">num</span><span class="o">;</span>
+    
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span>
+            <span class="n">customFunction</span><span class="o">.</span><span class="na">myFunction</span><span class="o">(</span><span class="s">"3"</span><span class="o">,</span> <span class="mi">5</span><span class="o">)</span>
+    <span class="o">);</span>
+<span class="o">}</span>
+
+<span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">test2</span><span class="o">()</span> <span class="o">{</span>
+    <span class="c1">//매개변수 1개일때</span>
+    <span class="n">arrayFunction</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">strSum</span> <span class="o">=</span> <span class="n">arr</span> <span class="o">-&gt;</span> <span class="o">{</span> 
+        <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+        
+        <span class="k">for</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span> <span class="o">:</span> <span class="n">arr</span><span class="o">)</span>
+            <span class="n">str</span> <span class="o">+=</span> <span class="n">s</span><span class="o">;</span>
+        
+        <span class="k">return</span> <span class="n">str</span><span class="o">;</span>
+    <span class="o">};</span>
+        
+    <span class="c1">//결국 strSum &lt;- 아래의 인터페이스를 재정의한 인터페이스가 되겠지요. </span>
+    <span class="cm">/*@FunctionalInterface
+    interface arrayFunction&lt;String&gt; {
+        public String myFunction(String... t) { 
+            String str = "";
+            
+            for(String s : arr)
+                str += s;
+            
+            return str;
+        };
+    }*/</span>
+    
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span>
+        <span class="n">strSum</span><span class="o">.</span><span class="na">myFunction</span><span class="o">(</span><span class="k">new</span> <span class="n">String</span><span class="o">[]</span> <span class="o">{</span><span class="s">"a"</span><span class="o">,</span> <span class="s">"b"</span><span class="o">,</span> <span class="s">"c"</span><span class="o">,</span> <span class="s">"d"</span><span class="o">,</span> <span class="s">"e"</span><span class="o">})</span>
+    <span class="o">);</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">defaultTest</span> <span class="o">{</span>
+    <span class="k">default</span> <span class="kt">void</span> <span class="nf">testFunction</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"나는 디폴트야"</span><span class="o">);</span>
+    <span class="o">}</span>
+    
+    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">testStatic</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"나는 테스트 스태틱 메소드야."</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+ 
+ 
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ramda</span> <span class="kd">implements</span> <span class="n">defaultTest</span><span class="o">{</span>
+    <span class="c1">//JAVA 8 </span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">new</span> <span class="nf">Ramda</span><span class="o">().</span><span class="na">testFunction</span><span class="o">();</span>
+        
+        <span class="n">defaultTest</span><span class="o">.</span><span class="na">testStatic</span><span class="o">();</span>
+    <span class="o">}</span>
+ 
+<span class="o">}</span>
+</code></pre>
+</div>
+<p>java8부터는 인터페이스 안에 default로 메소드를 선언할 수 있으며 해당 인터페이스를 상속받은 클래스는 해당 메소드를 오버라이드하지 않아도 됩니다.</p>
+
+<p>static 메소드는 인스턴트화된 객체로는 접근할 수 없습니다. 따라서 해당 인터페이스에 직접 접근해서 메소드를 사용합니다. :)</p>
+
+<h3 id="section-1">- 익명클래스</h3>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">A</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">test</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"나는 원래의 test야"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+
+<span class="kd">class</span> <span class="nc">Test</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">A</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">A</span><span class="o">()</span> <span class="o">{</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">test</span><span class="o">()</span> <span class="o">{</span>
+                <span class="kd">super</span><span class="o">.</span><span class="na">test</span><span class="o">();</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"나는 변경된 test야"</span><span class="o">);</span>
+            <span class="o">}</span>
+            
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">test2</span><span class="o">()</span> <span class="o">{}</span>
+        <span class="o">};</span>
+        
+        <span class="n">a</span><span class="o">.</span><span class="na">test</span><span class="o">();</span>
+        
+        <span class="n">a</span><span class="o">.</span><span class="na">test2</span><span class="o">();</span> <span class="c1">//사용할 수 없어요 ! A는 test2를 모르기 때문이지요 ㅎㅅㅎ</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<p><strong>익명클래스</strong>를 인스턴스화 함과 동시에 메소드를 오버라이드합니다.</p>
+
+<p>좀 더 알고있는 지식을 동원하자면, A()생성자 메소드를 실행하여 객체를 인스턴스화하고 new 연산자가 해당 객체의 주소값을 리턴하면 = 대입연산자를 통하여 A 타입의 변수 a에 해당 객체의 주소값을 할당합니다.</p>
+
+<p>생성하면서 public void test2() {} 라는 메소드를 만들어도 부모는 test2를 모르는 상태이기 때문에, 해당 메소드를 사용할 수 없습니다. (클래스의 다형성)</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">Runnable</span> <span class="n">r</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Runnable</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// TODO Auto-generated method stub</span>
+        
+    <span class="o">}</span>
+<span class="o">};</span>
+
+<span class="n">r</span><span class="o">.</span><span class="na">run</span><span class="o">();</span>
+</code></pre>
+</div>
+
+<p>마찬가지로 인터페이스인 Runnable을 new 하는 원리는 익명클래스에 Runnable을 상속받아서 구현한 구현 클래스를 r에 할당하는 것 입니다.</p>
+
+<p>근데 위 코드를 람다식으로 변환하기 위해서는 전제 조건이 @FunctionalInterface 어노테이션을 가진, 구현해야 하는 메소드가 반드시 하나여야 하는 인터페이스여야만 했지요 ?</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="nd">@FunctionalInterface</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">MyFunction</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>    
+    <span class="kd">public</span> <span class="n">T</span> <span class="nf">rambdaFunction</span><span class="o">(</span><span class="n">T</span><span class="o">...</span> <span class="n">list</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<p>이런식으로 말이지요.</p>
+
+<p>하지만 java8로 업그레이드 되면서 Runnable interface 에는 @FunctionalInterface 어노테이션이 추가 되어 있습니다.</p>
+
+<p>따라서 익명함수로 생성할때 반드시 오버라이드 해야 하는 메소드의 개수가 1개이므로</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">Runnable</span> <span class="n">run</span> <span class="o">=</span> <span class="o">()</span> <span class="o">-&gt;</span> <span class="o">{</span>
+    <span class="c1">//do something...</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"나는 쓰레드 안의 람다 표현식이야 ! + ㅅ+"</span><span class="o">);</span>
+<span class="o">};</span>
+
+</code></pre>
+</div>
+
+<p>위처럼 익명함수에 Runnable을 상속시켜 바로 오버라이드 해서 사용하는 방식으로 람다식을 구현할 수 있게 되는 거지요 :)</p>
+
+<p>함수형 언어가 되고 있는 JAVA와 JAVASCRIPT에 대해 지속적인 공부를 해야할 듯 싶습니다.</p>
+
+    </article>
+</div>
+
+
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'dolen';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+<div class="share-buttons">
+    <h6>Share on: </h6>
+    <ul>
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2016-10/java-lambda" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+        </li>
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2016-10/java-lambda" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+        </li>
+        <li>
+            <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2016-10/java-lambda" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+        </li>
+        <li>
+            <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2016-10/java-lambda" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+        </li>
+        <li>
+            <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2016-10/java-lambda" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+        </li>
+    </ul>
+</div><!-- end share-buttons -->
+
+
+
+        <footer>
+  &copy; 2016 dolen. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-heart heart-icon"></i>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+
+
+</body>
+</html>
