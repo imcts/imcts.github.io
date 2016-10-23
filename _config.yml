@@ -33,14 +33,14 @@ kramdown:
 ####################################
 #
 owner:
-  name: Dolen
+  name: "dolen"
   avatar: profile.jpeg
-  job: "A Front-End Developer ."
-  bio: "wellcome to my blog."
-  email:
-  disqus-shortname:
+  job: "Developer"
+  bio: "Front-End"
+  email: "imcts@coupang.com"
+  disqus-shortname: "dolen"
   twitter: #username
-  facebook: #username
+  facebook: "taesan.choi"
   google:
     plus: #username
     analytics:
@@ -48,10 +48,10 @@ owner:
     ad-client:
     ad-slot:
   bing-verify:
-  github: #username
+  github: "imcts"
   gitlab: #username
   stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
-  linkedin: #username
+  linkedin: "태산-최-a904a9119?trk=hp-identity-photo"
   skype: #username
   xing: #username
   instagram: #username
