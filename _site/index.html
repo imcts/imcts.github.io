@@ -125,6 +125,940 @@
       
       •
       
+        <a class="post-cat" href="http://localhost:4000/categories/#Algorithm">Algorithm</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2016-11/sort-shell" class="post-title" title="Algorithm - Shell Sort">Algorithm - Shell Sort</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <p><strong><a href="https://visualgo.net/sorting">Shell Sort View</a></strong></p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">Arr</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">61</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">8</span><span class="p">];</span>
+        <span class="c1">//this._list = new Array(100).fill(0).map(v =&gt; Math.floor(Math.random() * 100) + 1);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_gaps</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">shellSort</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">len</span>        <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
+            <span class="nx">loopCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nx">timer</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">timer</span><span class="p">();</span>
+ 
+        <span class="k">this</span><span class="p">.</span><span class="nx">getGaps</span><span class="p">();</span>
+ 
+        <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">g</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">gap</span><span class="p">;</span> <span class="nx">gap</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">gaps</span><span class="p">[</span><span class="nx">g</span><span class="p">];</span> <span class="nx">g</span><span class="o">++</span><span class="p">)</span>
+            <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">gap</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> 
+                <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">i</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span><span class="o">--</span><span class="p">)</span>
+                    <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span> <span class="o">-</span> <span class="nx">gap</span><span class="p">]</span> <span class="o">&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">])</span> 
+                        <span class="k">this</span><span class="p">.</span><span class="nx">bitSwap</span><span class="p">(</span><span class="nx">j</span> <span class="o">-</span> <span class="nx">gap</span><span class="p">,</span> <span class="nx">j</span><span class="p">);</span>
+ 
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">,</span> <span class="nx">loopCount</span> <span class="o">+</span> <span class="s1">' : count'</span><span class="p">,</span> <span class="nx">timer</span><span class="p">()</span> <span class="o">+</span> <span class="s1">' : million Seccond'</span><span class="p">);</span>
+    <span class="p">}</span>
+     
+    <span class="c1">//동적으로 갭을 만듭니다 !</span>
+    <span class="nx">getGaps</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">len</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
+            <span class="nx">gap</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+ 
+ 
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">len</span><span class="p">)</span>
+            <span class="k">return</span><span class="p">;</span>
+ 
+        <span class="c1">//gap의 시작값을 구하는 반복문</span>
+        <span class="k">while</span><span class="p">(</span><span class="nx">gap</span> <span class="o">&lt;</span> <span class="nx">len</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> 
+            <span class="nx">gap</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="nx">gap</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+ 
+        <span class="k">this</span><span class="p">.</span><span class="nx">gaps</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">gap</span><span class="p">);</span>
+ 
+        <span class="c1">//gap의 다음 수를 구하는 반복문.</span>
+        <span class="k">while</span><span class="p">(</span><span class="nx">gap</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">gap</span> <span class="o">=</span> <span class="p">(</span><span class="nx">gap</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span><span class="p">;</span>
+ 
+            <span class="k">if</span><span class="p">(</span><span class="nx">gap</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">//마지막 값은 0이 나올 수 있으므로 +ㅅ +/</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">gaps</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">gap</span><span class="p">);</span>
+        <span class="p">}</span>
+ 
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">gaps</span><span class="p">,</span> <span class="s1">' : gaps!'</span><span class="p">);</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">timer</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">start</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">();</span>
+ 
+        <span class="k">return</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+ 
+            <span class="k">return</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">-</span> <span class="nx">start</span><span class="p">;</span>
+        <span class="p">};</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">swapTwo</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">]][</span><span class="mi">0</span><span class="p">];</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">swapOne</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">],</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]];</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">bitSwap</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">==</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">])</span>
+            <span class="k">return</span><span class="p">;</span>
+ 
+        <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">^=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">^=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">^=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">set</span> <span class="nx">gaps</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">_gaps</span> <span class="o">=</span> <span class="nx">list</span><span class="p">;}</span>
+    <span class="nx">get</span> <span class="nx">gaps</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_gaps</span><span class="p">;}</span>
+    <span class="nx">set</span> <span class="nx">list</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">_list</span> <span class="o">=</span> <span class="nx">list</span><span class="p">;}</span>
+    <span class="nx">get</span> <span class="nx">list</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_list</span><span class="p">;}</span>
+<span class="p">}</span>
+ 
+ 
+<span class="k">new</span> <span class="nx">Arr</span><span class="p">().</span><span class="nx">shellSort</span><span class="p">();</span>
+</code></pre>
+</div>
+
+<p>insert sort 방법은 하나씩 순회하며 비교하지만 shell sort의 경우에는 Gap 수를 구하여 확장 합니다.</p>
+
+<p>즉 전체 배열을 순회하면서, 맨뒤에서부터 삽입 정렬을 수행하는데, 그 대상이 -1번째방이 아니라, - gap의 숫자와 비교하게 되는 거죠.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  --- 여기서부터 아래는 gaps[3, 2, 1] 의 방식으로 소팅하는 방법 입니다.
+
+
+  [61, 85, 19, 88, 68, 8, 70, 29] 
+  0번째 무시. 1번째 무시. 2번째 무시. 
+  3번째는 88번이있고, 88번은 61보다 작으므로 무시. 
+  4번째 루프때 68이 타겟이고, 85가 더 크니까 교환. 
+
+  [61, 68, 19, 88, 85, 8, 70, 29] 
+  5번째 루프때 8은 18보다 작으니까 교환 
+
+  [61, 68, 8, 88, 85, 19, 70, 29] 
+  70은 88보다 작으니까 교환 
+
+  [61, 68, 8, 70, 85, 19, 88, 29] 
+  29는 85보다 작으므로 교환 
+
+  [61, 68, 8, 70, 29, 19, 88, 85] 
+  29는 68보다 작으므로 교환
+
+  첫번째 루프 완료시. 
+  [61, 29, 8, 70, 68, 19, 88, 85] 
+
+
+
+  ------- 
+
+
+  [61, 29, 8, 70, 68, 19, 88, 85] 
+  19는 70보다 작으므로 교환
+  [61, 29, 8, 19, 68, 70, 88, 85] 
+  다시 19는 29보다 작으므로 교환 
+  [61, 19, 8, 29, 68, 70, 88, 85] 
+  8은 61보다 작으므로 교환 
+  [8, 19, 61, 29, 68, 70, 88, 85] 
+  
+
+  -------
+
+  [8, 19, 61, 29, 68, 70, 88, 85]
+  61보다 29가 작으므로 교환
+
+  [8, 19, 29, 61, 68, 70, 88, 85]
+
+  더이상 소팅할게 없으므로 종료 !
+</code></pre>
+</div>
+
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        6 NOV 2016
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#Algorithm">Algorithm</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2016-11/sort-select" class="post-title" title="Algorithm - Select Sort">Algorithm - Select Sort</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <p><strong><a href="https://visualgo.net/sorting">Select Sort View</a></strong></p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">Arr</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_list</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">100</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nx">v</span> <span class="o">=&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">selectSort</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">len</span>        <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
+            <span class="nx">cnt</span>       <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nx">loopCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nx">timer</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">timer</span><span class="p">();</span>
+ 
+        <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">tmpList</span><span class="p">,</span> <span class="nx">min</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">,</span> <span class="nx">cnt</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">tmpList</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">cnt</span><span class="p">);</span> <span class="c1">//배열의 순회한곳 이후부터 복사한다.</span>
+            <span class="nx">min</span>     <span class="o">=</span> <span class="nx">tmpList</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">v1</span><span class="p">,</span> <span class="nx">v2</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">v1</span> <span class="o">&lt;</span> <span class="nx">v2</span> <span class="p">?</span> <span class="nx">v1</span> <span class="p">:</span> <span class="nx">v2</span><span class="p">);</span> <span class="c1">//그중 최소값을 구한다. //여기서 한번 루프</span>
+            <span class="nx">index</span>   <span class="o">=</span> <span class="nx">tmpList</span><span class="p">.</span><span class="nx">findIndex</span><span class="p">(</span><span class="nx">v</span> <span class="o">=&gt;</span> <span class="nx">v</span> <span class="o">==</span> <span class="nx">min</span><span class="p">);</span> <span class="c1">//해당 배열의 인덱스값을 찾는다. // 여기서 한번 루프를 돈다. 비효율.</span>
+ 
+            <span class="k">this</span><span class="p">.</span><span class="nx">swapOne</span><span class="p">(</span><span class="nx">cnt</span><span class="p">,</span> <span class="nx">cnt</span> <span class="o">+</span> <span class="nx">index</span><span class="p">);</span>
+        <span class="p">}</span>
+ 
+        <span class="c1">//loop Time을 비교하면 이러하다 !</span>
+ 
+ 
+ 
+        <span class="c1">//따라서 이 방법이 더 효율적일 것 같다. </span>
+        <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">min</span><span class="p">,</span> <span class="nx">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">,</span> <span class="nx">cnt</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            
+            <span class="nx">min</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">index</span><span class="p">];</span>
+ 
+            <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">cnt</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">,</span> <span class="nx">loopCount</span><span class="o">++</span><span class="p">)</span> 
+                <span class="k">if</span><span class="p">(</span><span class="nx">min</span> <span class="o">&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">])</span> <span class="p">{</span>
+                    <span class="nx">min</span>   <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
+                    <span class="nx">index</span> <span class="o">=</span> <span class="nx">j</span><span class="p">;</span>
+                <span class="p">}</span>
+            
+ 
+            <span class="k">this</span><span class="p">.</span><span class="nx">swapOne</span><span class="p">(</span><span class="nx">cnt</span><span class="p">,</span> <span class="nx">index</span><span class="p">);</span>
+        <span class="p">}</span>
+ 
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">,</span> <span class="nx">loopCount</span> <span class="o">+</span> <span class="s1">' : count'</span><span class="p">,</span> <span class="nx">timer</span><span class="p">()</span> <span class="o">+</span> <span class="s1">' : million Seccond'</span><span class="p">);</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">timer</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">start</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">();</span>
+ 
+        <span class="k">return</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+ 
+            <span class="k">return</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">-</span> <span class="nx">start</span><span class="p">;</span>
+        <span class="p">};</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">swapTwo</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">]][</span><span class="mi">0</span><span class="p">];</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">swapOne</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">],</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]];</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">bitSwap</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">^=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">^=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">^=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">set</span> <span class="nx">list</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">_list</span> <span class="o">=</span> <span class="nx">list</span><span class="p">;}</span>
+    <span class="nx">get</span> <span class="nx">list</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_list</span><span class="p">;}</span>
+<span class="p">}</span>
+ 
+ 
+<span class="k">new</span> <span class="nx">Arr</span><span class="p">().</span><span class="nx">selectSort</span><span class="p">();</span>
+</code></pre>
+</div>
+
+<p>셀렉트 정렬방식은 모든 배열을 한바퀴 순회하여 제일 작은 숫자를 찾아내고,</p>
+
+<p>그 숫자를 배열의 0, 1,…. 순으로 스왑하며 정렬합니다.</p>
+
+
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        6 NOV 2016
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#Algorithm">Algorithm</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2016-11/sort-search" class="post-title" title="Algorithm - Search">Algorithm - Search</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <h4 id="section">순차 검색</h4>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">Search</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">list</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">100</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">map</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="nx">seqSearch</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">r</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="na">index</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+            <span class="na">value</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="p">};</span>
+ 
+        <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">n</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">value</span> <span class="o">===</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">r</span><span class="p">.</span><span class="nx">index</span> <span class="o">=</span> <span class="nx">i</span><span class="p">;</span>
+                <span class="nx">r</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">n</span><span class="p">;</span>
+            <span class="p">}</span>
+ 
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">r</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">);</span>
+    <span class="p">}</span>    
+ 
+    <span class="nx">selfSortSeqSearch</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//자체 정렬 데이터 기법을 적용한 seq 함수. </span>
+        <span class="kd">let</span> <span class="nx">r</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="na">index</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+            <span class="na">value</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="p">};</span>
+ 
+        <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">n</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">value</span> <span class="o">===</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">r</span><span class="p">.</span><span class="nx">index</span> <span class="o">=</span> <span class="nx">i</span><span class="p">;</span>
+                <span class="nx">r</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">n</span><span class="p">;</span>
+ 
+                <span class="k">if</span><span class="p">(</span><span class="nx">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">//검색 되면 한칸씩 계속 앞으로 밀려 나가게 된다. 검색의 우선순위가 높아질 수록 최상단에 위치하게 된다.  </span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">swap</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+ 
+ 
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">r</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">);</span>
+                <span class="k">return</span><span class="p">;</span>
+            <span class="p">}</span>
+ 
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">r</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">);</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">upgradeSelfSortSeqSearch</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 자체 정렬 데이터 기법을 조금더 업그레이드 한 seq 함수이다. </span>
+        <span class="kd">let</span> <span class="nx">r</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="na">index</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+            <span class="na">value</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="p">};</span>
+ 
+        <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">n</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+            <span class="k">if</span><span class="p">((</span><span class="nx">value</span> <span class="o">===</span> <span class="nx">n</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&gt;</span> <span class="nx">len</span> <span class="o">*</span> <span class="mf">0.2</span><span class="p">))</span> <span class="p">{</span>  <span class="c1">//만약 검색된 결과값이 배열의 20% 이외에 있다면, 최상단으로 앞당긴다. </span>
+                <span class="nx">r</span><span class="p">.</span><span class="nx">index</span> <span class="o">=</span> <span class="nx">i</span><span class="p">;</span>
+                <span class="nx">r</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">n</span><span class="p">;</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">swap</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+                
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">r</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">);</span>
+ 
+                <span class="k">return</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">value</span> <span class="o">===</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">r</span><span class="p">.</span><span class="nx">index</span> <span class="o">=</span> <span class="nx">i</span><span class="p">;</span>
+                <span class="nx">r</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">n</span><span class="p">;</span>
+ 
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">r</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">);</span>
+ 
+                <span class="k">return</span><span class="p">;</span>
+            <span class="p">}</span>
+ 
+ 
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">r</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">);</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">swap</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">],</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]];</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">get</span> <span class="nx">list</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_list</span><span class="p">;}</span>
+    <span class="nx">set</span> <span class="nx">list</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">_list</span> <span class="o">=</span> <span class="nx">list</span><span class="p">;}</span>
+<span class="p">}</span>
+ 
+ 
+<span class="k">new</span> <span class="nx">Search</span><span class="p">().</span><span class="nx">selfSortSeqSearch</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>검색 알고리즘은 어쩔 수 없이 전체를 한번 훑는게 전제조건이 됩니다. (sequence search)</p>
+
+<ol>
+  <li>배열의 처음부터 끝까지 돌다가 내가 원하는 값을 찾았을때 리턴 하는 방식. seqSearch</li>
+  <li>동작 방식은 같으나, 검색 결과가 존재하면 해당 index를 한칸씩 앞으로 당깁니다. selfSortSeqSearch</li>
+  <li>마찬가지로 동작방식은 같으나 검색 결과가 배열의 20%이외에 존재하면 첫번째로 밀어줍니다. upgradeSelfSortSeqSearch</li>
+</ol>
+
+<h4 id="section-1">이진검색</h4>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">Sort</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_list</span> <span class="o">=</span> <span class="nx">list</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_gaps</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">shellSort</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">len</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+ 
+        <span class="k">this</span><span class="p">.</span><span class="nx">getGaps</span><span class="p">();</span>
+ 
+        <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">g</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">gap</span><span class="p">;</span> <span class="nx">gap</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">gaps</span><span class="p">[</span><span class="nx">g</span><span class="p">];</span> <span class="nx">g</span><span class="o">++</span><span class="p">)</span>
+            <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">gap</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+                <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">i</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span><span class="o">--</span><span class="p">)</span> 
+                    <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span> <span class="o">-</span> <span class="nx">gap</span><span class="p">]</span> <span class="o">&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">])</span> 
+                        <span class="k">this</span><span class="p">.</span><span class="nx">swapOne</span><span class="p">(</span><span class="nx">j</span> <span class="o">-</span> <span class="nx">gap</span><span class="p">,</span> <span class="nx">j</span><span class="p">);</span>
+ 
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">;</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">getGaps</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">len</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
+            <span class="nx">gap</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+ 
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">len</span><span class="p">)</span>
+            <span class="k">return</span><span class="p">;</span>
+ 
+        <span class="c1">//gap의 시작값을 구하는 반복문</span>
+        <span class="k">while</span><span class="p">(</span><span class="nx">gap</span> <span class="o">&lt;</span> <span class="nx">len</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> 
+            <span class="nx">gap</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="nx">gap</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+ 
+        <span class="k">this</span><span class="p">.</span><span class="nx">gaps</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">gap</span><span class="p">);</span>
+ 
+        <span class="c1">//gap의 다음 수를 구하는 반복문.</span>
+        <span class="k">while</span><span class="p">(</span><span class="nx">gap</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">gap</span> <span class="o">=</span> <span class="p">(</span><span class="nx">gap</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span><span class="p">;</span>
+ 
+            <span class="k">if</span><span class="p">(</span><span class="nx">gap</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">//마지막 값은 0이 나올 수 있으므로 +ㅅ +/</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">gaps</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">gap</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">swapOne</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">],</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]];</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">set</span> <span class="nx">gaps</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">_gaps</span> <span class="o">=</span> <span class="nx">list</span><span class="p">;}</span>
+    <span class="nx">get</span> <span class="nx">gaps</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_gaps</span><span class="p">;}</span>
+    <span class="nx">set</span> <span class="nx">list</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">_list</span> <span class="o">=</span> <span class="nx">list</span><span class="p">;}</span>
+    <span class="nx">get</span> <span class="nx">list</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_list</span><span class="p">;}</span>
+<span class="p">}</span>
+ 
+ 
+<span class="kr">class</span> <span class="nx">Search</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">list</span> <span class="o">=</span> <span class="nx">list</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="nx">seqSearch</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">timer</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">timer</span><span class="p">(),</span>
+                <span class="nx">r</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="na">index</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+                    <span class="na">value</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span>
+                <span class="p">};</span>
+ 
+        <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">n</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">value</span> <span class="o">===</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">r</span><span class="p">.</span><span class="nx">index</span> <span class="o">=</span> <span class="nx">i</span><span class="p">;</span>
+                <span class="nx">r</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">n</span><span class="p">;</span>
+ 
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">r</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">,</span> <span class="nx">timer</span><span class="p">(),</span> <span class="s1">' : finish time!'</span><span class="p">);</span>
+ 
+                <span class="k">return</span><span class="p">;</span>
+            <span class="p">}</span>
+    <span class="p">}</span>    
+ 
+    <span class="nx">binarySearch</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 이진 검색은 반드시 정렬된 데이터를 가지고만 움직일 수 있다. 이것이 전제 조건. </span>
+        <span class="kd">let</span> <span class="nx">timer</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">timer</span><span class="p">(),</span> 
+            <span class="nx">list</span>  <span class="o">=</span> <span class="k">new</span> <span class="nx">Sort</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">).</span><span class="nx">shellSort</span><span class="p">(),</span> 
+            <span class="nx">upper</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nx">lower</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> 
+            <span class="nx">mid</span>   <span class="o">=</span> <span class="kc">null</span><span class="p">;</span> 
+ 
+        <span class="k">while</span><span class="p">(</span><span class="nx">lower</span> <span class="o">&lt;=</span> <span class="nx">upper</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">mid</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">((</span><span class="nx">upper</span> <span class="o">+</span> <span class="nx">lower</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+ 
+            <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">value</span><span class="p">)</span> 
+                <span class="nx">lower</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> 
+            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">mid</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">value</span><span class="p">)</span>
+                <span class="nx">upper</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="k">else</span> 
+                <span class="k">return</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">`</span><span class="nx">$</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">mid</span><span class="p">]}</span> <span class="err">:</span> <span class="nx">$</span><span class="p">{</span><span class="nx">mid</span><span class="p">},</span> <span class="nx">$</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">},</span> <span class="nx">$</span><span class="p">{</span><span class="nx">timer</span><span class="p">()}</span> <span class="err">:</span> <span class="nx">finish</span> <span class="nx">time</span><span class="err">`</span><span class="p">);</span> 
+        <span class="p">}</span>
+ 
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">`</span><span class="nx">not</span> <span class="nx">found</span><span class="p">,</span> <span class="nx">$</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">},</span> <span class="nx">$</span><span class="p">{</span><span class="nx">timer</span><span class="p">()}</span> <span class="err">:</span> <span class="nx">finish</span> <span class="nx">time</span><span class="err">`</span><span class="p">);</span> 
+    <span class="p">}</span>
+ 
+    <span class="nx">timer</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">start</span> <span class="o">=</span> <span class="nx">performance</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span>
+        <span class="k">return</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">performance</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span> <span class="o">-</span> <span class="nx">start</span><span class="p">;</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">get</span> <span class="nx">list</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_list</span><span class="p">;}</span>
+    <span class="nx">set</span> <span class="nx">list</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">_list</span> <span class="o">=</span> <span class="nx">list</span><span class="p">;}</span>
+<span class="p">}</span>
+ 
+ 
+<span class="c1">//seq search </span>
+<span class="k">new</span> <span class="nx">Search</span><span class="p">(</span><span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">100</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nx">v</span> <span class="o">=&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)).</span><span class="nx">seqSearch</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+ 
+<span class="c1">//shell + binary search</span>
+<span class="k">new</span> <span class="nx">Search</span><span class="p">(</span><span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">100</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nx">v</span> <span class="o">=&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)).</span><span class="nx">binarySearch</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>이진 검색의 전재조건은 반드시 정렬된 (오름차순 또는 내림차순의) 데이터가 필요하다는 점입니다.</p>
+
+<p>[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]</p>
+
+<p>위와 같은 배열이 존재한다고 할때.</p>
+
+<p>mid = 4; 이면 되고</p>
+
+<p>찾으려고 하는 값이 7이라고 할때</p>
+
+<p>value = 7; 이면 됩니다.</p>
+
+<p>this.list[mid] = 4; 이므로</p>
+
+<p>lower 값을 + 1 해줍니다.</p>
+
+<p>그러면 lower = 5번째방부터</p>
+
+<p>upper = 배열의 끝방..</p>
+
+<p>이런식으로 반복해서 검색하면 절반씩 잘라 나가기 때문에, 천만번의 검색을 하는 조건일때 25번이면 찾을 수 있다고 합니다.</p>
+
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        6 NOV 2016
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#Algorithm">Algorithm</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2016-11/sort-quick" class="post-title" title="Algorithm - Quick Sort">Algorithm - Quick Sort</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <p><strong><a href="https://visualgo.net/sorting">Quick Sort View</a></strong></p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">Arr</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+        <span class="c1">//this._list = new Array(10000).fill(0).map(v =&gt; Math.floor(Math.random() * 100) + 1);</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">quickSort</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">arr</span><span class="p">)</span>
+            <span class="nx">arr</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">;</span>
+ 
+        <span class="k">if</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">[];</span>
+        
+        <span class="kd">let</span> <span class="nx">less</span>    <span class="o">=</span> <span class="p">[],</span>
+            <span class="nx">greater</span> <span class="o">=</span> <span class="p">[],</span>
+            <span class="nx">pivot</span>   <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+            <span class="c1">//항상 배열의 첫번째 값을 기준점으로 잡습니다. </span>
+            <span class="c1">//그리고 나보다 작은 배열은 왼쪽으로 나보다 큰 배열은 우측으로 보냅니다 ! 이게 핵심 입니다.</span>
+            <span class="c1">//그리고 왼쪽에 작은배열 [1, 2, 3, 4] + 기준점 (6) + [7, 8, 9, 10]; 을 합치고 마지막으로 보내는게 핵심 로직 입니다. </span>
+            <span class="c1">//</span>
+            <span class="c1">//맨 아래까지 쪼개내려가면, [1, 4, 2, 3] 6 [10, 9, 8, 7] 이랬던 애들이 </span>
+            <span class="c1">//[] + 2 + [3] =&gt; [] + 1 + [2, 3] =&gt; [1, 2, 3] + 4 + [] =&gt; [1, 2, 3, 4]</span>
+            <span class="c1">//[7] + 8 + [] =&gt; [7, 8] + 9 + [] =&gt; [7, 8, 9] + 10 + [] =&gt; [7, 8, 9, 10]</span>
+            <span class="c1">//</span>
+            <span class="c1">//[1, 2, 3, 4] + 6 + [7, 8, 9, 10] 으로 만나게 될 테니까요 ! </span>
+ 
+ 
+        <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">v</span><span class="p">;</span> <span class="nx">v</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span>
+            <span class="nx">v</span> <span class="o">&lt;</span> <span class="nx">pivot</span> <span class="p">?</span> <span class="nx">less</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">:</span> <span class="nx">greater</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">v</span><span class="p">);</span>
+ 
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">quickSort</span><span class="p">(</span><span class="nx">less</span><span class="p">).</span><span class="nx">concat</span><span class="p">(</span><span class="nx">pivot</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">quickSort</span><span class="p">(</span><span class="nx">greater</span><span class="p">));</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">merge</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">,</span> <span class="nx">start</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">left</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="nx">right</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">--</span><span class="p">;</span> <span class="nx">start</span><span class="o">++</span><span class="p">)</span> 
+            <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">start</span><span class="p">]</span> <span class="o">=</span> <span class="nx">right</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">?</span> <span class="nx">left</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="nx">right</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">?</span> <span class="nx">left</span><span class="p">.</span><span class="nx">shift</span><span class="p">()</span> <span class="p">:</span> <span class="nx">right</span><span class="p">.</span><span class="nx">shift</span><span class="p">()</span> <span class="p">:</span> <span class="nx">left</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span>
+    <span class="p">}</span>
+    
+    <span class="nx">timer</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">start</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">();</span>
+        <span class="k">return</span> <span class="p">()</span> <span class="o">=&gt;</span>  <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">-</span> <span class="nx">start</span><span class="p">;</span>
+    <span class="p">}</span>
+ 
+ 
+    <span class="nx">set</span> <span class="nx">list</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">_list</span> <span class="o">=</span> <span class="nx">list</span><span class="p">;}</span>
+    <span class="nx">get</span> <span class="nx">list</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_list</span><span class="p">;}</span>
+<span class="p">}</span>
+ 
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">new</span> <span class="nx">Arr</span><span class="p">().</span><span class="nx">quickSort</span><span class="p">());</span>
+</code></pre>
+</div>
+
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        6 NOV 2016
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#Algorithm">Algorithm</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2016-11/sort-merge" class="post-title" title="Algorithm - Merge Sort">Algorithm - Merge Sort</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <p><strong><a href="https://visualgo.net/sorting">Merge Sort View</a></strong></p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">Arr</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+        <span class="c1">//this._list = new Array(10000).fill(0).map(v =&gt; Math.floor(Math.random() * 100) + 1);</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">mergeSort</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">timer</span>     <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">timer</span><span class="p">(),</span>
+            <span class="nx">listLen</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
+            <span class="nx">loopLen</span> <span class="o">=</span> <span class="nx">listLen</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+ 
+ 
+        <span class="c1">//step 은 배열을 자르는 기준이 되기 때문에 이 로직의 핵심이에요.</span>
+        <span class="c1">//step은 1부터 시작합니다. </span>
+        <span class="c1">//첫번째 포문은 배열의 길이만큼 도는데, step이 배열보다 커지지 않을때까지만 돌게 되요. 스텝은 현재 스텝길이의 * 2씩 증가. </span>
+        <span class="c1">//예를 들어 1 -&gt; 2 -&gt; 4 -&gt; 8... 순으로 증가하는거죠.</span>
+        <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">step</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">step</span> <span class="o">&lt;</span> <span class="nx">listLen</span><span class="p">;</span> <span class="nx">step</span> <span class="o">*=</span> <span class="mi">2</span><span class="p">)</span>  
+            <span class="c1">//머지 함수에는 left와 right배열을 전달하는걸 주 목적으로 합니다. </span>
+            <span class="c1">//두번째 루프에는 0부터 len / 2 까지 순회하게 되는데 i += step이므로 step이 1일경우 </span>
+            <span class="c1">//배열의 길이가 9라면, 배열을 매번 2개씩 절삭하므로 총 5번의 루프가 필요하게 되요.</span>
+            <span class="c1">//즉 i &lt; 4.5 가 되기때문에 총 5번 순회하는거지요 :) </span>
+            <span class="c1">//</span>
+            <span class="c1">//start 값은 배열의 시작 위치부터 몇개씩 절삭시킬것인가에 대한 값이에요. 해당 값은 </span>
+            <span class="c1">//step == 1</span>
+            <span class="c1">//0 -&gt; 2 -&gt; 4 -&gt; 6 -&gt; 8... </span>
+            <span class="c1">//0 -&gt; 0 + 1 * 2 -&gt; 2 + 1 * 2 -&gt; 4 + 1 * 2 -&gt;...</span>
+            <span class="c1">//</span>
+            <span class="c1">//step == 2</span>
+            <span class="c1">//0 -&gt; 4 -&gt; 8...</span>
+            <span class="c1">//0 -&gt; 0 + 2 * 2 -&gt; 4 + 2 * 2 -&gt;...</span>
+            <span class="c1">//step == 4</span>
+            <span class="c1">//0 -&gt; 8 -&gt; 16...</span>
+            <span class="c1">//0 -&gt; 0 + 4 * 2 -&gt; 8 + 4 * 2 -&gt;...</span>
+            <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">end</span> <span class="o">=</span> <span class="nx">step</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">loopLen</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="nx">step</span><span class="p">,</span> <span class="nx">start</span> <span class="o">+=</span> <span class="nx">step</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">end</span> <span class="o">=</span> <span class="nx">start</span> <span class="o">+</span> <span class="nx">step</span><span class="p">)</span> 
+                <span class="k">this</span><span class="p">.</span><span class="nx">merge</span><span class="p">(</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">getList</span><span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">),</span> 
+                    <span class="k">this</span><span class="p">.</span><span class="nx">getList</span><span class="p">(</span><span class="nx">end</span><span class="p">,</span> <span class="nx">start</span> <span class="o">+</span> <span class="nx">step</span> <span class="o">*</span> <span class="mi">2</span><span class="p">),</span> 
+                    <span class="nx">start</span>
+                <span class="p">);</span>
+            
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">,</span>  <span class="nx">timer</span><span class="p">()</span> <span class="o">+</span> <span class="s1">' : million Seccond'</span><span class="p">);</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">getList</span><span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">);</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">merge</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">,</span> <span class="nx">start</span><span class="p">)</span> <span class="p">{</span>
+ 
+        <span class="c1">//홀수배열인 경우에 left[0]방은 무조건 있어요. 하지만 right[0]은 없을수도 있지요? </span>
+        <span class="c1">//그러니까 right[r] 을 확인하고 있으면 둘을 비교해서 작은 값을 result에 집어넣습니다.</span>
+        <span class="c1">//없으면 그냥 왼쪽거만 남은거기땜에 그냥 왼쪽거에서 shift 하면 되요. :)</span>
+        <span class="c1">//</span>
+        <span class="c1">//결국엔 this.list에 몇번째부터 잘랐는지만 알면되는 start인자값을 통해서 n번부터 n번째에 값을 하나씩 최소값을 넣어주는거죠. </span>
+        <span class="c1">//start값은0 -&gt; 1 -&gt; 2.. 순으로 증가하게 될 테니까. </span>
+        <span class="c1">//</span>
+        <span class="c1">//결국 지금 뽑아내는 값은 최소값만 뽑혀나오게 되는거니까요 ! </span>
+        <span class="c1">//배열의 몇번째방부터 몇번째방까지 순차적으로 최소값만 찔러넣어주게 되는거지요 :)</span>
+        <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">left</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="nx">right</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">--</span><span class="p">;</span> <span class="nx">start</span><span class="o">++</span><span class="p">)</span> 
+             <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">start</span><span class="p">]</span> <span class="o">=</span> <span class="nx">right</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">?</span> <span class="nx">left</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="nx">right</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">?</span> <span class="nx">left</span><span class="p">.</span><span class="nx">shift</span><span class="p">()</span> <span class="p">:</span> <span class="nx">right</span><span class="p">.</span><span class="nx">shift</span><span class="p">()</span> <span class="p">:</span> <span class="nx">left</span><span class="p">.</span><span class="nx">shift</span><span class="p">();</span>
+    <span class="p">}</span>
+    
+    <span class="nx">timer</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">start</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">();</span>
+        <span class="k">return</span> <span class="p">()</span> <span class="o">=&gt;</span>  <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">-</span> <span class="nx">start</span><span class="p">;</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">set</span> <span class="nx">list</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">_list</span> <span class="o">=</span> <span class="nx">list</span><span class="p">;}</span>
+    <span class="nx">get</span> <span class="nx">list</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_list</span><span class="p">;}</span>
+<span class="p">}</span>
+ 
+ 
+<span class="k">new</span> <span class="nx">Arr</span><span class="p">().</span><span class="nx">mergeSort</span><span class="p">();</span>
+
+</code></pre>
+</div>
+
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        6 NOV 2016
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#Algorithm">Algorithm</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2016-11/sort-insert" class="post-title" title="Algorithm - Insert Sort">Algorithm - Insert Sort</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <p><strong><a href="https://visualgo.net/sorting">Insert Sort View</a></strong></p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">Arr</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">48</span><span class="p">];</span>
+        <span class="c1">//this._list = new Array(100).fill(0).map(v =&gt; Math.floor(Math.random() * 100) + 1);</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">selectSort</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">len</span>        <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
+            <span class="nx">cnt</span>       <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nx">loopCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nx">timer</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">timer</span><span class="p">();</span>
+ 
+ 
+        <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">,</span> <span class="nx">cnt</span><span class="o">++</span><span class="p">)</span> 
+            <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">i</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span><span class="o">--</span><span class="p">,</span> <span class="nx">loopCount</span><span class="o">++</span><span class="p">)</span> 
+                <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">])</span> 
+                    <span class="k">this</span><span class="p">.</span><span class="nx">swapOne</span><span class="p">(</span><span class="nx">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">j</span><span class="p">);</span>
+ 
+ 
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">,</span> <span class="nx">loopCount</span> <span class="o">+</span> <span class="s1">' : count'</span><span class="p">,</span> <span class="nx">timer</span><span class="p">()</span> <span class="o">+</span> <span class="s1">' : million Seccond'</span><span class="p">);</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">timer</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">start</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">();</span>
+ 
+        <span class="k">return</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+ 
+            <span class="k">return</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">-</span> <span class="nx">start</span><span class="p">;</span>
+        <span class="p">};</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">swapTwo</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">]][</span><span class="mi">0</span><span class="p">];</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">swapOne</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">],</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]];</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">bitSwap</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">^=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">^=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">^=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">set</span> <span class="nx">list</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">_list</span> <span class="o">=</span> <span class="nx">list</span><span class="p">;}</span>
+    <span class="nx">get</span> <span class="nx">list</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_list</span><span class="p">;}</span>
+<span class="p">}</span>
+ 
+ 
+<span class="k">new</span> <span class="nx">Arr</span><span class="p">().</span><span class="nx">selectSort</span><span class="p">();</span>
+</code></pre>
+</div>
+
+<p>인서트의 경우에는 한번 전위로 순회하며 다시 역순회 합니다.</p>
+
+<p>현재 값을 기준으로 나보다 작은 녀석을 만날때까지 돌다가, 나보다 작은 값을 만나면 그 값의 전값과 나의 위치를 바꾸어 줍니다.</p>
+
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        6 NOV 2016
+      </span>
+      
+      •
+      
+        <a class="post-cat" href="http://localhost:4000/categories/#Algorithm">Algorithm</a>
+        
+      
+      
+    </p>
+    <h4>
+      <a href="http://localhost:4000/articles/2016-11/sort-bubble" class="post-title" title="Algorithm - Bubble Sort">Algorithm - Bubble Sort</a>
+      
+    </h4>
+
+    
+
+    </header>
+
+    
+    <div class="post-description">
+      <p>
+        <p><strong><a href="https://visualgo.net/sorting">Bubble Sort View</a></strong></p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">Arr</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_list</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">100</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nx">v</span> <span class="o">=&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">bubbleSort</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">len</span>       <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
+            <span class="nx">cnt</span>       <span class="o">=</span> <span class="nx">len</span><span class="p">,</span>
+            <span class="nx">loopCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+ 
+        <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">,</span> <span class="nx">cnt</span><span class="o">--</span><span class="p">)</span>
+            <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">cnt</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">,</span> <span class="nx">loopCount</span><span class="o">++</span><span class="p">)</span> 
+                <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">bitSwap</span><span class="p">(</span><span class="nx">j</span><span class="p">,</span> <span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+ 
+   <span class="c1">//cnt를 사용하지 않고 루프를 돌릴 경우 약 5000회 이상의 반복문을 추가하게 된다. </span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">,</span> <span class="nx">loopCount</span><span class="p">);</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">swapTwo</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">]][</span><span class="mi">0</span><span class="p">];</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">swapOne</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">],</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]];</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">bitSwap</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">^=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">^=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">^=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">set</span> <span class="nx">list</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">_list</span> <span class="o">=</span> <span class="nx">list</span><span class="p">;}</span>
+    <span class="nx">get</span> <span class="nx">list</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_list</span><span class="p">;}</span>
+<span class="p">}</span>
+ 
+ 
+<span class="k">new</span> <span class="nx">Arr</span><span class="p">().</span><span class="nx">bubbleSort</span><span class="p">();</span>
+</code></pre>
+</div>
+
+<p>배열을 순회하며, 다음번의 값이 나보다 크면 교환하는 방식으로 합니다</p>
+
+<p>포문에서 - cnt 를 해 주는 이유는 순회한 횟수 만큼은 더는 뒤로 돌 필요가 없기 때문이며 (이미 뒤쪽은 정렬이 끝난상태라 앞쪽만 계속 정렬시킨다)</p>
+
+<p>저 - cnt 를 해주느냐와 안해주느냐의 차이는 실제 약 100회 이상의 루프 감소효과가 발생했습니다.</p>
+
+
+      </p>
+    </div>
+    
+
+    
+
+</section>
+
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        6 NOV 2016
+      </span>
+      
+      •
+      
         <a class="post-cat" href="http://localhost:4000/categories/#Project">Project</a>
         
       
@@ -173,7 +1107,7 @@
       
     </p>
     <h4>
-      <a href="http://localhost:4000/articles/2016-11/memo" class="post-title" title="신입때 만들어 두었던 MeMo">신입때 만들어 두었던 MeMo</a>
+      <a href="http://localhost:4000/articles/2016-11/memo" class="post-title" title="MeMo">MeMo</a>
       
     </h4>
 
@@ -184,9 +1118,7 @@
     
     <div class="post-description">
       <p>
-        <p><strong><a href="/project/memo">MEMO PROJECT</a></strong></p>
-
-<p>신입 시절 만들어두었던 MEMO를 찾은 김에 올려 둡니다.</p>
+        <p><strong><a href="/project/memo">MEMO</a></strong></p>
 
       </p>
     </div>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Algorithm - Bubble Sort</title>
+  <meta name="description" content="Bubble Sort Viewclass Arr {    constructor() {        this._list = new Array(100).fill(0).map(v =&gt; Math.random() * 100 + 1);    }     bubbleSort() {      ...">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/2016-11/sort-bubble">
+  <link rel="alternate" type="application/rss+xml" title="Leonids" href="http://localhost:4000/feed.xml" />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="http://localhost:4000/img/profile.jpeg" alt="" class="avatar">
+  
+  <a href="http://localhost:4000/" class="author_name">dolen</a>
+  <span class="author_job">Developer</span>
+  <span class="author_bio mbm">Front-End</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/">home</a>
+        <span>/</span>
+      </li>
+       
+      <li class="nav-item">
+        <a href="http://localhost:4000/archive/">Archive</a>
+        
+          <span>/</span>
+        
+      </li>
+          
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+        
+          <span>/</span>
+        
+      </li>
+            
+      <li class="nav-item">
+        <a href="http://localhost:4000/tags/">Tags</a>
+        
+      </li>
+       
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('imcts@coupang.com', 'Hello from website');</script>
+      </li>
+    
+    
+    <li><a href="http://facebook.com/taesan.choi" class="social-link-item" target="_blank"><i class="fa fa-fw fa-facebook"></i></a></li>
+    
+    <li><a href="http://linkedin.com/in/태산-최-a904a9119?trk=hp-identity-photo" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    
+    
+    
+    
+    <li><a href="http://github.com/imcts" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "http://localhost:4000/" >
+    Home
+</a>
+
+
+
+<div id="post">
+    <header class="post-header">
+        <h1 title="Algorithm - Bubble Sort">Algorithm - Bubble Sort</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        6 NOV 2016
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    2 mins read
+  
+</span>
+
+    </span>
+
+    </header>
+
+    <article class="post-content">
+        <p><strong><a href="https://visualgo.net/sorting">Bubble Sort View</a></strong></p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">Arr</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_list</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">100</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nx">v</span> <span class="o">=&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">bubbleSort</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">len</span>       <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
+            <span class="nx">cnt</span>       <span class="o">=</span> <span class="nx">len</span><span class="p">,</span>
+            <span class="nx">loopCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+ 
+        <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">,</span> <span class="nx">cnt</span><span class="o">--</span><span class="p">)</span>
+            <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">cnt</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">,</span> <span class="nx">loopCount</span><span class="o">++</span><span class="p">)</span> 
+                <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">bitSwap</span><span class="p">(</span><span class="nx">j</span><span class="p">,</span> <span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+ 
+   <span class="c1">//cnt를 사용하지 않고 루프를 돌릴 경우 약 5000회 이상의 반복문을 추가하게 된다. </span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">,</span> <span class="nx">loopCount</span><span class="p">);</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">swapTwo</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">]][</span><span class="mi">0</span><span class="p">];</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">swapOne</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">],</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]];</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">bitSwap</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">^=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">^=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">^=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
+    <span class="p">}</span>
+ 
+    <span class="nx">set</span> <span class="nx">list</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">_list</span> <span class="o">=</span> <span class="nx">list</span><span class="p">;}</span>
+    <span class="nx">get</span> <span class="nx">list</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_list</span><span class="p">;}</span>
+<span class="p">}</span>
+ 
+ 
+<span class="k">new</span> <span class="nx">Arr</span><span class="p">().</span><span class="nx">bubbleSort</span><span class="p">();</span>
+</code></pre>
+</div>
+
+<p>배열을 순회하며, 다음번의 값이 나보다 크면 교환하는 방식으로 합니다</p>
+
+<p>포문에서 - cnt 를 해 주는 이유는 순회한 횟수 만큼은 더는 뒤로 돌 필요가 없기 때문이며 (이미 뒤쪽은 정렬이 끝난상태라 앞쪽만 계속 정렬시킨다)</p>
+
+<p>저 - cnt 를 해주느냐와 안해주느냐의 차이는 실제 약 100회 이상의 루프 감소효과가 발생했습니다.</p>
+
+
+    </article>
+</div>
+
+
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'dolen';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+<div class="share-buttons">
+    <h6>Share on: </h6>
+    <ul>
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2016-11/sort-bubble" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+        </li>
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2016-11/sort-bubble" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+        </li>
+        <li>
+            <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2016-11/sort-bubble" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+        </li>
+        <li>
+            <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2016-11/sort-bubble" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+        </li>
+        <li>
+            <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2016-11/sort-bubble" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+        </li>
+    </ul>
+</div><!-- end share-buttons -->
+
+
+
+        <footer>
+  &copy; 2016 dolen. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a> made with <i class="fa fa-heart heart-icon"></i>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+
+
+</body>
+</html>
