@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../../../base.css">
+		<link rel="stylesheet" type="text/css" href="../css/index.css">
+
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.1/require.min.js"></script>
+	</head>
+	<body>
+        <h1>
+    		<p class="header">HTML5 Canvas / Draw</p>
+        </h1>
+	      
+	    <div id="root" class="root">
+	    	<section class="section">
+	    		<header class="header">
+	    			<h2>
+			    		<p><strong>문자 출력</strong></p>
+			    	</h2>
+	    		</header>
+				<article id="parent-article" class="article" style="width: 100%; height: 300px; background-color: red;overflow: auto;">
+					<canvas id="canvas-1">
+			    		you'r browser does not support HTML5 Canvas 
+			    	</canvas>	
+				</article>
+
+				<div>
+						text: <input id="text-box" type="text" placeholder="Hello World">
+						<br> 
+						
+						fill or Stoke:
+						<select id="line-select">
+							<option value="fill">fill</option>
+							<option value="stroke">stroke</option>
+							<option value="both">both</option>
+						</select>
+						<br>
+						
+						font: 
+						<select id="font-select">
+							<option value="normal">normal</option>
+							<option value="italic">italic</option>
+							<option value="oblique">oblique</option>
+						</select>
+						<br>
+
+						font-size: 
+						<input id="font-size" type="range">
+						<br>
+
+						font-weight: 
+						<select id="font-weight">
+							<option value="normal">normal</option>
+							<option value="bold">bold</option>
+							<option value="bolder">bolder</option>
+							<option value="lighter">lighter</option>
+						</select>
+						<br>
+
+						text-align: 
+						<select id="text-align">
+							<option value="center">center</option>
+							<option value="start">start</option>
+							<option value="end">end</option>
+							<option value="left">left</option>
+							<option value="right">right</option>
+						</select>
+						<br>
+	
+						text-base-line:
+						<select id="text-base-line">
+							<option value="top">top</option>
+							<option value="hanging">hanging</option>
+							<option value="middle">middle</option>
+							<option value="alphabetic">alphabetic</option>
+							<option value="ideographic">ideographic</option>
+							<option value="bottom">bottom</option>
+						</select>
+						<br>
+
+						color: <input id="text-color" type="color">정
+						<br>
+
+						opacity: <input id="text-opacity" type="range" max="1" min="0" step="0.1" value="1"> 
+						<br>
+
+						shadowX: <input id="text-shadow-x" type="range" value="0"> 
+						<br>
+						
+						shadowY: <input id="text-shadow-y" type="range" value="0"> 
+						<br>
+
+						shadowBlur: <input id="text-shadow-blur" type="range" value="0"> 
+						<br>
+
+						shadowColor: <input id="text-shadow-color" type="color">
+						<br>
+
+						parentWidth: <input id="parent-width" type="range" value="500" max="1000">
+						<br>
+
+						parentHeight: <input id="parent-height" type="range" value="300" max="1000">
+						<br>
+
+						canvasWidth: <input id="canvas-width" type="range" value="500" max="1000">
+						<br>
+
+						canvasHeight: <input id="canvas-height" type="range" value="300" max="1000">
+						
+					</div>
+	    	</section>
+
+	    </div>
+
+		<script src="../js/text.js"></script>
+	</body>
+</html>

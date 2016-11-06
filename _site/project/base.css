@@ -1,0 +1,28 @@
+
+html, body {
+	margin: 0; 
+	padding: 0;
+}
+
+ul, ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover, 
+a:active,
+a:link,
+a:visited {
+	color: #888;
+}
+
+.header {
+	text-indent: 30px;
+}
+
+.list-bar {
+	margin-top: 10px;
+}
