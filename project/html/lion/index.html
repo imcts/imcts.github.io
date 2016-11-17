@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>라이언</title>
+
+        <style>
+            html, body {
+                padding: 0;
+                margin: 0;
+            }
+
+            .content {
+                position: relative;
+                margin: 100px auto;
+                width: 250px;
+                height: 400px;
+                background-color: #fff9bb;;
+
+                overflow: hidden;;
+            }
+
+            .face {
+                position: absolute;
+                left: 80px;
+                bottom: 18px;
+                width: 100px;
+                height: 90px;
+                border: 3px solid #000;
+                border-radius: 50%;
+                background-color: #d5972a;
+            }
+
+            .ear::before {
+                position: absolute;
+                left: 88px;
+                bottom: 83px;
+                width: 25px;
+                height: 28px;
+                border: 3px solid #000;
+                border-radius: 50%;
+                background-color: #d5972a;
+                content: '';
+            }
+
+            .ear::after {
+                position: absolute;
+                left: 145px;
+                bottom: 85px;
+                width: 25px;
+                height: 28px;
+                border: 3px solid #000;
+                border-radius: 50%;
+                background-color: #d5972a;
+                content: '';
+            }
+
+            .brow::before {
+                position: absolute;
+                left: 100px;
+                bottom: 80px;
+                width: 20px;
+                height: 4px;
+                border-radius: 40%;
+                background-color: #000;
+                content: '';
+            }
+
+            .brow::after {
+                position: absolute;
+                left: 145px;
+                bottom: 80px;
+                width: 20px;
+                height: 4px;
+                border-radius: 40%;
+                background-color: #000;
+                content: '';
+            }
+
+            .eye::before {
+                position: absolute;
+                left: 107px;
+                bottom: 65px;
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                background-color: #000;
+                content: '';
+            }
+
+            .eye::after {
+                position: absolute;
+                left: 152px;
+                bottom: 65px;
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                background-color: #000;
+                content: '';
+            }
+
+            .nose {
+                position: absolute;
+                left: 129px;
+                bottom: 50px;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: #000;
+                content: '';
+                z-index: 5;
+            }
+
+            .mouse::before {
+                position: absolute;
+                left: 119px;
+                bottom: 40px;
+                width: 19px;
+                height: 15px;
+                border-radius: 50%;
+                background-color: #000;
+                content: '';
+            }
+
+            .mouse::after {
+                position: absolute;
+                left: 129px;
+                bottom: 40px;
+                width: 19px;
+                height: 15px;
+                border-radius: 50%;
+                background-color: #000;
+                content: '';
+            }
+
+            .white-mouse::before {
+                position: absolute;
+                left: 122px;
+                bottom: 43px;
+                width: 12px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: #fff;
+                content: '';
+            }
+
+            .white-mouse::after {
+                position: absolute;
+                left: 132px;
+                bottom: 43px;
+                width: 13px;
+                height: 11px;
+                border-radius: 50%;
+                background-color: #fff;
+                content: '';
+            }
+
+            .body {
+                position: absolute;
+                left: 87px;
+                bottom: -60px;
+                width: 85px;
+                height: 100px;
+                border: 3px solid #000;
+                border-radius: 50%;
+                background-color: #d5972a;
+            }
+
+            .bust::before {
+                position: absolute;
+                left: 103px;
+                bottom: -90px;
+                width: 55px;
+                height: 100px;
+                border-radius: 5%;
+                border-left: 3px solid #000;
+                border-right: 3px solid #000;
+                background-color: #d5972a;
+                content: '';
+            }
+
+            .white-hole {
+                position: absolute;
+                left: 103px;
+                bottom: -75px;
+                width: 60px;
+                height: 80px;
+                border-radius: 50%;
+                background-color: #fff;
+                content: '';
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <div class="body"></div>
+            <div class="ear"></div>
+            <div class="face"></div>
+            <div class="brow"></div>
+            <div class="eye"></div>
+            <div class="nose"></div>
+            <div class="mouse"></div>
+            <div class="white-mouse"></div>
+            <div class="bust"></div>
+            <div class="white-hole"></div>
+        </div>
+    </body>
+</html>
