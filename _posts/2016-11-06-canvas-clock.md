@@ -1,7 +1,7 @@
 ---
 layout: post
 title: HTML5 CANVAS CLOCK
-categories: [Project]
+categories: [Canvas]
 tags: [Project, HTML5, CANVAS]
 comments: true
 share: true
