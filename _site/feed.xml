@@ -5,9 +5,39 @@
     <description>A simple and awesome blog theme powered by jekyll.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 12 Nov 2016 08:34:47 +0100</pubDate>
-    <lastBuildDate>Sat, 12 Nov 2016 08:34:47 +0100</lastBuildDate>
+    <pubDate>Sun, 27 Nov 2016 13:55:42 +0100</pubDate>
+    <lastBuildDate>Sun, 27 Nov 2016 13:55:42 +0100</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>HTML5 FileUpload 정리</title>
+        <description>&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;/project/html/file&quot;&gt;FILE BLOB&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 27 Nov 2016 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/articles/2016-11/file-upload</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2016-11/file-upload</guid>
+        
+        <category>HTML5</category>
+        
+        
+        <category>Project</category>
+        
+      </item>
+    
+      <item>
+        <title>CSS 라이언</title>
+        <description>&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;/project/html/lion&quot;&gt;라이언&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 17 Nov 2016 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/articles/2016-11/lion</link>
+        <guid isPermaLink="true">http://localhost:4000/articles/2016-11/lion</guid>
+        
+        <category>Project</category>
+        
+        
+        <category>Project</category>
+        
+      </item>
     
       <item>
         <title>MONGODB를 쉽게 사용하게 해주는 DEPLOYD.</title>
@@ -84,27 +114,28 @@ dpd -d
 &lt;p&gt;&lt;img src=&quot;/resources/images/library/deployd/4.png&quot; alt=&quot;이미지&quot; /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;원하는 컬렉션명을 적어주신 후 엔터를 입력하는 것만으로 테이블 생성이 완료 됩니다.
+  &lt;p&gt;원하는 컬렉션명을 적어주신 후 엔터를 입력하는 것만으로 테이블 생성이 완료 됩니다.&lt;br /&gt;
 이제 Properties를 클릭하여 column을 생성할 차례 입니다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;img src=&quot;/resources/images/library/deployd/5.png&quot; alt=&quot;이미지&quot; /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;컬럼별로 데이터 타입을 지정할 수 있으니 원하는 타입의 데이터 column을 설정하시면 됩니다.
+  &lt;p&gt;컬럼별로 데이터 타입을 지정할 수 있으니 원하는 타입의 데이터 column을 설정하시면 됩니다.&lt;br /&gt;
 이제 데이터를 넣어볼까요 ?&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;img src=&quot;/resources/images/library/deployd/6.png&quot; alt=&quot;이미지&quot; /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;데이터 타입에 맞춰서 입력하시면 됩니다. mongodb 특성상 ID는 자동으로 입력해 주니 신경쓰지 맙시다.&lt;/p&gt;
+  &lt;p&gt;데이터 타입에 맞춰서 입력하시면 됩니다. &lt;br /&gt;
+mongodb 특성상 ID는 자동으로 입력해 주니 신경쓰지 맙시다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;img src=&quot;/resources/images/library/deployd/7.png&quot; alt=&quot;이미지&quot; /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;API를 기본적으로 제공해 주니 저대로 request를 요청하면 됩니다. 
+  &lt;p&gt;API를 기본적으로 제공해 주니 저대로 request를 요청하면 됩니다. &lt;br /&gt;
 GET요청을 한번 해볼까요 ??&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -1251,97 +1282,6 @@ ES6 심볼 이었습니다.&lt;/p&gt;
         
         
         <category>Algorithm</category>
-        
-      </item>
-    
-      <item>
-        <title>Algorithm - Bubble Sort</title>
-        <description>&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://visualgo.net/sorting&quot;&gt;Bubble Sort View&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Arr&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
- 
-    &lt;span class=&quot;nx&quot;&gt;bubbleSort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;len&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;cnt&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;loopCount&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
- 
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cnt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cnt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;loopCount&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-                    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bitSwap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
- 
-   &lt;span class=&quot;c1&quot;&gt;//cnt를 사용하지 않고 루프를 돌릴 경우 약 5000회 이상의 반복문을 추가하게 된다. &lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;loopCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
- 
-    &lt;span class=&quot;nx&quot;&gt;swapTwo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
- 
-    &lt;span class=&quot;nx&quot;&gt;swapOne&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
- 
-    &lt;span class=&quot;nx&quot;&gt;bitSwap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;^=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;^=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;^=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
- 
-    &lt;span class=&quot;nx&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;}&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
- 
- 
-&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bubbleSort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;배열을 순회하며, 다음번의 값이 나보다 크면 교환하는 방식으로 합니다&lt;/p&gt;
-
-&lt;p&gt;포문에서 - cnt 를 해 주는 이유는 순회한 횟수 만큼은 더는 뒤로 돌 필요가 없기 때문이며 (이미 뒤쪽은 정렬이 끝난상태라 앞쪽만 계속 정렬시킨다)&lt;/p&gt;
-
-&lt;p&gt;저 - cnt 를 해주느냐와 안해주느냐의 차이는 실제 약 100회 이상의 루프 감소효과가 발생했습니다.&lt;/p&gt;
-
-</description>
-        <pubDate>Sun, 06 Nov 2016 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/articles/2016-11/sort-bubble</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2016-11/sort-bubble</guid>
-        
-        <category>bubble</category>
-        
-        <category>sort</category>
-        
-        
-        <category>Algorithm</category>
-        
-      </item>
-    
-      <item>
-        <title>HTML5 CANVAS 정리</title>
-        <description>&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;/project/html/canvas/draw&quot;&gt;CANVAS DRAW&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;/project/html/canvas/text&quot;&gt;CANVAS TEXT&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;/project/html/canvas/cross-line&quot;&gt;CANVAS CROSS-LINE&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;/project/html/canvas/clock&quot;&gt;CANVAS CLOCK&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 06 Nov 2016 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/articles/2016-11/canvas</link>
-        <guid isPermaLink="true">http://localhost:4000/articles/2016-11/canvas</guid>
-        
-        <category>Project</category>
-        
-        <category>HTML5</category>
-        
-        <category>CANVAS</category>
-        
-        
-        <category>Project</category>
         
       </item>
     
