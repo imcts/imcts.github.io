@@ -274,7 +274,7 @@ require([
         isKeepChange           = true;
 
     //time
-    let CHANGE_TIME  = 10000,
+    let CHANGE_TIME  = 15000,
         TIME         = 700,
         time         = TIME,
         timer        = null,
