@@ -18,9 +18,6 @@ require([
         context.closePath();
         context.stroke();
 
-
-
-
         context.beginPath();
         context.moveTo(MARGIN, canvas.height - MARGIN);
         context.lineTo(canvas.width - MARGIN, canvas.height - MARGIN);

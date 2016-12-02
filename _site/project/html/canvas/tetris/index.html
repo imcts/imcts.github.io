@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TETRIS</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../../../base.css">
+		<link rel="stylesheet" type="text/css" href="../css/tetris.css">
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/4.1.0/rx.all.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.1/require.min.js"></script>
+	</head>
+	<body>
+        <h1>
+    		<p class="header">HTML5 Canvas / TETRIS</p>
+        </h1>
+
+	    <div id="root" class="root">
+	    	<section class="section">
+	    		<header class="header">
+	    			<h2>
+			    		<p><strong>TETRIS</strong></p>
+			    		<p><strong>조작법: 화살표키, 스페이스바, 쉬프트키</strong></p>
+			    	</h2>
+	    		</header>
+
+				<article class="article">
+					<canvas id="canvas" class="canvas">
+			    		you'r browser does not support HTML5 Canvas 
+			    	</canvas>	
+				</article>
+	    	</section>
+	    </div>
+
+		<section id="js_dimmedSection" class="dimmed__section">
+			<div class="dimmed__section__article">
+				<article id="js_startModal" class="dimmed__section__article__info">
+					<input id="js_userName" class="dimmed__section__article__info__input" type="text" placeholder="user name insert">
+					<p>
+						<button id="js_gameStartBtn" class="dimmed__section__article__info__btn">Insert Coin</button>
+					</p>
+				</article>
+
+				<article id="js_endModal" class="dimmed__section__article__info__retry">
+					<div id="js_endModalName" class="dimmed__section__article__info__retry__name"></div>
+					<div id="js_endModalPoint" class="dimmed__section__article__info__retry__point"></div>
+					<button id="js_restartBtn" class="dimmed__section__article__info__btn">Retry</button>
+				</article>
+			</div>
+
+
+		</section>
+
+		<script src="../js/tetris.js"></script>
+	</body>
+</html>

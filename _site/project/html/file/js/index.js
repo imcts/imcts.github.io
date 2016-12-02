@@ -16,7 +16,10 @@ const setEvent = () => {
                 image.src = url;
 
                 display.innerHTML = '';
-                display.append(image);
+
+                display.append && display.append(image);
+                display.appendChild && display.appendChild(image);
+
             } else if(type.lastIndexOf('video') >= 0) {
                 const display = document.getElementById('display'),
                       url     = window.URL.createObjectURL(file),
@@ -27,7 +30,9 @@ const setEvent = () => {
                 video.src = url;
 
                 display.innerHTML = '';
-                display.append(video);
+
+                display.append && display.append(video);
+                display.appendChild && display.appendChild(video);
             }
         }
     }, false);

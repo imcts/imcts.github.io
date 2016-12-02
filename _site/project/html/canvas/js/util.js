@@ -1,6 +1,6 @@
 define(() => {
 	const isCanvas = () => !!document.createElement('canvas');
-	const getCanvas = id => document.getElementById(id);
+	const getCanvas = id => document.getElementById(id || 'canvas');
 	const getElement = id => document.getElementById(id);
 
 	return {
