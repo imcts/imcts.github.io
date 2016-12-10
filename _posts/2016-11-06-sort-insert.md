@@ -1,12 +1,18 @@
 ---
+
 layout: post
 title: Algorithm - Insert Sort 
-categories: [Algorithm]
-tags: [insert, sort]
-comments: true
-share: true
----
+date: 2016-11-06 20:00:00
+image: '/assets/img/'
+description: 'zz'
+main-class: 'algorithm'
+tags: 
+- algorithm
+- sort
 
+introduction: '- JAVASCRIPT Insert Sort  -'
+
+---
 
 **[Insert Sort View](https://visualgo.net/sorting)**
 

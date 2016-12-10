@@ -1,10 +1,17 @@
 ---
+
 layout: post
-title: Algorithm - Search 
-categories: [Algorithm]
-tags: [search]
-comments: true
-share: true
+title: Algorithm - Search Sort 
+date: 2016-11-06 20:00:00
+image: '/assets/img/'
+description: 'zz'
+main-class: 'algorithm'
+tags: 
+- algorithm
+- sort
+
+introduction: '- JAVASCRIPT Search Sort  -'
+
 ---
 
 

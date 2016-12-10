@@ -1,10 +1,14 @@
 ---
 layout: post
-title: 자바스크립트 디자인 패턴에 관하여. 
-categories: [JavaScript]
-tags: [디자인 패턴]
-comments: true
-share: true
+title: 자바스크립트 디자인 패턴.
+date: 2016-10-02 20:00:00
+image: '/assets/img/'
+description: 'pattern'
+main-class: 'js'
+tags: 
+- pattern
+
+introduction: '- javascript pattern -'
 ---
 
 **패턴에 관해서** 정리해 볼까요 ? 

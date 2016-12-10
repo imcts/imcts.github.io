@@ -1,10 +1,14 @@
 ---
 layout: post
-title: 수포자가 필요해서 정리하는 수학공식 -비례식, 이미지 정렬- 
-categories: [Math]
-tags: [비례식]
-comments: true
-share: true
+title: 수포자가 필요해서 정리하는 수학공식
+date: 2016-09-25 20:00:00
+image: '/assets/img/'
+description: '비례식, 이미지 정렬' 
+main-class: 'math'
+tags: 
+- 비례식
+categories:
+introduction: '-비례식, 이미지 정렬-' 
 ---
 
 가로값:세로값 = 변경된가로값:세로값;

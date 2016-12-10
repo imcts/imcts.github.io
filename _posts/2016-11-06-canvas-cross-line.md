@@ -1,10 +1,17 @@
 ---
+
 layout: post
 title: HTML5 CANVAS CROSS LINE
-categories: [Canvas]
-tags: [Project, HTML5, CANVAS]
-comments: true
-share: true
+date: 2016-11-06 22:00:00
+image: '/assets/img/'
+description: 'HTML5 CANVAS CROSS LINE'
+main-class: 'js'
+tags: 
+- cross line
+- canvas
+
+introduction: '- HTML5 CANVAS CLOCK -'
+
 ---
 
-**[CANVAS CROSS-LINE](/project/html/canvas/cross-line)**
+**MOVE TO CANVAS CROSS LINE =>** **[CANVAS CROSS-LINE](/project/html/canvas/cross-line)**

@@ -1,10 +1,16 @@
 ---
 layout: post
 title: JAVA 제네릭 클래스와 메소드
-categories: [JAVA]
-tags: [제네릭]
-comments: true
-share: true
+date: 2016-09-31 20:00:00
+image: '/assets/img/'
+description: 'Generic class & method'
+main-class: 'java'
+tags: 
+- generic
+- class
+- method
+
+introduction: '-generic class method-'
 ---
 
 ### - Generic 

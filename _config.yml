@@ -1,69 +1,42 @@
-#
-###################################
-# Site wide configuration
-####################################
-#
-title: Leonids
-email:
-description: A simple and awesome blog theme powered by jekyll.
-url: # the base hostname & protocol for your site
+# Site settings
+title: Dolen - Desenvolvedor Front End
+description: my study blog
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
+
+# User settings
+username: 'dolen'
+user_description: Front-End Developer
+email: imcts@coupang.com
+twitter_username: imcts
+github_username:  imcts
+gplus_username:  imcts
+disqus_username: 'dolen'
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
 
 
-#
-###################################
-# Jekyll configuration
-####################################
-#
-timezone:          Europe/Paris
-markdown:          kramdown
-highlighter:       rouge
-excerpt_separator: <!--more-->
-permalink:         /articles/:year-:month/:title
+# html minify
+compress_html:
+  clippings: all
+  comments: all
+  endings: []
+  profile: true
 
-kramdown:
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  enable_coderay: false
+# Links to include in menu navigation
+# For external links add external: true
+links:
+  - title: Home
+    url: /
+  - title: Series
+    url: /series
+  - title: Tags
+    url: /tags
+  - title: About Me
+    url: /about
 
-#
-###################################
-# Site Owner configuration
-####################################
-#
-owner:
-  name: "dolen"
-  avatar: profile.jpeg
-  job: "Developer"
-  bio: "Front-End"
-  email: "imcts@coupang.com"
-  disqus-shortname: "dolen"
-  twitter: #username
-  facebook: "taesan.choi"
-  google:
-    plus: #username
-    analytics:
-    verify:
-    ad-client:
-    ad-slot:
-  bing-verify:
-  github: "imcts"
-  gitlab: #username
-  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
-  linkedin: "태산-최-a904a9119?trk=hp-identity-photo"
-  skype: #username
-  xing: #username
-  instagram: #username
-  lastfm: #username
-  tumblr: #username
-  pinterest: #username
-  foursquare: #username
-  steam: #username
-  dribbble: #username
-  youtube: #username
-  soundcloud: #username
-  weibo: #username
-  flickr: #username
-  500px: #username
-  codepen: #username
+# exclude my node related stuff
+exclude: ['package.json', 'src', 'node_modules']

@@ -1,12 +1,18 @@
 ---
+
 layout: post
 title: Algorithm - Select Sort 
-categories: [Algorithm]
-tags: [select, sort]
-comments: true
-share: true
----
+date: 2016-11-06 20:00:00
+image: '/assets/img/'
+description: 'zz'
+main-class: 'algorithm'
+tags: 
+- algorithm
+- sort
 
+introduction: '- JAVASCRIPT Select Sort  -'
+
+---
 
 **[Select Sort View](https://visualgo.net/sorting)**
 

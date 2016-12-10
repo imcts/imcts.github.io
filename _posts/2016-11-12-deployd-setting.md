@@ -1,11 +1,18 @@
 ---
+
 layout: post
-title: MONGODB를 쉽게 사용하게 해주는 DEPLOYD.
-categories: [DB]
-tags: [mongodb, deployd]
-comments: true
-share: true
+title: MONGODB를 쉽게 사용하게 해주는 DEPLOYD
+date: 2016-11-12 20:00:00
+image: '/assets/img/'
+main-class: 'tool'
+tags: 
+- deployd
+- mongodb
+
+introduction: '- DEPLOYD MONGODB -'
+
 ---
+
 
 **[DEPLOYD 사이트](http://deployd.com)**
 **[DEPLOYD DOCUMENT](http://docs.deployd.com/docs/)**

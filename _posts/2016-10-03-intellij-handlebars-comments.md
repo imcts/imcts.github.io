@@ -1,10 +1,16 @@
 ---
+
 layout: post
 title: IntelliJ 유용한 설정들 !
-categories: [IntelliJ]
-tags: [IntelliJ]
-comments: true
-share: true
+date: 2016-10-03 20:00:00
+image: '/assets/img/'
+description: 'pattern'
+main-class: 'tool'
+tags: 
+- intelliJ
+
+introduction: '- intelliJ plugin -'
+
 ---
 
 ### - Handlebars로 주석을 변경하는 방법 !! 

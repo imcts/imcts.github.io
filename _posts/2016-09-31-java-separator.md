@@ -1,10 +1,15 @@
 ---
 layout: post
 title: JAVA 가변인자와 ENUM
-categories: [JAVA]
-tags: [가변인자, ENUM]
-comments: true
-share: true
+date: 2016-09-31 21:00:00
+image: '/assets/img/'
+description: '가변인자 ENUM'
+main-class: 'java'
+tags: 
+- 가변인자
+- ENUM
+
+introduction: '-generic class method-'
 ---
 
 ### - 가변인자

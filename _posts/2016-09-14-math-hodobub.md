@@ -1,10 +1,15 @@
 ---
 layout: post
-title: 수포자가 필요해서 정리하는 수학공식 -호도법, 라디안- 
-categories: [Math]
-tags: [라디안, 호도법]
-comments: true
-share: true
+title: 수포자가 필요해서 정리하는 수학공식
+date: 2016-09-14 20:00:00
+image: '/assets/img/'
+description: -호도법, 라디안-
+main-class: 'math'
+color: '#B31917'
+tags: 
+- 라디안
+- 호도법
+introduction: '-호도법, 라디안-'
 ---
 
 

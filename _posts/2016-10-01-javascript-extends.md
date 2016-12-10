@@ -1,11 +1,18 @@
 ---
 layout: post
-title: 자바스크립트 상속에 관하여. 
-categories: [JavaScript]
-tags: [상속, extends]
-comments: true
-share: true
+title: 자바스크립트 상속.
+date: 2016-10-01 20:00:00
+image: '/assets/img/'
+description: 'Extends'
+main-class: 'js'
+tags: 
+- extends
+- prototype
+
+introduction: '- javascript extends -'
 ---
+
+
 
 **자바스크립트의 상속**을 정리해보겠습니다.
 

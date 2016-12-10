@@ -1,11 +1,19 @@
 ---
 layout: post
-title: 수포자가 필요해서 정리하는 수학공식 -루트, 삼각함수- 
-categories: [Math]
-tags: [루트, 삼각함수, 싸인, 코싸인, 탄젠트]
-comments: true
-share: true
----
+title: 수포자가 필요해서 정리하는 수학공식
+date: 2016-09-30 20:00:00
+image: '/assets/img/'
+description: '삼각함수, 루트, 싸인, 코싸인, 탄젠트'
+main-class: 'math'
+tags: 
+- 루트
+- 삼각함수 
+- 싸인
+- 코싸인
+- 탄젠트
+
+introduction: '-루트, 삼각함수-'
+--- 
 
 ### - 제곱근에 대하여 !
 

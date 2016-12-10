@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+        <url>
+            <loc>/about/index.html</loc>
+        </url>
+    
+        <url>
+            <loc>/category/css/</loc>
+        </url>
+    
+        <url>
+            <loc>/category/dev/</loc>
+        </url>
+    
+        <url>
+            <loc>/feed.xml</loc>
+        </url>
+    
+        <url>
+            <loc>/category/html/</loc>
+        </url>
+    
+        <url>
+            <loc>/</loc>
+        </url>
+    
+        <url>
+            <loc>/category/jekyll/</loc>
+        </url>
+    
+        <url>
+            <loc>/category/js/</loc>
+        </url>
+    
+        <url>
+            <loc>/category/misc/</loc>
+        </url>
+    
+        <url>
+            <loc>/search.json</loc>
+        </url>
+    
+        <url>
+            <loc>/series/index.html</loc>
+        </url>
+    
+        <url>
+            <loc>/sitemap.xml</loc>
+        </url>
+    
+        <url>
+            <loc>/category/svg/</loc>
+        </url>
+    
+        <url>
+            <loc>/tags/index.html</loc>
+        </url>
+    
+    
+        <url>
+            <loc>/file-upload/</loc>
+        </url>
+  
+        <url>
+            <loc>/canvas-tetris/</loc>
+        </url>
+  
+        <url>
+            <loc>/lion/</loc>
+        </url>
+  
+        <url>
+            <loc>/deployd-setting/</loc>
+        </url>
+  
+        <url>
+            <loc>/ES6-SYMBOL/</loc>
+        </url>
+  
+        <url>
+            <loc>/canvas-text/</loc>
+        </url>
+  
+        <url>
+            <loc>/canvas-draw/</loc>
+        </url>
+  
+        <url>
+            <loc>/canvas-cross-line/</loc>
+        </url>
+  
+        <url>
+            <loc>/canvas-clock/</loc>
+        </url>
+  
+        <url>
+            <loc>/sort-shell/</loc>
+        </url>
+  
+        <url>
+            <loc>/sort-select/</loc>
+        </url>
+  
+        <url>
+            <loc>/sort-search/</loc>
+        </url>
+  
+        <url>
+            <loc>/sort-quick/</loc>
+        </url>
+  
+        <url>
+            <loc>/sort-merge/</loc>
+        </url>
+  
+        <url>
+            <loc>/sort-insert/</loc>
+        </url>
+  
+        <url>
+            <loc>/sort-bubble/</loc>
+        </url>
+  
+        <url>
+            <loc>/memo/</loc>
+        </url>
+  
+        <url>
+            <loc>/css-transform/</loc>
+        </url>
+  
+        <url>
+            <loc>/java-lambda/</loc>
+        </url>
+  
+        <url>
+            <loc>/intellij-handlebars-comments/</loc>
+        </url>
+  
+        <url>
+            <loc>/javascript-pattern/</loc>
+        </url>
+  
+        <url>
+            <loc>/javascript-extends/</loc>
+        </url>
+  
+        <url>
+            <loc>/java-separator/</loc>
+        </url>
+  
+        <url>
+            <loc>/java-generic-class/</loc>
+        </url>
+  
+        <url>
+            <loc>/math-sam-gak-ham-su/</loc>
+        </url>
+  
+        <url>
+            <loc>/math-ratio/</loc>
+        </url>
+  
+        <url>
+            <loc>/math-hodobub/</loc>
+        </url>
+  
+</urlset>

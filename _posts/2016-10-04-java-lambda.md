@@ -1,10 +1,15 @@
 ---
 layout: post
 title: JAVA 람다 표현식 (Lambda Expression)
-categories: [JAVA]
-tags: [람다표현식, Lambda Expression]
-comments: true
-share: true
+date: 2016-10-04 21:00:00
+image: '/assets/img/'
+description: 'Lambda'
+main-class: 'java'
+tags: 
+- 람다표현식
+- Lambda Expression
+
+introduction: '-Lambda Expression-'
 ---
 
 ### - 람다 표현식에 관하여 

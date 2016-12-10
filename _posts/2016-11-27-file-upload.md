@@ -1,10 +1,17 @@
 ---
+
 layout: post
 title: HTML5 FileUpload 정리
-categories: [Project]
-tags: [HTML5]
-comments: true
-share: true
+date: 2016-11-27 21:00:00
+image: '/assets/img/'
+main-class: 'html'
+tags: 
+- HTML5
+- FILE UPLOAD
+
+introduction: '- HTML5 FILE PREVIEW -'
+
 ---
 
-**[FILE BLOB](/project/html/file)**
+
+**MOVE TO HTML5 FILE PREVIEW =>** **[FILE BLOB](/project/html/file)**
