@@ -6,11 +6,11 @@
         </url>
     
         <url>
-            <loc>/category/css/</loc>
+            <loc>/category/algorithm/</loc>
         </url>
     
         <url>
-            <loc>/category/dev/</loc>
+            <loc>/category/css/</loc>
         </url>
     
         <url>
@@ -26,7 +26,7 @@
         </url>
     
         <url>
-            <loc>/category/jekyll/</loc>
+            <loc>/category/java/</loc>
         </url>
     
         <url>
@@ -34,7 +34,11 @@
         </url>
     
         <url>
-            <loc>/category/misc/</loc>
+            <loc>/category/math/</loc>
+        </url>
+    
+        <url>
+            <loc>/category/project/</loc>
         </url>
     
         <url>
@@ -50,11 +54,11 @@
         </url>
     
         <url>
-            <loc>/category/svg/</loc>
+            <loc>/tags/index.html</loc>
         </url>
     
         <url>
-            <loc>/tags/index.html</loc>
+            <loc>/category/tool/</loc>
         </url>
     
     
