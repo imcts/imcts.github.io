@@ -1,6 +1,13 @@
 [
   
     {
+      "title"    : "ES6 - TEMPLATE LITERAL",
+      "tags"     : "javascript and template literal",
+      "url"      : "/ES6-TEMPLATE-LITERAL/",
+      "date"     : "10 Dec 2016"
+    } ,
+  
+    {
       "title"    : "JAVA 8 Method Reference",
       "tags"     : "JAVA8 and method reference",
       "url"      : "/java-method-reference/",
