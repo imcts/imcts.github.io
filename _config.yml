@@ -1,6 +1,6 @@
 # Site settings
 title: Dolen - Desenvolvedor Front End
-description: my study blog
+description: dolen - blog
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
 
