@@ -63,6 +63,10 @@
     
     
         <url>
+            <loc>/java-method-reference/</loc>
+        </url>
+  
+        <url>
             <loc>/java-lambda/</loc>
         </url>
   

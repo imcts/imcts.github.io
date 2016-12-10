@@ -1,6 +1,13 @@
 [
   
     {
+      "title"    : "JAVA 8 Method Reference",
+      "tags"     : "JAVA8 and method reference",
+      "url"      : "/java-method-reference/",
+      "date"     : "10 Dec 2016"
+    } ,
+  
+    {
       "title"    : "JAVA 8 Lambda Expression",
       "tags"     : "람다표현식 and Lambda Expression",
       "url"      : "/java-lambda/",

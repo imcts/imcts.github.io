@@ -2,7 +2,7 @@
 
 layout: post
 title: JAVA 8 Lambda Expression
-date: 2016-12-09 21:00:00
+date: 2016-12-09 15:00:00
 image: '/assets/img/'
 description: 'Lambda'
 main-class: 'java'
@@ -158,129 +158,9 @@ Comparator 인터페이스 또한 @FunctionalInterface이므로 람다 표현식
 
 매개변수에는 어차피 자료형이 선언되어있으므로 별도로 표기하지 않아도 괜찮습니다. :)  
 또한 구현해야 하는 body는 라인수가 1라인이므로 {} 를 생략할 수 있게 됩니다.  
-
-
-
-
-
-
-```java
-@FunctionalInterface
-interface arrayFunction<T> {
-    public T myFunction(T... t);
-    
-    static void myStaticFunction() {
-        System.out.println("인터페이스안에 static으로 정의할 수 있어요.");
-    }
-}
-```
-
-
-
-
-
-
-위 코드를 보면 하나의 람다 표현식을 사용하기 위한 메소드를 정의하였습니다. 
-
-@FunctionalInterface의 조건은 1개의 인터페이스와 1개의 메소드입니다.
-
-**JAVA8**의 기능으로 static 메소드가 인터페이스 안에서 구현될 수 있게 되었습니다. static 메소드는 람다 조건에 무시됩니다. 
-  
-  
-```java
-private static void test() {
-    arrayFunction<Integer> integerFunction = (Integer... arr) -> {
-        int sum = 0; 
-        
-        for(int i = 0; i < arr.length; i++) 
-            sum += arr[i];
-        
-        List<Integer> list = new ArrayList<Integer>();
-        list.add(10);
-        list.add(12);
-        list.add(2);
-        
-        return sum;
-    };
-    
-    System.out.println(
-        integerFunction.myFunction(new Integer[] {1, 2, 3, 4, 5})
-    );
-}
-
-```
-
-사용할때에는 정의해서 사용하면 되는거죠. 
-
-일단 기초적인 방법입니다. 
-
-integerFunction interface 에 선언해둔 myFunction을 재정의하여 사용하는 방식이지요. 
-
-일단은 사용법만 알아둘 예정이기 때문에 여러가지 더 좋은 응용방법은 찾아보며 공부하시길 바랍니다.
-
-
-
-
-```java
-@FunctionalInterface
-interface compareFunction<T, F, Z> {
-    public Z myFunction(T o, F z);
-}
-
-
-@FunctionalInterface
-interface arrayFunction<T> {
-    public T myFunction(T... t);
-    
-    //인터페이스명으로 메소드를 접근할 수 있습니다.
-    static void myStaticFunction() {
-        System.out.println("인터페이스안에 static으로 정의할 수 있습니다.");
-    }
-}
-
-private static void test3() {
-    //매개변수가 여러개지만, 리터럴이 1번에 해결될때. 중괄호와 리턴구문을 생략가능합니다.
-    compareFunction<String, Integer, String> customFunction = (str, num) -> str + num;
-    
-    System.out.println(
-            customFunction.myFunction("3", 5)
-    );
-}
-
-private static void test2() {
-    //매개변수 1개일때
-    arrayFunction<String> strSum = arr -> { 
-        String str = "";
-        
-        for(String s : arr)
-            str += s;
-        
-        return str;
-    };
-        
-    //결국 strSum <- 아래의 인터페이스를 재정의한 인터페이스가 되겠지요. 
-    /*@FunctionalInterface
-    interface arrayFunction<String> {
-        public String myFunction(String... t) { 
-            String str = "";
-            
-            for(String s : arr)
-                str += s;
-            
-            return str;
-        };
-    }*/
-    
-    System.out.println(
-        strSum.myFunction(new String[] {"a", "b", "c", "d", "e"})
-    );
-}
-```
-
 <br>
 <br>
 <br>
-
 
 
 #### - custom interface

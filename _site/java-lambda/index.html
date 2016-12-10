@@ -92,7 +92,7 @@
 <header class="header-post" role="banner">
      <div class="content">
         
-            <time itemprop="datePublished" datetime="2016-12-10T06:00:00+09:00" class="date">10 Dec 2016</time>
+            <time itemprop="datePublished" datetime="2016-12-10T00:00:00+09:00" class="date">10 Dec 2016</time>
         
         <h1 class="post-title" itemprop="name">JAVA 8 Lambda Expression</h1>
         <p itemprop="description" class="subtitle">Lambda</p>
@@ -235,113 +235,8 @@ Comparator 인터페이스 또한 @FunctionalInterface이므로 람다 표현식
 </div>
 
 <p>매개변수에는 어차피 자료형이 선언되어있으므로 별도로 표기하지 않아도 괜찮습니다. :)<br />
-또한 구현해야 하는 body는 라인수가 1라인이므로 {} 를 생략할 수 있게 됩니다.</p>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="nd">@FunctionalInterface</span>
-<span class="kd">interface</span> <span class="nc">arrayFunction</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="n">T</span> <span class="nf">myFunction</span><span class="o">(</span><span class="n">T</span><span class="o">...</span> <span class="n">t</span><span class="o">);</span>
-    
-    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">myStaticFunction</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"인터페이스안에 static으로 정의할 수 있어요."</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre>
-</div>
-
-<p>위 코드를 보면 하나의 람다 표현식을 사용하기 위한 메소드를 정의하였습니다.</p>
-
-<p>@FunctionalInterface의 조건은 1개의 인터페이스와 1개의 메소드입니다.</p>
-
-<p><strong>JAVA8</strong>의 기능으로 static 메소드가 인터페이스 안에서 구현될 수 있게 되었습니다. static 메소드는 람다 조건에 무시됩니다.</p>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">test</span><span class="o">()</span> <span class="o">{</span>
-    <span class="n">arrayFunction</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">integerFunction</span> <span class="o">=</span> <span class="o">(</span><span class="n">Integer</span><span class="o">...</span> <span class="n">arr</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
-        <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> 
-        
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> 
-            <span class="n">sum</span> <span class="o">+=</span> <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
-        
-        <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
-        <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">10</span><span class="o">);</span>
-        <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">12</span><span class="o">);</span>
-        <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
-        
-        <span class="k">return</span> <span class="n">sum</span><span class="o">;</span>
-    <span class="o">};</span>
-    
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span>
-        <span class="n">integerFunction</span><span class="o">.</span><span class="na">myFunction</span><span class="o">(</span><span class="k">new</span> <span class="n">Integer</span><span class="o">[]</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">})</span>
-    <span class="o">);</span>
-<span class="o">}</span>
-
-</code></pre>
-</div>
-
-<p>사용할때에는 정의해서 사용하면 되는거죠.</p>
-
-<p>일단 기초적인 방법입니다.</p>
-
-<p>integerFunction interface 에 선언해둔 myFunction을 재정의하여 사용하는 방식이지요.</p>
-
-<p>일단은 사용법만 알아둘 예정이기 때문에 여러가지 더 좋은 응용방법은 찾아보며 공부하시길 바랍니다.</p>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="nd">@FunctionalInterface</span>
-<span class="kd">interface</span> <span class="nc">compareFunction</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="n">F</span><span class="o">,</span> <span class="n">Z</span><span class="o">&gt;</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="n">Z</span> <span class="nf">myFunction</span><span class="o">(</span><span class="n">T</span> <span class="n">o</span><span class="o">,</span> <span class="n">F</span> <span class="n">z</span><span class="o">);</span>
-<span class="o">}</span>
-
-
-<span class="nd">@FunctionalInterface</span>
-<span class="kd">interface</span> <span class="nc">arrayFunction</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="n">T</span> <span class="nf">myFunction</span><span class="o">(</span><span class="n">T</span><span class="o">...</span> <span class="n">t</span><span class="o">);</span>
-    
-    <span class="c1">//인터페이스명으로 메소드를 접근할 수 있습니다.</span>
-    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">myStaticFunction</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"인터페이스안에 static으로 정의할 수 있습니다."</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-<span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">test3</span><span class="o">()</span> <span class="o">{</span>
-    <span class="c1">//매개변수가 여러개지만, 리터럴이 1번에 해결될때. 중괄호와 리턴구문을 생략가능합니다.</span>
-    <span class="n">compareFunction</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">customFunction</span> <span class="o">=</span> <span class="o">(</span><span class="n">str</span><span class="o">,</span> <span class="n">num</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">str</span> <span class="o">+</span> <span class="n">num</span><span class="o">;</span>
-    
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span>
-            <span class="n">customFunction</span><span class="o">.</span><span class="na">myFunction</span><span class="o">(</span><span class="s">"3"</span><span class="o">,</span> <span class="mi">5</span><span class="o">)</span>
-    <span class="o">);</span>
-<span class="o">}</span>
-
-<span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">test2</span><span class="o">()</span> <span class="o">{</span>
-    <span class="c1">//매개변수 1개일때</span>
-    <span class="n">arrayFunction</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">strSum</span> <span class="o">=</span> <span class="n">arr</span> <span class="o">-&gt;</span> <span class="o">{</span> 
-        <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
-        
-        <span class="k">for</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span> <span class="o">:</span> <span class="n">arr</span><span class="o">)</span>
-            <span class="n">str</span> <span class="o">+=</span> <span class="n">s</span><span class="o">;</span>
-        
-        <span class="k">return</span> <span class="n">str</span><span class="o">;</span>
-    <span class="o">};</span>
-        
-    <span class="c1">//결국 strSum &lt;- 아래의 인터페이스를 재정의한 인터페이스가 되겠지요. </span>
-    <span class="cm">/*@FunctionalInterface
-    interface arrayFunction&lt;String&gt; {
-        public String myFunction(String... t) { 
-            String str = "";
-            
-            for(String s : arr)
-                str += s;
-            
-            return str;
-        };
-    }*/</span>
-    
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span>
-        <span class="n">strSum</span><span class="o">.</span><span class="na">myFunction</span><span class="o">(</span><span class="k">new</span> <span class="n">String</span><span class="o">[]</span> <span class="o">{</span><span class="s">"a"</span><span class="o">,</span> <span class="s">"b"</span><span class="o">,</span> <span class="s">"c"</span><span class="o">,</span> <span class="s">"d"</span><span class="o">,</span> <span class="s">"e"</span><span class="o">})</span>
-    <span class="o">);</span>
-<span class="o">}</span>
-</code></pre>
-</div>
-
-<p><br />
+또한 구현해야 하는 body는 라인수가 1라인이므로 {} 를 생략할 수 있게 됩니다.<br />
+<br />
 <br />
 <br /></p>
 
