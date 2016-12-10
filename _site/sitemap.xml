@@ -59,6 +59,14 @@
     
     
         <url>
+            <loc>/java-lambda/</loc>
+        </url>
+  
+        <url>
+            <loc>/java-interface/</loc>
+        </url>
+  
+        <url>
             <loc>/file-upload/</loc>
         </url>
   
@@ -128,10 +136,6 @@
   
         <url>
             <loc>/css-transform/</loc>
-        </url>
-  
-        <url>
-            <loc>/java-lambda/</loc>
         </url>
   
         <url>

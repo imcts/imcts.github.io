@@ -5,9 +5,37 @@
     <description>my study blog</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 10 Dec 2016 22:13:16 +0900</pubDate>
-    <lastBuildDate>Sat, 10 Dec 2016 22:13:16 +0900</lastBuildDate>
+    <pubDate>Sat, 10 Dec 2016 23:41:11 +0900</pubDate>
+    <lastBuildDate>Sat, 10 Dec 2016 23:41:11 +0900</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>JAVA 8 Lambda Expression</title>
+        <description>&lt;h3 id=&quot;section&quot;&gt;- 람다 표현식에 관하여&lt;/h3&gt; &lt;p&gt;자바8에 들어오면서 함수형 표현식 (Lambda Expression)이 도입되었습니다.&lt;br /&gt; 물론 Javascript 진영 또한 ES6에 접어들면서 마찬가지로 람다 표현식을 도입하였지요.&lt;br /&gt; 오늘은 자바의 람다식에 대해서 알아보겠습니다.&lt;/p&gt; &lt;h4 id=&quot;interface&quot;&gt;- interface&lt;/h4&gt; &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@FunctionalInterface&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;myFunction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt; &lt;/div&gt; &lt;ul&gt; &lt;li&gt;@FunctionalInterface가 정의되어있어야 합니다.&lt;/li&gt; &lt;li&gt;정의해 둔 인터페이스에 추상메소드는 1개여야만 합니다.&lt;/li&gt; &lt;li&gt;default 메소드와 static 메소드는 무시합니다.&lt;/li&gt; &lt;/ul&gt; &lt;h4 id=&quot;section-1&quot;&gt;- 활용 방법&lt;/h4&gt; &lt;p&gt;람다 표현식은 함수 표현식이기 때문에 불필요한 부분을 제거할 수 있게 됩니다.&lt;br /&gt; 정말 많이 작성 하였었던 Thread를 오랜만에 생성해 보겠습니다.&lt;br /&gt; 조금 기본적인 코드를 만들어 볼까요...</description>
+        <pubDate>Sat, 10 Dec 2016 06:00:00 +0900</pubDate>
+        <link>/java-lambda/</link>
+        <guid isPermaLink="true">/java-lambda/</guid>
+        
+        <category>람다표현식</category>
+        
+        <category>Lambda Expression</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>JAVA 8 Interface</title>
+        <description>&lt;h3 id=&quot;java8-interface-&quot;&gt;- JAVA8 Interface에 관하여&lt;/h3&gt; &lt;p&gt;자바8 에 접어들면서 가장 크게 변한 부분이 바로 interface가 아닐까 싶습니다.&lt;br /&gt; 오늘은 어떤식으로 interface가 변경되었고 또 어떤식으로 응용이 가능한지에 대해 정리해보았습니다.&lt;/p&gt; &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;myInterface&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt; &lt;/div&gt; &lt;p&gt;자바 8 이전의 interface의 역할은 다중 상속을 지원하고, 표준 규격을 강제하며, 확장성과 유지보수성을 높이고 다형성을 지원하기 위해서 사용되었습니다.&lt;br /&gt; 따라서 interface에는 메소드의 정의를 해놓은 추상메소드만이 존재할 수 있었습니다. 또한 변수를 선언할 수 있었지만, 권고하지 않았지요.&lt;br /&gt; &lt;strong&gt;자바8의 인터페이스&lt;/strong&gt;는 어떻게 변경 되었는지 알아볼까요.&lt;/p&gt; &lt;h4 id=&quot;section&quot;&gt;- 인터페이스의 변수선언 및 메소드 구현&lt;/h4&gt; &lt;div...</description>
+        <pubDate>Sat, 10 Dec 2016 00:00:00 +0900</pubDate>
+        <link>/java-interface/</link>
+        <guid isPermaLink="true">/java-interface/</guid>
+        
+        <category>JAVA8</category>
+        
+        <category>Interface</category>
+        
+        
+      </item>
     
       <item>
         <title>HTML5 FileUpload 정리</title>
@@ -264,20 +292,6 @@
         <category>Transition</category>
         
         <category>Transform</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>JAVA 람다 표현식 (Lambda Expression)</title>
-        <description>&lt;h3 id=&quot;section&quot;&gt;- 람다 표현식에 관하여&lt;/h3&gt; &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@FunctionalInterface&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;compareFunction&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Z&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Z&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;myFunction&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;F&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt; &lt;/div&gt; &lt;ol&gt; &lt;li&gt;@FunctionalInterface가 정의되어있어야 합니다.&lt;/li&gt; &lt;li&gt;1개의 인터페이스에 1개의 메서드만 구현되어 있어야 합니다.&lt;/li&gt; &lt;/ol&gt; &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Thread&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Runnable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;다시 스레드 시작&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span...</description>
-        <pubDate>Wed, 05 Oct 2016 06:00:00 +0900</pubDate>
-        <link>/java-lambda/</link>
-        <guid isPermaLink="true">/java-lambda/</guid>
-        
-        <category>람다표현식</category>
-        
-        <category>Lambda Expression</category>
         
         
       </item>

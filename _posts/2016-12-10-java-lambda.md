@@ -1,0 +1,338 @@
+---
+
+layout: post
+title: JAVA 8 Lambda Expression
+date: 2016-12-09 21:00:00
+image: '/assets/img/'
+description: 'Lambda'
+main-class: 'java'
+tags: 
+- 람다표현식
+- Lambda Expression
+
+introduction: '-Lambda Expression-'
+
+---
+
+### - 람다 표현식에 관하여 
+
+자바8에 들어오면서 함수형 표현식 (Lambda Expression)이 도입되었습니다.  
+물론 Javascript 진영 또한 ES6에 접어들면서 마찬가지로 람다 표현식을 도입하였지요.  
+오늘은 자바의 람다식에 대해서 알아보겠습니다.
+
+#### - interface
+
+```java
+@FunctionalInterface
+interface myFunction {
+    public void run(); 
+}
+```
+
+- @FunctionalInterface가 정의되어있어야 합니다.  
+- 정의해 둔 인터페이스에 추상메소드는 1개여야만 합니다.
+- default 메소드와 static 메소드는 무시합니다.
+ 
+ 
+
+
+#### - 활용 방법
+
+람다 표현식은 함수 표현식이기 때문에 불필요한 부분을 제거할 수 있게 됩니다.  
+정말 많이 작성 하였었던 Thread를 오랜만에 생성해 보겠습니다.  
+조금 기본적인 코드를 만들어 볼까요 ?  
+
+ 
+```java
+    Thread thread = new Thread() {
+        @Override
+        public void run() {
+            System.out.println("run thread!!");
+        }
+    };
+
+    thread.start();
+```
+
+Thread를 동작 시키기 위해서는 해당 변수를 선언하고 해당 객체를 생성하고 run 메소드를 오버라이드하여 내부를 구현한 익명 클래스를 활용하는  
+방식을 많이 사용했었습니다. 
+<br>
+<br>
+<br>
+
+
+```java
+new Thread(
+    @Override
+        public void run() {
+            System.out.println("run thread!!");
+        }
+}).start();
+```
+
+또는 이렇게 줄여서도 많이 사용하거나 
+<br>
+<br>
+<br>
+
+
+```java
+    new Thread(
+        new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("run thread!!");
+            }
+        }
+    ).start();
+```
+
+이렇게 사용하기도 했었지요. 
+<br>
+<br>
+<br>
+
+
+
+```java
+Runnable thread = () -> System.out.println("start");
+thread.run();
+
+new Thread(
+    () -> System.out.println("start")
+).start();
+```
+하지만 람다 표현식을 사용하게 되면 이런식으로 표현이 가능 합니다.  
+Runnable이 구현해야 하는 메소드는 run()메소드 하나 뿐이니 해당 메소드를 구현체로 전달해주면 되는것이지요. 
+<br>
+<br>
+<br>
+
+
+
+```java
+Comparator<Integer> compare = new Comparator<Integer>() {
+    @Override
+    public int compare(Integer o1, Integer o2) {
+        return o1 - o2;
+    }
+};
+
+System.out.println(
+        compare.compare(1, 2) // -1 
+);
+```
+
+정말 많이 사용했었던 compare 메소드 입니다.  
+sort를 할때 정말 많이 사용하게 되는 메소드이기도 하지요 !  
+Comparator 인터페이스 또한 @FunctionalInterface이므로 람다 표현식을 적용시킬 수 있습니다. 
+<br>
+<br>
+<br>
+
+```java
+    Comparator<Integer> compare = (Integer o1, Integer o2) -> {
+        return o1 - o2
+    };
+    
+    System.out.println(
+        compare2.compare(1, 2) // -1 
+    );
+```
+
+어때요 ? 조금 더 간결하게 표현이 되는 것을 볼 수 있죠 ?? 즉 불필요한 메소드명과 접근 제한자의 표기를 제거하고,  
+매개변수와 메소드 body만 구현하게 되는 것이지요. :)  
+조금 더 간결하게 표현해 볼까요 ?
+<br>
+<br>
+<br>
+
+
+```java
+    Comparator<Integer> compare2 = (o1, o2) -> o1 - o2;
+    
+    System.out.println(
+        compare2.compare(1, 2) // -1 
+    );
+```
+
+매개변수에는 어차피 자료형이 선언되어있으므로 별도로 표기하지 않아도 괜찮습니다. :)  
+또한 구현해야 하는 body는 라인수가 1라인이므로 {} 를 생략할 수 있게 됩니다.  
+
+
+
+
+
+
+```java
+@FunctionalInterface
+interface arrayFunction<T> {
+    public T myFunction(T... t);
+    
+    static void myStaticFunction() {
+        System.out.println("인터페이스안에 static으로 정의할 수 있어요.");
+    }
+}
+```
+
+
+
+
+
+
+위 코드를 보면 하나의 람다 표현식을 사용하기 위한 메소드를 정의하였습니다. 
+
+@FunctionalInterface의 조건은 1개의 인터페이스와 1개의 메소드입니다.
+
+**JAVA8**의 기능으로 static 메소드가 인터페이스 안에서 구현될 수 있게 되었습니다. static 메소드는 람다 조건에 무시됩니다. 
+  
+  
+```java
+private static void test() {
+    arrayFunction<Integer> integerFunction = (Integer... arr) -> {
+        int sum = 0; 
+        
+        for(int i = 0; i < arr.length; i++) 
+            sum += arr[i];
+        
+        List<Integer> list = new ArrayList<Integer>();
+        list.add(10);
+        list.add(12);
+        list.add(2);
+        
+        return sum;
+    };
+    
+    System.out.println(
+        integerFunction.myFunction(new Integer[] {1, 2, 3, 4, 5})
+    );
+}
+
+```
+
+사용할때에는 정의해서 사용하면 되는거죠. 
+
+일단 기초적인 방법입니다. 
+
+integerFunction interface 에 선언해둔 myFunction을 재정의하여 사용하는 방식이지요. 
+
+일단은 사용법만 알아둘 예정이기 때문에 여러가지 더 좋은 응용방법은 찾아보며 공부하시길 바랍니다.
+
+
+
+
+```java
+@FunctionalInterface
+interface compareFunction<T, F, Z> {
+    public Z myFunction(T o, F z);
+}
+
+
+@FunctionalInterface
+interface arrayFunction<T> {
+    public T myFunction(T... t);
+    
+    //인터페이스명으로 메소드를 접근할 수 있습니다.
+    static void myStaticFunction() {
+        System.out.println("인터페이스안에 static으로 정의할 수 있습니다.");
+    }
+}
+
+private static void test3() {
+    //매개변수가 여러개지만, 리터럴이 1번에 해결될때. 중괄호와 리턴구문을 생략가능합니다.
+    compareFunction<String, Integer, String> customFunction = (str, num) -> str + num;
+    
+    System.out.println(
+            customFunction.myFunction("3", 5)
+    );
+}
+
+private static void test2() {
+    //매개변수 1개일때
+    arrayFunction<String> strSum = arr -> { 
+        String str = "";
+        
+        for(String s : arr)
+            str += s;
+        
+        return str;
+    };
+        
+    //결국 strSum <- 아래의 인터페이스를 재정의한 인터페이스가 되겠지요. 
+    /*@FunctionalInterface
+    interface arrayFunction<String> {
+        public String myFunction(String... t) { 
+            String str = "";
+            
+            for(String s : arr)
+                str += s;
+            
+            return str;
+        };
+    }*/
+    
+    System.out.println(
+        strSum.myFunction(new String[] {"a", "b", "c", "d", "e"})
+    );
+}
+```
+
+<br>
+<br>
+<br>
+
+
+
+#### - custom interface
+
+그렇다면 인터페이스를 내가 원하는대로 만들 수는 없을까요 ?  
+물론 가능 하겠지요 ? :)
+
+
+```java
+    @FunctionalInterface
+    interface myFunction<T> {
+        public T excute(T a, T b);
+    }
+```
+
+구현해야 하는 추상메소드가 1개인 인터페이스를 정의해 줍니다.  
+
+```java
+    myFunction<Integer> sum = (a, b) -> a + b;
+    
+    System.out.println(
+        sum.excute(1, 5)
+    );
+```
+
+그리고 표현식을 적용하고, 실행하면 끝입니다.  
+살짝 응용해 볼까요 ?
+<br>
+<br>
+<br>
+
+```java
+    @FunctionalInterface
+    interface myFunction<T> {
+        public T excute(T a, T b);
+    }
+    
+    class TestClass {
+        public static <T> T operator(myFunction<T> func, T a, T b) {
+            return func.excute(a, b);
+        }
+    }
+
+
+    main() {
+    
+        System.out.println(
+                TestClass.operator((a, b) -> a + b, 5, 3) //8 
+        );
+        
+    }
+```
+
+메소드에 lambda표현식을 매개변수로 넘겨주고, 해당 lambda표현식을 실행하는 것으로 여러가지를 할 수 있게 되었습니다.  
+람다 표현식 이었습니다. :) 
