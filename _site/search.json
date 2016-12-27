@@ -1,6 +1,13 @@
 [
   
     {
+      "title"    : "JAVA 8 스트림 (Stream)",
+      "tags"     : "JAVA8 and stream",
+      "url"      : "/java-stream/",
+      "date"     : "17 Dec 2016"
+    } ,
+  
+    {
       "title"    : "ES6 - TEMPLATE LITERAL",
       "tags"     : "javascript and template literal",
       "url"      : "/ES6-TEMPLATE-LITERAL/",
@@ -8,14 +15,14 @@
     } ,
   
     {
-      "title"    : "JAVA 8 Method Reference",
+      "title"    : "JAVA8 메소드 레퍼런스(Method Reference)",
       "tags"     : "JAVA8 and method reference",
       "url"      : "/java-method-reference/",
       "date"     : "10 Dec 2016"
     } ,
   
     {
-      "title"    : "JAVA 8 Lambda Expression",
+      "title"    : "JAVA8 람다 표현식(Lambda Expression)",
       "tags"     : "람다표현식 and Lambda Expression",
       "url"      : "/java-lambda/",
       "date"     : "10 Dec 2016"

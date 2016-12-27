@@ -1,7 +1,7 @@
 ---
 
 layout: post
-title: JAVA 8 Method Reference
+title: JAVA8 메소드 레퍼런스(Method Reference)
 date: 2016-12-09 20:00:00
 image: '/assets/img/'
 main-class: 'java'
@@ -165,7 +165,23 @@ person 클래스를 생성하여 사용하는 방법은, 생성자에 정의된 
 이렇게 말이죠 !  
 당연히 메소드 참조이기때문에, 메소드의 오버로딩이 적용된다는 점은 기본이겠지요 ?  
 
-메소드 참조 였습니다.  
+#### - 자주 사용하는 함수형 인터페이스
+
+|함수형 인터페이스        |파라미터타입|반환 타입|추상 메서드 이름|설명                                    |다른 메소드                       |
+|:------------------:|:-------:|:-----:|:----------:|:------------------------------------:|:------------------------------:|
+|Runnable            |없음      |void   |run         |인자나 반환 값 없이 액션을 수행한다.            |없음                            |
+|Supplier<T>         |없음      |T      |get         |T 타입 값을 공급한다.                       |없음                            |
+|Consumer<T>         |T        |void   |accept      |T 타입 값을 소비한다.                       |andThen                        |
+|BiConsumer<T, U>    |T, U     |void   |accept      |T와 U타입 값을 소비한다.                     |andThen                       |
+|Function<T, R>      |T        |R      |apply       |T 타입 인자를 받는 함수다.                    |compose<br>andThen<br>identity|
+|BiFunction<T, U, R> |T, U     |R      |apply       |T와 U타입 인자를 받는 함수다.                 |andThen                        |
+|UnaryOperator<T>    |T        |T      |apply       |T 타입에 적용하는 단항 연산자다.               |compose<br>andThen<br>identity |
+|BinaryOperator<T>   |T, T     |T      |apply       |T 타입에 적용하는 이항 연산자다.               |andThen<br>maxBy<br>minBy      |
+|Predicate<T>        |T        |boolean|test        |Boolean 값을 반환하는 함수다.                |and<br>or<br>negate<br>isEqual |
+|BiPredicate<T, U>   |T, U     |boolean|test        |두 가지 인자를 받고 boolean 값을 반환하는 함수다.|and<br>or<br>negate            |
+
+
+자바8 메소드 참조 정리 였습니다. :)  
 
 
 

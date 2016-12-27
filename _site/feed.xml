@@ -3,18 +3,32 @@
   <channel>
     <title>Dolen - Desenvolvedor Front End</title>
     <description>dolen - blog</description>
-    <link>/</link>
-    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 11 Dec 2016 11:38:10 +0900</pubDate>
-    <lastBuildDate>Sun, 11 Dec 2016 11:38:10 +0900</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 27 Dec 2016 21:34:13 +0900</pubDate>
+    <lastBuildDate>Tue, 27 Dec 2016 21:34:13 +0900</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>JAVA 8 스트림 (Stream)</title>
+        <description>&lt;h3 id=&quot;java8-stream&quot;&gt;- JAVA8 Stream&lt;/h3&gt; &lt;p&gt;자바 &lt;strong&gt;스트림(Stream)&lt;/strong&gt;에 대해서 정리해보려 합니다.&lt;/p&gt; &lt;p&gt;스트림(Stream)은 컬렉션보다 개념적으로 높은 수준의 데이터 뷰 역할을 하며, 이를 이용하면 좀 더 직관적으로 계산을 명시할 수 있다고합니다.&lt;br /&gt; 스트림을 이용할때에는 일을 수행하는 방법이 아닌 하고싶은 일을 명시하면 되는데요, 연산을 스케줄링 하는 것은 해당 구현체에 맡기면 됩니다.&lt;br /&gt; &lt;br /&gt;&lt;/p&gt; &lt;p&gt;먼저 스트림을 시작하기 전에 스트림의 특징을 알아볼까요 ?&lt;/p&gt; &lt;ol&gt; &lt;li&gt;스트림은 요소를 저장하지 않습니다. 요소는 스트림을 지원하는 컬렉션에 저장되거나 필요한 때에 생성됩니다.&lt;/li&gt; &lt;li&gt;스트림 연산은 원본을 변경하지 않습니다. &lt;strong&gt;(Immutable)&lt;/strong&gt; 합니다.&lt;/li&gt; &lt;li&gt;스트림 연산은 가능하면 지연시켜 둡니다. 즉 연산 결과가 필요하기 전까지는 실행되지 않습니다.&lt;/li&gt; &lt;/ol&gt; &lt;h4 id=&quot;section&quot;&gt;- 반복에서 스트림 연산으로의 전환&lt;/h4&gt; &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;...</description>
+        <pubDate>Sat, 17 Dec 2016 05:00:00 +0900</pubDate>
+        <link>http://localhost:4000/java-stream/</link>
+        <guid isPermaLink="true">http://localhost:4000/java-stream/</guid>
+        
+        <category>JAVA8</category>
+        
+        <category>stream</category>
+        
+        
+      </item>
     
       <item>
         <title>ES6 - TEMPLATE LITERAL</title>
         <description>&lt;p&gt;##1. javascript 의 문자열의 사용&lt;/p&gt; &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'string'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt; &lt;/div&gt; &lt;p&gt;자바스크립트에서 String 을 사용하는 방법입니다.&lt;br /&gt; 너무도 당연하고 너무도 간단하지요 ?&lt;br /&gt; 자바스크립트는 자료형이 없는 언어이기때문이죠.&lt;br /&gt; 하지만 문자열을 가지고 virtual dom을 구성하려 한다면 이야기는 조금 복잡해 질 지도 모르겠습니다.&lt;br /&gt; &lt;br /&gt; 그 이야기를 하기 전에 먼저 자바스크립트에서 문자열을 사용해왔었던 방법들을 한번 살펴볼까요. &lt;br /&gt; &lt;br /&gt;&lt;/p&gt; &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'저는 총 '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span...</description>
         <pubDate>Sat, 10 Dec 2016 11:00:00 +0900</pubDate>
-        <link>/ES6-TEMPLATE-LITERAL/</link>
-        <guid isPermaLink="true">/ES6-TEMPLATE-LITERAL/</guid>
+        <link>http://localhost:4000/ES6-TEMPLATE-LITERAL/</link>
+        <guid isPermaLink="true">http://localhost:4000/ES6-TEMPLATE-LITERAL/</guid>
         
         <category>javascript</category>
         
@@ -24,11 +38,11 @@
       </item>
     
       <item>
-        <title>JAVA 8 Method Reference</title>
+        <title>JAVA8 메소드 레퍼런스(Method Reference)</title>
         <description>&lt;h3 id=&quot;java8-method-reference&quot;&gt;- JAVA8 Method Reference&lt;/h3&gt; &lt;p&gt;메소드 참조와 생성자 참조에 대해서 알아보도록 하겠습니다.&lt;br /&gt; 우리는 람다 표현식에서 알아보았듯이, 구현해야 하는 메소드의 본문을 람다 표현식으로 (익명클래스로 생성되도록 하는) 대체할 수 있다는 것을 알았습니다.&lt;br /&gt; 하지만, 이미 우리가 구현하고자 하는 람다식 자체가 구현되어있는 경우가 있습니다.&lt;br /&gt; 이럴때 사용하는 메서드 참조용 특수 문법이 있는데, 이 방식을 메소드 참조라고 표현합니다. &lt;br /&gt; &lt;br /&gt;&lt;/p&gt; &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strings&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;6&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;5&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;4&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;3&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;2&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;};&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span...</description>
         <pubDate>Sat, 10 Dec 2016 05:00:00 +0900</pubDate>
-        <link>/java-method-reference/</link>
-        <guid isPermaLink="true">/java-method-reference/</guid>
+        <link>http://localhost:4000/java-method-reference/</link>
+        <guid isPermaLink="true">http://localhost:4000/java-method-reference/</guid>
         
         <category>JAVA8</category>
         
@@ -38,11 +52,11 @@
       </item>
     
       <item>
-        <title>JAVA 8 Lambda Expression</title>
+        <title>JAVA8 람다 표현식(Lambda Expression)</title>
         <description>&lt;h3 id=&quot;section&quot;&gt;- 람다 표현식에 관하여&lt;/h3&gt; &lt;p&gt;자바8에 들어오면서 함수형 표현식 (Lambda Expression)이 도입되었습니다.&lt;br /&gt; 물론 Javascript 진영 또한 ES6에 접어들면서 마찬가지로 람다 표현식을 도입하였지요.&lt;br /&gt; 오늘은 자바의 람다식에 대해서 알아보겠습니다.&lt;/p&gt; &lt;h4 id=&quot;interface&quot;&gt;- interface&lt;/h4&gt; &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@FunctionalInterface&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;myFunction&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt; &lt;/div&gt; &lt;ul&gt; &lt;li&gt;@FunctionalInterface가 정의되어있어야 합니다.&lt;/li&gt; &lt;li&gt;정의해 둔 인터페이스에 추상메소드는 1개여야만 합니다.&lt;/li&gt; &lt;li&gt;default 메소드와 static 메소드는 무시합니다.&lt;/li&gt; &lt;/ul&gt; &lt;h4 id=&quot;section-1&quot;&gt;- 활용 방법&lt;/h4&gt; &lt;p&gt;람다 표현식은 함수 표현식이기 때문에 불필요한 부분을 제거할 수 있게 됩니다.&lt;br /&gt; 정말 많이 작성 하였었던 Thread를 오랜만에 생성해 보겠습니다.&lt;br /&gt; 조금 기본적인 코드를 만들어 볼까요...</description>
         <pubDate>Sat, 10 Dec 2016 00:00:00 +0900</pubDate>
-        <link>/java-lambda/</link>
-        <guid isPermaLink="true">/java-lambda/</guid>
+        <link>http://localhost:4000/java-lambda/</link>
+        <guid isPermaLink="true">http://localhost:4000/java-lambda/</guid>
         
         <category>람다표현식</category>
         
@@ -55,8 +69,8 @@
         <title>JAVA 8 Interface</title>
         <description>&lt;h3 id=&quot;java8-interface-&quot;&gt;- JAVA8 Interface에 관하여&lt;/h3&gt; &lt;p&gt;자바8 에 접어들면서 가장 크게 변한 부분이 바로 interface가 아닐까 싶습니다.&lt;br /&gt; 오늘은 어떤식으로 interface가 변경되었고 또 어떤식으로 응용이 가능한지에 대해 정리해보았습니다.&lt;/p&gt; &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;myInterface&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt; &lt;/div&gt; &lt;p&gt;자바 8 이전의 interface의 역할은 다중 상속을 지원하고, 표준 규격을 강제하며, 확장성과 유지보수성을 높이고 다형성을 지원하기 위해서 사용되었습니다.&lt;br /&gt; 따라서 interface에는 메소드의 정의를 해놓은 추상메소드만이 존재할 수 있었습니다. 또한 변수를 선언할 수 있었지만, 권고하지 않았지요.&lt;br /&gt; &lt;strong&gt;자바8의 인터페이스&lt;/strong&gt;는 어떻게 변경 되었는지 알아볼까요.&lt;/p&gt; &lt;h4 id=&quot;section&quot;&gt;- 인터페이스의 변수선언 및 메소드 구현&lt;/h4&gt; &lt;div...</description>
         <pubDate>Sat, 10 Dec 2016 00:00:00 +0900</pubDate>
-        <link>/java-interface/</link>
-        <guid isPermaLink="true">/java-interface/</guid>
+        <link>http://localhost:4000/java-interface/</link>
+        <guid isPermaLink="true">http://localhost:4000/java-interface/</guid>
         
         <category>JAVA8</category>
         
@@ -70,8 +84,8 @@
         <description>&lt;p&gt;&lt;strong&gt;MOVE TO HTML5 FILE PREVIEW =&amp;gt;&lt;/strong&gt; &lt;strong&gt;&lt;a href=&quot;/project/html/file&quot;&gt;FILE BLOB&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 28 Nov 2016 06:00:00 +0900</pubDate>
-        <link>/file-upload/</link>
-        <guid isPermaLink="true">/file-upload/</guid>
+        <link>http://localhost:4000/file-upload/</link>
+        <guid isPermaLink="true">http://localhost:4000/file-upload/</guid>
         
         <category>HTML5</category>
         
@@ -85,8 +99,8 @@
         <description>&lt;p&gt;&lt;strong&gt;MOVE TO CANVAS TETRIS =&amp;gt;&lt;/strong&gt; &lt;strong&gt;&lt;a href=&quot;/project/html/canvas/tetris&quot;&gt;CANVAS TETRIS&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 28 Nov 2016 05:00:00 +0900</pubDate>
-        <link>/canvas-tetris/</link>
-        <guid isPermaLink="true">/canvas-tetris/</guid>
+        <link>http://localhost:4000/canvas-tetris/</link>
+        <guid isPermaLink="true">http://localhost:4000/canvas-tetris/</guid>
         
         <category>tetris</category>
         
@@ -100,8 +114,8 @@
         <description>&lt;p&gt;&lt;strong&gt;MOVE TO CSS LION =&amp;gt;&lt;/strong&gt; &lt;strong&gt;&lt;a href=&quot;/project/html/lion&quot;&gt;라이언&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 18 Nov 2016 06:00:00 +0900</pubDate>
-        <link>/lion/</link>
-        <guid isPermaLink="true">/lion/</guid>
+        <link>http://localhost:4000/lion/</link>
+        <guid isPermaLink="true">http://localhost:4000/lion/</guid>
         
         <category>CSS</category>
         
@@ -114,8 +128,8 @@
         <title>MONGODB를 쉽게 사용하게 해주는 DEPLOYD</title>
         <description>&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://deployd.com&quot;&gt;DEPLOYD 사이트&lt;/a&gt;&lt;/strong&gt; &lt;strong&gt;&lt;a href=&quot;http://docs.deployd.com/docs/&quot;&gt;DEPLOYD DOCUMENT&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;deployd 에 접속하여 보면 간단한 소개 동영상과 함께 document등이 있으니 참고하길 바랍니다.&lt;br /&gt; 먼저 deployd는 mongodb를 사용하여 동작하므로 mongodb를 설치해볼까요 ?&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/&quot;&gt;MONGODB WINDOW&lt;/a&gt;&lt;/strong&gt; &lt;strong&gt;&lt;a href=&quot;https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/&quot;&gt;MONGODB MAC OS&lt;/a&gt;&lt;/strong&gt; &lt;strong&gt;&lt;a href=&quot;https://docs.mongodb.com/manual/administration/install-on-linux/&quot;&gt;MONGODB LINUX&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;저의 경우에는 MAC 을 사용하니 MAC 설치방법에 대해서 볼까요 ?&lt;/p&gt; &lt;/blockquote&gt; &lt;pre&gt;&lt;code class=&quot;language-cli&quot;&gt;brew update brew install mongodb &lt;/code&gt;&lt;/pre&gt; &lt;blockquote&gt; &lt;p&gt;MAC OS의 경우에는 이것으로 끝 입니다. &lt;br /&gt; WINDOW의 경우에는 별도의 환경변수를 설정해주시면 됩니다. &lt;br /&gt; 그다음에는 deployd를 설치해주어야 하는데요. &lt;br /&gt; deployd는 npm 으로 설치가능합니다.&lt;/p&gt; &lt;/blockquote&gt; &lt;pre&gt;&lt;code class=&quot;language-cli&quot;&gt;npm install deployd -g &lt;/code&gt;&lt;/pre&gt; &lt;blockquote&gt; &lt;p&gt;설치가 성공적으로 완료가 되었으면 이제 실행해볼 차례...</description>
         <pubDate>Sun, 13 Nov 2016 05:00:00 +0900</pubDate>
-        <link>/deployd-setting/</link>
-        <guid isPermaLink="true">/deployd-setting/</guid>
+        <link>http://localhost:4000/deployd-setting/</link>
+        <guid isPermaLink="true">http://localhost:4000/deployd-setting/</guid>
         
         <category>deployd</category>
         
@@ -128,8 +142,8 @@
         <title>ES6 - SYMBOL</title>
         <description>&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Symbol&quot;&gt;SYMBOL API&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;h4 id=&quot;type&quot;&gt;1. 7번째 원시 데이터 타입 (TYPE)&lt;/h4&gt; &lt;blockquote&gt; &lt;p&gt;Undefined&lt;br /&gt; Boolean&lt;br /&gt; Number&lt;br /&gt; String&lt;br /&gt; Object&lt;br /&gt; NULL&lt;/p&gt; &lt;/blockquote&gt; &lt;blockquote&gt; &lt;p&gt;Symbol 이 추가 되었습니다.&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Data_structures&quot;&gt;JS 원시 데이터 타입&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;symbol1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Symbol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Apple'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;symbol1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//symbol&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{});&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//object&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//object&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//string&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span...</description>
         <pubDate>Tue, 08 Nov 2016 05:00:00 +0900</pubDate>
-        <link>/ES6-SYMBOL/</link>
-        <guid isPermaLink="true">/ES6-SYMBOL/</guid>
+        <link>http://localhost:4000/ES6-SYMBOL/</link>
+        <guid isPermaLink="true">http://localhost:4000/ES6-SYMBOL/</guid>
         
         <category>javascript</category>
         
@@ -143,8 +157,8 @@
         <description>&lt;p&gt;&lt;strong&gt;MOVE TO CANVAS TEXT =&amp;gt;&lt;/strong&gt; &lt;strong&gt;&lt;a href=&quot;/project/html/canvas/text&quot;&gt;CANVAS TEXT&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 07 Nov 2016 08:00:00 +0900</pubDate>
-        <link>/canvas-text/</link>
-        <guid isPermaLink="true">/canvas-text/</guid>
+        <link>http://localhost:4000/canvas-text/</link>
+        <guid isPermaLink="true">http://localhost:4000/canvas-text/</guid>
         
         <category>text</category>
         
@@ -158,8 +172,8 @@
         <description>&lt;p&gt;&lt;strong&gt;MOVE TO CANVAS DRAW =&amp;gt;&lt;/strong&gt; &lt;strong&gt;&lt;a href=&quot;/project/html/canvas/draw&quot;&gt;CANVAS DRAW&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 07 Nov 2016 07:00:00 +0900</pubDate>
-        <link>/canvas-draw/</link>
-        <guid isPermaLink="true">/canvas-draw/</guid>
+        <link>http://localhost:4000/canvas-draw/</link>
+        <guid isPermaLink="true">http://localhost:4000/canvas-draw/</guid>
         
         <category>draw</category>
         
@@ -173,8 +187,8 @@
         <description>&lt;p&gt;&lt;strong&gt;MOVE TO CANVAS CROSS LINE =&amp;gt;&lt;/strong&gt; &lt;strong&gt;&lt;a href=&quot;/project/html/canvas/cross-line&quot;&gt;CANVAS CROSS-LINE&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 07 Nov 2016 07:00:00 +0900</pubDate>
-        <link>/canvas-cross-line/</link>
-        <guid isPermaLink="true">/canvas-cross-line/</guid>
+        <link>http://localhost:4000/canvas-cross-line/</link>
+        <guid isPermaLink="true">http://localhost:4000/canvas-cross-line/</guid>
         
         <category>cross line</category>
         
@@ -188,8 +202,8 @@
         <description>&lt;p&gt;&lt;strong&gt;MOVE TO CANVAS CLOCK =&amp;gt;&lt;/strong&gt;  &lt;strong&gt;&lt;a href=&quot;/project/html/canvas/clock&quot;&gt;CANVAS CLOCK&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 07 Nov 2016 06:00:00 +0900</pubDate>
-        <link>/canvas-clock/</link>
-        <guid isPermaLink="true">/canvas-clock/</guid>
+        <link>http://localhost:4000/canvas-clock/</link>
+        <guid isPermaLink="true">http://localhost:4000/canvas-clock/</guid>
         
         <category>clock</category>
         
@@ -202,8 +216,8 @@
         <title>Algorithm - Shell Sort</title>
         <description>&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://visualgo.net/sorting&quot;&gt;Shell Sort View&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Arr&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;61&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;85&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;19&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;88&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;68&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;70&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;29&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//this._list = new Array(100).fill(0).map(v =&amp;gt; Math.floor(Math.random() * 100) + 1);&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_gaps&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;shellSort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;len&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;loopCount&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;timer&lt;/span&gt;...</description>
         <pubDate>Mon, 07 Nov 2016 05:00:00 +0900</pubDate>
-        <link>/sort-shell/</link>
-        <guid isPermaLink="true">/sort-shell/</guid>
+        <link>http://localhost:4000/sort-shell/</link>
+        <guid isPermaLink="true">http://localhost:4000/sort-shell/</guid>
         
         <category>algorithm</category>
         
@@ -216,8 +230,8 @@
         <title>Algorithm - Select Sort</title>
         <description>&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://visualgo.net/sorting&quot;&gt;Select Sort View&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Arr&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;floor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;selectSort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;len&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cnt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;loopCount&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;timer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span...</description>
         <pubDate>Mon, 07 Nov 2016 05:00:00 +0900</pubDate>
-        <link>/sort-select/</link>
-        <guid isPermaLink="true">/sort-select/</guid>
+        <link>http://localhost:4000/sort-select/</link>
+        <guid isPermaLink="true">http://localhost:4000/sort-select/</guid>
         
         <category>algorithm</category>
         
@@ -230,8 +244,8 @@
         <title>Algorithm - Search Sort</title>
         <description>&lt;h4 id=&quot;section&quot;&gt;순차 검색&lt;/h4&gt; &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Search&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;seqSearch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;...</description>
         <pubDate>Mon, 07 Nov 2016 05:00:00 +0900</pubDate>
-        <link>/sort-search/</link>
-        <guid isPermaLink="true">/sort-search/</guid>
+        <link>http://localhost:4000/sort-search/</link>
+        <guid isPermaLink="true">http://localhost:4000/sort-search/</guid>
         
         <category>algorithm</category>
         
@@ -244,8 +258,8 @@
         <title>Algorithm - Quick Sort</title>
         <description>&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://visualgo.net/sorting&quot;&gt;Quick Sort View&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Arr&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//this._list = new Array(10000).fill(0).map(v =&amp;gt; Math.floor(Math.random() * 100) + 1);&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;quickSort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;...</description>
         <pubDate>Mon, 07 Nov 2016 05:00:00 +0900</pubDate>
-        <link>/sort-quick/</link>
-        <guid isPermaLink="true">/sort-quick/</guid>
+        <link>http://localhost:4000/sort-quick/</link>
+        <guid isPermaLink="true">http://localhost:4000/sort-quick/</guid>
         
         <category>algorithm</category>
         
@@ -258,8 +272,8 @@
         <title>Algorithm - Merge Sort</title>
         <description>&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://visualgo.net/sorting&quot;&gt;Merge Sort View&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Arr&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//this._list = new Array(10000).fill(0).map(v =&amp;gt; Math.floor(Math.random() * 100) + 1);&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;mergeSort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;timer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;timer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;listLen&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;loopLen&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;listLen&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;...</description>
         <pubDate>Mon, 07 Nov 2016 05:00:00 +0900</pubDate>
-        <link>/sort-merge/</link>
-        <guid isPermaLink="true">/sort-merge/</guid>
+        <link>http://localhost:4000/sort-merge/</link>
+        <guid isPermaLink="true">http://localhost:4000/sort-merge/</guid>
         
         <category>algorithm</category>
         
@@ -272,8 +286,8 @@
         <title>Algorithm - Insert Sort</title>
         <description>&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://visualgo.net/sorting&quot;&gt;Insert Sort View&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Arr&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;44&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;38&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;47&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;36&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;26&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;27&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;46&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;19&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;48&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//this._list = new Array(100).fill(0).map(v =&amp;gt; Math.floor(Math.random() * 100) + 1);&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;selectSort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;len&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span...</description>
         <pubDate>Mon, 07 Nov 2016 05:00:00 +0900</pubDate>
-        <link>/sort-insert/</link>
-        <guid isPermaLink="true">/sort-insert/</guid>
+        <link>http://localhost:4000/sort-insert/</link>
+        <guid isPermaLink="true">http://localhost:4000/sort-insert/</guid>
         
         <category>algorithm</category>
         
@@ -286,8 +300,8 @@
         <title>Algorithm - Bubble Sort</title>
         <description>&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://visualgo.net/sorting&quot;&gt;Bubble Sort View&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Arr&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bubbleSort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;len&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cnt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;loopCount&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span...</description>
         <pubDate>Mon, 07 Nov 2016 05:00:00 +0900</pubDate>
-        <link>/sort-bubble/</link>
-        <guid isPermaLink="true">/sort-bubble/</guid>
+        <link>http://localhost:4000/sort-bubble/</link>
+        <guid isPermaLink="true">http://localhost:4000/sort-bubble/</guid>
         
         <category>algorithm</category>
         
@@ -301,8 +315,8 @@
         <description>&lt;p&gt;&lt;strong&gt;MOVE TO MEMO PROJECT =&amp;gt;&lt;/strong&gt; &lt;strong&gt;&lt;a href=&quot;/project/memo&quot;&gt;MEMO&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 06 Nov 2016 06:00:00 +0900</pubDate>
-        <link>/memo/</link>
-        <guid isPermaLink="true">/memo/</guid>
+        <link>http://localhost:4000/memo/</link>
+        <guid isPermaLink="true">http://localhost:4000/memo/</guid>
         
         <category>memo</category>
         
@@ -314,8 +328,8 @@
         <description>&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;/project/html/cube&quot;&gt;CSS Transition Transform&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 05 Oct 2016 06:00:00 +0900</pubDate>
-        <link>/css-transform/</link>
-        <guid isPermaLink="true">/css-transform/</guid>
+        <link>http://localhost:4000/css-transform/</link>
+        <guid isPermaLink="true">http://localhost:4000/css-transform/</guid>
         
         <category>Transition</category>
         
@@ -328,8 +342,8 @@
         <title>IntelliJ 유용한 설정들 !</title>
         <description>&lt;h3 id=&quot;handlebars----&quot;&gt;- Handlebars로 주석을 변경하는 방법 !!&lt;/h3&gt; &lt;p&gt;Handlebars 를 프로젝트에 적용해서 사용하다 보면, html 태그에 주석을 달아서 처리해야 할 일이 있지요 ?&lt;/p&gt; &lt;pre&gt;&lt;code class=&quot;language-code&quot;&gt;&amp;lt;!--HTML 주석 입니다--&amp;gt; &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;보통 html에서는 이렇게 주석처리를 해서 사용하게 되는데요.&lt;/p&gt; &lt;p&gt;handlebars에서는 그렇지 않거든요.&lt;/p&gt; &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s1&quot;&gt;'{ {!----} }'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;--&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;이렇게&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;잘&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;보여집니다&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;주석때문에&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;안보이길래&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;중괄호&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;시작과&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;끝을&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;한칸씩&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;띄웠습니다&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt; &lt;/div&gt; &lt;p&gt;근데 매번 주석할때마다 저걸 다 치려면 너무 힘이 들어요 :(..&lt;/p&gt; &lt;pre&gt;&lt;code class=&quot;language-code&quot;&gt;Block Select + (Command + /) &lt;/code&gt;&lt;/pre&gt; &lt;p&gt;그래서 이렇게 주석 단축키를 눌러보면 항상 HTML주석이 달립니다.&lt;/p&gt;...</description>
         <pubDate>Tue, 04 Oct 2016 05:00:00 +0900</pubDate>
-        <link>/intellij-handlebars-comments/</link>
-        <guid isPermaLink="true">/intellij-handlebars-comments/</guid>
+        <link>http://localhost:4000/intellij-handlebars-comments/</link>
+        <guid isPermaLink="true">http://localhost:4000/intellij-handlebars-comments/</guid>
         
         <category>intelliJ</category>
         
@@ -340,8 +354,8 @@
         <title>자바스크립트 디자인 패턴.</title>
         <description>&lt;p&gt;&lt;strong&gt;패턴에 관해서&lt;/strong&gt; 정리해 볼까요 ?&lt;/p&gt; &lt;h3 id=&quot;singleton-pattern&quot;&gt;- SingleTon Pattern&lt;/h3&gt; &lt;p&gt;&lt;strong&gt;싱글톤 패턴&lt;/strong&gt;이란 전역적으로 단 하나의 객체만을 두고 사용하는 방식을 말합니다.&lt;/p&gt; &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//false &lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//false&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Single&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;instance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'test'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Single&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span...</description>
         <pubDate>Mon, 03 Oct 2016 05:00:00 +0900</pubDate>
-        <link>/javascript-pattern/</link>
-        <guid isPermaLink="true">/javascript-pattern/</guid>
+        <link>http://localhost:4000/javascript-pattern/</link>
+        <guid isPermaLink="true">http://localhost:4000/javascript-pattern/</guid>
         
         <category>pattern</category>
         
@@ -352,8 +366,8 @@
         <title>자바스크립트 상속.</title>
         <description>&lt;p&gt;&lt;strong&gt;자바스크립트의 상속&lt;/strong&gt;을 정리해보겠습니다.&lt;/p&gt; &lt;p&gt;예전에 정리해두었던건데, 영 마구잡이식이어서 블로그도 새로 만들었고 되새김질도 하는 김에 정리해봅니다.&lt;/p&gt; &lt;p&gt;시작해볼까요 :)&lt;/p&gt; &lt;h3 id=&quot;section&quot;&gt;- 기본적인 상속&lt;/h3&gt; &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Parent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Parent'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Parent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;say&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Child&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Child&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Parent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Child&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span...</description>
         <pubDate>Sun, 02 Oct 2016 05:00:00 +0900</pubDate>
-        <link>/javascript-extends/</link>
-        <guid isPermaLink="true">/javascript-extends/</guid>
+        <link>http://localhost:4000/javascript-extends/</link>
+        <guid isPermaLink="true">http://localhost:4000/javascript-extends/</guid>
         
         <category>extends</category>
         
@@ -366,8 +380,8 @@
         <title>JAVA 가변인자와 ENUM</title>
         <description>&lt;h3 id=&quot;section&quot;&gt;- 가변인자&lt;/h3&gt; &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Gabyun&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;srr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;...</description>
         <pubDate>Sat, 01 Oct 2016 21:00:00 +0900</pubDate>
-        <link>/java-separator/</link>
-        <guid isPermaLink="true">/java-separator/</guid>
+        <link>http://localhost:4000/java-separator/</link>
+        <guid isPermaLink="true">http://localhost:4000/java-separator/</guid>
         
         <category>가변인자</category>
         
@@ -380,8 +394,8 @@
         <title>JAVA 제네릭 클래스와 메소드</title>
         <description>&lt;h3 id=&quot;generic&quot;&gt;- Generic&lt;/h3&gt; &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.ArrayList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/** * Created by imcts on 2016. 3. 12.. */&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;T&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;a&lt;/span&gt;...</description>
         <pubDate>Sat, 01 Oct 2016 20:00:00 +0900</pubDate>
-        <link>/java-generic-class/</link>
-        <guid isPermaLink="true">/java-generic-class/</guid>
+        <link>http://localhost:4000/java-generic-class/</link>
+        <guid isPermaLink="true">http://localhost:4000/java-generic-class/</guid>
         
         <category>generic</category>
         
@@ -396,8 +410,8 @@
         <title>수포자가 필요해서 정리하는 수학공식</title>
         <description>&lt;h3 id=&quot;section&quot;&gt;- 제곱근에 대하여 !&lt;/h3&gt; &lt;p&gt;&lt;img src=&quot;/resources/images/math/sam-gak-ham-su-root.jpeg&quot; alt=&quot;루트&quot; /&gt;&lt;/p&gt; &lt;p&gt;간단 간단하게 정리하면서 지나가겠습니다.&lt;/p&gt; &lt;p&gt;루트라는건 이런 거에요.&lt;/p&gt; &lt;p&gt;어떤 수를 제곱하였을때 루트안에 있는 수가 되는지를 정의한 것 입니다 .&lt;/p&gt; &lt;table&gt; &lt;thead&gt; &lt;tr&gt; &lt;th style=&quot;text-align: center&quot;&gt;ROOT&lt;/th&gt; &lt;th style=&quot;text-align: center&quot;&gt;VALUE&lt;/th&gt; &lt;/tr&gt; &lt;/thead&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt; &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt; &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt; &lt;td style=&quot;text-align: center&quot;&gt;1.414..&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt; &lt;td style=&quot;text-align: center&quot;&gt;1.732..&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt; &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;/table&gt; &lt;p&gt;이런식으로 계속 이어지는 것이지요 !&lt;/p&gt; &lt;p&gt;그럼 ROOT 16은 어떨까요 ?&lt;/p&gt; &lt;p&gt;4를 제곱하면 16이라는 값이 나오므로, ROOT 16 == 4가...</description>
         <pubDate>Sat, 01 Oct 2016 05:00:00 +0900</pubDate>
-        <link>/math-sam-gak-ham-su/</link>
-        <guid isPermaLink="true">/math-sam-gak-ham-su/</guid>
+        <link>http://localhost:4000/math-sam-gak-ham-su/</link>
+        <guid isPermaLink="true">http://localhost:4000/math-sam-gak-ham-su/</guid>
         
         <category>루트</category>
         
@@ -416,24 +430,10 @@
         <title>수포자가 필요해서 정리하는 수학공식</title>
         <description>&lt;p&gt;가로값:세로값 = 변경된가로값:세로값;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;비례식&lt;/strong&gt;에대해 알아보게된 이유는 별다른게 아니었습니다. 필요했기 때문이죠.&lt;/p&gt; &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;parent&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;parent&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;profile&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;children&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;url&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt; &lt;/div&gt; &lt;p&gt;위와 같은 상황이었을때 이미지를 상황에 따라서 가운데 정렬을 하고 싶었거든요.&lt;/p&gt; &lt;p&gt;물론 &lt;strong&gt;css&lt;/strong&gt;를 사용하여 정렬할 수도 있습니다.&lt;/p&gt; &lt;p&gt;이미지 태그를 사용하는게 아니라, 백그라운드를 사용하는게 그것이지요.&lt;/p&gt; &lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.parent&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#fff&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;url(&quot;url&quot;)&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;no-repeat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;background-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cover&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt; &lt;/div&gt; &lt;p&gt;또는 이런 방법도 있을 수 있겠네요 !&lt;/p&gt; &lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.parent&lt;/span&gt;...</description>
         <pubDate>Mon, 26 Sep 2016 05:00:00 +0900</pubDate>
-        <link>/math-ratio/</link>
-        <guid isPermaLink="true">/math-ratio/</guid>
+        <link>http://localhost:4000/math-ratio/</link>
+        <guid isPermaLink="true">http://localhost:4000/math-ratio/</guid>
         
         <category>비례식</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>수포자가 필요해서 정리하는 수학공식</title>
-        <description>&lt;p&gt;&lt;strong&gt;DEGREE&lt;/strong&gt;: 360도를 표현하며 60분법으로도 표현이 가능합니다.&lt;br /&gt; 우리가 일반적으로 사용하는 각도의 개념이라고 보면 됩니다.&lt;/p&gt; &lt;p&gt;그렇지만, 보통의 컴퓨터 프로그램들은 우리가 사용하는 DEGREE를 읽어 들여 계산하지 않고 &lt;strong&gt;RADIAN&lt;/strong&gt; 이라는 값을 사용하여 계산하게 됩니다.&lt;/p&gt; &lt;p&gt;결국 호도법을 하게 된 이유는 &lt;strong&gt;RADIAN&lt;/strong&gt;값을 구하기 위해서에요 !&lt;/p&gt; &lt;p&gt;그럼 한번 구해볼까요 ?&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/resources/images/math/hodo_1.jpeg&quot; alt=&quot;이미지&quot; /&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;π(원주율)&lt;/strong&gt;: 원주율이란 &lt;strong&gt;원의둘레&lt;/strong&gt;가 &lt;strong&gt;지름&lt;/strong&gt;보다 몇배나 큰지를 나타난 비례값이에요. 그걸 공식으로 나타내본다면 &lt;strong&gt;π = 원의둘레 / 지름&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;이라는 결론이 나오겠지요.&lt;/p&gt; &lt;p&gt;그런데 우리는 이걸 알아둘 필요가 있어요. &lt;strong&gt;1/3 == 3/9 //true&lt;/strong&gt; 라는 것을요&lt;/p&gt; &lt;p&gt;그렇다는 이야기는 &lt;strong&gt;π = 반원의둘레 / 반지름&lt;/strong&gt; 이기도 하다는 이야기가 되요.&lt;/p&gt; &lt;p&gt;호도법은 여기에서 시작 됩니다.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/resources/images/math/hodo_2.jpeg&quot; alt=&quot;이미지&quot; /&gt;&lt;/p&gt; &lt;p&gt;위의 그림을...</description>
-        <pubDate>Thu, 15 Sep 2016 05:00:00 +0900</pubDate>
-        <link>/math-hodobub/</link>
-        <guid isPermaLink="true">/math-hodobub/</guid>
-        
-        <category>라디안</category>
-        
-        <category>호도법</category>
         
         
       </item>

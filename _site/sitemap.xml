@@ -2,184 +2,188 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
         <url>
-            <loc>/about/index.html</loc>
+            <loc>http://localhost:4000/about/index.html</loc>
         </url>
     
         <url>
-            <loc>/category/algorithm/</loc>
+            <loc>http://localhost:4000/category/algorithm/</loc>
         </url>
     
         <url>
-            <loc>/category/css/</loc>
+            <loc>http://localhost:4000/category/css/</loc>
         </url>
     
         <url>
-            <loc>/feed.xml</loc>
+            <loc>http://localhost:4000/feed.xml</loc>
         </url>
     
         <url>
-            <loc>/category/html/</loc>
+            <loc>http://localhost:4000/category/html/</loc>
         </url>
     
         <url>
-            <loc>/</loc>
+            <loc>http://localhost:4000/</loc>
         </url>
     
         <url>
-            <loc>/category/java/</loc>
+            <loc>http://localhost:4000/category/java/</loc>
         </url>
     
         <url>
-            <loc>/category/js/</loc>
+            <loc>http://localhost:4000/category/js/</loc>
         </url>
     
         <url>
-            <loc>/category/math/</loc>
+            <loc>http://localhost:4000/category/math/</loc>
         </url>
     
         <url>
-            <loc>/category/project/</loc>
+            <loc>http://localhost:4000/category/project/</loc>
         </url>
     
         <url>
-            <loc>/search.json</loc>
+            <loc>http://localhost:4000/search.json</loc>
         </url>
     
         <url>
-            <loc>/series/index.html</loc>
+            <loc>http://localhost:4000/series/index.html</loc>
         </url>
     
         <url>
-            <loc>/sitemap.xml</loc>
+            <loc>http://localhost:4000/sitemap.xml</loc>
         </url>
     
         <url>
-            <loc>/tags/index.html</loc>
+            <loc>http://localhost:4000/tags/index.html</loc>
         </url>
     
         <url>
-            <loc>/category/tool/</loc>
+            <loc>http://localhost:4000/category/tool/</loc>
         </url>
     
     
         <url>
-            <loc>/ES6-TEMPLATE-LITERAL/</loc>
+            <loc>http://localhost:4000/java-stream/</loc>
         </url>
   
         <url>
-            <loc>/java-method-reference/</loc>
+            <loc>http://localhost:4000/ES6-TEMPLATE-LITERAL/</loc>
         </url>
   
         <url>
-            <loc>/java-lambda/</loc>
+            <loc>http://localhost:4000/java-method-reference/</loc>
         </url>
   
         <url>
-            <loc>/java-interface/</loc>
+            <loc>http://localhost:4000/java-lambda/</loc>
         </url>
   
         <url>
-            <loc>/file-upload/</loc>
+            <loc>http://localhost:4000/java-interface/</loc>
         </url>
   
         <url>
-            <loc>/canvas-tetris/</loc>
+            <loc>http://localhost:4000/file-upload/</loc>
         </url>
   
         <url>
-            <loc>/lion/</loc>
+            <loc>http://localhost:4000/canvas-tetris/</loc>
         </url>
   
         <url>
-            <loc>/deployd-setting/</loc>
+            <loc>http://localhost:4000/lion/</loc>
         </url>
   
         <url>
-            <loc>/ES6-SYMBOL/</loc>
+            <loc>http://localhost:4000/deployd-setting/</loc>
         </url>
   
         <url>
-            <loc>/canvas-text/</loc>
+            <loc>http://localhost:4000/ES6-SYMBOL/</loc>
         </url>
   
         <url>
-            <loc>/canvas-draw/</loc>
+            <loc>http://localhost:4000/canvas-text/</loc>
         </url>
   
         <url>
-            <loc>/canvas-cross-line/</loc>
+            <loc>http://localhost:4000/canvas-draw/</loc>
         </url>
   
         <url>
-            <loc>/canvas-clock/</loc>
+            <loc>http://localhost:4000/canvas-cross-line/</loc>
         </url>
   
         <url>
-            <loc>/sort-shell/</loc>
+            <loc>http://localhost:4000/canvas-clock/</loc>
         </url>
   
         <url>
-            <loc>/sort-select/</loc>
+            <loc>http://localhost:4000/sort-shell/</loc>
         </url>
   
         <url>
-            <loc>/sort-search/</loc>
+            <loc>http://localhost:4000/sort-select/</loc>
         </url>
   
         <url>
-            <loc>/sort-quick/</loc>
+            <loc>http://localhost:4000/sort-search/</loc>
         </url>
   
         <url>
-            <loc>/sort-merge/</loc>
+            <loc>http://localhost:4000/sort-quick/</loc>
         </url>
   
         <url>
-            <loc>/sort-insert/</loc>
+            <loc>http://localhost:4000/sort-merge/</loc>
         </url>
   
         <url>
-            <loc>/sort-bubble/</loc>
+            <loc>http://localhost:4000/sort-insert/</loc>
         </url>
   
         <url>
-            <loc>/memo/</loc>
+            <loc>http://localhost:4000/sort-bubble/</loc>
         </url>
   
         <url>
-            <loc>/css-transform/</loc>
+            <loc>http://localhost:4000/memo/</loc>
         </url>
   
         <url>
-            <loc>/intellij-handlebars-comments/</loc>
+            <loc>http://localhost:4000/css-transform/</loc>
         </url>
   
         <url>
-            <loc>/javascript-pattern/</loc>
+            <loc>http://localhost:4000/intellij-handlebars-comments/</loc>
         </url>
   
         <url>
-            <loc>/javascript-extends/</loc>
+            <loc>http://localhost:4000/javascript-pattern/</loc>
         </url>
   
         <url>
-            <loc>/java-separator/</loc>
+            <loc>http://localhost:4000/javascript-extends/</loc>
         </url>
   
         <url>
-            <loc>/java-generic-class/</loc>
+            <loc>http://localhost:4000/java-separator/</loc>
         </url>
   
         <url>
-            <loc>/math-sam-gak-ham-su/</loc>
+            <loc>http://localhost:4000/java-generic-class/</loc>
         </url>
   
         <url>
-            <loc>/math-ratio/</loc>
+            <loc>http://localhost:4000/math-sam-gak-ham-su/</loc>
         </url>
   
         <url>
-            <loc>/math-hodobub/</loc>
+            <loc>http://localhost:4000/math-ratio/</loc>
+        </url>
+  
+        <url>
+            <loc>http://localhost:4000/math-hodobub/</loc>
         </url>
   
 </urlset>

@@ -55,8 +55,7 @@ introduction: '- JAVA8 Interface -'
 ```
 
 
-
-이제는 인터페이스에 선언된 변수는 기본적으로 **public static final** 이 선언되어 집니다.  
+인터페이스에 선언된 변수는 기본적으로 **public static final** 이 선언되어 집니다.  
 즉 **public static final int AGE = 30; === int AGE = 30;** 이렇게 두 가지는 동일합니다.   
 또한 인터페이스에는 **default**를 선언함으로서 메소드의 body부분을 구현할 수 있게 되었습니다.  
 물론 **static**메소드 또한 구현할 수 있게 되었지요.  

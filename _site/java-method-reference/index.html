@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>JAVA 8 Method Reference</title>
+    <title>JAVA8 메소드 레퍼런스(Method Reference)</title>
     <meta name="description" content="dolen - blog">
 
     <!-- Google Authorship Markup -->
@@ -14,25 +14,25 @@
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@imcts">
-    <meta name="twitter:title" content="JAVA 8 Method Reference">
+    <meta name="twitter:title" content="JAVA8 메소드 레퍼런스(Method Reference)">
     <meta name="twitter:description" content="dolen - blog">
     
-    <meta property="twitter:image:src" content="/assets/img/">
+    <meta property="twitter:image:src" content="http://localhost:4000/assets/img/">
     
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="/java-method-reference/">
-    <meta property="og:title" content="JAVA 8 Method Reference">
+    <meta property="og:url" content="http://localhost:4000/java-method-reference/">
+    <meta property="og:title" content="JAVA8 메소드 레퍼런스(Method Reference)">
     
-    <meta property="og:image" content="/assets/img/">
+    <meta property="og:image" content="http://localhost:4000/assets/img/">
     
     <meta property="og:description" content="dolen - blog">
     <meta property="og:site_name" content="Dolen - Desenvolvedor Front End">
 
     <!-- Social: Google+ / Schema.org  -->
-    <meta itemprop="name" content="JAVA 8 Method Reference"/>
+    <meta itemprop="name" content="JAVA8 메소드 레퍼런스(Method Reference)"/>
     <meta itemprop="description" content="dolen - blog">
-    <meta itemprop="image" content="/assets/img/blog-image.png"/>
+    <meta itemprop="image" content="http://localhost:4000/assets/img/blog-image.png"/>
 
     <!-- Windows 8 Tile Icons -->
     <meta name="application-name" content="dolen Blog">
@@ -45,8 +45,8 @@
     <meta name="theme-color" content="">
 
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="/java-method-reference/">
-    <link rel="alternate" type="application/rss+xml" title="Dolen - Desenvolvedor Front End" href="/feed.xml" />
+    <link rel="canonical" href="http://localhost:4000/java-method-reference/">
+    <link rel="alternate" type="application/rss+xml" title="Dolen - Desenvolvedor Front End" href="http://localhost:4000/feed.xml" />
 </head>
 
     <body>
@@ -75,13 +75,13 @@
   <h2>MENU</h2>
   <ul>
     
-      <li><a href="/">Home</a></li>
+      <li><a href="http://localhost:4000/">Home</a></li>
     
-      <li><a href="/series">Series</a></li>
+      <li><a href="http://localhost:4000/series">Series</a></li>
     
-      <li><a href="/tags">Tags</a></li>
+      <li><a href="http://localhost:4000/tags">Tags</a></li>
     
-    <li><a class="feed" href="/feed.xml" title="Atom/RSS feed">Feed</a></li>
+    <li><a class="feed" href="http://localhost:4000/feed.xml" title="Atom/RSS feed">Feed</a></li>
   </ul>
 </nav>
 </aside>
@@ -94,7 +94,7 @@
         
             <time itemprop="datePublished" datetime="2016-12-10T05:00:00+09:00" class="date">10 Dec 2016</time>
         
-        <h1 class="post-title" itemprop="name">JAVA 8 Method Reference</h1>
+        <h1 class="post-title" itemprop="name">JAVA8 메소드 레퍼런스(Method Reference)</h1>
         <p itemprop="description" class="subtitle"></p>
     </div>
 </header>
@@ -253,22 +253,119 @@ person 클래스를 생성하여 사용하는 방법은, 생성자에 정의된 
 <p>이렇게 말이죠 !<br />
 당연히 메소드 참조이기때문에, 메소드의 오버로딩이 적용된다는 점은 기본이겠지요 ?</p>
 
-<p>메소드 참조 였습니다.</p>
+<h4 id="section-1">- 자주 사용하는 함수형 인터페이스</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">함수형 인터페이스</th>
+      <th style="text-align: center">파라미터타입</th>
+      <th style="text-align: center">반환 타입</th>
+      <th style="text-align: center">추상 메서드 이름</th>
+      <th style="text-align: center">설명</th>
+      <th style="text-align: center">다른 메소드</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Runnable</td>
+      <td style="text-align: center">없음</td>
+      <td style="text-align: center">void</td>
+      <td style="text-align: center">run</td>
+      <td style="text-align: center">인자나 반환 값 없이 액션을 수행한다.</td>
+      <td style="text-align: center">없음</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Supplier<T></T></td>
+      <td style="text-align: center">없음</td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">get</td>
+      <td style="text-align: center">T 타입 값을 공급한다.</td>
+      <td style="text-align: center">없음</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Consumer<T></T></td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">void</td>
+      <td style="text-align: center">accept</td>
+      <td style="text-align: center">T 타입 값을 소비한다.</td>
+      <td style="text-align: center">andThen</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">BiConsumer&lt;T, U&gt;</td>
+      <td style="text-align: center">T, U</td>
+      <td style="text-align: center">void</td>
+      <td style="text-align: center">accept</td>
+      <td style="text-align: center">T와 U타입 값을 소비한다.</td>
+      <td style="text-align: center">andThen</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Function&lt;T, R&gt;</td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">R</td>
+      <td style="text-align: center">apply</td>
+      <td style="text-align: center">T 타입 인자를 받는 함수다.</td>
+      <td style="text-align: center">compose<br />andThen<br />identity</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">BiFunction&lt;T, U, R&gt;</td>
+      <td style="text-align: center">T, U</td>
+      <td style="text-align: center">R</td>
+      <td style="text-align: center">apply</td>
+      <td style="text-align: center">T와 U타입 인자를 받는 함수다.</td>
+      <td style="text-align: center">andThen</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">UnaryOperator<T></T></td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">apply</td>
+      <td style="text-align: center">T 타입에 적용하는 단항 연산자다.</td>
+      <td style="text-align: center">compose<br />andThen<br />identity</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">BinaryOperator<T></T></td>
+      <td style="text-align: center">T, T</td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">apply</td>
+      <td style="text-align: center">T 타입에 적용하는 이항 연산자다.</td>
+      <td style="text-align: center">andThen<br />maxBy<br />minBy</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Predicate<T></T></td>
+      <td style="text-align: center">T</td>
+      <td style="text-align: center">boolean</td>
+      <td style="text-align: center">test</td>
+      <td style="text-align: center">Boolean 값을 반환하는 함수다.</td>
+      <td style="text-align: center">and<br />or<br />negate<br />isEqual</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">BiPredicate&lt;T, U&gt;</td>
+      <td style="text-align: center">T, U</td>
+      <td style="text-align: center">boolean</td>
+      <td style="text-align: center">test</td>
+      <td style="text-align: center">두 가지 인자를 받고 boolean 값을 반환하는 함수다.</td>
+      <td style="text-align: center">and<br />or<br />negate</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>자바8 메소드 참조 정리 였습니다. :)</p>
 
 
             </article>
 
             <section class="share">
     <h3>Share</h3>
-    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20/java-method-reference/%20via%20&#64;imcts&hashtags=JAVA8,method reference,"
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20http://localhost:4000/java-method-reference/%20via%20&#64;imcts&hashtags=JAVA8,method reference,"
     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
         <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
     </a>
-    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=/java-method-reference/"
+    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/java-method-reference/"
     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
         <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
     </a>
-    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=/java-method-reference/"
+    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:4000/java-method-reference/"
     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
         <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
     </a>

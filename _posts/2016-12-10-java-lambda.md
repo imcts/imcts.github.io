@@ -1,7 +1,7 @@
 ---
 
 layout: post
-title: JAVA 8 Lambda Expression
+title: JAVA8 람다 표현식(Lambda Expression)
 date: 2016-12-09 15:00:00
 image: '/assets/img/'
 description: 'Lambda'
@@ -215,4 +215,5 @@ Comparator 인터페이스 또한 @FunctionalInterface이므로 람다 표현식
 ```
 
 메소드에 lambda표현식을 매개변수로 넘겨주고, 해당 lambda표현식을 실행하는 것으로 여러가지를 할 수 있게 되었습니다.  
-람다 표현식 이었습니다. :) 
+
+자바8 람다 표현식 정리 였습니다. :) 
