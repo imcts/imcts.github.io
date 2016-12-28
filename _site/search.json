@@ -1,6 +1,13 @@
 [
   
     {
+      "title"    : "빌더 패턴.",
+      "tags"     : "pattern",
+      "url"      : "/javascript-build-pattern/",
+      "date"     : "28 Dec 2016"
+    } ,
+  
+    {
       "title"    : "JAVA 8 스트림 (Stream)",
       "tags"     : "JAVA8 and stream",
       "url"      : "/java-stream/",
