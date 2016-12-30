@@ -15,3 +15,5 @@ introduction: '- HTML5 CANVAS CLOCK -'
 ---
 
 **MOVE TO CANVAS CLOCK =>**  **[CANVAS CLOCK](/project/html/canvas/clock)**
+
+**MOVE TO CANVAS CLOCK ANIMATION =>**  **[CANVAS CLOCK](/project/html/canvas/clockAnimation)**
