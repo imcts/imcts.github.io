@@ -13,7 +13,7 @@ introduction: '- javascript template literal -'
 
 ---
 
-##1. javascript 의 문자열의 사용
+### 1. javascript 의 문자열의 사용
 
 ```js
     var str = 'string';
