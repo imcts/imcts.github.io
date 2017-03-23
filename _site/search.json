@@ -1,6 +1,13 @@
 [
   
     {
+      "title"    : "RESUME",
+      "tags"     : "memo",
+      "url"      : "/resume/",
+      "date"     : "23 Mar 2017"
+    } ,
+  
+    {
       "title"    : "ES6 - REFLECTION",
       "tags"     : "javascript and template literal",
       "url"      : "/ES6-Reflection/",

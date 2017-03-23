@@ -1,0 +1,361 @@
+* { 
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: #f9f9f9;
+}
+
+body {
+    padding: 20px 40px;
+}
+
+.resume {
+    width: 740px;
+    margin: 0 auto;
+    padding: 40px 40px;
+    border: 2px solid #bbb;
+    color: #333;
+}
+
+.resume section {
+    margin-bottom: 36px;
+}
+
+.resume__title {
+    font-size: 36px;
+}
+
+.resume__profile {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    margin-top: 12px;
+    padding: 20px 24px;
+    border: 1px solid #bbb;
+}
+
+.resume__profile__figure {
+    display: table-cell;
+    width: 150px;
+    height: 200px;
+}
+
+.resume__profile__figure > img {
+    width: 100%;
+    height: 100%;
+}
+
+.resume__profile__figure > figcaption {
+    margin-top: 12px;
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.resume__profile__info {
+    display: table-cell;
+    padding-left: 20px;
+    vertical-align: middle;
+}
+
+.resume__profile__info__dolen {
+    border: 1px solid #ddd;
+}
+
+.resume__profile__info__dolen__list {
+    padding: 11px 20px 8px 20px;
+    line-height: 30px;
+    vertical-align: middle;
+    border-bottom: 1px solid #ddd;
+}
+
+.resume__profile__info__dolen__list:last-child {
+    border: none;
+}
+
+.resume__profile__info__dolen__list__content__birth {
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+.resume__profile__info__dolen__list__title {
+    display: table-cell;
+    width: 100px;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.resume__profile__info__dolen__list__content {
+    display: table-cell;
+}
+
+.resume__education {
+    margin-top: 12px;
+    padding: 10px 24px;
+    border: 1px solid #bbb;
+}
+
+.resume__education__list {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    padding: 11px 20px 8px 20px;
+    line-height: 30px;
+    vertical-align: middle;
+    border-bottom: 1px solid #ddd;
+}
+
+.resume__education__list:last-child {
+    border: none;
+}
+
+.resume__education__list__start-dt {
+    display: table-cell;
+    width: 18%;
+}
+
+.resume__education__list__end-dt {
+    display: table-cell;
+    width: 18%;
+}
+
+.resume__education__list__location {
+    display: table-cell;
+}
+
+.resume__education__list__stat {
+    display: table-cell;
+    width: 10%;
+}
+
+.resume__education__list__description {
+    display: table-cell;
+}
+
+.resume__certification {
+    margin-top: 12px;
+    padding: 10px 24px;
+    border: 1px solid #bbb;
+}
+
+.resume__certification__list {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    padding: 11px 20px 8px 20px;
+    line-height: 30px;
+    vertical-align: middle;
+    border-bottom: 1px solid #ddd;
+}
+
+.resume__certification__list:last-child {
+    border: none;
+}
+
+.resume__certification__list__reg-dt {
+    display: table-cell;
+    width: 18%;
+}
+
+.resume__certification__list__description {
+    display: table-cell;
+}
+
+.resume__certification__list__agency {
+    display: table-cell;
+    width: 30%
+}
+
+.resume__duty {
+    margin-top: 12px;
+    padding: 10px 24px;
+    border: 1px solid #bbb;
+}
+
+.resume__duty__list {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    padding: 11px 20px 8px 20px;
+    line-height: 30px;
+    vertical-align: middle;
+    border-bottom: 1px solid #ddd;
+}
+
+.resume__duty__list:last-child {
+    border: none;
+}
+
+.resume__duty__list__start-dt {
+    display: table-cell;
+    width: 15%;
+}
+
+.resume__duty__list__end-dt {
+    display: table-cell;
+    width: 15%;
+}
+
+.resume__duty__list__army {
+    display: table-cell;
+}
+
+.resume__duty__list__class {
+    display: table-cell;
+}
+
+.resume__duty__list__type {
+    display: table-cell;
+}
+
+.resume__duty__list__stat {
+    display: table-cell;
+}
+
+.resume__career {
+    margin-top: 12px;
+}
+
+.resume__career__list {
+    margin-bottom: 12px;
+    padding: 10px 24px;
+    border: 1px solid #bbb;
+}
+
+.resume__career__list:last-child {
+    margin-bottom: 0;
+}
+
+.resume__career__list__company {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    padding: 11px 20px 8px 20px;
+    line-height: 30px;
+    vertical-align: middle;
+    border-bottom: 1px solid #ddd;
+}
+
+.resume__career__list__company__name {
+    display: table-cell;
+}
+
+.resume__career__list__company__start-dt {
+    display: table-cell;
+}
+
+.resume__career__list__company__end-dt {
+    display: table-cell;
+}
+
+.resume__career__list__company__type {
+    display: table-cell;
+}
+
+.resume__career__list__company__type > strong {
+    padding-right: 10px;
+}
+
+.resume__career__list__employee {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    padding: 11px 20px 8px 20px;
+    line-height: 30px;
+    vertical-align: middle;
+}
+
+.resume__career__list__employee__rank {
+    display: table-cell;
+}
+
+.resume__career__list__employee__rank > strong {
+    margin-right: 10px;
+}
+
+.resume__career__list__employee__responsibility {
+    display: table-cell;
+}
+
+.resume__career__list__employee__responsibility > strong {
+    margin-right: 10px;
+}
+
+.resume__project {
+    margin-top: 12px;
+}
+
+.resume__project__list {
+    margin-bottom: 12px;
+    padding: 10px 24px;
+    border: 1px solid #bbb;
+}
+
+.resume__project__list strong {
+    margin-right: 10px;
+}
+
+.resume__project__list:last-child {
+    margin-bottom: 0;
+}
+
+.resume__project__list__info {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    padding: 11px 20px 8px 20px;
+    line-height: 30px;
+    vertical-align: middle;
+    border-bottom: 1px solid #ddd;
+}
+
+.resume__project__list__info__project-name {
+    display: table-cell;
+    width: 45%;
+}
+
+.resume__project__list__info__start-dt {
+    display: table-cell;
+    width: 18%;
+}
+
+.resume__project__list__info__end-dt {
+    display: table-cell;
+    width: 18%;
+}
+
+.resume__project__list__info__type {
+    display: table-cell;
+}
+
+.resume__project__list__company {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    padding: 11px 20px 8px 20px;
+    line-height: 30px;
+    vertical-align: middle;
+    border-bottom: 1px solid #ddd;
+}
+
+.resume__project__list__skill {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    padding: 11px 20px 8px 20px;
+    line-height: 30px;
+    vertical-align: middle;
+    border-bottom: 1px solid #ddd;
+}
+
+.resume__project__list__role {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    padding: 11px 20px 8px 20px;
+    line-height: 30px;
+    vertical-align: middle;
+}
