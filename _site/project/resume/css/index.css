@@ -191,12 +191,12 @@ body {
 
 .resume__duty__list__start-dt {
     display: table-cell;
-    width: 15%;
+    width: 20%;
 }
 
 .resume__duty__list__end-dt {
     display: table-cell;
-    width: 15%;
+    width: 20%;
 }
 
 .resume__duty__list__army {

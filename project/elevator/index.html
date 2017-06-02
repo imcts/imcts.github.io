@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="./resources/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="./resources/css/index.css">
+        <title>Kakao Interview</title>
+    </head>
+
+    <body>
+        <div class="container js_container">
+            <!--header-->
+            <header class="header">
+                <h1 class="header__title">화물 엘리베이터 시뮬레이션 프로그램</h1>
+            </header>
+
+            <!--floor section-->
+            <section class="floor js_floorContainer"></section>
+
+            <!--elevator section-->
+            <section class="content js_contentContainer">
+                <div class="content__table">
+                    <div class="content__cell js_contentElevatorListContainer"></div>
+                </div>
+            </section>
+
+            <!--select selction-->
+            <section class="select select--active js_selectContainer">
+                <div class="select__table">
+                    <div class="select__table__cell">
+                        <div class="select__table__cell__modal">
+                            <div class="select__table__cell__modal__row">
+                                층의 개수:
+                                <select class="js_selectFloorSelector">
+                                    <option value="2">2층</option>
+                                    <option value="3">3층</option>
+                                    <option value="4">4층</option>
+                                    <option value="5">5층</option>
+                                </select>
+                            </div>
+
+                            <div class="select__table__cell__modal__row">
+                                엘레베이터개수:
+                                <select class="js_selectElevatorSelector">
+                                    <option value="2">2대</option>
+                                    <option value="3">3대</option>
+                                    <option value="4">4대</option>
+                                </select>
+                            </div>
+
+                            <div class="select__table__cell__modal__footer">
+                                <button class="select__table__cell__modal__footer__btn js_selectSubmitBtn">선택완료</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <div class="js_elevatorTemplateContainer">
+            <script class="js_templateElevator" type="text">
+                <div class="content__cell__container">
+                    <div class="content__cell__container__elevator js_contentElevator" data-index="{{index}}"></div>
+                </div>
+            </script>
+
+            <script class="js_templateFloor" type="text">
+                <div class="floor__container">
+                    <button class="floor__container__btn js_floorBtn" data-floor="{{targetFloor}}">{{floor}}층</button>
+                </div>
+            </script>
+        </div>
+
+
+        <script type="text/javascript" src="resources/js/library/require-2.3.3.min.js"></script>
+        <script type="text/javascript" src="resources/js/config/require-config.js"></script>
+    </body>
+</html>

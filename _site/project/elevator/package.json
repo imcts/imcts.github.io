@@ -1,0 +1,19 @@
+{
+  "name": "elevator",
+  "version": "1.0.0",
+  "description": "KAKAO INTERVIEW",
+  "main": "index.js",
+  "scripts": {
+    "start": "karma start"
+  },
+  "author": "dolen",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^2.5.3",
+    "karma": "^1.6.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "karma-requirejs": "^1.1.0"
+  }
+}
