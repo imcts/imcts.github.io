@@ -1,6 +1,13 @@
 [
   
     {
+      "title"    : "자바스크립트 부동소수점 표현방식",
+      "tags"     : "javascript, mantissa, exponent, and base",
+      "url"      : "/javascript-exponent-expression/",
+      "date"     : "10 Jun 2017"
+    } ,
+  
+    {
       "title"    : "DragAndDrop",
       "tags"     : "memo",
       "url"      : "/dragAndDrop/",

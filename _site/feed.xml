@@ -5,9 +5,27 @@
     <description>dolen - blog</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 02 Jun 2017 16:00:42 +0900</pubDate>
-    <lastBuildDate>Fri, 02 Jun 2017 16:00:42 +0900</lastBuildDate>
+    <pubDate>Mon, 12 Jun 2017 16:45:02 +0900</pubDate>
+    <lastBuildDate>Mon, 12 Jun 2017 16:45:02 +0900</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>자바스크립트 부동소수점 표현방식</title>
+        <description>&lt;h3 id=&quot;ieee-754&quot;&gt;1. IEEE-754&lt;/h3&gt; &lt;p&gt;자바스크립트는 &lt;strong&gt;&lt;a href=&quot;https://ko.wikipedia.org/wiki/IEEE_754&quot;&gt;IEEE-754&lt;/a&gt;&lt;/strong&gt;에 의거하여 정수와 부동소수점을 표기합니다.&lt;br /&gt; IEEE-754 표기법 중 32BIT를 사용하는 단정도와 64BIT를 사용하는 배정도방식이 존재하는데&lt;br /&gt; 자바스크립트는 배정도 방식을 사용하여 정수와 부동소수점을 표기합니다.&lt;/p&gt; &lt;h3 id=&quot;signed-bit&quot;&gt;2. 부호 비트 (SIGNED BIT)&lt;/h3&gt; &lt;p&gt;자바스크립트는 배정도방식으로 저장하지만 실제로 개발자가 비트연산등을 수행하여 값을 저장할때에는 32BIT 정수로 변환하여 연산을 수행한 뒤 64BIT로 다시 변환하여 저장합니다.&lt;br /&gt; 0000 0000 0000 0000 0000 0000 0000 0000(2) 의 비트값이 존재한다고 했을때 첫 번째 비트를 부호 표현을 위한 비트로 따로 지정하게 되는데 이를 부호 비트라고 칭합니다.&lt;br /&gt; 부호비트는 0일때 양수를 1일때 음수를 나타냅니다.&lt;/p&gt; &lt;h3 id=&quot;section&quot;&gt;3. 양수를 표현할때&lt;/h3&gt; &lt;p&gt;먼저 정수를 저장하는 방법에 대해 알아보도록 하죠. 43이라는...</description>
+        <pubDate>Sat, 10 Jun 2017 11:00:00 +0900</pubDate>
+        <link>http://localhost:4000/javascript-exponent-expression/</link>
+        <guid isPermaLink="true">http://localhost:4000/javascript-exponent-expression/</guid>
+        
+        <category>javascript</category>
+        
+        <category>mantissa</category>
+        
+        <category>exponent</category>
+        
+        <category>base</category>
+        
+        
+      </item>
     
       <item>
         <title>DragAndDrop</title>
@@ -412,20 +430,6 @@
         <guid isPermaLink="true">http://localhost:4000/javascript-pattern/</guid>
         
         <category>pattern</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>자바스크립트 상속.</title>
-        <description>&lt;p&gt;&lt;strong&gt;자바스크립트의 상속&lt;/strong&gt;을 정리해보겠습니다.&lt;/p&gt; &lt;p&gt;예전에 정리해두었던건데, 영 마구잡이식이어서 블로그도 새로 만들었고 되새김질도 하는 김에 정리해봅니다.&lt;/p&gt; &lt;p&gt;시작해볼까요 :)&lt;/p&gt; &lt;h3 id=&quot;section&quot;&gt;- 기본적인 상속&lt;/h3&gt; &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Parent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Parent'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Parent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;say&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Child&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Child&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Parent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Child&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span...</description>
-        <pubDate>Sun, 02 Oct 2016 05:00:00 +0900</pubDate>
-        <link>http://localhost:4000/javascript-extends/</link>
-        <guid isPermaLink="true">http://localhost:4000/javascript-extends/</guid>
-        
-        <category>extends</category>
-        
-        <category>prototype</category>
         
         
       </item>
