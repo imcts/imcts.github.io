@@ -1,7 +1,7 @@
 ---
 
 layout: post
-title: 자바스크립트 부동소수점 표현방식
+title: 자바스크립트 숫자 표현 방식
 date: 2017-06-10 02:00:00
 image: '/assets/img/'
 main-class: 'js'
