@@ -103,7 +103,7 @@
             <article role="article" id="post" class="post-content" itemprop="articleBody">
                 <p><strong><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Symbol">SYMBOL API</a></strong></p>
 
-<h4 id="type">1. 7번째 원시 데이터 타입 (TYPE)</h4>
+<h4 id="1-7번째-원시-데이터-타입-type">1. 7번째 원시 데이터 타입 (TYPE)</h4>
 <blockquote>
   <p>Undefined<br />
 Boolean<br />
@@ -119,7 +119,7 @@ NULL</p>
 
 <p><strong><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Data_structures">JS 원시 데이터 타입</a></strong></p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    <span class="kr">const</span> <span class="nx">symbol1</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">(</span><span class="s1">'Apple'</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">const</span> <span class="nx">symbol1</span> <span class="o">=</span> <span class="nb">Symbol</span><span class="p">(</span><span class="s1">'Apple'</span><span class="p">);</span>
 
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">symbol1</span><span class="p">);</span> <span class="c1">//symbol</span>
 
@@ -129,23 +129,21 @@ NULL</p>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">//number</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="kc">undefined</span><span class="p">);</span> <span class="c1">//undefined</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="kc">true</span><span class="p">);</span> <span class="c1">//boolean</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<h4 id="section">2. 생성 및 사용방법</h4>
+<h4 id="2-생성-및-사용방법">2. 생성 및 사용방법</h4>
 
 <blockquote>
   <p>생성 및 사용방법 및 특성
 심볼은 새로운 타입 입니다.</p>
 </blockquote>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    <span class="kr">const</span> <span class="nx">symbol</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">();</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">const</span> <span class="nx">symbol</span> <span class="o">=</span> <span class="nb">Symbol</span><span class="p">();</span>
     
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">symbol</span><span class="p">);</span> <span class="c1">//Symbol()</span>
 
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">symbol1</span><span class="p">);</span> <span class="c1">//symbol </span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p>심볼은 인자로 문자열을 받습니다 
@@ -153,44 +151,42 @@ NULL</p>
 심볼을 보는 방법은 아래와 같습니다.</p>
 </blockquote>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    <span class="kr">const</span> <span class="nx">symbol</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">(</span><span class="s1">'Apple'</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">const</span> <span class="nx">symbol</span> <span class="o">=</span> <span class="nb">Symbol</span><span class="p">(</span><span class="s1">'Apple'</span><span class="p">);</span>
 
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">String</span><span class="p">(</span><span class="nx">symbol</span><span class="p">));</span> <span class="c1">//Symbol(Apple)</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">symbol</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span> <span class="c1">//Symbol(Apple)</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">symbol</span><span class="p">);</span> <span class="c1">//Symbol(Apple)</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">String</span><span class="p">(</span><span class="nx">symbol</span><span class="p">).</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s1">'Apple'</span><span class="p">));</span> <span class="c1">//7 </span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<h4 id="unique-">3. 심볼은 Unique 합니다.</h4>
+<h4 id="3-심볼은-unique-합니다">3. 심볼은 Unique 합니다.</h4>
 
 <blockquote>
   <p>심볼은 항상 새로운 값을 리턴 합니다.
 심볼에 전달된 파라미터값이 동일하다고 해서 해당 심볼이 같지는 않습니다.</p>
 </blockquote>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    <span class="kr">const</span> <span class="nx">symbol1</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">(</span><span class="s1">'Apple'</span><span class="p">);</span>
-    <span class="kr">const</span> <span class="nx">symbol2</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">(</span><span class="s1">'Apple2'</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">const</span> <span class="nx">symbol1</span> <span class="o">=</span> <span class="nb">Symbol</span><span class="p">(</span><span class="s1">'Apple'</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">symbol2</span> <span class="o">=</span> <span class="nb">Symbol</span><span class="p">(</span><span class="s1">'Apple2'</span><span class="p">);</span>
 
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">symbol1</span> <span class="o">==</span> <span class="nx">symbol2</span><span class="p">);</span> <span class="c1">//false</span>
     
     
-    <span class="kr">const</span> <span class="nx">symbol1</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">(</span><span class="s1">'Apple'</span><span class="p">);</span>
-    <span class="kr">const</span> <span class="nx">symbol2</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">(</span><span class="s1">'Apple'</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">symbol1</span> <span class="o">=</span> <span class="nb">Symbol</span><span class="p">(</span><span class="s1">'Apple'</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">symbol2</span> <span class="o">=</span> <span class="nb">Symbol</span><span class="p">(</span><span class="s1">'Apple'</span><span class="p">);</span>
 
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">symbol1</span> <span class="o">==</span> <span class="nx">symbol2</span><span class="p">);</span> <span class="c1">//false</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p>심볼은 Property Key의 역할을 수행할 수 있습니다. 
 너무나 당연한 말이지만 Object의 Function의 이름으로도 역할 할 수 있습니다.</p>
 </blockquote>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    <span class="kr">const</span> <span class="nx">KEY</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">(</span><span class="s1">'KEY'</span><span class="p">);</span>
-        <span class="kr">const</span> <span class="nx">FNC</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">(</span><span class="s1">'FNC'</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">const</span> <span class="nx">KEY</span> <span class="o">=</span> <span class="nb">Symbol</span><span class="p">(</span><span class="s1">'KEY'</span><span class="p">);</span>
+        <span class="kd">const</span> <span class="nx">FNC</span> <span class="o">=</span> <span class="nb">Symbol</span><span class="p">(</span><span class="s1">'FNC'</span><span class="p">);</span>
     
-        <span class="kr">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
             <span class="p">[</span><span class="nx">KEY</span><span class="p">]:</span> <span class="s1">'key value'</span><span class="p">,</span>
             <span class="p">[</span><span class="nx">FNC</span><span class="p">]:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="s1">'object inner function int'</span>
         <span class="p">};</span>
@@ -201,10 +197,9 @@ NULL</p>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">[</span><span class="nx">KEY</span><span class="p">]);</span>   <span class="c1">// key value</span>
     
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">[</span><span class="nx">FNC</span><span class="p">]());</span> <span class="c1">// object inner function int</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<h4 id="property-key">4. Property Key</h4>
+<h4 id="4-property-key">4. Property Key</h4>
 
 <blockquote>
   <p>위에서 보다 시피 매번 전역 공간에 심볼을 생성하여 저장하며 객체의 키 값으로 사용하기에는 너무 번거로운 경우가 많이 발생합니다. 
@@ -212,36 +207,33 @@ NULL</p>
 먼저 객체를 하나 만들어 줍니다.</p>
 </blockquote>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    <span class="kr">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
-       <span class="p">[</span><span class="nx">Symbol</span><span class="p">(</span><span class="s1">'KEY'</span><span class="p">)]:</span> <span class="s1">'symbol key value'</span><span class="p">,</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+       <span class="p">[</span><span class="nb">Symbol</span><span class="p">(</span><span class="s1">'KEY'</span><span class="p">)]:</span> <span class="s1">'symbol key value'</span><span class="p">,</span>
        <span class="na">key</span><span class="p">:</span> <span class="s1">'string key value'</span>
     <span class="p">};</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p>객체에서 key 값을 얻어오려면 기존에는 이렇게 코딩하였죠 ?</p>
 </blockquote>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
         <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="c1">// ['key']</span>
     <span class="p">);</span>
      
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
         <span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertyNames</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="c1">//['key']</span>
     <span class="p">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p>하지만 심볼형태의 key는 Object.keys, Object.getOwnPropertyNames 함수로는 가져올 수 없습니다.</p>
 </blockquote>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
         <span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertySymbols</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="c1">// [Symbol(KEY)] </span>
     <span class="p">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p>그래서 Object.getOwnPropertySymbols 함수를 사용하여야 합니다 <br />
@@ -251,30 +243,28 @@ NULL</p>
 Reflect는 비추다라는 의미를 가지고 있네요.</p>
 </blockquote>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
-        <span class="nx">Reflect</span><span class="p">.</span><span class="nx">ownKeys</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="c1">//["key", Symbol(KEY)]</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
+        <span class="nb">Reflect</span><span class="p">.</span><span class="nx">ownKeys</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="c1">//["key", Symbol(KEY)]</span>
     <span class="p">);</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p>Iterator 객체와 for of 의 응용</p>
 </blockquote>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    <span class="kr">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
         <span class="na">arr</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
-        <span class="p">[</span><span class="nx">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]()</span> <span class="p">{</span>
+        <span class="p">[</span><span class="nb">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]()</span> <span class="p">{</span>
             <span class="k">return</span> <span class="p">{</span>
                 <span class="na">next</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span>  <span class="k">this</span><span class="p">.</span><span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">?</span> <span class="p">{</span> <span class="na">value</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">arr</span><span class="p">.</span><span class="nx">shift</span><span class="p">()</span> <span class="p">}</span> <span class="p">:</span> <span class="p">{</span> <span class="na">done</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">};</span>
 
-    <span class="k">for</span><span class="p">(</span><span class="kr">const</span> <span class="nx">num</span> <span class="nx">of</span> <span class="nx">obj</span><span class="p">)</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">const</span> <span class="nx">num</span> <span class="k">of</span> <span class="nx">obj</span><span class="p">)</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span> <span class="c1">//1, 2, 3, 4, 5</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p>간단한 예제를 하나 만들어보았습니다. <br />
@@ -286,16 +276,16 @@ Symbol에는 iterator 객체를 만들어줄 수 있는데요.<br />
 iterator는 하나의 객체에 반드시 하나만 존재해야 하는데요, 여러개를 선언하더라도 추후에 적용된 iterator가 override 되게 됩니다.</p>
 </blockquote>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    <span class="kr">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
         <span class="na">arr</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
-        <span class="p">[</span><span class="nx">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]()</span> <span class="p">{</span>
+        <span class="p">[</span><span class="nb">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]()</span> <span class="p">{</span>
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'first'</span><span class="p">);</span>
             <span class="k">return</span> <span class="p">{</span>
                 <span class="na">next</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span>  <span class="k">this</span><span class="p">.</span><span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">?</span> <span class="p">{</span> <span class="na">value</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">arr</span><span class="p">.</span><span class="nx">shift</span><span class="p">()</span> <span class="p">}</span> <span class="p">:</span> <span class="p">{</span> <span class="na">done</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
             <span class="p">}</span>
         <span class="p">},</span>
 
-        <span class="p">[</span><span class="nx">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]()</span> <span class="p">{</span>
+        <span class="p">[</span><span class="nb">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]()</span> <span class="p">{</span>
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'second'</span><span class="p">);</span>
             <span class="k">return</span> <span class="p">{</span>
                 <span class="na">next</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span>  <span class="k">this</span><span class="p">.</span><span class="nx">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">?</span> <span class="p">{</span> <span class="na">value</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">arr</span><span class="p">.</span><span class="nx">shift</span><span class="p">()</span> <span class="p">}</span> <span class="p">:</span> <span class="p">{</span> <span class="na">done</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
@@ -303,15 +293,14 @@ iterator는 하나의 객체에 반드시 하나만 존재해야 하는데요, �
         <span class="p">}</span>
     <span class="p">};</span>
 
-    <span class="k">for</span><span class="p">(</span><span class="kr">const</span> <span class="nx">num</span> <span class="nx">of</span> <span class="nx">obj</span><span class="p">)</span> 
+    <span class="k">for</span><span class="p">(</span><span class="kd">const</span> <span class="nx">num</span> <span class="k">of</span> <span class="nx">obj</span><span class="p">)</span> 
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span> <span class="c1">//second 1, 2, 3, 4, 5</span>
 
 
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Reflect</span><span class="p">.</span><span class="nx">ownKeys</span><span class="p">(</span><span class="nx">obj</span><span class="p">));</span> <span class="p">[</span><span class="s2">"arr"</span><span class="p">,</span> <span class="nx">Symbol</span><span class="p">(</span><span class="nx">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">)]</span>
-</code></pre>
-</div>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Reflect</span><span class="p">.</span><span class="nx">ownKeys</span><span class="p">(</span><span class="nx">obj</span><span class="p">));</span> <span class="p">[</span><span class="s2">"arr"</span><span class="p">,</span> <span class="nb">Symbol</span><span class="p">(</span><span class="nb">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">)]</span>
+</code></pre></div></div>
 
-<h4 id="symbol--">5. 전역적인 Symbol의 사용 방법</h4>
+<h4 id="5-전역적인-symbol의-사용-방법">5. 전역적인 Symbol의 사용 방법</h4>
 
 <blockquote>
   <p>Symbol의 전역적인 사용 방법에 대해서 알아 보죠.
@@ -321,40 +310,37 @@ Common 한 Property등이 그렇겠지요 ? <br />
 물론 window.mySymbol = Symbol(); 이딴거 말구요 ; ㅅ;</p>
 </blockquote>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    <span class="nx">Symbol</span><span class="p">.</span><span class="k">for</span><span class="p">(</span><span class="s1">'key'</span><span class="p">);</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nb">Symbol</span><span class="p">.</span><span class="k">for</span><span class="p">(</span><span class="s1">'key'</span><span class="p">);</span>
+</code></pre></div></div>
 
 <blockquote>
   <p>단 하나만 아시면 됩니다. Symbol.for 라는 함수죠. <br />
 파라미터로 넘어온 key를 기준으로 없다면 create 있다면 get해줍니다.</p>
 </blockquote>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    <span class="kr">const</span> <span class="nx">mySymbol</span>  <span class="o">=</span> <span class="nx">Symbol</span><span class="p">.</span><span class="k">for</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span> <span class="c1">//create Symbol</span>
-    <span class="kr">const</span> <span class="nx">mySymbol2</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">.</span><span class="k">for</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span> <span class="c1">//get Symbol</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">const</span> <span class="nx">mySymbol</span>  <span class="o">=</span> <span class="nb">Symbol</span><span class="p">.</span><span class="k">for</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span> <span class="c1">//create Symbol</span>
+    <span class="kd">const</span> <span class="nx">mySymbol2</span> <span class="o">=</span> <span class="nb">Symbol</span><span class="p">.</span><span class="k">for</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span> <span class="c1">//get Symbol</span>
 
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
         <span class="nx">mySymbol</span> <span class="o">===</span> <span class="nx">mySymbol2</span>
     <span class="p">);</span>  <span class="c1">//true </span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p>어때요 엄청 쉽지요 ??<br />
 하나의 기능을 더 알아볼게요 !</p>
 </blockquote>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
-        <span class="nx">Symbol</span><span class="p">.</span><span class="nx">keyFor</span><span class="p">(</span><span class="nx">mySymbol</span><span class="p">)</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
+        <span class="nb">Symbol</span><span class="p">.</span><span class="nx">keyFor</span><span class="p">(</span><span class="nx">mySymbol</span><span class="p">)</span>
     <span class="p">);</span> <span class="c1">//test</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p>이렇게 하면 해당 심볼의 key값을 가져올 수 있게 되지요 ! 엄청 간단합니다.</p>
 </blockquote>
 
-<h4 id="section-1">6. 개인적인 확장</h4>
+<h4 id="6-개인적인-확장">6. 개인적인 확장</h4>
 
 <blockquote>
   <p>사실 Symbol은 엄청나게 Unique 하기 때문에 많은 곳에서 응용해서 사용할 수 있습니다. <br />
@@ -362,7 +348,7 @@ Class의 상속객체에서도 사용할 수가 있을 테구요 Property를 외
 하지만 그보다 더 우선 눈에 들어온 것은 바로 Enum class처럼 사용할 수 있겠다라는 것.</p>
 </blockquote>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">company</span><span class="o">.</span><span class="na">java8</span><span class="o">.</span><span class="na">java</span><span class="o">.</span><span class="na">study</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">company</span><span class="o">.</span><span class="na">java8</span><span class="o">.</span><span class="na">java</span><span class="o">.</span><span class="na">study</span><span class="o">;</span>
 
 <span class="cm">/**
  * Created by imcts on 2016. 11. 7..
@@ -407,35 +393,33 @@ Class의 상속객체에서도 사용할 수가 있을 테구요 Property를 외
         <span class="o">}</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p>네 자바의 Enum 입니다. <br />
 이걸 JS에서도 한번 구현해 보고자 합니다.</p>
 </blockquote>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    <span class="kr">class</span> <span class="nx">Enum</span> <span class="p">{</span>
-        <span class="nx">constructor</span><span class="p">(</span><span class="nx">keys</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">for</span><span class="p">(</span><span class="kr">const</span> <span class="nx">key</span> <span class="nx">of</span> <span class="nx">keys</span><span class="p">)</span>
-                <span class="k">this</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">class</span> <span class="nx">Enum</span> <span class="p">{</span>
+        <span class="kd">constructor</span><span class="p">(</span><span class="nx">keys</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">for</span><span class="p">(</span><span class="kd">const</span> <span class="nx">key</span> <span class="k">of</span> <span class="nx">keys</span><span class="p">)</span>
+                <span class="k">this</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nb">Symbol</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
 
-    <span class="kr">const</span> <span class="nx">ENUMS</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Enum</span><span class="p">([</span><span class="s1">'APPLE'</span><span class="p">,</span> <span class="s1">'BANANA'</span><span class="p">,</span> <span class="s1">'ORANGE'</span><span class="p">]);</span>
+    <span class="kd">const</span> <span class="nx">ENUMS</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Enum</span><span class="p">([</span><span class="s1">'APPLE'</span><span class="p">,</span> <span class="s1">'BANANA'</span><span class="p">,</span> <span class="s1">'ORANGE'</span><span class="p">]);</span>
 
     <span class="k">switch</span><span class="p">(</span><span class="nx">ENUMS</span><span class="p">.</span><span class="nx">APPLE</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">case</span> <span class="nx">ENUMS</span><span class="p">.</span><span class="nx">APPLE</span><span class="err">:</span>
+        <span class="k">case</span> <span class="nx">ENUMS</span><span class="p">.</span><span class="nx">APPLE</span><span class="p">:</span>
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'APPLE'</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span>
 
-        <span class="k">case</span> <span class="nx">ENUMS</span><span class="p">.</span><span class="nx">BANANA</span><span class="err">:</span>
+        <span class="k">case</span> <span class="nx">ENUMS</span><span class="p">.</span><span class="nx">BANANA</span><span class="p">:</span>
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'BANANA'</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span>
 
-        <span class="k">case</span> <span class="nx">ENUMS</span><span class="p">.</span><span class="nx">ORANGE</span><span class="err">:</span>
+        <span class="k">case</span> <span class="nx">ENUMS</span><span class="p">.</span><span class="nx">ORANGE</span><span class="p">:</span>
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'ORANGE'</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span>
     <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p>응용하기에 따라서 엄청나게 막강해질 수도 있겠다라는 생각이 드네요. <br />
@@ -443,39 +427,37 @@ Class의 상속객체에서도 사용할 수가 있을 테구요 Property를 외
 Redux에 적용해보아도 좋을 것 같다는 생각이 드네요 ! 결국은 Enum 하나만 export 되면 되니까요  !</p>
 </blockquote>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    <span class="kr">class</span> <span class="nx">Enum</span> <span class="p">{</span>
-        <span class="nx">constructor</span><span class="p">(</span><span class="nx">keys</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">for</span><span class="p">(</span><span class="kr">const</span> <span class="nx">key</span> <span class="nx">of</span> <span class="nx">keys</span><span class="p">)</span>
-                <span class="k">this</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nx">Symbol</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">class</span> <span class="nx">Enum</span> <span class="p">{</span>
+        <span class="kd">constructor</span><span class="p">(</span><span class="nx">keys</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">for</span><span class="p">(</span><span class="kd">const</span> <span class="nx">key</span> <span class="k">of</span> <span class="nx">keys</span><span class="p">)</span>
+                <span class="k">this</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nb">Symbol</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
     
-    <span class="kr">export</span> <span class="k">default</span> <span class="k">new</span> <span class="nx">Enum</span><span class="p">([</span><span class="s1">'APPLE'</span><span class="p">,</span> <span class="s1">'BANANA'</span><span class="p">,</span> <span class="s1">'ORANGE'</span><span class="p">]);</span>
+    <span class="k">export</span> <span class="k">default</span> <span class="k">new</span> <span class="nx">Enum</span><span class="p">([</span><span class="s1">'APPLE'</span><span class="p">,</span> <span class="s1">'BANANA'</span><span class="p">,</span> <span class="s1">'ORANGE'</span><span class="p">]);</span>
     
     <span class="c1">//enum.js</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p>Enum Class를 정의하고</p>
 </blockquote>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="nx">Actions</span> <span class="nx">from</span> <span class="s1">'./actions'</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Actions</span> <span class="k">from</span> <span class="s1">'./actions'</span><span class="p">;</span>
 
 <span class="k">switch</span><span class="p">(</span><span class="nx">Actions</span><span class="p">.</span><span class="nx">APPLE</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="nx">Actions</span><span class="p">.</span><span class="nx">APPLE</span><span class="err">:</span>
+    <span class="k">case</span> <span class="nx">Actions</span><span class="p">.</span><span class="nx">APPLE</span><span class="p">:</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'APPLE'</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span>
 
-    <span class="k">case</span> <span class="nx">Actions</span><span class="p">.</span><span class="nx">BANANA</span><span class="err">:</span>
+    <span class="k">case</span> <span class="nx">Actions</span><span class="p">.</span><span class="nx">BANANA</span><span class="p">:</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'BANANA'</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span>
 
-    <span class="k">case</span> <span class="nx">Actions</span><span class="p">.</span><span class="nx">ORANGE</span><span class="err">:</span>
+    <span class="k">case</span> <span class="nx">Actions</span><span class="p">.</span><span class="nx">ORANGE</span><span class="p">:</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'ORANGE'</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c1">//APPLE 출력</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p>호출 하여 사용해 줍니다 ! <br />

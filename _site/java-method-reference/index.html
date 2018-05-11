@@ -101,7 +101,7 @@
         <section class="post">
 
             <article role="article" id="post" class="post-content" itemprop="articleBody">
-                <h3 id="java8-method-reference">- JAVA8 Method Reference</h3>
+                <h3 id="--java8-method-reference">- JAVA8 Method Reference</h3>
 
 <p>메소드 참조와 생성자 참조에 대해서 알아보도록 하겠습니다.<br />
 우리는 람다 표현식에서 알아보았듯이, 구현해야 하는 메소드의 본문을 람다 표현식으로 (익명클래스로 생성되도록 하는) 대체할 수 있다는 것을 알았습니다.<br />
@@ -110,7 +110,7 @@
 <br />
 <br /></p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">String</span> <span class="o">[]</span> <span class="n">strings</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span> <span class="o">[]</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">String</span> <span class="o">[]</span> <span class="n">strings</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span> <span class="o">[]</span> <span class="o">{</span>
         <span class="s">"6"</span><span class="o">,</span> <span class="s">"5"</span><span class="o">,</span> <span class="s">"4"</span><span class="o">,</span> <span class="s">"3"</span><span class="o">,</span> <span class="s">"2"</span><span class="o">,</span> <span class="s">"1"</span>
     <span class="o">};</span>
 
@@ -118,8 +118,7 @@
 
     <span class="k">for</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span> <span class="o">:</span> <span class="n">strings</span><span class="o">)</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>일단 간단한 예제를 하나 적어보았습니다.<br />
 한창 자바 코딩할때에는 하루에도 수십번씩 적었던 코드들이죠.<br />
@@ -127,14 +126,13 @@
 
 <p>하지만 반복적인 for문의 사용과 iterator는 굉장히 지치게 하죠.</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="k">default</span> <span class="kt">void</span> <span class="nf">forEach</span><span class="o">(</span><span class="n">Consumer</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">T</span><span class="o">&gt;</span> <span class="n">action</span><span class="o">)</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">default</span> <span class="kt">void</span> <span class="nf">forEach</span><span class="o">(</span><span class="n">Consumer</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">T</span><span class="o">&gt;</span> <span class="n">action</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">Objects</span><span class="o">.</span><span class="na">requireNonNull</span><span class="o">(</span><span class="n">action</span><span class="o">);</span>
         <span class="k">for</span> <span class="o">(</span><span class="n">T</span> <span class="n">t</span> <span class="o">:</span> <span class="k">this</span><span class="o">)</span> <span class="o">{</span>
             <span class="n">action</span><span class="o">.</span><span class="na">accept</span><span class="o">(</span><span class="n">t</span><span class="o">);</span>
         <span class="o">}</span>
     <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>그래서 자바8의 ArrayList 클래스에는 각 요소에 함수를 적용하는 forEach 메소드를 지원합니다.</p>
 
 <p>코드를 조금 수정해 볼까요 ?
@@ -142,15 +140,14 @@
 <br />
 <br /></p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">String</span> <span class="o">[]</span> <span class="n">strings</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span> <span class="o">[]</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">String</span> <span class="o">[]</span> <span class="n">strings</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span> <span class="o">[]</span> <span class="o">{</span>
         <span class="s">"6"</span><span class="o">,</span> <span class="s">"5"</span><span class="o">,</span> <span class="s">"4"</span><span class="o">,</span> <span class="s">"3"</span><span class="o">,</span> <span class="s">"2"</span><span class="o">,</span> <span class="s">"1"</span>
     <span class="o">};</span>
 
     <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">strings</span><span class="o">);</span>
     
     <span class="n">list</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">x</span><span class="o">));</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>이런식으로 간결해 지는것을 볼 수 있습니다.<br />
 하지만, 결과적으로 따지고 본다면, forEach메소드는 매개변수로 Consumer interface를 전달받죠. <br />
 물론 우리는 람다식을 이용하여, Consumer가 가지고있는 accept 메소드 구현체를 직접 전달함으로써 해결하고 있지만<br />
@@ -164,15 +161,14 @@
 <br />
 <br /></p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">String</span> <span class="o">[]</span> <span class="n">strings</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span> <span class="o">[]</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">String</span> <span class="o">[]</span> <span class="n">strings</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span> <span class="o">[]</span> <span class="o">{</span>
         <span class="s">"6"</span><span class="o">,</span> <span class="s">"5"</span><span class="o">,</span> <span class="s">"4"</span><span class="o">,</span> <span class="s">"3"</span><span class="o">,</span> <span class="s">"2"</span><span class="o">,</span> <span class="s">"1"</span>
     <span class="o">};</span>
 
     <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">strings</span><span class="o">);</span>
     
     <span class="n">list</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>이렇게 표현해 주는 것만으로, forEach에게 println을 전달해 주게 되는것이지요.<br />
 이러한 예에서 볼 수 있듯이 :: 연산자는 메소드 이름과 클래스를 분리하거나, 메소드 이름과 객체의 이름을 분리합니다.<br />
@@ -202,9 +198,9 @@ ex) System.out::println은 x -&gt; System.out.println(x)와 동일합니다.<br 
 <br />
 <br /></p>
 
-<h4 id="section">- 생성자 참조</h4>
+<h4 id="--생성자-참조">- 생성자 참조</h4>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="nd">@Data</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Data</span>
     <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
         <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
         <span class="kd">private</span> <span class="n">String</span> <span class="n">gender</span><span class="o">;</span>
@@ -220,40 +216,36 @@ ex) System.out::println은 x -&gt; System.out.println(x)와 동일합니다.<br 
             <span class="k">this</span><span class="o">.</span><span class="na">gender</span> <span class="o">=</span> <span class="n">gender</span><span class="o">;</span>
         <span class="o">}</span>
     <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>일단 클래스를 하나 생성해볼까요.<br />
 person 클래스를 생성하여 사용하는 방법은, 생성자에 정의된 방법과 동일 합니다.</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">Person</span> <span class="n">member</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="o">();</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">Person</span> <span class="n">member</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="o">();</span>
     <span class="n">Person</span> <span class="n">member1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="o">(</span><span class="s">"dolen1"</span><span class="o">);</span>
     <span class="n">Person</span> <span class="n">member2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="o">(</span><span class="s">"dolen2"</span><span class="o">,</span> <span class="s">"man"</span><span class="o">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>이렇게 사용할 수 있겠지요 ?<br />
 하지만 우리는 람다식을 배웠기 때문에 이 식을 이렇게도 표현할 수 있다는 것을 알고 있습니다.</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">Function</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Person</span><span class="o">&gt;</span> <span class="n">myFunction</span> <span class="o">=</span> <span class="n">name</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">Person</span><span class="o">(</span><span class="n">name</span><span class="o">);</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">Function</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Person</span><span class="o">&gt;</span> <span class="n">myFunction</span> <span class="o">=</span> <span class="n">name</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">Person</span><span class="o">(</span><span class="n">name</span><span class="o">);</span>
+</code></pre></div></div>
 
 <p>또한 생성자는 메소드라는 것을 자바를 공부했다면 알고 계셔야 하는 부분 중 하나이지요?<br />
 따라서 생성자 메소드 또한 메소드 참조를 할 수 있습니다. :)</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">Function</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Person</span><span class="o">&gt;</span> <span class="n">myFunction</span> <span class="o">=</span> <span class="nl">Person:</span><span class="o">:</span><span class="k">new</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">Function</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Person</span><span class="o">&gt;</span> <span class="n">myFunction</span> <span class="o">=</span> <span class="nl">Person:</span><span class="o">:</span><span class="k">new</span><span class="o">;</span>
     <span class="n">myFunction</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="s">"dolen"</span><span class="o">);</span>
     
     <span class="n">BiFunction</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">,</span> <span class="n">Person</span><span class="o">&gt;</span> <span class="n">myFunction1</span> <span class="o">=</span> <span class="nl">Person:</span><span class="o">:</span><span class="k">new</span><span class="o">;</span>
     <span class="n">myFunction1</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="s">"dolen"</span><span class="o">,</span> <span class="s">"man"</span><span class="o">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>이렇게 말이죠 !<br />
 당연히 메소드 참조이기때문에, 메소드의 오버로딩이 적용된다는 점은 기본이겠지요 ?</p>
 
-<h4 id="section-1">- 자주 사용하는 함수형 인터페이스</h4>
+<h4 id="--자주-사용하는-함수형-인터페이스">- 자주 사용하는 함수형 인터페이스</h4>
 
 <table>
   <thead>

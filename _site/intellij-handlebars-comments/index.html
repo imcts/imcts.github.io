@@ -101,7 +101,7 @@
         <section class="post">
 
             <article role="article" id="post" class="post-content" itemprop="articleBody">
-                <h3 id="handlebars----">- Handlebars로 주석을 변경하는 방법 !!</h3>
+                <h3 id="--handlebars로-주석을-변경하는-방법-">- Handlebars로 주석을 변경하는 방법 !!</h3>
 
 <p>Handlebars 를 프로젝트에 적용해서 사용하다 보면, html 태그에 주석을 달아서 처리해야 할 일이 있지요 ?</p>
 
@@ -112,9 +112,8 @@
 
 <p>handlebars에서는 그렇지 않거든요.</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="s1">'{ {!----} }'</span> <span class="o">&lt;--</span> <span class="err">이렇게</span> <span class="err">잘</span> <span class="err">보여집니다</span><span class="p">.</span> <span class="err">주석때문에</span> <span class="err">안보이길래</span> <span class="err">중괄호</span> <span class="err">시작과</span> <span class="err">끝을</span> <span class="p">{</span> <span class="err">한칸씩</span> <span class="err">띄웠습니다</span><span class="p">.</span> <span class="p">}</span> 
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'{ {!----} }'</span> <span class="o">&lt;--</span> <span class="err">이렇게</span> <span class="err">잘</span> <span class="err">보여집니다</span><span class="p">.</span> <span class="err">주석때문에</span> <span class="err">안보이길래</span> <span class="err">중괄호</span> <span class="err">시작과</span> <span class="err">끝을</span> <span class="p">{</span> <span class="err">한칸씩</span> <span class="err">띄웠습니다</span><span class="p">.</span> <span class="p">}</span> 
+</code></pre></div></div>
 
 <p>근데 매번 주석할때마다 저걸 다 치려면 너무 힘이 들어요 :(..</p>
 
@@ -134,15 +133,14 @@
 
 <p>위처럼 수정해 주시면 정상적으로 주석이 handlebars 용으로 달리게 됩니다 ! :)</p>
 
-<h3 id="live-template">- Live Template</h3>
+<h3 id="--live-template">- Live Template</h3>
 
 <p>front-end 개발자로서 작업하면서 가장 많이 치는 코드가 뭘까요 ?</p>
 
 <p>저는 이겁니다.</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">();</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">();</span>
+</code></pre></div></div>
 
 <p>매번 저거 다 치려다 보면 너무 힘이 든데요 T ^T..</p>
 
@@ -155,33 +153,31 @@
 
 <p>이런식으로 설정하면</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">csl</span> <span class="o">+</span> <span class="nx">TAP</span> <span class="o">-&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="c1">//cursor위치);</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">csl</span> <span class="o">+</span> <span class="nx">TAP</span> <span class="o">-&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="c1">//cursor위치);</span>
+</code></pre></div></div>
 
 <p>로 이용할 수 있습니다 !</p>
 
 <p>각자 편한것들을 등록해서 사용해 보도록 해요 :)</p>
 
-<h3 id="auto-code-style">- Auto Code Style</h3>
+<h3 id="--auto-code-style">- Auto Code Style</h3>
 
 <p>코드를 치다보면 꽤나 귀찮은 작업들이 있을때가 많지요 ??</p>
 
 <p>예를 들면 저 같은 경우에는 = 를 정렬 시키는걸 아주 좋아하는데요.</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    <span class="kr">const</span> <span class="nx">testA</span>  <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">const</span> <span class="nx">testA</span>  <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
           <span class="nx">testAA</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
           
           
-    <span class="kr">const</span> <span class="nx">object</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">object</span> <span class="o">=</span> <span class="p">{</span>
         <span class="na">a</span><span class="p">:</span>   <span class="mi">333</span><span class="p">,</span>
         <span class="na">aaa</span><span class="p">:</span> <span class="mi">444</span><span class="p">,</span>
         <span class="na">aa</span><span class="p">:</span>  <span class="mi">555</span>
     <span class="p">};</span>
     
     
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>이런식으로 말이죠 !</p>
 
@@ -203,7 +199,7 @@
 
 <p>을 눌러주시면 내가 설정해놓은 컨벤션 대로 코드가 수정이 됩니다 !</p>
 
-<h3 id="power-code">- Power Code</h3>
+<h3 id="--power-code">- Power Code</h3>
 
 <p>불꽃 타이핑 !! 불꽃 타이핑을 쳐봅시다아 !!</p>
 

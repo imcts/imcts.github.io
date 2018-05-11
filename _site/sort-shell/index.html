@@ -103,8 +103,8 @@
             <article role="article" id="post" class="post-content" itemprop="articleBody">
                 <p><strong><a href="https://visualgo.net/sorting">Shell Sort View</a></strong></p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">Arr</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Arr</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">61</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">8</span><span class="p">];</span>
         <span class="c1">//this._list = new Array(100).fill(0).map(v =&gt; Math.floor(Math.random() * 100) + 1);</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">_gaps</span> <span class="o">=</span> <span class="p">[];</span>
@@ -178,22 +178,21 @@
         <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">^=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
     <span class="p">}</span>
  
-    <span class="nx">set</span> <span class="nx">gaps</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">_gaps</span> <span class="o">=</span> <span class="nx">list</span><span class="p">;}</span>
-    <span class="nx">get</span> <span class="nx">gaps</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_gaps</span><span class="p">;}</span>
-    <span class="nx">set</span> <span class="nx">list</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">_list</span> <span class="o">=</span> <span class="nx">list</span><span class="p">;}</span>
-    <span class="nx">get</span> <span class="nx">list</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_list</span><span class="p">;}</span>
+    <span class="kd">set</span> <span class="nx">gaps</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">_gaps</span> <span class="o">=</span> <span class="nx">list</span><span class="p">;}</span>
+    <span class="kd">get</span> <span class="nx">gaps</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_gaps</span><span class="p">;}</span>
+    <span class="kd">set</span> <span class="nx">list</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">_list</span> <span class="o">=</span> <span class="nx">list</span><span class="p">;}</span>
+    <span class="kd">get</span> <span class="nx">list</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_list</span><span class="p">;}</span>
 <span class="p">}</span>
  
  
 <span class="k">new</span> <span class="nx">Arr</span><span class="p">().</span><span class="nx">shellSort</span><span class="p">();</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>insert sort 방법은 하나씩 순회하며 비교하지만 shell sort의 경우에는 Gap 수를 구하여 확장 합니다.</p>
 
 <p>즉 전체 배열을 순회하면서, 맨뒤에서부터 삽입 정렬을 수행하는데, 그 대상이 -1번째방이 아니라, - gap의 숫자와 비교하게 되는 거죠.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  --- 여기서부터 아래는 gaps[3, 2, 1] 의 방식으로 소팅하는 방법 입니다.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  --- 여기서부터 아래는 gaps[3, 2, 1] 의 방식으로 소팅하는 방법 입니다.
 
 
   [61, 85, 19, 88, 68, 8, 70, 29] 
@@ -238,8 +237,7 @@
   [8, 19, 29, 61, 68, 70, 88, 85]
 
   더이상 소팅할게 없으므로 종료 !
-</code></pre>
-</div>
+</code></pre></div></div>
 
             </article>
 

@@ -101,9 +101,9 @@
         <section class="post">
 
             <article role="article" id="post" class="post-content" itemprop="articleBody">
-                <h3 id="generic">- Generic</h3>
+                <h3 id="--generic">- Generic</h3>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
  
 <span class="cm">/**
@@ -163,8 +163,7 @@
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span><span class="o">.</span><span class="na">test</span><span class="o">(</span><span class="s">"String"</span><span class="o">));</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>제네릭 클래스</strong></p>
 <ol>
@@ -182,13 +181,12 @@
   <li>여러개라면 &lt; E, T &gt; 등 콤마로 구분하여 선언가능해요 !</li>
 </ol>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="c1">//기본 사용방법</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//기본 사용방법</span>
 <span class="n">List</span><span class="o">&lt;?&gt;</span> <span class="n">wildList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
 
 <span class="c1">//강제성</span>
 <span class="n">List</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">wildList1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
             </article>
 

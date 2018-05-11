@@ -103,8 +103,8 @@
             <article role="article" id="post" class="post-content" itemprop="articleBody">
                 <p><strong><a href="https://visualgo.net/sorting">Select Sort View</a></strong></p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">Arr</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Arr</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">_list</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">100</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nx">v</span> <span class="o">=&gt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
     <span class="p">}</span>
  
@@ -167,14 +167,13 @@
         <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">^=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
     <span class="p">}</span>
  
-    <span class="nx">set</span> <span class="nx">list</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">_list</span> <span class="o">=</span> <span class="nx">list</span><span class="p">;}</span>
-    <span class="nx">get</span> <span class="nx">list</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_list</span><span class="p">;}</span>
+    <span class="kd">set</span> <span class="nx">list</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">_list</span> <span class="o">=</span> <span class="nx">list</span><span class="p">;}</span>
+    <span class="kd">get</span> <span class="nx">list</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_list</span><span class="p">;}</span>
 <span class="p">}</span>
  
  
 <span class="k">new</span> <span class="nx">Arr</span><span class="p">().</span><span class="nx">selectSort</span><span class="p">();</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>셀렉트 정렬방식은 모든 배열을 한바퀴 순회하여 제일 작은 숫자를 찾아내고,</p>
 

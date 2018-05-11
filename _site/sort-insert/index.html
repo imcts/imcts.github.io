@@ -103,8 +103,8 @@
             <article role="article" id="post" class="post-content" itemprop="articleBody">
                 <p><strong><a href="https://visualgo.net/sorting">Insert Sort View</a></strong></p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">Arr</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Arr</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">48</span><span class="p">];</span>
         <span class="c1">//this._list = new Array(100).fill(0).map(v =&gt; Math.floor(Math.random() * 100) + 1);</span>
     <span class="p">}</span>
@@ -148,14 +148,13 @@
         <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">^=</span> <span class="k">this</span><span class="p">.</span><span class="nx">list</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
     <span class="p">}</span>
  
-    <span class="nx">set</span> <span class="nx">list</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">_list</span> <span class="o">=</span> <span class="nx">list</span><span class="p">;}</span>
-    <span class="nx">get</span> <span class="nx">list</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_list</span><span class="p">;}</span>
+    <span class="kd">set</span> <span class="nx">list</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">_list</span> <span class="o">=</span> <span class="nx">list</span><span class="p">;}</span>
+    <span class="kd">get</span> <span class="nx">list</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_list</span><span class="p">;}</span>
 <span class="p">}</span>
  
  
 <span class="k">new</span> <span class="nx">Arr</span><span class="p">().</span><span class="nx">selectSort</span><span class="p">();</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>인서트의 경우에는 한번 전위로 순회하며 다시 역순회 합니다.</p>
 

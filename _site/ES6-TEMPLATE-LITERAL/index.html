@@ -101,11 +101,10 @@
         <section class="post">
 
             <article role="article" id="post" class="post-content" itemprop="articleBody">
-                <h3 id="javascript---">1. javascript 의 문자열의 사용</h3>
+                <h3 id="1-javascript-의-문자열의-사용">1. javascript 의 문자열의 사용</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    <span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s1">'string'</span><span class="p">;</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s1">'string'</span><span class="p">;</span>
+</code></pre></div></div>
 
 <p>자바스크립트에서 String 을 사용하는 방법입니다.<br />
 너무도 당연하고 너무도 간단하지요 ?<br />
@@ -116,7 +115,7 @@
 <br />
 <br /></p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    <span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s1">'저는 총 '</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s1">'저는 총 '</span><span class="p">;</span>
     
     <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
        <span class="k">if</span><span class="p">(</span><span class="nx">i</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> 
@@ -128,8 +127,7 @@
     <span class="nx">str</span> <span class="o">+=</span> <span class="s1">'까지 셀 줄 압니다'</span><span class="p">;</span>
     
     <span class="c1">//"저는 총 0부터1, 2, 3, 4, 5, 6, 7, 8, 9 까지 셀 줄 압니다"</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>간단한 예제를 한번 준비해보았습니다.<br />
 아마 지금도 많이 치고 있고, 앞으로도 수도 없이 작성해야 하는 코드 종류 중에 하나이겠지요.<br />
@@ -138,20 +136,19 @@
 
 <p>그래서 템플릿 리터럴이 등장하게 되었습니다.</p>
 
-<h4 id="syntax">- SYNTAX</h4>
+<h4 id="--syntax">- SYNTAX</h4>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    <span class="kr">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="err">`</span><span class="nx">dolen</span><span class="err">`</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="s2">`dolen`</span><span class="p">;</span>
     
-    <span class="kr">const</span> <span class="nx">lineStr</span> <span class="o">=</span> <span class="err">`</span>
-        <span class="nx">string</span> <span class="nx">text1</span> 
-        <span class="nx">string</span> <span class="nx">text2</span>
-    <span class="err">`</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">lineStr</span> <span class="o">=</span> <span class="s2">`
+        string text1 
+        string text2
+    `</span><span class="p">;</span>
     
-    <span class="kr">const</span> <span class="nx">replaceStr</span> <span class="o">=</span> <span class="err">`</span><span class="nx">my</span> <span class="nx">nick</span> <span class="nx">name</span> <span class="nx">is</span> <span class="nx">$</span><span class="p">{</span><span class="nx">name</span><span class="p">}</span><span class="err">`</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">replaceStr</span> <span class="o">=</span> <span class="s2">`my nick name is </span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
     
-    <span class="kr">const</span> <span class="nx">funcStr</span> <span class="o">=</span> <span class="nx">someFnc</span> <span class="err">`</span><span class="nx">my</span> <span class="nx">nick</span> <span class="nx">name</span> <span class="nx">is</span> <span class="nx">$</span><span class="p">{</span><span class="nx">name</span><span class="p">}</span><span class="err">`</span><span class="p">;</span>
-</code></pre>
-</div>
+    <span class="kd">const</span> <span class="nx">funcStr</span> <span class="o">=</span> <span class="nx">someFnc</span> <span class="s2">`my nick name is </span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+</code></pre></div></div>
 
 <p>사용 방법은 무척이나 간단합니다.<br />
 back-tic key (키보드 숫자 1키 좌측에 위치)를 사용하여 시작하며 마찬가지 닫아줌으로서 종료됩니다.<br />
@@ -160,65 +157,61 @@ back-tic key (키보드 숫자 1키 좌측에 위치)를 사용하여 시작하�
 <br />
 <br /></p>
 
-<h4 id="multi-line">- Multi Line</h4>
+<h4 id="--multi-line">- Multi Line</h4>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    <span class="kd">let</span> <span class="nx">multiStrOrigin</span> <span class="o">=</span> <span class="s1">'string '</span><span class="p">;</span>
-    <span class="nx">multiStrOrigin</span> <span class="o">+=</span> <span class="s1">'\n'</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">let</span> <span class="nx">multiStrOrigin</span> <span class="o">=</span> <span class="s1">'string '</span><span class="p">;</span>
+    <span class="nx">multiStrOrigin</span> <span class="o">+=</span> <span class="s1">'</span><span class="err">\</span><span class="s1">n'</span><span class="p">;</span>
     <span class="nx">multiStrOrigin</span> <span class="o">+=</span> <span class="s1">'new line'</span><span class="p">;</span>
     
     
     
-    <span class="kr">const</span> <span class="nx">multiStrNew</span> <span class="o">=</span> <span class="err">`</span>
-        <span class="nx">string</span>
-        <span class="k">new</span> <span class="nx">line</span>
-    <span class="err">`</span><span class="p">;</span>
-</code></pre>
-</div>
+    <span class="kd">const</span> <span class="nx">multiStrNew</span> <span class="o">=</span> <span class="s2">`
+        string
+        new line
+    `</span><span class="p">;</span>
+</code></pre></div></div>
 
 <p>ES6의 템플릿 리터럴은 라인 개행을 자동으로 진행해 줍니다.<br />
 그렇다면 \n이 들어있지 않은채로 새로운 방식으로 그냥 보여주기만 그렇게 보여주는 것인가 ?</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    <span class="kr">const</span> <span class="nx">multiStrNew</span> <span class="o">=</span> <span class="err">`</span>
-        <span class="nx">string</span>
-        <span class="k">new</span> <span class="nx">line</span>
-    <span class="err">`</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">const</span> <span class="nx">multiStrNew</span> <span class="o">=</span> <span class="s2">`
+        string
+        new line
+    `</span><span class="p">;</span>
     
-    <span class="nx">multiStrNew</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">'\n'</span><span class="p">)</span>
+    <span class="nx">multiStrNew</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">'</span><span class="err">\</span><span class="s1">n'</span><span class="p">)</span>
     <span class="mi">0</span>
-    <span class="nx">multiStrNew</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s1">'\n'</span><span class="p">)</span>
+    <span class="nx">multiStrNew</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s1">'</span><span class="err">\</span><span class="s1">n'</span><span class="p">)</span>
     <span class="mi">32</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>그렇지 않고 \n을 치환하여 준다는 사실을 알 수 있습니다.  :)</p>
 
-<h4 id="expression-interpolation--">- Expression interpolation (삽입 표현식)</h4>
+<h4 id="--expression-interpolation-삽입-표현식">- Expression interpolation (삽입 표현식)</h4>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    <span class="kr">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-    <span class="kr">const</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
     
     <span class="kd">let</span> <span class="nx">str</span> <span class="o">=</span> <span class="s1">'a is '</span> <span class="o">+</span> <span class="nx">a</span> <span class="o">+</span> <span class="s1">' and b is '</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>기존 자바스크립트로 할 수 있는 표현 방식 입니다.<br />
 이를 타개하기 위해서 ES6에서는 이런 식의 삽입 표현식이 도입되었습니다.</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    <span class="kr">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
-    <span class="kr">const</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
     
-    <span class="kr">const</span> <span class="nx">str</span> <span class="o">=</span> <span class="err">`</span><span class="nx">a</span> <span class="nx">is</span> <span class="nx">$</span><span class="p">{</span> <span class="nx">a</span> <span class="p">}</span> <span class="nx">and</span> <span class="nx">b</span> <span class="nx">is</span> <span class="nx">$</span><span class="p">{</span> <span class="nx">b</span> <span class="p">}</span><span class="err">`</span><span class="p">;</span>
-</code></pre>
-</div>
+    <span class="kd">const</span> <span class="nx">str</span> <span class="o">=</span> <span class="s2">`a is </span><span class="p">${</span> <span class="nx">a</span> <span class="p">}</span><span class="s2"> and b is </span><span class="p">${</span> <span class="nx">b</span> <span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+</code></pre></div></div>
 
 <p>굉장히 심플해졌죠 ? :)</p>
 
-<h4 id="tagged-template-literals">-  Tagged template literals</h4>
+<h4 id="---tagged-template-literals">-  Tagged template literals</h4>
 
 <p>template literals 의 더욱 발전된 한 형태는 tagged template literals 입니다.<br />
 function를 사용하여 template literals 의 출력을 변형하는데 그를 이용할 수 있습니다.</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    <span class="kd">function</span> <span class="nx">tag</span><span class="p">(</span><span class="nx">strings</span><span class="p">,</span> <span class="p">...</span><span class="nx">values</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">function</span> <span class="nx">tag</span><span class="p">(</span><span class="nx">strings</span><span class="p">,</span> <span class="p">...</span><span class="nx">values</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">strings</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="c1">// "Hello "</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">strings</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span> <span class="c1">// " world "</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">strings</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span> <span class="c1">// ""</span>
@@ -228,32 +221,30 @@ function를 사용하여 template literals 의 출력을 변형하는데 그를 
       <span class="k">return</span> <span class="s2">"return string"</span><span class="p">;</span>
     <span class="p">}</span>
     
-    <span class="nx">tag</span><span class="err">`</span><span class="nx">Hello</span> <span class="nx">$</span><span class="p">{</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span> <span class="p">}</span> <span class="nx">world</span> <span class="nx">$</span><span class="p">{</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span> <span class="p">}</span><span class="err">`</span><span class="p">;</span>
+    <span class="nx">tag</span><span class="s2">`Hello </span><span class="p">${</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span> <span class="p">}</span><span class="s2"> world </span><span class="p">${</span> <span class="nx">a</span> <span class="o">*</span> <span class="nx">b</span> <span class="p">}</span><span class="s2">`</span><span class="p">;</span>
     <span class="c1">//return string </span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>이처럼 tag함수는 문자열로 이루어진 배열과, ${ expressions }로 이루어진 값들로 구성되게 됩니다.<br />
 문자열은 반드시 strings + 1의 길이로 이루어져있습니다. 마지막에는 반드시 빈 공백 문자열이 들어옵니다.</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    <span class="kr">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">'닉네임:dolen'</span><span class="p">;</span>
-    <span class="kr">const</span> <span class="nx">age</span>  <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">'닉네임:dolen'</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">age</span>  <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
     
-    <span class="kr">const</span> <span class="nx">template</span> <span class="o">=</span> <span class="p">(</span><span class="nx">strings</span><span class="p">,</span> <span class="p">...</span><span class="nx">values</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">template</span> <span class="o">=</span> <span class="p">(</span><span class="nx">strings</span><span class="p">,</span> <span class="p">...</span><span class="nx">values</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="kd">let</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">strings</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
         
         <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">values</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> 
-            <span class="nx">r</span> <span class="o">+=</span> <span class="err">`</span><span class="nx">$</span><span class="p">{</span> <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">values</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span> <span class="p">}</span><span class="nx">$</span><span class="p">{</span> <span class="nx">strings</span><span class="p">[</span><span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="p">}</span><span class="err">`</span><span class="p">;</span>
+            <span class="nx">r</span> <span class="o">+=</span> <span class="s2">`</span><span class="p">${</span> <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">values</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span> <span class="p">}${</span> <span class="nx">strings</span><span class="p">[</span><span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="p">}</span><span class="s2">`</span><span class="p">;</span>
         
         
         <span class="k">return</span> <span class="nx">r</span><span class="p">;</span>
     <span class="p">};</span>
     
-    <span class="kr">const</span> <span class="nx">params</span> <span class="o">=</span> <span class="nx">template</span> <span class="err">`</span><span class="o">/</span><span class="nx">register</span><span class="p">?</span><span class="nx">name</span><span class="o">=</span><span class="nx">$</span><span class="p">{</span> <span class="nx">name</span> <span class="p">}</span><span class="o">&amp;</span><span class="nx">age</span><span class="o">=</span><span class="nx">$</span><span class="p">{</span> <span class="nx">age</span> <span class="p">}</span><span class="err">`</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">params</span> <span class="o">=</span> <span class="nx">template</span> <span class="s2">`/register?name=</span><span class="p">${</span> <span class="nx">name</span> <span class="p">}</span><span class="s2">&amp;age=</span><span class="p">${</span> <span class="nx">age</span> <span class="p">}</span><span class="s2">`</span><span class="p">;</span>
     
     <span class="c1">//  /register?name=%EB%8B%89%EB%84%A4%EC%9E%84%3Adolen&amp;age=30</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>함수를 사용하여 문자열의 결과값을 반환할 수 있기 때문에, 잘만 사용한다면 정말 template 의 형태로 응용할 수 있어 보입니다. :)</p>
 
@@ -261,9 +252,9 @@ function를 사용하여 template literals 의 출력을 변형하는데 그를 
 <br />
 <br /></p>
 
-<h4 id="dom-document-object-model-controller">- DOM (Document Object Model) Controller</h4>
+<h4 id="--dom-document-object-model-controller">- DOM (Document Object Model) Controller</h4>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    <span class="kr">const</span> <span class="nx">list</span> <span class="o">=</span> <span class="p">[</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">const</span> <span class="nx">list</span> <span class="o">=</span> <span class="p">[</span>
         <span class="p">{</span>
             <span class="na">name</span><span class="p">:</span> <span class="s1">'name1'</span><span class="p">,</span>
             <span class="na">age</span><span class="p">:</span>  <span class="mi">30</span><span class="p">,</span>
@@ -282,8 +273,7 @@ function를 사용하여 template literals 의 출력을 변형하는데 그를 
             <span class="na">grade</span><span class="p">:</span> <span class="mi">1</span>
         <span class="p">}</span>
     <span class="p">];</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>기본적인 mock data list를 하나 선언해두고, DOM에 대한 이야기를 이어나가보겠습니다.<br />
 수많은 서버 렌더링으로 그려지는 웹사이트들이 많이 존재하고 있습니다.<br />
@@ -291,11 +281,11 @@ function를 사용하여 template literals 의 출력을 변형하는데 그를 
 그 결과를 client에서 rendering 하는 방식도 많이 구현되어 있습니다.<br />
 이럴 경우에 client는 어떤 방식의 rendering을 취하게 될까요 ??</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    
     <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="s1">'&lt;div&gt;'</span><span class="p">;</span>
     
     
-    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="nx">of</span> <span class="nx">list</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="k">of</span> <span class="nx">list</span><span class="p">)</span> <span class="p">{</span>
         
         <span class="nx">result</span> <span class="o">+=</span> <span class="s1">'&lt;div&gt;'</span><span class="p">;</span>
         
@@ -318,19 +308,18 @@ function를 사용하여 template literals 의 출력을 변형하는데 그를 
     <span class="nx">result</span> <span class="o">+=</span> <span class="s1">'&lt;/div&gt;'</span><span class="p">;</span>
     
     <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>이런식으로 표현하게 될 겁니다.</p>
 
 <p>하지만 이것만으로 문제가 해결되진 않죠.<br />
 왜냐면 우리에겐 각종 attribute가 존재하고 있으니까요.</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    
     <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="s1">'&lt;div class="wrap"&gt;'</span><span class="p">;</span>
     
     
-    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="nx">of</span> <span class="nx">list</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="k">of</span> <span class="nx">list</span><span class="p">)</span> <span class="p">{</span>
         
         <span class="nx">result</span> <span class="o">+=</span> <span class="s1">'&lt;div class="employee"&gt;'</span><span class="p">;</span>
         
@@ -353,8 +342,7 @@ function를 사용하여 template literals 의 출력을 변형하는데 그를 
     <span class="nx">result</span> <span class="o">+=</span> <span class="s1">'&lt;/div&gt;'</span><span class="p">;</span>
     
     <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>단순히 css class를 추가하였습니다.<br />
 복잡도는 그렇게 증가하지 않았지요 ?<br />
@@ -364,40 +352,38 @@ function를 사용하여 template literals 의 출력을 변형하는데 그를 
 
 <p>한때는 위 방식이 너무 힘이 들고 번거로워서, 다른 방법을 모색하기도 했었습니다.</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    <span class="kr">const</span> <span class="nx">template</span> <span class="o">=</span> <span class="s1">'&lt;div class="employee&gt; / &lt;/div&gt;'</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">const</span> <span class="nx">template</span> <span class="o">=</span> <span class="s1">'&lt;div class="employee&gt; / &lt;/div&gt;'</span><span class="p">;</span>
     
-    <span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
         <span class="na">name</span><span class="p">:</span> <span class="s1">'name1'</span><span class="p">,</span>
         <span class="na">age</span><span class="p">:</span>  <span class="mi">30</span>
     <span class="p">};</span>
     
     <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">template</span><span class="p">;</span>
     
-    <span class="k">for</span><span class="p">(</span><span class="kr">const</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">data</span><span class="p">)</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">const</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">data</span><span class="p">)</span>
         <span class="nx">result</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="s1">' + i + '</span><span class="p">,</span> <span class="s1">'g'</span><span class="p">),</span> <span class="nx">data</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>이런식으로 문자열을 replace하는거죠 !<br />
 하지만 그보다는 ES6의 Template Literal을 이용하는 편이 더 좋아 보입니다.<br />
 <br />
 <br /></p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code>    
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    
     <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
                 
-    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="nx">of</span> <span class="nx">list</span><span class="p">)</span> 
-        <span class="nx">result</span> <span class="o">+=</span> <span class="err">`</span>
-            <span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"employee ${i.grade === 1 ? 'owner' : 'normal'}"</span><span class="o">&gt;</span>
-                <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"position"</span><span class="o">&gt;</span><span class="nx">$</span><span class="p">{</span><span class="nx">i</span><span class="p">.</span><span class="nx">grade</span> <span class="o">===</span> <span class="mi">1</span> <span class="p">?</span> <span class="s1">'사장'</span> <span class="p">:</span> <span class="s1">'사원'</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
-</span>                <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"name"</span><span class="o">&gt;</span><span class="nx">$</span><span class="p">{</span> <span class="nx">i</span><span class="p">.</span><span class="nx">name</span> <span class="p">}</span><span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
-</span>                <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"age"</span><span class="o">&gt;</span><span class="nx">$</span><span class="p">{</span> <span class="nx">i</span><span class="p">.</span><span class="nx">age</span> <span class="p">}</span><span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
-</span>            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>        <span class="err">`</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="k">of</span> <span class="nx">list</span><span class="p">)</span> 
+        <span class="nx">result</span> <span class="o">+=</span> <span class="s2">`
+            &lt;div class="employee </span><span class="p">${</span><span class="nx">i</span><span class="p">.</span><span class="nx">grade</span> <span class="o">===</span> <span class="mi">1</span> <span class="p">?</span> <span class="s1">'owner'</span> <span class="p">:</span> <span class="s1">'normal'</span><span class="p">}</span><span class="s2">"&gt;
+                &lt;span class="position"&gt;</span><span class="p">${</span><span class="nx">i</span><span class="p">.</span><span class="nx">grade</span> <span class="o">===</span> <span class="mi">1</span> <span class="p">?</span> <span class="s1">'사장'</span> <span class="p">:</span> <span class="s1">'사원'</span><span class="p">}</span><span class="s2">&lt;/span&gt;
+                &lt;span class="name"&gt;</span><span class="p">${</span> <span class="nx">i</span><span class="p">.</span><span class="nx">name</span> <span class="p">}</span><span class="s2">&lt;/span&gt;
+                &lt;span class="age"&gt;</span><span class="p">${</span> <span class="nx">i</span><span class="p">.</span><span class="nx">age</span> <span class="p">}</span><span class="s2">&lt;/span&gt;
+            &lt;/div&gt;
+        `</span><span class="p">;</span>
     
-    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="err">`</span><span class="o">&lt;</span><span class="nx">div</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"wrap"</span><span class="o">&gt;</span><span class="nx">$</span><span class="p">{</span> <span class="nx">result</span> <span class="p">}</span><span class="o">&lt;</span><span class="sr">/div&gt;`</span><span class="se">)</span><span class="err">;
-</span></code></pre>
-</div>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">`&lt;div class="wrap"&gt;</span><span class="p">${</span> <span class="nx">result</span> <span class="p">}</span><span class="s2">&lt;/div&gt;`</span><span class="p">);</span>
+</code></pre></div></div>
 
 <p>Template Literal 이었습니다. :)</p>
 

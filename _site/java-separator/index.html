@@ -101,9 +101,9 @@
         <section class="post">
 
             <article role="article" id="post" class="post-content" itemprop="articleBody">
-                <h3 id="section">- 가변인자</h3>
+                <h3 id="--가변인자">- 가변인자</h3>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Gabyun</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Gabyun</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">test</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="n">String</span><span class="o">...</span> <span class="n">test</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">test</span><span class="o">);</span>
  
@@ -118,23 +118,21 @@
         <span class="n">test</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="n">srr</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>가변인자</strong>란 동일한 타입의 매개변수를 배열로 넘겨받아 사용하는 매개변수 입니다.</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">fnc</span> <span class="o">=</span> <span class="p">(...</span><span class="nx">args</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">fnc</span> <span class="o">=</span> <span class="p">(...</span><span class="nx">args</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="nx">args</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">v</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">););</span>
 <span class="p">};</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Javascrip의 spread operator 와 동일 하다고 보면 됩니다.</p>
 
-<h3 id="enum">- ENUM</h3>
+<h3 id="--enum">- ENUM</h3>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Enum</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Enum</span> <span class="o">{</span>
  
     <span class="kd">public</span> <span class="kd">enum</span> <span class="n">Test</span> <span class="o">{</span>
         <span class="n">A</span><span class="o">,</span> <span class="n">B</span><span class="o">,</span> <span class="n">C</span><span class="o">,</span> <span class="n">D</span><span class="o">;</span>
@@ -166,16 +164,14 @@
  
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>기본적인 사용법은 위와 같습니다.</p>
 
 <p>특정 enum 아래에 상수를 선언하게 되면</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Test</span> <span class="n">A</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Test</span><span class="o">();</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Test</span> <span class="n">A</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Test</span><span class="o">();</span>
+</code></pre></div></div>
 
 <p>라고 선언되는 것과 동일한 결과를 얻습니다.</p>
 
@@ -183,7 +179,7 @@
 
 <p>스위치 케이스는 enum 형태의 열거형 자료가 들어오면 자연스럽게 그 열거형의 형태로 변경시켜주기 때문에 사용하기 용이합니다.</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Enum</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Enum</span> <span class="o">{</span>
  
     <span class="kd">public</span> <span class="kd">enum</span> <span class="n">Test</span> <span class="o">{</span>
         <span class="n">A</span><span class="o">,</span> <span class="n">B</span><span class="o">,</span> <span class="n">C</span><span class="o">,</span> <span class="n">D</span><span class="o">,</span>
@@ -253,8 +249,7 @@
  
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ol>
   <li>메소드를 enum 내부에서 오버라이드하거나, 생성하여 쓸 수도 있습니다.</li>

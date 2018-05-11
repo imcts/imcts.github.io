@@ -101,24 +101,23 @@
         <section class="post">
 
             <article role="article" id="post" class="post-content" itemprop="articleBody">
-                <h3 id="java8-interface-">- JAVA8 Interface에 관하여</h3>
+                <h3 id="--java8-interface에-관하여">- JAVA8 Interface에 관하여</h3>
 
 <p>자바8 에 접어들면서 가장 크게 변한 부분이 바로 interface가 아닐까 싶습니다.<br />
 오늘은 어떤식으로 interface가 변경되었고 또 어떤식으로 응용이 가능한지에 대해 정리해보았습니다.</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">myInterface</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">myInterface</span> <span class="o">{</span>
         <span class="kd">public</span> <span class="kt">void</span> <span class="nf">method</span><span class="o">();</span> 
     <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>자바 8 이전의 interface의 역할은 다중 상속을 지원하고, 표준 규격을 강제하며, 확장성과 유지보수성을 높이고 다형성을 지원하기 위해서 사용되었습니다.<br />
 따라서 interface에는 메소드의 정의를 해놓은 추상메소드만이 존재할 수 있었습니다. 또한 변수를 선언할 수 있었지만, 권고하지 않았지요.<br />
 <strong>자바8의 인터페이스</strong>는 어떻게 변경 되었는지 알아볼까요.</p>
 
-<h4 id="section">- 인터페이스의 변수선언 및 메소드 구현</h4>
+<h4 id="--인터페이스의-변수선언-및-메소드-구현">- 인터페이스의 변수선언 및 메소드 구현</h4>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">InterfaceInnerVariable</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">InterfaceInnerVariable</span> <span class="o">{</span>
         <span class="kt">int</span> <span class="n">AGE2</span> <span class="o">=</span> <span class="mi">28</span><span class="o">;</span> 
         <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">AGE</span> <span class="o">=</span> <span class="mi">30</span><span class="o">;</span> <span class="c1">//위 코드와 동일한 역할을 합니다.</span>
     
@@ -137,17 +136,16 @@
         <span class="o">}</span>
     <span class="o">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>인터페이스에 선언된 변수는 기본적으로 <strong>public static final</strong> 이 선언되어 집니다.<br />
 즉 <strong>public static final int AGE = 30; === int AGE = 30;</strong> 이렇게 두 가지는 동일합니다. <br />
 또한 인터페이스에는 <strong>default</strong>를 선언함으로서 메소드의 body부분을 구현할 수 있게 되었습니다.<br />
 물론 <strong>static</strong>메소드 또한 구현할 수 있게 되었지요.</p>
 
-<h4 id="section-1">- 상속</h4>
+<h4 id="--상속">- 상속</h4>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="kd">class</span> <span class="nc">Extends</span> <span class="kd">implements</span> <span class="n">InterfaceInnerVariable</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">class</span> <span class="nc">Extends</span> <span class="kd">implements</span> <span class="n">InterfaceInnerVariable</span> <span class="o">{</span>
         <span class="nd">@Override</span>
         <span class="kd">public</span> <span class="kt">void</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
             <span class="c1">//method body 구현</span>
@@ -169,8 +167,7 @@
         <span class="o">}</span>
     
     <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>상속은 동일하게 implements로 진행하시면 됩니다.<br />
 하지만 자세히 보시면 @Override해야 하는 메소드가 1개 밖에 없는 것을 보실 수 있습니다.<br />
@@ -178,13 +175,13 @@
 getCount()를 구현하지 않았음에도 33이 출력되는 것을 확인할 수 있기 때문이죠.<br />
 물론 static 메소드의 경우에는 InterfaceInnerVariable 로 바로 접근이 가능하겠지요 :)</p>
 
-<h4 id="section-2">- 다중상속</h4>
+<h4 id="--다중상속">- 다중상속</h4>
 
 <p>자바에서 인터페이스를 사용하는 또 다른 이유가 바로 다중상속을 구현하기 위해서인데요.<br />
 그렇다면 동일한 메소드명을 가지고있는 인터페이스 2가지를 상속받았을때에는 어떻게 될까요??<br />
 일단 인터페이스를 하나 더 만들어 보겠습니다.</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
     <span class="kd">interface</span> <span class="nc">CommonStaticMethod</span> <span class="o">{</span>
         <span class="k">default</span> <span class="kt">int</span> <span class="nf">getCount</span><span class="o">(</span><span class="kt">int</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
             <span class="k">return</span> <span class="mi">20</span> <span class="o">+</span> <span class="n">value</span><span class="o">;</span>
@@ -194,12 +191,11 @@ getCount()를 구현하지 않았음에도 33이 출력되는 것을 확인할 �
             <span class="k">return</span> <span class="o">(</span><span class="kt">int</span><span class="o">)(</span><span class="mi">20</span> <span class="o">+</span> <span class="n">value</span><span class="o">);</span>
         <span class="o">}</span>
     <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>그리고 아까 만들어두었던 클래스에 상속시켜 볼까요 ?</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="kd">class</span> <span class="nc">Extends</span> <span class="kd">implements</span> <span class="n">InterfaceInnerVariable</span><span class="o">,</span> <span class="n">CommonStaticMethod</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">class</span> <span class="nc">Extends</span> <span class="kd">implements</span> <span class="n">InterfaceInnerVariable</span><span class="o">,</span> <span class="n">CommonStaticMethod</span> <span class="o">{</span>
         <span class="nd">@Override</span>
         <span class="kd">public</span> <span class="kt">void</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
             <span class="c1">//do something..</span>
@@ -211,8 +207,7 @@ getCount()를 구현하지 않았음에도 33이 출력되는 것을 확인할 �
             <span class="k">return</span> <span class="n">CommonStaticMethod</span><span class="o">.</span><span class="na">super</span><span class="o">.</span><span class="na">getCount</span><span class="o">(</span><span class="n">value</span><span class="o">);</span> 
         <span class="o">}</span>
     <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>InterfaceInnerVariable와 CommonStaticMethod</strong>는 둘다 getCount() 메소드를 보유하고 있습니다.<br />
 따라서 두 메소드는 충돌하게 되며, 반드시 상속받은 자식 객체에서 구현해주어야 합니다.<br />

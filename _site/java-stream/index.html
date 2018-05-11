@@ -101,7 +101,7 @@
         <section class="post">
 
             <article role="article" id="post" class="post-content" itemprop="articleBody">
-                <h3 id="java8-stream">- JAVA8 Stream</h3>
+                <h3 id="--java8-stream">- JAVA8 Stream</h3>
 
 <p>자바 <strong>스트림(Stream)</strong>에 대해서 정리해보려 합니다.</p>
 
@@ -117,8 +117,8 @@
   <li>스트림 연산은 가능하면 지연시켜 둡니다. 즉 연산 결과가 필요하기 전까지는 실행되지 않습니다.</li>
 </ol>
 
-<h4 id="section">- 반복에서 스트림 연산으로의 전환</h4>
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">"When one thinks of the labors which the the English have devoted to digging the tunnel under the Thames, the tremendous expenditure of energy involved, and then how a little accident may for a long time obstruct the entire enterprise, one will be able to form a fitting conception of this critical undertaking as a whole."</span><span class="o">;</span>
+<h4 id="--반복에서-스트림-연산으로의-전환">- 반복에서 스트림 연산으로의 전환</h4>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">"When one thinks of the labors which the the English have devoted to digging the tunnel under the Thames, the tremendous expenditure of energy involved, and then how a little accident may for a long time obstruct the entire enterprise, one will be able to form a fitting conception of this critical undertaking as a whole."</span><span class="o">;</span>
     
     <span class="n">String</span> <span class="o">[]</span> <span class="n">strings</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">" "</span><span class="o">);</span>
 
@@ -129,25 +129,23 @@
             <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">;</span>
 
     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">count</span><span class="o">);</span> <span class="c1">//21</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>컬렉션을 처리할때 보통은 요소를 순회하면서 각 요소를 이용해 원하는 작업을 수행하는데요, 예를 들자면 책에 긴 단어가 얼마나 나오는지 알아보고자 한다면 위 코드처럼 작성하곤 했습니다.<br />
 <br /></p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="kt">long</span> <span class="n">cnt</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">strings</span><span class="o">).</span><span class="na">stream</span><span class="o">().</span><span class="na">filter</span><span class="o">(</span><span class="n">v</span> <span class="o">-&gt;</span> <span class="n">v</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="o">).</span><span class="na">count</span><span class="o">();</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kt">long</span> <span class="n">cnt</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">strings</span><span class="o">).</span><span class="na">stream</span><span class="o">().</span><span class="na">filter</span><span class="o">(</span><span class="n">v</span> <span class="o">-&gt;</span> <span class="n">v</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="o">).</span><span class="na">count</span><span class="o">();</span>
     
     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">cnt</span><span class="o">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>스트림을 이용하면 이처럼 간단하게 표현할 수 있게 됩니다<br />
 카운팅을 증명하기 위해 로직이나 루프를 살펴볼 필요가 없고 메서드 이름을 보면 코드가 무엇을 의도하는지를 바로 알 수 있게 해 주지요.<br />
 게다가 루프에서는 연산 순서를 자세하 작성해야 하지만 스트림은 결과만 맞으면 원하는 방식으로 연산을 운용할 수도 있습니다.</p>
 
-<h4 id="section-1">- 스트림의 생성</h4>
+<h4 id="--스트림의-생성">- 스트림의 생성</h4>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">"When one thinks of the labors which the the English have devoted to digging the tunnel under the Thames, the tremendous expenditure of energy involved, and then how a little accident may for a long time obstruct the entire enterprise, one will be able to form a fitting conception of this critical undertaking as a whole."</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">"When one thinks of the labors which the the English have devoted to digging the tunnel under the Thames, the tremendous expenditure of energy involved, and then how a little accident may for a long time obstruct the entire enterprise, one will be able to form a fitting conception of this critical undertaking as a whole."</span><span class="o">;</span>
     
     <span class="c1">//배열을 사용한 스트림의 생성</span>
     <span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">Stream</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">str</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">" "</span><span class="o">));</span>
@@ -158,27 +156,25 @@
     
     <span class="c1">//컬렉션에서 생성</span>
     <span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">stream4</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">str</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">" "</span><span class="o">)).</span><span class="na">stream</span><span class="o">();</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Collection Interface의 stream 메소드를 이용하면 어느 컬렉션이든 스트림으로 변환할 수 있습니다.<br />
 또한 일반 변수나 배열은 Stream.of를 이용하면 스트림으로 생성 가능 합니다.<br />
 빈 스트림은 Stream.empty();로 생성 가능 합니다.</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">stream5</span> <span class="o">=</span> <span class="n">Pattern</span><span class="o">.</span><span class="na">compile</span><span class="o">(</span><span class="s">" "</span><span class="o">).</span><span class="na">splitAsStream</span><span class="o">(</span><span class="s">"hello world"</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">stream5</span> <span class="o">=</span> <span class="n">Pattern</span><span class="o">.</span><span class="na">compile</span><span class="o">(</span><span class="s">" "</span><span class="o">).</span><span class="na">splitAsStream</span><span class="o">(</span><span class="s">"hello world"</span><span class="o">);</span>
     <span class="n">stream5</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span> <span class="c1">//hello world</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>또한 자바 API의 여러 메소드들은 스트림을 돌려주는데요. Patten에 있는 splitAsStream을 이용해서도 Stream을 생성할 수 있습니다.
 <br />
 <br /></p>
 
-<h4 id="section-2">- 자주 사용되는 메소드들</h4>
+<h4 id="--자주-사용되는-메소드들">- 자주 사용되는 메소드들</h4>
 
 <p>스트림 메소드 중 자주 사용되는 메소드를 알아볼게요.</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">Integer</span> <span class="o">[]</span> <span class="n">intArr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span> <span class="o">[]</span> <span class="o">{</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span> <span class="o">};</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">Integer</span> <span class="o">[]</span> <span class="n">intArr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span> <span class="o">[]</span> <span class="o">{</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span> <span class="o">};</span>
     
     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">intArr</span><span class="o">);</span> <span class="c1">//1, 2, 3, 4, 5</span>
 
@@ -187,93 +183,84 @@
     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">intArr</span><span class="o">);</span> <span class="c1">//1, 2, 3, 4, 5</span>
 
     <span class="n">intStream</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span> <span class="c1">//2, 3, 4, 5, 6</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>스트림 변환은 또 다른 스트림에 들어 있는 요소에서 파생된 요소의 스트림을 만들어 냅니다.<br />
 이 중 map 메소드는 원본 스트림에서 새로운 스트림을 mapping 해서 돌려 줍니다.<br />
 언제나 새로운 스트림이 생성되어지는 것이죠.</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">Stream</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">intStream1</span> <span class="o">=</span> <span class="n">Stream</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">intArr</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">v</span> <span class="o">-&gt;</span> <span class="n">v</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Stream</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">intStream1</span> <span class="o">=</span> <span class="n">Stream</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">intArr</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">v</span> <span class="o">-&gt;</span> <span class="n">v</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="o">);</span>
 
 <span class="n">intStream1</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span> <span class="c1">//4, 5</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>filter 메소드의 인자는 Predicate<T> 입니다.  
 즉 T를 인자로 받아서 boolean을 return 해줍니다.</T></p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">Stream</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">getLetterStream</span><span class="o">(</span><span class="n">T</span><span class="o">...</span> <span class="n">t</span><span class="o">)</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">Stream</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">getLetterStream</span><span class="o">(</span><span class="n">T</span><span class="o">...</span> <span class="n">t</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">Stream</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">t</span><span class="o">);</span>
     <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>flatMap을 설명하기 전에 위와 같은 메소드를 하나 만들어 두겠습니다.</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">"hello world"</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">"hello world"</span><span class="o">;</span>
     
     <span class="n">Stream</span><span class="o">&lt;</span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">stream6</span> <span class="o">=</span> <span class="n">Pattern</span><span class="o">.</span><span class="na">compile</span><span class="o">(</span><span class="s">""</span><span class="o">).</span><span class="na">splitAsStream</span><span class="o">(</span><span class="n">str</span><span class="o">).</span><span class="na">map</span><span class="o">(</span><span class="n">s</span> <span class="o">-&gt;</span> <span class="n">getLetterStream</span><span class="o">(</span><span class="n">s</span><span class="o">));</span>
     
     <span class="n">stream6</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span> <span class="c1">//Stream, Stream</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>위 코드를 실행해보면 [ [ “h”, “e”, “l”, “o” ], [ “w”, “o”, “r”, “l”, “d” ] ] 라는 스트림이 생성됩니다.<br />
 이 스트림을 하나의 문자열 스트림으로 펼쳐내려면 flatMap을 사용하면 됩니다</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">"hello world"</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">"hello world"</span><span class="o">;</span>
     
     <span class="n">Stream</span><span class="o">&lt;</span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">stream6</span> <span class="o">=</span> <span class="n">Pattern</span><span class="o">.</span><span class="na">compile</span><span class="o">(</span><span class="s">""</span><span class="o">).</span><span class="na">splitAsStream</span><span class="o">(</span><span class="n">str</span><span class="o">).</span><span class="na">flatMap</span><span class="o">(</span><span class="n">s</span> <span class="o">-&gt;</span> <span class="n">getLetterStream</span><span class="o">(</span><span class="n">s</span><span class="o">));</span>
     
     <span class="n">stream6</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span> <span class="c1">//h e l l o w o r l d </span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>두 개의 스트림을 하나의 스트림으로 만들어 줍니다.</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">stream7</span> <span class="o">=</span> <span class="n">Stream</span><span class="o">.</span><span class="na">concat</span><span class="o">(</span><span class="n">getLetterStream</span><span class="o">(</span><span class="s">"Hello"</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">""</span><span class="o">)),</span> <span class="n">getLetterStream</span><span class="o">(</span><span class="s">"World"</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">""</span><span class="o">)));</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">stream7</span> <span class="o">=</span> <span class="n">Stream</span><span class="o">.</span><span class="na">concat</span><span class="o">(</span><span class="n">getLetterStream</span><span class="o">(</span><span class="s">"Hello"</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">""</span><span class="o">)),</span> <span class="n">getLetterStream</span><span class="o">(</span><span class="s">"World"</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">""</span><span class="o">)));</span>
     <span class="n">stream7</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span> <span class="c1">//H e l l o W o r l d</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>flatMap처럼 두개의 스트림을 합쳐주는 메소드로는 concat이 있습니다.  인자로 Stream을 넘겨받아, 하나의 Stream으로 변환시켜줍니다.</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="c1">//reduce</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">//reduce</span>
     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span>
         <span class="n">Stream</span><span class="o">.</span><span class="na">iterate</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">v</span> <span class="o">-&gt;</span> <span class="n">v</span> <span class="o">+</span> <span class="mi">1</span><span class="o">).</span><span class="na">limit</span><span class="o">(</span><span class="mi">100</span><span class="o">).</span><span class="na">reduce</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="o">(</span><span class="n">v1</span><span class="o">,</span> <span class="n">v2</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">v1</span> <span class="o">+</span> <span class="n">v2</span><span class="o">).</span><span class="na">intValue</span><span class="o">()</span> <span class="c1">//5050</span>
     <span class="o">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>reduce는 줄이다라는 의미를 가진 메소드입니다.<br />
 첫번째 매개변수로 seed 값을 전달하고, 해당 값부터 시작하여 주어진 값들을 처리한 뒤 결과를 돌려주게 됩니다.</p>
 
-<h4 id="collection--">- Collection을 반환하자 !</h4>
+<h4 id="--collection을-반환하자-">- Collection을 반환하자 !</h4>
 
 <p>모든 Collection 에서 Stream을 사용할 수 있다는 점은 알겠지만, 어떠한 스트림 연산을 마친 뒤 결과를 Array또는 Collection등으로 반환해야 하는 경우가 더 많을 겁니다.<br />
 그럼 몇가지 예제를 통해서 어떤식으로 결과를 모아야하는지 알아볼까요.</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="c1">//Array</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">//Array</span>
     <span class="kt">int</span> <span class="o">[]</span> <span class="n">integerArr</span> <span class="o">=</span> <span class="n">Stream</span><span class="o">.</span><span class="na">iterate</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">v</span> <span class="o">-&gt;</span> <span class="n">v</span> <span class="o">+</span> <span class="mi">1</span><span class="o">).</span><span class="na">limit</span><span class="o">(</span><span class="mi">10</span><span class="o">).</span><span class="na">mapToInt</span><span class="o">(</span><span class="n">v</span> <span class="o">-&gt;</span> <span class="n">v</span><span class="o">).</span><span class="na">toArray</span><span class="o">();</span>
     
     <span class="k">for</span><span class="o">(</span><span class="n">Integer</span> <span class="n">i</span> <span class="o">:</span> <span class="n">integerArr</span><span class="o">)</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">integerArr</span><span class="o">);</span> <span class="c1">// 1, 2, 3, 4, 5, 6, 7, 8, 9, 10</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>우리는 앞서 Stream.of(Array)를 통하여 배열을 스트림으로 변환할 수 있다는점을 알았습니다.<br />
 마찬가지로 toArray 메소드를 통하여 기본 타입 배열을 반환할 수 있습니다.</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="c1">//List</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">//List</span>
     <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="n">Stream</span><span class="o">.</span><span class="na">iterate</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">v</span> <span class="o">-&gt;</span> <span class="n">v</span> <span class="o">+</span> <span class="mi">1</span><span class="o">).</span><span class="na">limit</span><span class="o">(</span><span class="mi">100</span><span class="o">).</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>List객체는 collect메소드를 통하여 반환할 수 있습니다.</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="c1">//Map</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">//Map</span>
     <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Human</span><span class="o">&gt;</span> <span class="n">humanMap</span> <span class="o">=</span>
             <span class="n">Stream</span><span class="o">.</span><span class="na">iterate</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">v</span> <span class="o">-&gt;</span> <span class="n">v</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span>
             <span class="o">.</span><span class="na">limit</span><span class="o">(</span><span class="mi">20</span><span class="o">)</span>
@@ -284,13 +271,12 @@
                 <span class="k">return</span> <span class="k">new</span> <span class="nf">Human</span><span class="o">(</span><span class="n">name</span><span class="o">.</span><span class="na">toString</span><span class="o">(),</span> <span class="n">Long</span><span class="o">.</span><span class="na">parseLong</span><span class="o">(</span><span class="n">v</span><span class="o">.</span><span class="na">toString</span><span class="o">()));</span>
             <span class="o">})</span>
             <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toMap</span><span class="o">(</span><span class="nl">Human:</span><span class="o">:</span><span class="n">getName</span><span class="o">,</span> <span class="n">Function</span><span class="o">.</span><span class="na">identity</span><span class="o">()));</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Map의 경우에는 toMap 메소드를 통하여 반환할 수 있는데, 각각 인자로 key와 value를 전달받습니다.<br />
 만약 값으로 객체 자신이 되어야 한다면, v -&gt; v 로도 처리할 수 있지만, Function.identity를 사용할 수 있습니다.</p>
 
-<h4 id="section-3">- 자주 사용하는 함수형 인터페이스</h4>
+<h4 id="--자주-사용하는-함수형-인터페이스">- 자주 사용하는 함수형 인터페이스</h4>
 
 <table>
   <thead>
