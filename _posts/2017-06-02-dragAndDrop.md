@@ -13,4 +13,4 @@ introduction: '- DragAndDrop -'
 
 ---
 
-<iframe width="100%" height="auto" src="/project/dragAndDrop" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="/project/dragAndDrop/index.html" frameborder="0" allowfullscreen></iframe>

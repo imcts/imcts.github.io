@@ -14,4 +14,4 @@ introduction: '- HTML5 CANVAS DRAW -'
 
 ---
 
-<iframe width="1024" height="2400" src="/project/html/canvas/draw" frameborder="0" allowfullscreen></iframe>
+<iframe width="1024" height="2400" src="/project/html/canvas/draw/index.html" frameborder="0" allowfullscreen></iframe>

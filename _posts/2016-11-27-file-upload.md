@@ -13,4 +13,4 @@ introduction: '- HTML5 FILE PREVIEW -'
 
 ---
 
-<iframe width="1024" height="600" src="/project/html/file" frameborder="0" allowfullscreen></iframe>
+<iframe width="1024" height="600" src="/project/html/file/index.html" frameborder="0" allowfullscreen></iframe>

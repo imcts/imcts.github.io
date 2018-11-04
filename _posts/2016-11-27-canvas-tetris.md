@@ -33,7 +33,7 @@ introduction: '- HTML5 CANVAS TETRIS -'
 
 <button class="scroll-btn lock">스크롤 잠그기</button>
 <button class="scroll-btn unlock">스크롤 해제</button>
-<iframe width="1024" height="730" style="margin-top: -32px" src="/project/html/canvas/tetris" frameborder="0" allowfullscreen></iframe>
+<iframe width="1024" height="730" style="margin-top: -32px" src="/project/html/canvas/tetris/index.html" frameborder="0" allowfullscreen></iframe>
 
 <script>
     var buttons = document.querySelectorAll('.scroll-btn')

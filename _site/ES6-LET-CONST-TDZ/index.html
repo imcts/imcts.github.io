@@ -287,21 +287,22 @@
     <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
       <span class="kd">let</span> <span class="nx">value2</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span> <span class="c1">// 10</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span> <span class="c1">// Chrome: 10</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span> <span class="c1">// Safari, Firefox, Opera : ReferenceError: i is not defined</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value2</span><span class="p">);</span> <span class="c1">// value2 is not defined</span>
 </code></pre></div></div>
 <p><code class="highlighter-rouge">let</code>과 <code class="highlighter-rouge">const</code>는 블록 스코프 안에서 사용되는 경우 해당 블록에 대한 별도의 정적 스코프를 생성 합니다. 
 그로인해 중복 선언의 개념이 아닌 새로운 스코프에 변수를 선언하는 개념으로 생각하면 됩니다. 그렇기 때문에 조건문 안에서 출력된 <code class="highlighter-rouge">value</code>는 조건문 밖에서 선언된 <code class="highlighter-rouge">value</code>와 중복 선언에 대한 오류를 발생시키지 않고 
 상위 변수를 가리는(shading) 역할을 수행하게 됩니다. 마찬가지로 반복문의 블록 스코프 안에서 선언된 <code class="highlighter-rouge">value2</code>는 블록 스코프 밖에서 사용되는 경우 비선언 에러를 발생시키게 됩니다.<br />
-재미있는 것은 반복문의 초기값 영역에서 선언된 <code class="highlighter-rouge">let i</code>의 경우 현재 시간 크롬에서는 에러를 발생시키지 않고 정상적으로 10을 출력하고 있다. <strong>(예전에는 안됐었는데)</strong></p>
+재미있는 것은 반복문의 초기값 영역에서 선언된 <code class="highlighter-rouge">let i</code>의 경우 현재 시간 크롬에서는 에러를 발생시키지 않고 정상적으로 10을 출력하고 있다는 점이네요. <strong>(예전에는 안됐었는데)</strong></p>
 
 <h4 id="조건문에서의-블록-스코프">조건문에서의 블록 스코프</h4>
-<p>조건문에서 블록 스코프를 만들지 않고도 변수를 선언할 수 있을까?</p>
+<p>조건문에서 블록 스코프를 만들지 않고도 변수를 선언할 수 있을까요?</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span>
       <span class="kd">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// Unexpected token const</span>
 </code></pre></div></div>
-<p><code class="highlighter-rouge">let</code>이나 <code class="highlighter-rouge">const</code>는 반드시 블록 스코프를 자신의 정적 스코프 영역으로 삼아야 하므로 조건문에 블록 스코프가 없는 경우라면 에러를 발생 시키는 것을 알 수 있다.</p>
+<p><code class="highlighter-rouge">let</code>이나 <code class="highlighter-rouge">const</code>는 반드시 블록 스코프를 자신의 정적 스코프 영역으로 삼아야 하므로 조건문에 블록 스코프가 없는 경우라면 에러를 발생 시키는 것을 알 수 있습니다.</p>
 
 <h4 id="tdz-temporal-dead-zone">TDZ (Temporal Dead Zone)</h4>
 <p>임시 죽음 공간이라 불리워지는 이 공간은 변수를 선언하기 직전에 호출하면 에러를 발생시키는 영역입니다.</p>

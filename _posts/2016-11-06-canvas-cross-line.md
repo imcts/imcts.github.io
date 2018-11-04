@@ -14,4 +14,4 @@ introduction: '- HTML5 CANVAS CLOCK -'
 
 ---
 
-<iframe width="1024" height="700" src="/project/html/canvas/cross-line" frameborder="0" allowfullscreen></iframe>
+<iframe width="1024" height="700" src="/project/html/canvas/cross-line/index.html" frameborder="0" allowfullscreen></iframe>

@@ -14,4 +14,4 @@ introduction: '- HTML5 CANVAS TEXT -'
 
 ---
 
-<iframe width="1024" height="850" src="/project/html/canvas/text" frameborder="0" allowfullscreen></iframe>
+<iframe width="1024" height="850" src="/project/html/canvas/text/index.html" frameborder="0" allowfullscreen></iframe>

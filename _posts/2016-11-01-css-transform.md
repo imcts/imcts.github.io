@@ -13,4 +13,4 @@ introduction: '- CSS TRANSITION TRANSFORM -'
 
 ---
 
-<iframe width="1024" height="900" src="/project/html/cube" frameborder="0" allowfullscreen></iframe>
+<iframe width="1024" height="900" src="/project/html/cube/index.html" frameborder="0" allowfullscreen></iframe>
