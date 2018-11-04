@@ -63,6 +63,10 @@
     
     
         <url>
+            <loc>http://localhost:4000/ES6-LET-CONST-TDZ/</loc>
+        </url>
+  
+        <url>
             <loc>http://localhost:4000/panorama-viewer/</loc>
         </url>
   

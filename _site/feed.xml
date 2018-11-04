@@ -5,9 +5,29 @@
     <description>dolen - blog</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 04 Nov 2018 15:16:32 +0900</pubDate>
-    <lastBuildDate>Sun, 04 Nov 2018 15:16:32 +0900</lastBuildDate>
+    <pubDate>Sun, 04 Nov 2018 17:21:50 +0900</pubDate>
+    <lastBuildDate>Sun, 04 Nov 2018 17:21:50 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>ES6 - INTRODUCE, LET, CONST</title>
+        <description>&lt;h3 id=&quot;1-ecmascript&quot;&gt;1. ECMAScript&lt;/h3&gt; &lt;p&gt;&lt;strong&gt;ECMA&lt;/strong&gt;란 European Computer Manufactures Association에서 출발하여 &lt;strong&gt;1994&lt;/strong&gt;년에 정보 통신 기술 표준 연구회의 의미로서 변경된 기관명 입니다. 그 결과 더이상 ECMA는 단어의 앞글자를 따서 만들어진 글자가 아닌 그 자체로의 의미를 가지게 됩니다. 이 협회는 다양한 언어나 규격에 대한 표준을 정의하게 되는데 그 중 하나가 ECMA-262 입니다.&lt;/p&gt; &lt;table&gt; &lt;thead&gt; &lt;tr&gt; &lt;th style=&quot;text-align: center&quot;&gt;판&lt;/th&gt; &lt;th style=&quot;text-align: center&quot;&gt;출판일&lt;/th&gt; &lt;th style=&quot;text-align: left&quot;&gt;특징&lt;/th&gt; &lt;/tr&gt; &lt;/thead&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt; &lt;td style=&quot;text-align: center&quot;&gt;1997년 6월&lt;/td&gt; &lt;td style=&quot;text-align: left&quot;&gt;초판&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt; &lt;td style=&quot;text-align: center&quot;&gt;1998년 6월&lt;/td&gt; &lt;td style=&quot;text-align: left&quot;&gt;ISO/IEC 16262 국제 표준과 완전히 동일한 규격을 적용&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt; &lt;td style=&quot;text-align:...</description>
+        <pubDate>Sat, 03 Nov 2018 20:00:00 +0900</pubDate>
+        <link>http://localhost:4000/ES6-LET-CONST-TDZ/</link>
+        <guid isPermaLink="true">http://localhost:4000/ES6-LET-CONST-TDZ/</guid>
+        
+        <category>javascript</category>
+        
+        <category>ES6 Introduce</category>
+        
+        <category>TDZ</category>
+        
+        <category>let</category>
+        
+        <category>const</category>
+        
+        
+      </item>
     
       <item>
         <title>CSS Panorama Viewer</title>
@@ -467,21 +487,6 @@
         <guid isPermaLink="true">http://localhost:4000/memo/</guid>
         
         <category>memo</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>CSS Transition, Transform</title>
-        <description>&lt;iframe width=&quot;1024&quot; height=&quot;900&quot; src=&quot;/project/html/cube&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-</description>
-        <pubDate>Wed, 05 Oct 2016 06:00:00 +0900</pubDate>
-        <link>http://localhost:4000/css-transform/</link>
-        <guid isPermaLink="true">http://localhost:4000/css-transform/</guid>
-        
-        <category>Transition</category>
-        
-        <category>Transform</category>
         
         
       </item>

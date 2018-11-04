@@ -1,6 +1,13 @@
 [
   
     {
+      "title"    : "ES6 - INTRODUCE, LET, CONST",
+      "tags"     : "javascript, ES6 Introduce, TDZ, let, and const",
+      "url"      : "/ES6-LET-CONST-TDZ/",
+      "date"     : "03 Nov 2018"
+    } ,
+  
+    {
       "title"    : "CSS Panorama Viewer",
       "tags"     : "CSS, POSITION, TRANSFORM, PERSPECTIVE, and ANIMATION",
       "url"      : "/panorama-viewer/",
