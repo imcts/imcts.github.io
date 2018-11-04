@@ -13,5 +13,4 @@ introduction: '- HTML5 FILE PREVIEW -'
 
 ---
 
-
-**MOVE TO HTML5 FILE PREVIEW =>** **[FILE BLOB](/project/html/file)**
+<iframe width="1024" height="600" src="/project/html/file" frameborder="0" allowfullscreen></iframe>

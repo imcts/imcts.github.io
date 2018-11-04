@@ -13,4 +13,4 @@ introduction: '- DragAndDrop -'
 
 ---
 
-**MOVE TO DragAndDrop =>** **[DragAndDrop](/project/dragAndDrop)**
+<iframe width="100%" height="auto" src="/project/dragAndDrop" frameborder="0" allowfullscreen></iframe>

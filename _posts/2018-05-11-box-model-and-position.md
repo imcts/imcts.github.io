@@ -16,4 +16,4 @@ introduction: '- CSS SHIELD -'
 
 금주에 정리 예정
 
-**MOVE TO CSS SHIELD =>** **[WACANDA-FOREVER!!!](/project/codespitz/css/box-model-and-position.html)**
+<iframe width="1024" height="600" src="/project/codespitz/css/box-model-and-position.html" frameborder="0" allowfullscreen></iframe>

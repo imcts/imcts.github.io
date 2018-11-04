@@ -5,15 +5,15 @@
     <description>dolen - blog</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 06 Jun 2018 23:06:17 +0900</pubDate>
-    <lastBuildDate>Wed, 06 Jun 2018 23:06:17 +0900</lastBuildDate>
+    <pubDate>Sun, 04 Nov 2018 15:16:32 +0900</pubDate>
+    <lastBuildDate>Sun, 04 Nov 2018 15:16:32 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
         <title>CSS Panorama Viewer</title>
         <description>&lt;p&gt;금주에 정리 예정&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;MOVE TO CSS PANORAMA VIEWER =&amp;gt;&lt;/strong&gt; &lt;strong&gt;&lt;a href=&quot;/project/codespitz/css/panorama.html&quot;&gt;PANORAMA VIEWER&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;iframe width=&quot;1024&quot; height=&quot;800&quot; src=&quot;/project/codespitz/css/panorama.html&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
         <pubDate>Fri, 11 May 2018 05:00:00 +0900</pubDate>
         <link>http://localhost:4000/panorama-viewer/</link>
@@ -36,7 +36,7 @@
         <title>CSS position, box-model</title>
         <description>&lt;p&gt;금주에 정리 예정&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;MOVE TO CSS SHIELD =&amp;gt;&lt;/strong&gt; &lt;strong&gt;&lt;a href=&quot;/project/codespitz/css/box-model-and-position.html&quot;&gt;WACANDA-FOREVER!!!&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;iframe width=&quot;1024&quot; height=&quot;600&quot; src=&quot;/project/codespitz/css/box-model-and-position.html&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
         <pubDate>Fri, 11 May 2018 05:00:00 +0900</pubDate>
         <link>http://localhost:4000/box-model-and-position/</link>
@@ -71,7 +71,7 @@
     
       <item>
         <title>DragAndDrop</title>
-        <description>&lt;p&gt;&lt;strong&gt;MOVE TO DragAndDrop =&amp;gt;&lt;/strong&gt; &lt;strong&gt;&lt;a href=&quot;/project/dragAndDrop&quot;&gt;DragAndDrop&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+        <description>&lt;iframe width=&quot;100%&quot; height=&quot;auto&quot; src=&quot;/project/dragAndDrop&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
         <pubDate>Fri, 02 Jun 2017 06:00:00 +0900</pubDate>
         <link>http://localhost:4000/dragAndDrop/</link>
@@ -84,7 +84,7 @@
     
       <item>
         <title>RESUME</title>
-        <description>&lt;p&gt;&lt;strong&gt;MOVE TO RESUME =&amp;gt;&lt;/strong&gt; &lt;strong&gt;&lt;a href=&quot;/project/resume&quot;&gt;RESUME&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+        <description>&lt;iframe width=&quot;100%&quot; height=&quot;900&quot; src=&quot;/project/resume&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
         <pubDate>Thu, 23 Mar 2017 06:00:00 +0900</pubDate>
         <link>http://localhost:4000/resume/</link>
@@ -193,7 +193,7 @@
     
       <item>
         <title>HTML5 FileUpload 정리</title>
-        <description>&lt;p&gt;&lt;strong&gt;MOVE TO HTML5 FILE PREVIEW =&amp;gt;&lt;/strong&gt; &lt;strong&gt;&lt;a href=&quot;/project/html/file&quot;&gt;FILE BLOB&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+        <description>&lt;iframe width=&quot;1024&quot; height=&quot;600&quot; src=&quot;/project/html/file&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
         <pubDate>Mon, 28 Nov 2016 06:00:00 +0900</pubDate>
         <link>http://localhost:4000/file-upload/</link>
@@ -208,7 +208,42 @@
     
       <item>
         <title>HTML5 CANVAS TETRIS</title>
-        <description>&lt;p&gt;&lt;strong&gt;MOVE TO CANVAS TETRIS =&amp;gt;&lt;/strong&gt; &lt;strong&gt;&lt;a href=&quot;/project/html/canvas/tetris&quot;&gt;CANVAS TETRIS&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+        <description>&lt;style&gt;
+    button {
+        width: 100px;
+        height: 30px;
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    
+    .lock {
+        background-color: red;    
+    }
+    
+    .unlock {
+        background-color: blue;    
+    }
+&lt;/style&gt;
+
+&lt;p&gt;&lt;button class=&quot;scroll-btn lock&quot;&gt;스크롤 잠그기&lt;/button&gt;
+&lt;button class=&quot;scroll-btn unlock&quot;&gt;스크롤 해제&lt;/button&gt;&lt;/p&gt;
+&lt;iframe width=&quot;1024&quot; height=&quot;730&quot; style=&quot;margin-top: -32px&quot; src=&quot;/project/html/canvas/tetris&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;script&gt;
+    var buttons = document.querySelectorAll('.scroll-btn')
+    buttons[0].addEventListener('click', function () {
+        document.body.style.overflow = 'hidden';
+    })
+    
+    buttons[1].addEventListener('click', function () {
+        document.body.style.overflow = '';
+    })
+    
+    
+    
+&lt;/script&gt;
+
 </description>
         <pubDate>Mon, 28 Nov 2016 05:00:00 +0900</pubDate>
         <link>http://localhost:4000/canvas-tetris/</link>
@@ -223,7 +258,7 @@
     
       <item>
         <title>CSS 라이언</title>
-        <description>&lt;p&gt;&lt;strong&gt;MOVE TO CSS LION =&amp;gt;&lt;/strong&gt; &lt;strong&gt;&lt;a href=&quot;/project/html/lion&quot;&gt;라이언&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+        <description>&lt;iframe width=&quot;1024&quot; height=&quot;600&quot; src=&quot;/project/html/lion&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
         <pubDate>Fri, 18 Nov 2016 06:00:00 +0900</pubDate>
         <link>http://localhost:4000/lion/</link>
@@ -265,8 +300,8 @@
       </item>
     
       <item>
-        <title>HTML5 CANVAS DRAW</title>
-        <description>&lt;p&gt;&lt;strong&gt;MOVE TO CANVAS TEXT =&amp;gt;&lt;/strong&gt; &lt;strong&gt;&lt;a href=&quot;/project/html/canvas/text&quot;&gt;CANVAS TEXT&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+        <title>HTML5 CANVAS TEXT</title>
+        <description>&lt;iframe width=&quot;1024&quot; height=&quot;850&quot; src=&quot;/project/html/canvas/text&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
         <pubDate>Mon, 07 Nov 2016 08:00:00 +0900</pubDate>
         <link>http://localhost:4000/canvas-text/</link>
@@ -281,7 +316,7 @@
     
       <item>
         <title>HTML5 CANVAS DRAW</title>
-        <description>&lt;p&gt;&lt;strong&gt;MOVE TO CANVAS DRAW =&amp;gt;&lt;/strong&gt; &lt;strong&gt;&lt;a href=&quot;/project/html/canvas/draw&quot;&gt;CANVAS DRAW&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+        <description>&lt;iframe width=&quot;1024&quot; height=&quot;2400&quot; src=&quot;/project/html/canvas/draw&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
         <pubDate>Mon, 07 Nov 2016 07:00:00 +0900</pubDate>
         <link>http://localhost:4000/canvas-draw/</link>
@@ -296,7 +331,7 @@
     
       <item>
         <title>HTML5 CANVAS CROSS LINE</title>
-        <description>&lt;p&gt;&lt;strong&gt;MOVE TO CANVAS CROSS LINE =&amp;gt;&lt;/strong&gt; &lt;strong&gt;&lt;a href=&quot;/project/html/canvas/cross-line&quot;&gt;CANVAS CROSS-LINE&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+        <description>&lt;iframe width=&quot;1024&quot; height=&quot;700&quot; src=&quot;/project/html/canvas/cross-line&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
         <pubDate>Mon, 07 Nov 2016 07:00:00 +0900</pubDate>
         <link>http://localhost:4000/canvas-cross-line/</link>
@@ -311,9 +346,8 @@
     
       <item>
         <title>HTML5 CANVAS CLOCK</title>
-        <description>&lt;p&gt;&lt;strong&gt;MOVE TO CANVAS CLOCK =&amp;gt;&lt;/strong&gt;  &lt;strong&gt;&lt;a href=&quot;/project/html/canvas/clock&quot;&gt;CANVAS CLOCK&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;MOVE TO CANVAS CLOCK ANIMATION =&amp;gt;&lt;/strong&gt;  &lt;strong&gt;&lt;a href=&quot;/project/html/canvas/clockAnimation&quot;&gt;CANVAS CLOCK&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+        <description>&lt;iframe width=&quot;1024&quot; height=&quot;500&quot; src=&quot;/project/html/canvas/clock&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;1024&quot; height=&quot;700&quot; src=&quot;/project/html/canvas/clockAnimation&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
         <pubDate>Mon, 07 Nov 2016 06:00:00 +0900</pubDate>
         <link>http://localhost:4000/canvas-clock/</link>
@@ -426,7 +460,7 @@
     
       <item>
         <title>MEMO</title>
-        <description>&lt;p&gt;&lt;strong&gt;MOVE TO MEMO PROJECT =&amp;gt;&lt;/strong&gt; &lt;strong&gt;&lt;a href=&quot;/project/memo&quot;&gt;MEMO&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+        <description>&lt;iframe width=&quot;1024&quot; height=&quot;900&quot; src=&quot;/project/memo&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
         <pubDate>Sun, 06 Nov 2016 06:00:00 +0900</pubDate>
         <link>http://localhost:4000/memo/</link>
@@ -439,7 +473,7 @@
     
       <item>
         <title>CSS Transition, Transform</title>
-        <description>&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;/project/html/cube&quot;&gt;CSS Transition Transform&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+        <description>&lt;iframe width=&quot;1024&quot; height=&quot;900&quot; src=&quot;/project/html/cube&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
         <pubDate>Wed, 05 Oct 2016 06:00:00 +0900</pubDate>
         <link>http://localhost:4000/css-transform/</link>

@@ -18,4 +18,4 @@ introduction: '- CSS PANORAMA -'
 
 금주에 정리 예정
 
-**MOVE TO CSS PANORAMA VIEWER =>** **[PANORAMA VIEWER](/project/codespitz/css/panorama.html)**
+<iframe width="1024" height="800" src="/project/codespitz/css/panorama.html" frameborder="0" allowfullscreen></iframe>

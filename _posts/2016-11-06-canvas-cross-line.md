@@ -14,4 +14,4 @@ introduction: '- HTML5 CANVAS CLOCK -'
 
 ---
 
-**MOVE TO CANVAS CROSS LINE =>** **[CANVAS CROSS-LINE](/project/html/canvas/cross-line)**
+<iframe width="1024" height="700" src="/project/html/canvas/cross-line" frameborder="0" allowfullscreen></iframe>

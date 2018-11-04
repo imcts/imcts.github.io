@@ -14,4 +14,4 @@ introduction: '- HTML5 CANVAS DRAW -'
 
 ---
 
-**MOVE TO CANVAS DRAW =>** **[CANVAS DRAW](/project/html/canvas/draw)**
+<iframe width="1024" height="2400" src="/project/html/canvas/draw" frameborder="0" allowfullscreen></iframe>

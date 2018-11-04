@@ -14,6 +14,6 @@ introduction: '- HTML5 CANVAS CLOCK -'
 
 ---
 
-**MOVE TO CANVAS CLOCK =>**  **[CANVAS CLOCK](/project/html/canvas/clock)**
 
-**MOVE TO CANVAS CLOCK ANIMATION =>**  **[CANVAS CLOCK](/project/html/canvas/clockAnimation)**
+<iframe width="1024" height="500" src="/project/html/canvas/clock" frameborder="0" allowfullscreen></iframe>
+<iframe width="1024" height="700" src="/project/html/canvas/clockAnimation" frameborder="0" allowfullscreen></iframe>
