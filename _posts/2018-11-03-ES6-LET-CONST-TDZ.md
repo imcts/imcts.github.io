@@ -213,3 +213,11 @@ introduction: '- ES6 Basic Study -'
     }
 ```
 마찬가지로 상위에 변수가 선언되어 있더라도, 자바스크립트는 새로운 블록을 만나는 순간 새로운 블록 스코프를 생성하므로 비선언 에러를 발생시키며 프로그램을 종료 합니다.  
+
+````javascript
+    typeof unDefinededValue; // undefined
+
+    typeof value; // value is not defined
+    const value = true;
+````
+마지막으로 어떤 값이 오더라도 에러를 발생시키지 않는 `typeof` 조차도 `TDZ`에는 에러를 발생 시키는 걸 볼 수 있습니다.    
