@@ -323,6 +323,13 @@
 </code></pre></div></div>
 <p>마찬가지로 상위에 변수가 선언되어 있더라도, 자바스크립트는 새로운 블록을 만나는 순간 새로운 블록 스코프를 생성하므로 비선언 에러를 발생시키며 프로그램을 종료 합니다.</p>
 
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">typeof</span> <span class="nx">unDefinededValue</span><span class="p">;</span> <span class="c1">// undefined</span>
+
+    <span class="k">typeof</span> <span class="nx">value</span><span class="p">;</span> <span class="c1">// value is not defined</span>
+    <span class="kd">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</code></pre></div></div>
+<p>마지막으로 어떤 값이 오더라도 에러를 발생시키지 않는 <code class="highlighter-rouge">typeof</code> 조차도 <code class="highlighter-rouge">TDZ</code>에는 에러를 발생 시키는 걸 볼 수 있습니다.</p>
+
             </article>
 
             <section class="share">
@@ -348,7 +355,7 @@
             <a itemprop="name" href="https://github.com/imcts">dolen</a>
         </h3>
         <p class="desc">Front-End Developer</p>
-        <p><a itemprop="email" class="email" href="mailto:imcts@coupang.com">imcts@coupang.com</a></p>
+        <p><a itemprop="email" class="email" href="mailto:imcts@nate.com">imcts@nate.com</a></p>
         <p><a itemprop="github" class="github" href="https://github.com/imcts">github.com/imcts</a></p>
     </div>
 </section>

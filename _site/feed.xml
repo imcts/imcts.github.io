@@ -5,9 +5,23 @@
     <description>dolen - blog</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 04 Nov 2018 17:39:36 +0900</pubDate>
-    <lastBuildDate>Sun, 04 Nov 2018 17:39:36 +0900</lastBuildDate>
+    <pubDate>Sat, 10 Nov 2018 23:48:25 +0900</pubDate>
+    <lastBuildDate>Sat, 10 Nov 2018 23:48:25 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>ES6 - TEMPLATE LITERAL</title>
+        <description>&lt;h3 id=&quot;1-string-객체를-생성&quot;&gt;1. String 객체를 생성&lt;/h3&gt; &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'string'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;string&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;JavaScript&lt;/code&gt;에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt;은 원시타입&lt;code class=&quot;highlighter-rouge&quot;&gt;primitiv&lt;/code&gt; 입니다. 그 자체로 값인 것이죠. 물론 전역 객체로서 &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt; 또한 존재하기 때문에 &lt;code class=&quot;highlighter-rouge&quot;&gt;new&lt;/code&gt;연산자를 사용하여 객체 형태로 생성되도록 할 수도 있습니다. 이렇게 사용할 경우 객체가 매번 생성되어지기 때문에 추천하지 않는 방법이죠.&lt;/p&gt; &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;뿐만 아니라 서로 객체의 주소값을...</description>
+        <pubDate>Fri, 09 Nov 2018 11:00:00 +0900</pubDate>
+        <link>http://localhost:4000/ES6-TEMPLATE-LITERAL/</link>
+        <guid isPermaLink="true">http://localhost:4000/ES6-TEMPLATE-LITERAL/</guid>
+        
+        <category>javascript</category>
+        
+        <category>template literal</category>
+        
+        
+      </item>
     
       <item>
         <title>ES6 - INTRODUCE, LET, CONST</title>
@@ -151,20 +165,6 @@
         <category>JAVA8</category>
         
         <category>stream</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>ES6 - TEMPLATE LITERAL</title>
-        <description>&lt;h3 id=&quot;1-javascript-의-문자열의-사용&quot;&gt;1. javascript 의 문자열의 사용&lt;/h3&gt; &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'string'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;자바스크립트에서 String 을 사용하는 방법입니다.&lt;br /&gt; 너무도 당연하고 너무도 간단하지요 ?&lt;br /&gt; 자바스크립트는 자료형이 없는 언어이기때문이죠.&lt;br /&gt; 하지만 문자열을 가지고 virtual dom을 구성하려 한다면 이야기는 조금 복잡해 질 지도 모르겠습니다.&lt;br /&gt; &lt;br /&gt; 그 이야기를 하기 전에 먼저 자바스크립트에서 문자열을 사용해왔었던 방법들을 한번 살펴볼까요. &lt;br /&gt; &lt;br /&gt;&lt;/p&gt; &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'저는 총 '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;...</description>
-        <pubDate>Sat, 10 Dec 2016 11:00:00 +0900</pubDate>
-        <link>http://localhost:4000/ES6-TEMPLATE-LITERAL/</link>
-        <guid isPermaLink="true">http://localhost:4000/ES6-TEMPLATE-LITERAL/</guid>
-        
-        <category>javascript</category>
-        
-        <category>template literal</category>
         
         
       </item>

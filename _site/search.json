@@ -1,6 +1,13 @@
 [
   
     {
+      "title"    : "ES6 - TEMPLATE LITERAL",
+      "tags"     : "javascript and template literal",
+      "url"      : "/ES6-TEMPLATE-LITERAL/",
+      "date"     : "09 Nov 2018"
+    } ,
+  
+    {
       "title"    : "ES6 - INTRODUCE, LET, CONST",
       "tags"     : "javascript, ES6 Introduce, TDZ, let, and const",
       "url"      : "/ES6-LET-CONST-TDZ/",
@@ -61,13 +68,6 @@
       "tags"     : "JAVA8 and stream",
       "url"      : "/java-stream/",
       "date"     : "17 Dec 2016"
-    } ,
-  
-    {
-      "title"    : "ES6 - TEMPLATE LITERAL",
-      "tags"     : "javascript and template literal",
-      "url"      : "/ES6-TEMPLATE-LITERAL/",
-      "date"     : "10 Dec 2016"
     } ,
   
     {
