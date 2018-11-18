@@ -1,6 +1,13 @@
 [
   
     {
+      "title"    : "ES6 - ARROW FUNCTION",
+      "tags"     : "javascript and arrow function",
+      "url"      : "/ES6-ARROW_FUNCTION/",
+      "date"     : "17 Nov 2018"
+    } ,
+  
+    {
       "title"    : "ES6 - TEMPLATE LITERAL",
       "tags"     : "javascript and template literal",
       "url"      : "/ES6-TEMPLATE-LITERAL/",

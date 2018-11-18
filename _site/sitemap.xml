@@ -63,6 +63,10 @@
     
     
         <url>
+            <loc>http://localhost:4000/ES6-ARROW_FUNCTION/</loc>
+        </url>
+  
+        <url>
             <loc>http://localhost:4000/ES6-TEMPLATE-LITERAL/</loc>
         </url>
   
