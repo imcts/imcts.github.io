@@ -1,6 +1,13 @@
 [
   
     {
+      "title"    : "ES6 - DESTRUCTURING ASSIGNMENT",
+      "tags"     : "javascript and destructuring assignment",
+      "url"      : "/ES6-DESTRUCTURING_ASSIGNMENT/",
+      "date"     : "23 Nov 2018"
+    } ,
+  
+    {
       "title"    : "ES6 - ARROW FUNCTION",
       "tags"     : "javascript and arrow function",
       "url"      : "/ES6-ARROW_FUNCTION/",
