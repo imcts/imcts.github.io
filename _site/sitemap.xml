@@ -63,6 +63,10 @@
     
     
         <url>
+            <loc>http://localhost:4000/ES6-ITERABLE-ITERATOR-FOR-OF/</loc>
+        </url>
+  
+        <url>
             <loc>http://localhost:4000/ES6-DESTRUCTURING_ASSIGNMENT/</loc>
         </url>
   
@@ -92,10 +96,6 @@
   
         <url>
             <loc>http://localhost:4000/dragAndDrop/</loc>
-        </url>
-  
-        <url>
-            <loc>http://localhost:4000/resume/</loc>
         </url>
   
         <url>

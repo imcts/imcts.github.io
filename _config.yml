@@ -31,10 +31,10 @@ compress_html:
 links:
   - title: Home
     url: /
-  - title: Series
-    url: /series
   - title: Tags
     url: /tags
+  - title: Resume
+    url: /project/resume/index.html
 
 # exclude my node related stuff
 exclude: ['package.json', 'src', 'node_modules']

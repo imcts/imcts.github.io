@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/BlogPosting" class="post-js">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>ES6 - ITERABLE ITERATOR</title>
+    <meta name="description" content="ES6 Basic Study">
+
+    <!-- Google Authorship Markup -->
+    <link rel="author" href="https://plus.google.com/+imcts?rel=author">
+
+    <!-- Social: Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@imcts">
+    <meta name="twitter:title" content="ES6 - ITERABLE ITERATOR">
+    <meta name="twitter:description" content="ES6 Basic Study">
+    
+    <meta property="twitter:image:src" content="http://localhost:4000/assets/img/">
+    
+
+    <!-- Social: Facebook / Open Graph -->
+    <meta property="og:url" content="http://localhost:4000/ES6-ITERABLE-ITERATOR-FOR-OF/">
+    <meta property="og:title" content="ES6 - ITERABLE ITERATOR">
+    
+    <meta property="og:image" content="http://localhost:4000/assets/img/">
+    
+    <meta property="og:description" content="ES6 Basic Study">
+    <meta property="og:site_name" content="Dolen - developer Front End">
+
+    <!-- Social: Google+ / Schema.org  -->
+    <meta itemprop="name" content="ES6 - ITERABLE ITERATOR"/>
+    <meta itemprop="description" content="ES6 Basic Study">
+    <meta itemprop="image" content="http://localhost:4000/assets/img/blog-image.png"/>
+
+    <!-- Windows 8 Tile Icons -->
+    <meta name="application-name" content="dolen Blog">
+    <meta name="msapplication-TileColor" content="#0562DC">
+    <meta name="msapplication-square70x70logo" content="smalltile.png" />
+    <meta name="msapplication-square150x150logo" content="mediumtile.png" />
+    <meta name="msapplication-wide310x150logo" content="widetile.png" />
+    <meta name="msapplication-square310x310logo" content="largetile.png" />
+    <!-- Android Lolipop Theme Color -->
+    <meta name="theme-color" content="">
+
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="http://localhost:4000/ES6-ITERABLE-ITERATOR-FOR-OF/">
+    <link rel="alternate" type="application/rss+xml" title="Dolen - developer Front End" href="http://localhost:4000/feed.xml" />
+</head>
+
+    <body>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" display="none" version="1.1"><defs><symbol id="icon-menu" viewBox="0 0 1024 1024"><path class="path1" d="M128 213.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 725.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 469.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5z"/></symbol><symbol id="icon-search" viewBox="0 0 951 1024"><path class="path1" d="M658.286 475.429q0-105.714-75.143-180.857t-180.857-75.143-180.857 75.143-75.143 180.857 75.143 180.857 180.857 75.143 180.857-75.143 75.143-180.857zM950.857 950.857q0 29.714-21.714 51.429t-51.429 21.714q-30.857 0-51.429-21.714l-196-195.429q-102.286 70.857-228 70.857-81.714 0-156.286-31.714t-128.571-85.714-85.714-128.571-31.714-156.286 31.714-156.286 85.714-128.571 128.571-85.714 156.286-31.714 156.286 31.714 128.571 85.714 85.714 128.571 31.714 156.286q0 125.714-70.857 228l196 196q21.143 21.143 21.143 51.429z"/></symbol><symbol id="icon-close" viewBox="0 0 805 1024"><path class="path1" d="M741.714 755.429q0 22.857-16 38.857l-77.714 77.714q-16 16-38.857 16t-38.857-16l-168-168-168 168q-16 16-38.857 16t-38.857-16l-77.714-77.714q-16-16-16-38.857t16-38.857l168-168-168-168q-16-16-16-38.857t16-38.857l77.714-77.714q16-16 38.857-16t38.857 16l168 168 168-168q16-16 38.857-16t38.857 16l77.714 77.714q16 16 16 38.857t-16 38.857l-168 168 168 168q16 16 16 38.857z"/></symbol><symbol id="icon-twitter" viewBox="0 0 951 1024"><path class="path1" d="M925.714 233.143q-38.286 56-92.571 95.429 0.571 8 0.571 24 0 74.286-21.714 148.286t-66 142-105.429 120.286-147.429 83.429-184.571 31.143q-154.857 0-283.429-82.857 20 2.286 44.571 2.286 128.571 0 229.143-78.857-60-1.143-107.429-36.857t-65.143-91.143q18.857 2.857 34.857 2.857 24.571 0 48.571-6.286-64-13.143-106-63.714t-42-117.429v-2.286q38.857 21.714 83.429 23.429-37.714-25.143-60-65.714t-22.286-88q0-50.286 25.143-93.143 69.143 85.143 168.286 136.286t212.286 56.857q-4.571-21.714-4.571-42.286 0-76.571 54-130.571t130.571-54q80 0 134.857 58.286 62.286-12 117.143-44.571-21.143 65.714-81.143 101.714 53.143-5.714 106.286-28.571z"/></symbol><symbol id="icon-facebook" viewBox="0 0 585 1024"><path class="path1" d="M548 6.857v150.857h-89.714q-49.143 0-66.286 20.571t-17.143 61.714v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571q0-106.286 59.429-164.857t158.286-58.571q84 0 130.286 6.857z"/></symbol><symbol id="icon-google-plus" viewBox="0 0 951 1024"><path class="path1" d="M420 454.857q0 20.571 18.286 40.286t44.286 38.857 51.714 42 44 59.429 18.286 81.143q0 51.429-27.429 98.857-41.143 69.714-120.571 102.571t-170.286 32.857q-75.429 0-140.857-23.714t-98-78.571q-21.143-34.286-21.143-74.857 0-46.286 25.429-85.714t67.714-65.714q74.857-46.857 230.857-57.143-18.286-24-27.143-42.286t-8.857-41.714q0-20.571 12-48.571-26.286 2.286-38.857 2.286-84.571 0-142.571-55.143t-58-139.714q0-46.857 20.571-90.857t56.571-74.857q44-37.714 104.286-56t124.286-18.286h238.857l-78.857 50.286h-74.857q42.286 36 64 76t21.714 91.429q0 41.143-14 74t-33.714 53.143-39.714 37.143-34 35.143-14 37.714zM336.571 400q21.714 0 44.571-9.429t37.714-24.857q30.286-32.571 30.286-90.857 0-33.143-9.714-71.429t-27.714-74-48.286-59.143-66.857-23.429q-24 0-47.143 11.143t-37.429 30q-26.857 33.714-26.857 91.429 0 26.286 5.714 55.714t18 58.857 29.714 52.857 42.857 38.286 55.143 14.857zM337.714 898.857q33.143 0 63.714-7.429t56.571-22.286 41.714-41.714 15.714-62.286q0-14.286-4-28t-8.286-24-15.429-23.714-16.857-20-22-19.714-20.857-16.571-23.714-17.143-20.857-14.857q-9.143-1.143-27.429-1.143-30.286 0-60 4t-61.429 14.286-55.429 26.286-39.143 42.571-15.429 60.286q0 40 20 70.571t52.286 47.429 68 25.143 72.857 8.286zM800.571 398.286h121.714v61.714h-121.714v125.143h-60v-125.143h-121.143v-61.714h121.143v-124h60v124z"/></symbol></defs></svg>
+
+        <header class="bar-header">
+    <h1 class="logo">
+        <a href="/"></a>
+    </h1>
+</header>
+<div class="search-wrapper">
+    <div class="search-form">
+        <input type="text" class="search-field" placeholder="Search...">
+        <svg class="icon-remove-sign"><use xlink:href="#icon-close"></use></svg>
+        <ul class="search-results search-list"></ul>
+    </div>
+</div>
+
+<div id="fade" class="overlay"></div>
+<a id="slide" class="slideButton fade">
+    <svg id="open" class="icon-menu"><use xlink:href="#icon-menu"></use></svg>
+    <svg id="close" class="icon-menu"><use xlink:href="#icon-close"></use></svg>
+</a>
+<aside id="sidebar">
+<nav id="navigation">
+  <h2>MENU</h2>
+  <ul>
+    
+      <li><a href="http://localhost:4000/">Home</a></li>
+    
+      <li><a href="http://localhost:4000/tags">Tags</a></li>
+    
+      <li><a href="http://localhost:4000/project/resume/index.html">Resume</a></li>
+    
+  </ul>
+</nav>
+</aside>
+<a id="search" class="dosearch">
+    <svg class="icon-menu icon-search"><use xlink:href="#icon-search"></use></svg>
+</a>
+
+
+<header class="header-post" role="banner">
+     <div class="content">
+        
+            <time itemprop="datePublished" datetime="2018-11-28T09:00:00+09:00" class="date">28 Nov 2018</time>
+        
+        <h1 class="post-title" itemprop="name">ES6 - ITERABLE ITERATOR</h1>
+        <p itemprop="description" class="subtitle">ES6 Basic Study</p>
+    </div>
+</header>
+        <section class="post">
+
+            <article role="article" id="post" class="post-content" itemprop="articleBody">
+                <h3 id="duck-typing">Duck Typing</h3>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Integer</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="o">(</span><span class="n">String</span> <span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>        
+    <span class="o">}</span>    
+<span class="o">}</span>
+</code></pre></div></div>
+<p>사람은 손가락이 10개이기 때문에 주로 10진법에 익숙하지만, 전자 기기의 경우에는 특정한 신호(물, 바람, 힘, 전기, 방향등)를 받아들여 <code class="highlighter-rouge">on</code>, <code class="highlighter-rouge">off</code>만으로 구분해야 하기에 
+0과 1로만 이루어지는 수 체계인 <a href="https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%A7%84%EB%B2%95">2진법</a>을 주로 사용합니다. 당연하게도 전자기기인 컴퓨터는 2진법을 사용하여 저장 장치에 값을 기록하고 
+사용하는데요. 이때 메모리안에 수도 없이 이어져있는 <code class="highlighter-rouge">bit</code>공간중에 어디서부터 어디까지가 내가 만든 값일까요? 프로그래밍 언어 별로 정수, 실수, 문자열등에 사용되는 메모리양은 전부 다르지만 보통의 프로그래밍 언어는 값의 크기를 지정합니다. 
+유명한 정적언어인 <code class="highlighter-rouge">C</code>, <code class="highlighter-rouge">JAVA</code>를 기준으로 정수형의 숫자값은 <code class="highlighter-rouge">4Byte</code>의 크기를 갖게 됩니다. <code class="highlighter-rouge">1Byte</code>는 <code class="highlighter-rouge">8Bit</code>이므로 <code class="highlighter-rouge">32Bit</code>라는 공간을 갖게 되는데요. 
+그로인해 메모리에는 <code class="highlighter-rouge">00000000 00000000 00000000 00000001</code>이라는 값이 저장되게 됩니다. 그렇다면 왜 꼭 특정 값을 저장하는데 크기를 지정해 놓은 것일까요? 
+그래야만 연속적으로 이어져있는 비트 공간의 값들 중 현재 내가 얻어야 하는 값의 길이를 알 수 있기 때문 입니다. 우리는 이를 <a href="https://ko.wikipedia.org/wiki/%EC%9E%90%EB%A3%8C%ED%98%95"><code class="highlighter-rouge">데이터 타입</code> 또는 <code class="highlighter-rouge">자료형</code></a> 이라고 부릅니다. 
+많은 언어들은 프로그래머들이 별도의 자료형을 정의할 수 있게 허용하는데요. 이런 별도의 자료형들을 <code class="highlighter-rouge">구조체</code>나 <code class="highlighter-rouge">class</code>라고 합니다. 이런 별도의 자료형들을 사용하면 메소드나 함수에 전달된 값이 어떤 자료형을 갖게 되는지를 알 수 있을 뿐더러 
+그 자료형에 선언된 값이나 속성이 존재한다는 것도 확신할 수 있게 됩니다. 정해진 자료형으로 생성된 인스턴스는 반드시 해당 자료형의 값이나 속성을 가지고 태어날 것이라는 것을 확신할 수 있기 때문이죠.</p>
+
+<p>반면 <code class="highlighter-rouge">Duck Typing</code>이라는 것은 클래스의 상속이나 인터페이스의 구현으로 자료형을 판단하는 것이 아닌, 인스턴스의 <code class="highlighter-rouge">값</code>이나 <code class="highlighter-rouge">속성</code>을 기준으로 해당 객체를 판단하겠다는 것입니다. 
+이는 오리처럼 걷고 오리처럼 울면 오리라고 간주한다라는 <a href="https://ko.wikipedia.org/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%98%A4%EB%A6%AC_%EC%8B%A4%ED%97%98">덕테스트</a>에서 유래한 말이기도 합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Bird</span> <span class="p">{</span>
+  <span class="nx">quack</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'꽥 꽥!'</span><span class="p">)</span>
+  <span class="p">}</span>
+  
+  <span class="nx">walk</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'뒤뚱 뒤뚱!'</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">Person</span> <span class="p">{</span>
+  <span class="nx">quack</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'나는 오리로 분장했어요.'</span><span class="p">)</span>
+  <span class="p">}</span>
+    
+  <span class="nx">walk</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'뒤뚱 뒤뚱 오리처럼 걸어요!'</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><code class="highlighter-rouge">Bird</code>나 <code class="highlighter-rouge">Person</code>이나 모두 <code class="highlighter-rouge">quack</code>처럼 울 수 있고 <code class="highlighter-rouge">walk</code>로 걸을 수 있으니 오리로 간주하겠다는 것이죠.</p>
+
+<h3 id="iterable">Iterable</h3>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">Iterable</span> <span class="o">{</span>
+    <span class="n">Iterator</span> <span class="o">[</span><span class="n">Symbol</span><span class="o">.</span><span class="na">iterator</span><span class="o">]</span> <span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p><code class="highlighter-rouge">Iterable</code>은 객체 또는 객체의 <code class="highlighter-rouge">prototype</code>체인중 하나라도 <code class="highlighter-rouge">Symbol.iterator</code>속성을 보유하고 있어야 하며 
+실행시 반드시 <code class="highlighter-rouge">Iterator</code>프로토콜을 준수하는 객체를 반환해야 합니다. <code class="highlighter-rouge">Iterable</code>은 <code class="highlighter-rouge">iteration</code>을 위한 행동을 정의하는 역할을 수행 합니다. 
+<code class="highlighter-rouge">DuckTyping</code>에서 설명드렸던 것과 같은 맥락으로 객체(<em>Object</em>)는 속성값(<em>prototype</em>)을 가질 수 있고 <code class="highlighter-rouge">Iterable</code>이 되기 위한 조건은 <code class="highlighter-rouge">Symbol.iterator</code>속성만 보유하고 있으면 되므로 
+모든 자바스크립트의 객체는 <code class="highlighter-rouge">Iterable</code>할 수 있습니다.</p>
+
+<h3 id="iterator">Iterator</h3>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">Iterator</span> <span class="o">{</span>
+    <span class="n">IteratorResult</span> <span class="nf">next</span> <span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p><code class="highlighter-rouge">Iterator</code>는 <code class="highlighter-rouge">next</code>메소드를 가지고 있어야 하고 실행할 때마다 <code class="highlighter-rouge">IteratorResult</code>를 반환 해야 합니다.</p>
+
+<h3 id="iterator-result">Iterator Result</h3>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">IteratorResult</span> <span class="o">{</span>
+    <span class="kt">boolean</span> <span class="n">done</span><span class="o">;</span>
+    <span class="n">Object</span> <span class="n">value</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p><code class="highlighter-rouge">Iterator</code>가 반환하는 <code class="highlighter-rouge">IteratorResult</code>는 <code class="highlighter-rouge">iteration</code>의 완료 여부를 나타내는 <code class="highlighter-rouge">done</code>과 <code class="highlighter-rouge">value</code>를 속성으로 보유하고 있어야 합니다. 
+<code class="highlighter-rouge">done</code>은 모든 <code class="highlighter-rouge">iteration</code>이 완료 되면 <code class="highlighter-rouge">true</code>를 그 외에는 <code class="highlighter-rouge">falsy</code>를 갖게 됩니다. <code class="highlighter-rouge">value</code>에는 해당 <code class="highlighter-rouge">iteration</code>에서 사용될 값을 반환하며 자료형은 <code class="highlighter-rouge">Object</code>이므로 그 어떠한 값도 담길 수 있습니다.</p>
+
+<h3 id="default-execute">default execute</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">iterable</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="p">[</span><span class="nb">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">value</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="nx">next</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">value</span><span class="o">++</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="p">?</span> <span class="p">{</span><span class="nx">value</span><span class="p">}</span> <span class="p">:</span> <span class="p">{</span><span class="na">done</span><span class="p">:</span> <span class="kc">true</span><span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">iterator</span> <span class="o">=</span> <span class="nx">iterable</span><span class="p">[</span><span class="nb">Symbol</span><span class="p">.</span><span class="nx">iterator</span><span class="p">]()</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="c1">// {value: 1}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="c1">// {value: 2}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="c1">// {value: 3}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">iterator</span><span class="p">.</span><span class="nx">next</span><span class="p">())</span> <span class="c1">// {done: true}</span>
+</code></pre></div></div>
+<p><code class="highlighter-rouge">Iterable</code>을 실행하며 <code class="highlighter-rouge">Iterator</code>객체를 얻고 이를 통해 <code class="highlighter-rouge">Iteration</code>을 수행하여 <code class="highlighter-rouge">IteratorResult</code>를 얻는 것을 확인할 수 있습니다.</p>
+
+<h3 id="반복문">반복문</h3>
+<p>반복에는 보통 2가지가 존재하는데 <code class="highlighter-rouge">iteration</code>과 <code class="highlighter-rouge">recursion</code>입니다. 
+<code class="highlighter-rouge">iteration</code>이란 동일한 구조를 계속하여 반복하는 것을 말하며 <code class="highlighter-rouge">recursion</code>이란 알고리즘을 통해 재귀적으로 반복되는 것을 말 합니다. 
+자바스크립트의 <code class="highlighter-rouge">iteration</code>을 수행하는 방법은 언어적으로 굉장히 풍부합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">i</span> <span class="o">++</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// do something</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>반복문의 경우에는 반드시 <code class="highlighter-rouge">3가지</code>가 존재해야 하는데 <code class="highlighter-rouge">초기값</code>, <code class="highlighter-rouge">조건문</code>, <code class="highlighter-rouge">증감식</code>이 그것들 입니다. 이 중 하나라도 없다면 반복문은 영원히 실행되지 않거나, 영원히 실행되게 됩니다.</p>
+
+<h3 id="foreach">forEach</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="nx">array</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">v</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">))</span>
+<span class="nx">array</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">v</span> <span class="o">=&gt;</span> <span class="nx">v</span><span class="p">)</span>
+<span class="nx">array</span><span class="p">.</span><span class="nx">some</span><span class="p">(</span><span class="nx">v</span> <span class="o">=&gt;</span> <span class="nx">v</span><span class="p">)</span>
+<span class="nx">array</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="nx">v</span> <span class="o">=&gt;</span> <span class="nx">v</span><span class="p">)</span>
+</code></pre></div></div>
+<p>자바스크립트는 언어적으로 반복문에 필요한 복잡한 값들을 언어차원에서 흡수하여 루프를 추상화하여 수행할 수 있도록 도와 줍니다. 특별히 인덱스를 사용해야 하거나 커스텀하게 반복을 해야 하는 일이 아니라면 
+최대한 추상화된 반복문을 사용하는 것을 권고 합니다.</p>
+
+<h3 id="iterable-executor-for-of">Iterable executor for-of</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">value</span> <span class="k">of</span> <span class="nx">iterable</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// statement</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><code class="highlighter-rouge">for-of</code>문은 전달받은 <code class="highlighter-rouge">Iterable</code>을 수행하여 <code class="highlighter-rouge">Iterator</code>를 얻고 <code class="highlighter-rouge">IteratorResult</code>의 <code class="highlighter-rouge">done</code>이 <code class="highlighter-rouge">true</code>를 반환할때까지 실행하여 값을 전달해 줍니다.</p>
+
+<h4 id="array">Array</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">iterable</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">];</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">value</span> <span class="k">of</span> <span class="nx">iterable</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="c1">// 10, 20, 30</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="string">String</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">iterable</span> <span class="o">=</span> <span class="s1">'12345'</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">value</span> <span class="k">of</span> <span class="nx">iterable</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="c1">// 1, 2, 3, 4, 5</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="map">Map</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">iterable</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Map</span><span class="p">([</span>
+  <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> 
+  <span class="p">[</span><span class="s1">'b'</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> 
+  <span class="p">[</span><span class="s1">'c'</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="p">])</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="p">[</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">]</span> <span class="k">of</span> <span class="nx">iterable</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span>
+  <span class="c1">// a, 1</span>
+  <span class="c1">// b, 2</span>
+  <span class="c1">// c, 3</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="set">Set</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">iterable</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">value</span> <span class="k">of</span> <span class="nx">iterable</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="c1">// 1, 2, 3</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="generator">Generator</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="o">*</span> <span class="nx">generator</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">yield</span> <span class="mi">1</span>
+  <span class="k">yield</span> <span class="mi">2</span>
+  <span class="k">yield</span> <span class="mi">3</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">value</span> <span class="k">of</span> <span class="nx">generator</span><span class="p">())</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="c1">// 1, 2, 3</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>자바스크립트의 많은 객체들은 <code class="highlighter-rouge">Iterable</code>을 구현하고 있습니다. 별도의 순서에 의한 실행이 아닌 <code class="highlighter-rouge">iteration</code>을 위한 <code class="highlighter-rouge">Iterable</code>이라면 <code class="highlighter-rouge">for-of</code>를 활용하면 좀 더 쉽게 사용할 수 있습니다.<br />
+<code class="highlighter-rouge">for-of</code>는<code class="highlighter-rouge">Iterable</code>을 실행해주는 <code class="highlighter-rouge">executor</code>이기 때문이죠. 앞서 말씀드린 추상화된 반복문들에서 사용할 수 없는 <code class="highlighter-rouge">break</code>문을 사용할 수 있다는 점 또한 큰 이점이 될 수 있겠네요.</p>
+
+<p><code class="highlighter-rouge">Iterable</code>과 <code class="highlighter-rouge">executor for-of</code> 였습니다.</p>
+
+            </article>
+
+            <section class="share">
+    <h3>Share</h3>
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20http://localhost:4000/ES6-ITERABLE-ITERATOR-FOR-OF/%20via%20&#64;imcts&hashtags=javascript,Iterable,Iterator,for - of,"
+    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+        <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
+    </a>
+    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/ES6-ITERABLE-ITERATOR-FOR-OF/"
+    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+        <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
+    </a>
+    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:4000/ES6-ITERABLE-ITERATOR-FOR-OF/"
+    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+        <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
+    </a>
+</section>
+            <section class="author" itemprop="author">
+    <div class="details" itemscope itemtype="http://schema.org/Person">
+        <img itemprop="image" class="img-rounded" src="/resources/images/profile/profile.jpeg" alt="">
+        <p class="def">Author</p>
+        <h3 class="name">
+            <a itemprop="name" href="https://github.com/imcts">dolen</a>
+        </h3>
+        <p class="desc">Front-End Developer</p>
+        <p><a itemprop="email" class="email" href="mailto:dolen.sirupe@gmail.com">dolen.sirupe@gmail.com</a></p>
+        <p><a itemprop="github" class="github" href="https://github.com/imcts">github.com/imcts</a></p>
+    </div>
+</section>
+
+            <section class="comments">
+    <h3>Comments</h3>
+    <div id="disqus_thread"></div>
+</section>
+<script type="text/javascript">
+    var disqus_loaded = false;
+
+    function load_disqus()
+    {
+        disqus_loaded = true;
+        var disqus_shortname = 'dolen';
+        var disqus_title = '';
+        var disqus_url = '/ES6-ITERABLE-ITERATOR-FOR-OF/';
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        var ldr = document.getElementById('disqus_loader');
+    };
+    window.onscroll = function(e) {
+        if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 800)) {
+            //hit bottom of page
+            if (disqus_loaded==false)
+                load_disqus()
+        }
+    };
+</script>
+            <footer>
+    <p>Dolen. Front-End Developer.</p>
+</footer>
+<script src="/assets/js/main.js"></script>
+        </section>
+    </body>
+</html>

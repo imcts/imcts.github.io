@@ -1,6 +1,13 @@
 [
   
     {
+      "title"    : "ES6 - ITERABLE ITERATOR",
+      "tags"     : "javascript, Iterable, Iterator, and for - of",
+      "url"      : "/ES6-ITERABLE-ITERATOR-FOR-OF/",
+      "date"     : "28 Nov 2018"
+    } ,
+  
+    {
       "title"    : "ES6 - DESTRUCTURING ASSIGNMENT",
       "tags"     : "javascript and destructuring assignment",
       "url"      : "/ES6-DESTRUCTURING_ASSIGNMENT/",
@@ -54,13 +61,6 @@
       "tags"     : "memo",
       "url"      : "/dragAndDrop/",
       "date"     : "02 Jun 2017"
-    } ,
-  
-    {
-      "title"    : "RESUME",
-      "tags"     : "memo",
-      "url"      : "/resume/",
-      "date"     : "23 Mar 2017"
     } ,
   
     {
