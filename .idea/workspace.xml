@@ -2,24 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55d7771c-0815-409c-ab6d-8f157d014b9d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/2018-12-14-ES6-PARAMETERS.md" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/_site/ES6-ITERABLE-ITERATOR-FOR-OF/index.html" afterPath="$PROJECT_DIR$/_site/ES6-ITERABLE-ITERATOR-FOR-OF/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/about/index.html" afterPath="$PROJECT_DIR$/_site/about/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/category/algorithm/index.html" afterPath="$PROJECT_DIR$/_site/category/algorithm/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/category/css/index.html" afterPath="$PROJECT_DIR$/_site/category/css/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/category/html/index.html" afterPath="$PROJECT_DIR$/_site/category/html/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/category/java/index.html" afterPath="$PROJECT_DIR$/_site/category/java/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/category/js/index.html" afterPath="$PROJECT_DIR$/_site/category/js/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/category/math/index.html" afterPath="$PROJECT_DIR$/_site/category/math/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/category/project/index.html" afterPath="$PROJECT_DIR$/_site/category/project/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/category/tool/index.html" afterPath="$PROJECT_DIR$/_site/category/tool/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/feed.xml" afterPath="$PROJECT_DIR$/_site/feed.xml" />
-      <change beforePath="$PROJECT_DIR$/_site/index.html" afterPath="$PROJECT_DIR$/_site/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/search.json" afterPath="$PROJECT_DIR$/_site/search.json" />
-      <change beforePath="$PROJECT_DIR$/_site/series/index.html" afterPath="$PROJECT_DIR$/_site/series/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/sitemap.xml" afterPath="$PROJECT_DIR$/_site/sitemap.xml" />
-      <change beforePath="$PROJECT_DIR$/_site/tags/index.html" afterPath="$PROJECT_DIR$/_site/tags/index.html" />
+      <change beforePath="$PROJECT_DIR$/project/resume/css/index.css" afterPath="$PROJECT_DIR$/project/resume/css/index.css" />
+      <change beforePath="$PROJECT_DIR$/project/resume/index.html" afterPath="$PROJECT_DIR$/project/resume/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,31 +15,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="2018-12-14-ES6-PARAMETERS.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/_posts/2018-12-14-ES6-PARAMETERS.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="207">
-                <caret line="130" column="63" lean-forward="false" selection-start-line="130" selection-start-column="63" selection-end-line="130" selection-end-column="63" />
-                <folding>
-                  <marker date="1544928733627" expanded="true" signature="286:360" ph="{...}" />
-                  <marker date="1544928733627" expanded="true" signature="298:313" ph="{...}" />
-                  <marker date="1544928733627" expanded="true" signature="935:961" ph="{...}" />
-                  <marker date="1544928733627" expanded="true" signature="1353:1376" ph="{...}" />
-                  <marker date="1544928733627" expanded="true" signature="1652:1675" ph="{...}" />
-                  <marker date="1544928733627" expanded="true" signature="1969:1992" ph="{...}" />
-                  <marker date="1544928733627" expanded="true" signature="1996:2010" ph="{...}" />
-                  <marker date="1544928733627" expanded="true" signature="2256:2279" ph="{...}" />
-                  <marker date="1544928733627" expanded="true" signature="2425:2448" ph="{...}" />
-                  <marker date="1544928733627" expanded="true" signature="2820:2848" ph="{...}" />
-                  <marker date="1544928733627" expanded="true" signature="3288:3311" ph="{...}" />
-                  <marker date="1544928733627" expanded="true" signature="3651:3677" ph="{...}" />
-                  <marker date="1544928733627" expanded="true" signature="3885:3968" ph="{...}" />
-                  <marker date="1544928733627" expanded="true" signature="3904:3925" ph="{...}" />
-                  <marker date="1544928733627" expanded="true" signature="3944:3966" ph="{...}" />
-                </folding>
-              </first_editor>
-              <second_editor />
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/project/resume/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="494">
+              <caret line="110" column="12" lean-forward="false" selection-start-line="110" selection-start-column="12" selection-end-line="110" selection-end-column="12" />
+              <folding>
+                <element signature="n#section#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#article#0;n#section#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#article#0;n#section#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#article#0;n#section#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -72,6 +43,8 @@
       <find>그로인해</find>
       <find>해당 기본</find>
       <find>더이상 변수</find>
+      <find>Cer</find>
+      <find>role</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -92,11 +65,12 @@
       <list>
         <option value="$PROJECT_DIR$/_posts/2018-11-17-ES6-ARROW_FUNCTION.md" />
         <option value="$PROJECT_DIR$/_posts/2018-11-23-ES6-DESTRUCTURING_ASSIGNMENT.md" />
-        <option value="$PROJECT_DIR$/project/resume/index.html" />
         <option value="$PROJECT_DIR$/_includes/menu-search.html" />
         <option value="$PROJECT_DIR$/_config.yml" />
         <option value="$PROJECT_DIR$/_posts/2018-11-28-ES6-ITERABLE-ITERATOR-FOR-OF.md" />
         <option value="$PROJECT_DIR$/_posts/2018-12-14-ES6-PARAMETERS.md" />
+        <option value="$PROJECT_DIR$/project/resume/css/index.css" />
+        <option value="$PROJECT_DIR$/project/resume/index.html" />
       </list>
     </option>
   </component>
@@ -135,22 +109,16 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="_includes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="_posts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
@@ -174,10 +142,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -313,15 +277,16 @@
       <workItem from="1543822569337" duration="59000" />
       <workItem from="1544290194574" duration="4000" />
       <workItem from="1544502667215" duration="101000" />
-      <workItem from="1544880792134" duration="3706000" />
+      <workItem from="1544880792134" duration="3891000" />
+      <workItem from="1544938235666" duration="2578000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29092000" />
+    <option name="totallyTimeSpent" value="31855000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="946" extended-state="6" />
+    <frame x="0" y="23" width="1680" height="946" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -336,7 +301,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32549942" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17948718" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18131869" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -420,13 +385,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/resume/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="26" column="3" lean-forward="false" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/idea.vmoptions">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -441,13 +399,6 @@
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/resume/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="187" column="37" lean-forward="true" selection-start-line="187" selection-start-column="37" selection-end-line="187" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -576,6 +527,27 @@
             </folding>
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/resume/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="351" column="1" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="371" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/resume/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="110" column="12" lean-forward="false" selection-start-line="110" selection-start-column="12" selection-end-line="110" selection-end-column="12" />
+          <folding>
+            <element signature="n#section#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#article#0;n#section#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#article#0;n#section#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#article#0;n#section#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
