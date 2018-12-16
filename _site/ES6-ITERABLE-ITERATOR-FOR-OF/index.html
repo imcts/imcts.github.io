@@ -112,7 +112,7 @@
 0과 1로만 이루어지는 수 체계인 <a href="https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%A7%84%EB%B2%95">2진법</a>을 주로 사용합니다. 당연하게도 전자기기인 컴퓨터는 2진법을 사용하여 저장 장치에 값을 기록하고 
 사용하는데요. 이때 메모리안에 수도 없이 이어져있는 <code class="highlighter-rouge">bit</code>공간중에 어디서부터 어디까지가 내가 만든 값일까요? 프로그래밍 언어 별로 정수, 실수, 문자열등에 사용되는 메모리양은 전부 다르지만 보통의 프로그래밍 언어는 값의 크기를 지정합니다. 
 유명한 정적언어인 <code class="highlighter-rouge">C</code>, <code class="highlighter-rouge">JAVA</code>를 기준으로 정수형의 숫자값은 <code class="highlighter-rouge">4Byte</code>의 크기를 갖게 됩니다. <code class="highlighter-rouge">1Byte</code>는 <code class="highlighter-rouge">8Bit</code>이므로 <code class="highlighter-rouge">32Bit</code>라는 공간을 갖게 되는데요. 
-그로인해 메모리에는 <code class="highlighter-rouge">00000000 00000000 00000000 00000001</code>이라는 값이 저장되게 됩니다. 그렇다면 왜 꼭 특정 값을 저장하는데 크기를 지정해 놓은 것일까요? 
+그로인해 변수 <code class="highlighter-rouge">value</code>의 메모리에는 <code class="highlighter-rouge">00000000 00000000 00000000 00000001</code>이라는 값이 저장되게 됩니다. 그렇다면 왜 꼭 특정 값을 저장하는데 크기를 지정해 놓은 것일까요? 
 그래야만 연속적으로 이어져있는 비트 공간의 값들 중 현재 내가 얻어야 하는 값의 길이를 알 수 있기 때문 입니다. 우리는 이를 <a href="https://ko.wikipedia.org/wiki/%EC%9E%90%EB%A3%8C%ED%98%95"><code class="highlighter-rouge">데이터 타입</code> 또는 <code class="highlighter-rouge">자료형</code></a> 이라고 부릅니다. 
 많은 언어들은 프로그래머들이 별도의 자료형을 정의할 수 있게 허용하는데요. 이런 별도의 자료형들을 <code class="highlighter-rouge">구조체</code>나 <code class="highlighter-rouge">class</code>라고 합니다. 이런 별도의 자료형들을 사용하면 메소드나 함수에 전달된 값이 어떤 자료형을 갖게 되는지를 알 수 있을 뿐더러 
 그 자료형에 선언된 값이나 속성이 존재한다는 것도 확신할 수 있게 됩니다. 정해진 자료형으로 생성된 인스턴스는 반드시 해당 자료형의 값이나 속성을 가지고 태어날 것이라는 것을 확신할 수 있기 때문이죠.</p>
