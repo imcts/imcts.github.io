@@ -2,8 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55d7771c-0815-409c-ab6d-8f157d014b9d" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/README.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/package-lock.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/package.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/api/index.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/constant/cart.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/constant/class.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/constant/list.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/constant/menu.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/constant/message.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/constant/tag.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/core/Model.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/core/Observer.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/core/View.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/dom/Dom.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/format/Number.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/index.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/model/AppModel.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/view/AppView.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/view/CartView.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/view/ListView.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/view/component/list/BearList.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/view/component/list/CartList.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/view/component/menu/Menu.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/view/component/tag/TagList.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/static/css/index.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/static/img/bear.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/static/img/img.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/template/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/webpack.config.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/project/toss" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,7 +41,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="package-lock.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/project/bear/package-lock.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -106,6 +145,19 @@
               <item name="blog" type="462c0819:PsiDirectoryNode" />
               <item name="project" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="bear" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="bear" type="462c0819:PsiDirectoryNode" />
+              <item name="template" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -127,6 +179,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/project/bear" />
       <recent name="$PROJECT_DIR$/_posts" />
     </key>
   </component>
@@ -253,7 +306,7 @@
       <workItem from="1544938235666" duration="2706000" />
       <workItem from="1544941989804" duration="216000" />
       <workItem from="1545009454435" duration="75000" />
-      <workItem from="1545550660368" duration="427000" />
+      <workItem from="1545550660368" duration="469000" />
     </task>
     <task id="LOCAL-00001" summary="add bears">
       <created>1545550852267</created>
@@ -269,11 +322,18 @@
       <option name="project" value="LOCAL" />
       <updated>1545551068379</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary=".dele">
+      <created>1545551094689</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1545551094689</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32701000" />
+    <option name="totallyTimeSpent" value="32743000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="946" extended-state="6" />
@@ -315,7 +375,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add bears" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value=".dele" />
+    <option name="LAST_COMMIT_MESSAGE" value=".dele" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -578,6 +639,14 @@
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/bear/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
