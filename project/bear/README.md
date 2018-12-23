@@ -1,4 +1,4 @@
-# Toss Homework Project.
+# The Bear Project.
 
 ##### install
 ```shell

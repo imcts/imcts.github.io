@@ -2,35 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55d7771c-0815-409c-ab6d-8f157d014b9d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/package-lock.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/package.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/api/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/constant/cart.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/constant/class.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/constant/list.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/constant/menu.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/constant/message.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/constant/tag.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/core/Model.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/core/Observer.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/core/View.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/dom/Dom.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/format/Number.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/index.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/model/AppModel.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/view/AppView.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/view/CartView.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/view/ListView.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/view/component/list/BearList.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/view/component/list/CartList.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/view/component/menu/Menu.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/src/view/component/tag/TagList.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/static/css/index.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/static/img/bear.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/static/img/img.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/template/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/project/bear/webpack.config.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,12 +13,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="package-lock.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/project/bear/package-lock.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/project/bear/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="10" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -95,6 +69,7 @@
         <option value="$PROJECT_DIR$/project/toss/package.json" />
         <option value="$PROJECT_DIR$/project/resume/index.html" />
         <option value="$PROJECT_DIR$/project/toss/README.md" />
+        <option value="$PROJECT_DIR$/project/bear/README.md" />
       </list>
     </option>
   </component>
@@ -150,13 +125,6 @@
               <item name="blog" type="462c0819:PsiDirectoryNode" />
               <item name="project" type="462c0819:PsiDirectoryNode" />
               <item name="bear" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="bear" type="462c0819:PsiDirectoryNode" />
-              <item name="template" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -306,7 +274,7 @@
       <workItem from="1544938235666" duration="2706000" />
       <workItem from="1544941989804" duration="216000" />
       <workItem from="1545009454435" duration="75000" />
-      <workItem from="1545550660368" duration="469000" />
+      <workItem from="1545550660368" duration="638000" />
     </task>
     <task id="LOCAL-00001" summary="add bears">
       <created>1545550852267</created>
@@ -329,11 +297,18 @@
       <option name="project" value="LOCAL" />
       <updated>1545551094689</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add bear">
+      <created>1545551144146</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1545551144146</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32743000" />
+    <option name="totallyTimeSpent" value="32912000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="946" extended-state="6" />
@@ -347,10 +322,10 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32902467" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22326675" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29612222" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12148962" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12148962" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -376,7 +351,8 @@
     <MESSAGE value="add bears" />
     <MESSAGE value="." />
     <MESSAGE value=".dele" />
-    <option name="LAST_COMMIT_MESSAGE" value=".dele" />
+    <MESSAGE value="add bear" />
+    <option name="LAST_COMMIT_MESSAGE" value="add bear" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -642,11 +618,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/project/bear/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/bear/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/project/bear/package-lock.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="300">
+          <caret line="20" column="14" lean-forward="false" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/bear/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="10" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
