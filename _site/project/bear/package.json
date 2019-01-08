@@ -1,0 +1,26 @@
+{
+  "name": "toss",
+  "version": "1.0.0",
+  "description": "The project of the homework of TOSS",
+  "main": "index.js",
+  "scripts": {
+    "server": "webpack-dev-server --mode=development",
+    "build:dev": "webpack --config webpack.config.js --mode=development",
+    "build:prod": "webpack --config webpack.config.js --mode=production"
+  },
+  "author": "dolen.sirupe",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "babel-loader": "^8.0.4",
+    "copy-webpack-plugin": "^4.6.0",
+    "css-loader": "^2.0.2",
+    "jquery": "^3.3.1",
+    "mini-css-extract-plugin": "^0.5.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "webpack": "^4.28.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.11"
+  }
+}

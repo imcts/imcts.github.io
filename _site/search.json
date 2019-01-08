@@ -1,6 +1,13 @@
 [
   
     {
+      "title"    : "ES6 - CLASS",
+      "tags"     : "javascript, method, and extends",
+      "url"      : "/ES6-CLASS-METHOD/",
+      "date"     : "07 Jan 2019"
+    } ,
+  
+    {
       "title"    : "ES6 - PARAMETERS",
       "tags"     : "javascript, rest, and default value",
       "url"      : "/ES6-PARAMETERS/",

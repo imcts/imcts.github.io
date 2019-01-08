@@ -1,0 +1,3 @@
+export const CART_EVENT = {
+  CART_CLEARED: 'CART_CLEARED'
+}

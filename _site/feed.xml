@@ -5,9 +5,25 @@
     <description>dolen - blog</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 16 Dec 2018 11:52:15 +0900</pubDate>
-    <lastBuildDate>Sun, 16 Dec 2018 11:52:15 +0900</lastBuildDate>
+    <pubDate>Tue, 08 Jan 2019 18:28:13 +0900</pubDate>
+    <lastBuildDate>Tue, 08 Jan 2019 18:28:13 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>ES6 - CLASS</title>
+        <description>&lt;h3 id=&quot;class&quot;&gt;Class&lt;/h3&gt; &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ES6&lt;/code&gt;에서는 새로운 &lt;code class=&quot;highlighter-rouge&quot;&gt;class&lt;/code&gt;문법을 지원하여 &lt;code class=&quot;highlighter-rouge&quot;&gt;prototype&lt;/code&gt; 기반의 상속보다 간단하게 기술합니다. 그로 인해 객체를 생성하고 객체의 관계를 정의하는데에 훨씬 단순하고 명확한 문법을 제공 하게 되었습니다.&lt;/p&gt; &lt;h4 id=&quot;class-선언문&quot;&gt;Class 선언문&lt;/h4&gt; &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Class&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;method&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Class&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// function&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;h4 id=&quot;class-표현식&quot;&gt;Class 표현식&lt;/h4&gt; &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Class&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Class&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// function&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;class&lt;/code&gt;는 함수의 일종으로 분류 되어 집니다. 자바스크립트에서의 함수는 1급객체로서 선언문으로표현하거나 표현식으로 표시할 수 있듯이 클래스 또한 선언문과...</description>
+        <pubDate>Mon, 07 Jan 2019 09:00:00 +0900</pubDate>
+        <link>http://localhost:4000/ES6-CLASS-METHOD/</link>
+        <guid isPermaLink="true">http://localhost:4000/ES6-CLASS-METHOD/</guid>
+        
+        <category>javascript</category>
+        
+        <category>method</category>
+        
+        <category>extends</category>
+        
+        
+      </item>
     
       <item>
         <title>ES6 - PARAMETERS</title>
@@ -477,20 +493,6 @@
         <pubDate>Mon, 07 Nov 2016 05:00:00 +0900</pubDate>
         <link>http://localhost:4000/sort-quick/</link>
         <guid isPermaLink="true">http://localhost:4000/sort-quick/</guid>
-        
-        <category>algorithm</category>
-        
-        <category>sort</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Algorithm - Merge Sort</title>
-        <description>&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://visualgo.net/sorting&quot;&gt;Merge Sort View&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Arr&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//this._list = new Array(10000).fill(0).map(v =&amp;gt; Math.floor(Math.random() * 100) + 1);&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;mergeSort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;timer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;timer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;listLen&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;loopLen&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;listLen&lt;/span&gt; &lt;span...</description>
-        <pubDate>Mon, 07 Nov 2016 05:00:00 +0900</pubDate>
-        <link>http://localhost:4000/sort-merge/</link>
-        <guid isPermaLink="true">http://localhost:4000/sort-merge/</guid>
         
         <category>algorithm</category>
         
