@@ -290,3 +290,102 @@ const Class = class extends class extends class {
 }
 ````
 클래스 표현법에 따라 클래스명은 생략할 수 있습니다. 
+
+### Native Classes
+`class` 문법은 여러가지 `Native Class`객체 또한 상속받을 수 있습니다.
+
+#### Collections
+```javascript
+const A = class extends Array {
+  constructor (...args) {
+    super(...args)
+  }
+  
+  pop () {
+    throw new Error('This method is not allowed to use.')
+  }
+  
+  shift () {
+    throw new Error('This method is not allowed to use.')
+  }
+  
+  map (f) {
+    
+    // before doing.
+    
+    return super.map(f)
+  }
+}
+
+const arr = new A(1, 2, 3)
+
+a.shift() // This method is not allowed to use.
+a.pop()   // This method is not allowed to use.
+```
+자바스크립트 내장객체인 `Array`를 상속한 클래스를 만들고, `pop`, `shift`메소드를 사용하지 못하도록 구현 하였습니다. 물론 자바스크립트의 `Array`는 여타 정적 언어의 배열처럼 동작하지 않고 
+일종의 `Linked HashMap`처럼 동작하므로 `arr.length`의 값을 `0`으로 변경하는 것만으로 초기화 되기는 하지만, 해당 객체의 메소드를 외부에서 사용하지 못하게 할 것이라는 의도는 표현할 수 있습니다. 
+뿐만 아니라 특정 메소드를 `override`하여 메소드가 호출되기 전에 특수한 처리 등을 할 수 있게 되기도 합니다. 
+
+````javascript
+const T = class {}
+
+const S = class extends Set {
+  constructor (...args) {
+    super(...args)
+  }
+  
+  add () {
+    throw new Error('This method is not allowed to use.')
+  }
+  
+  has () {
+    throw new Error('This method is not allowed to use.')
+  }
+  
+  delete () {
+    throw new Error('This method is not allowed to use.')
+  }
+  
+  addT (t) {
+    super.add(t)
+  }
+}
+new S().add()         // This method is not allowed to use. 
+new S().addT(new T())
+````
+`ES6`에 추가된 `Set`은 자동으로 중복된 객체를 저장하지 않으므로 별도의 중복 체크 여부없이 데이터를 저장할때 사용할 수 있습니다. 그 뿐 아니라 `내적동질성`에 의하여 원래 외부로 노출되어야 하는 메소드는 사용하지 못하도록 하고 
+`S`에서는 `super`를 사용하여 부모의 메소드에 접근하게 할 수 있습니다. 
+
+#### Error
+```javascript
+const E = class extends Error {
+  constructor (...args) {
+    super(...args)
+  }
+}
+
+e = new E('My error') // My error
+```
+자바스크립트의 [`에러타입`](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Error)은 이미 8가지가 존재합니다. 그러나 이 외에도 별도의 에러 타입을 지정하면 유용할때가 있습니다. 
+
+```javascript
+const Error404 = class extends Error {
+  constructor (...agrs) {
+    super(...args)
+    this._sendLog()
+  }
+  
+  _sendLog () {
+    // Send log.
+  }
+}
+```
+흔히 사용하는 `ajax`통신시에 실패했을 경우 저희는 `Error`인스턴스를 전달 받게 되는데, 그 안에는 여러가지 상태값들이 존재하게 됩니다. 그리고 그 에러를 기준으로 여러곳의 화면에서는 동시 다발적으로 발생해야 하죠. 
+단적인 예로 화면을 에러 화면으로 교체한다거나, 또는 에러 로그를 남긴 뒤 사용자에게 메시지 팝업을 노출한다거나 하는 등의 것들 입니다. 하지만 에러의 종류는 굉장히 많을 수 있고 에러를 판단하는 방법 중 가장 흔한 방법은 문자열 비교 이므로 
+변경되어져야 하는 부분에서는 `e.message`를 가지고 비교하곤 합니다. 이러한 경우 개별적인 상황에 맞는 에러 객체를 생성하여 `instanceof`로 에러의 형을 판단할 수 있고 그에 따른 처리를 한군데로 분리 할 수도 있겠죠. 
+
+### Private Patterns
+```javascript
+
+```
+
