@@ -355,6 +355,182 @@
 </code></pre></div></div>
 <p>클래스 표현법에 따라 클래스명은 생략할 수 있습니다.</p>
 
+<h3 id="native-classes">Native Classes</h3>
+<p><code class="highlighter-rouge">class</code> 문법은 여러가지 <code class="highlighter-rouge">Native Class</code>객체 또한 상속받을 수 있습니다.</p>
+
+<h4 id="collections">Collections</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">A</span> <span class="o">=</span> <span class="kd">class</span> <span class="kd">extends</span> <span class="nb">Array</span> <span class="p">{</span>
+  <span class="kd">constructor</span> <span class="p">(...</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(...</span><span class="nx">args</span><span class="p">)</span>
+  <span class="p">}</span>
+  
+  <span class="nx">pop</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">'This method is not allowed to use.'</span><span class="p">)</span>
+  <span class="p">}</span>
+  
+  <span class="nx">shift</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">'This method is not allowed to use.'</span><span class="p">)</span>
+  <span class="p">}</span>
+  
+  <span class="nx">map</span> <span class="p">(</span><span class="nx">f</span><span class="p">)</span> <span class="p">{</span>
+    
+    <span class="c1">// before doing.</span>
+    
+    <span class="k">return</span> <span class="k">super</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">A</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="nx">a</span><span class="p">.</span><span class="nx">shift</span><span class="p">()</span> <span class="c1">// This method is not allowed to use.</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">pop</span><span class="p">()</span>   <span class="c1">// This method is not allowed to use.</span>
+</code></pre></div></div>
+<p>자바스크립트 내장객체인 <code class="highlighter-rouge">Array</code>를 상속한 클래스를 만들고, <code class="highlighter-rouge">pop</code>, <code class="highlighter-rouge">shift</code>메소드를 사용하지 못하도록 구현 하였습니다. 물론 자바스크립트의 <code class="highlighter-rouge">Array</code>는 여타 정적 언어의 배열처럼 동작하지 않고 
+일종의 <code class="highlighter-rouge">Linked HashMap</code>처럼 동작하므로 <code class="highlighter-rouge">arr.length</code>의 값을 <code class="highlighter-rouge">0</code>으로 변경하는 것만으로 초기화 되기는 하지만, 해당 객체의 메소드를 외부에서 사용하지 못하게 할 것이라는 의도는 표현할 수 있습니다. 
+뿐만 아니라 특정 메소드를 <code class="highlighter-rouge">override</code>하여 메소드가 호출되기 전에 특수한 처리 등을 할 수 있게 되기도 합니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">T</span> <span class="o">=</span> <span class="kd">class</span> <span class="p">{}</span>
+
+<span class="kd">const</span> <span class="nx">S</span> <span class="o">=</span> <span class="kd">class</span> <span class="kd">extends</span> <span class="nb">Set</span> <span class="p">{</span>
+  <span class="kd">constructor</span> <span class="p">(...</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(...</span><span class="nx">args</span><span class="p">)</span>
+  <span class="p">}</span>
+  
+  <span class="nx">add</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">'This method is not allowed to use.'</span><span class="p">)</span>
+  <span class="p">}</span>
+  
+  <span class="nx">has</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">'This method is not allowed to use.'</span><span class="p">)</span>
+  <span class="p">}</span>
+  
+  <span class="k">delete</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">'This method is not allowed to use.'</span><span class="p">)</span>
+  <span class="p">}</span>
+  
+  <span class="nx">addT</span> <span class="p">(</span><span class="nx">t</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">t</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">new</span> <span class="nx">S</span><span class="p">().</span><span class="nx">add</span><span class="p">()</span>         <span class="c1">// This method is not allowed to use. </span>
+<span class="k">new</span> <span class="nx">S</span><span class="p">().</span><span class="nx">addT</span><span class="p">(</span><span class="k">new</span> <span class="nx">T</span><span class="p">())</span>
+</code></pre></div></div>
+<p><code class="highlighter-rouge">ES6</code>에 추가된 <code class="highlighter-rouge">Set</code>은 자동으로 중복된 객체를 저장하지 않으므로 별도의 중복 체크 여부없이 데이터를 저장할때 사용할 수 있습니다. 그 뿐 아니라 <code class="highlighter-rouge">내적동질성</code>에 의하여 원래 외부로 노출되어야 하는 메소드는 사용하지 못하도록 하고 
+<code class="highlighter-rouge">S</code>에서는 <code class="highlighter-rouge">super</code>를 사용하여 부모의 메소드에 접근하게 할 수 있습니다.</p>
+
+<h4 id="error">Error</h4>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">E</span> <span class="o">=</span> <span class="kd">class</span> <span class="kd">extends</span> <span class="nb">Error</span> <span class="p">{</span>
+  <span class="kd">constructor</span> <span class="p">(...</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(...</span><span class="nx">args</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">e</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">E</span><span class="p">(</span><span class="s1">'My error'</span><span class="p">)</span> <span class="c1">// My error</span>
+</code></pre></div></div>
+<p>자바스크립트의 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Error"><code class="highlighter-rouge">에러타입</code></a>은 이미 8가지가 존재합니다. 그러나 이 외에도 별도의 에러 타입을 지정하면 유용할때가 있습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">Error404</span> <span class="o">=</span> <span class="kd">class</span> <span class="kd">extends</span> <span class="nb">Error</span> <span class="p">{</span>
+  <span class="kd">constructor</span> <span class="p">(...</span><span class="nx">agrs</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(...</span><span class="nx">args</span><span class="p">)</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">_sendLog</span><span class="p">()</span>
+  <span class="p">}</span>
+  
+  <span class="nx">_sendLog</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Send log.</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>흔히 사용하는 <code class="highlighter-rouge">ajax</code>통신시에 실패했을 경우 <code class="highlighter-rouge">Error</code>인스턴스를 전달 받게 되는데, 그 안에는 여러가지 상태값들이 존재하게 됩니다. 해당 에러를 기준으로 여러곳의 화면에서는 동시 다발적으로 변화가 발생해야 할 때가 많습니다. 
+단적인 예로 화면을 에러 화면으로 교체한다거나, 에러 로그를 남긴 뒤 사용자에게 메시지 팝업을 노출한다거나 하는 등의 것들이죠. 에러의 종류는 굉장히 많을 수 있고 에러를 판단하는 방법 중 가장 흔한 방법은 문자열 비교 이므로 
+변경되어져야 하는 부분에서는 <code class="highlighter-rouge">e.message</code>를 가지고 비교하곤 합니다. 이럴때 상황에 맞는 에러 객체를 생성하여 <code class="highlighter-rouge">instanceof</code>로 에러의 형을 판단할 수 있다면 공통된 에러처리를 분리 할 수도 있습니다.</p>
+
+<h3 id="private-patterns">Private Patterns</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">Class</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">CLASSES</span> <span class="o">=</span> <span class="p">{}</span>
+  <span class="kd">var</span> <span class="nx">index</span> <span class="o">=</span> <span class="mi">0</span>
+  
+  <span class="kd">function</span> <span class="nx">Class</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">Class</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="nx">index</span><span class="o">++</span>
+    <span class="nx">CLASSES</span><span class="p">[</span><span class="k">this</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">value</span><span class="p">:</span> <span class="nx">value</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  
+  <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">(</span><span class="nx">Class</span><span class="p">.</span><span class="nx">prototype</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">toString</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">id</span>
+    <span class="p">},</span>
+    
+    <span class="nx">getValue</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">CLASSES</span><span class="p">[</span><span class="k">this</span><span class="p">].</span><span class="nx">value</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+  
+  <span class="k">return</span> <span class="nx">Class</span>
+<span class="p">})()</span>
+
+<span class="k">new</span> <span class="nx">Class</span><span class="p">(</span><span class="mi">123</span><span class="p">).</span><span class="nx">getValue</span><span class="p">()</span> <span class="c1">// 123</span>
+<span class="k">new</span> <span class="nx">Class</span><span class="p">(</span><span class="mi">456</span><span class="p">).</span><span class="nx">getValue</span><span class="p">()</span> <span class="c1">// 456</span>
+</code></pre></div></div>
+<p><code class="highlighter-rouge">ES5</code>까지는 클래스에서 <code class="highlighter-rouge">private</code>변수를 사용하기 위해서는 매번 생성되는 객체마다 <code class="highlighter-rouge">id</code>와 <code class="highlighter-rouge">index</code>를 조합하여 객체에 저장하는 방식으로 사용하곤 했었습니다. 즉시 실행 함수로 
+클래스 선언문을 감싸고 그 안에서 클래스를 선언하고 <code class="highlighter-rouge">closure</code>영역에 객체를 하나 두어 매번 생성되는 인스턴스를 저장하는 방법이죠. 이렇게 되면 외부에서는 해당 객체의 내부 프로퍼티에 접근할 수가 없게 되고 
+클래스는 내부 프로퍼티들을 <code class="highlighter-rouge">은닉화</code> 할 수 있습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">Class</span> <span class="o">=</span> <span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">PRIVATE</span> <span class="o">=</span> <span class="nb">Symbol</span><span class="p">()</span>
+  
+  <span class="k">return</span> <span class="kd">class</span> <span class="p">{</span>
+    <span class="kd">constructor</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">[</span><span class="nx">PRIVATE</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="nx">value</span><span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="kd">get</span> <span class="nx">value</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="k">this</span><span class="p">[</span><span class="nx">PRIVATE</span><span class="p">].</span><span class="nx">value</span>
+    <span class="p">}</span>
+    
+    <span class="kd">set</span> <span class="nx">value</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">PRIVATE</span> <span class="o">=</span> <span class="k">this</span><span class="p">[</span><span class="nx">PRIVATE</span><span class="p">]</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">PRIVATE</span><span class="p">.</span><span class="nx">value</span> <span class="o">!==</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">PRIVATE</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">value</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">})()</span>
+
+<span class="k">new</span> <span class="nx">Class</span><span class="p">(</span><span class="mi">123</span><span class="p">).</span><span class="nx">value</span> <span class="c1">// 123</span>
+<span class="k">new</span> <span class="nx">Class</span><span class="p">(</span><span class="mi">456</span><span class="p">).</span><span class="nx">value</span> <span class="c1">// 456</span>
+</code></pre></div></div>
+<p><code class="highlighter-rouge">ES6</code>의 <a href="https://imcts.github.io/ES6-SYMBOL/"><code class="highlighter-rouge">Symbol</code></a>과 클래스 구문을 활용하면 좀 더 편리하게 <code class="highlighter-rouge">private</code>를 구현할 수 있습니다. 하지만 <code class="highlighter-rouge">Symbol</code>을 사용하기 때문에 
+<code class="highlighter-rouge">console.log</code>를 사용하여 객체를 들여다 보면 프로퍼티가 보일 뿐더러 <code class="highlighter-rouge">Reflect.ownKeys</code>메소드를 사용하면 해당 인스턴스의 <code class="highlighter-rouge">Symbol</code>값 마저도 구할 수 있기 때문에 정확한 <code class="highlighter-rouge">은닉화</code>라고 보기는 어렵습니다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">Class</span> <span class="o">=</span> <span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">CLASSES</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Map</span><span class="p">()</span>
+  
+  <span class="k">return</span> <span class="kd">class</span> <span class="p">{</span>
+    <span class="kd">constructor</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">CLASSES</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="p">{</span><span class="nx">value</span><span class="p">})</span>
+    <span class="p">}</span>
+    
+    <span class="kd">get</span> <span class="nx">value</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">CLASSES</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">value</span>
+    <span class="p">}</span>
+    
+    <span class="kd">set</span> <span class="nx">value</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">PRIVATE</span> <span class="o">=</span> <span class="nx">CLASSES</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">PRIVATE</span><span class="p">.</span><span class="nx">value</span> <span class="o">!==</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">PRIVATE</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">value</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">})()</span>
+
+<span class="k">new</span> <span class="nx">Class</span><span class="p">(</span><span class="mi">123</span><span class="p">).</span><span class="nx">value</span>
+</code></pre></div></div>
+<p><code class="highlighter-rouge">ES6</code>의 <code class="highlighter-rouge">Map</code>은 그 어떤 값이라도 <code class="highlighter-rouge">key</code>로 지정할 수 있는 표현력이 좋은 자료구조이므로 객체 인스턴스의 주소값 또한 <code class="highlighter-rouge">key</code>로 사용할 수 있습니다. 
+<code class="highlighter-rouge">Map</code>을 사용하면 클래스 인스턴스의 <code class="highlighter-rouge">은닉화</code>를 확실하게 할 수 있게 됩니다. <code class="highlighter-rouge">Map</code>이 아닌 <code class="highlighter-rouge">WeekMap</code>을 사용한다면 
+해당 객체의 인스턴스가 그 어떤 객체도 참조하지 않을때(<code class="highlighter-rouge">GC대상일때</code>) <code class="highlighter-rouge">CLASSES</code>에서도 제거되므로 더 편리하게 사용할 수 있습니다.</p>
+
+
             </article>
 
             <section class="share">

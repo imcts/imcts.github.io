@@ -380,12 +380,96 @@ const Error404 = class extends Error {
   }
 }
 ```
-흔히 사용하는 `ajax`통신시에 실패했을 경우 저희는 `Error`인스턴스를 전달 받게 되는데, 그 안에는 여러가지 상태값들이 존재하게 됩니다. 그리고 그 에러를 기준으로 여러곳의 화면에서는 동시 다발적으로 발생해야 하죠. 
-단적인 예로 화면을 에러 화면으로 교체한다거나, 또는 에러 로그를 남긴 뒤 사용자에게 메시지 팝업을 노출한다거나 하는 등의 것들 입니다. 하지만 에러의 종류는 굉장히 많을 수 있고 에러를 판단하는 방법 중 가장 흔한 방법은 문자열 비교 이므로 
-변경되어져야 하는 부분에서는 `e.message`를 가지고 비교하곤 합니다. 이러한 경우 개별적인 상황에 맞는 에러 객체를 생성하여 `instanceof`로 에러의 형을 판단할 수 있고 그에 따른 처리를 한군데로 분리 할 수도 있겠죠. 
+흔히 사용하는 `ajax`통신시에 실패했을 경우 `Error`인스턴스를 전달 받게 되는데, 그 안에는 여러가지 상태값들이 존재하게 됩니다. 해당 에러를 기준으로 여러곳의 화면에서는 동시 다발적으로 변화가 발생해야 할 때가 많습니다. 
+단적인 예로 화면을 에러 화면으로 교체한다거나, 에러 로그를 남긴 뒤 사용자에게 메시지 팝업을 노출한다거나 하는 등의 것들이죠. 에러의 종류는 굉장히 많을 수 있고 에러를 판단하는 방법 중 가장 흔한 방법은 문자열 비교 이므로 
+변경되어져야 하는 부분에서는 `e.message`를 가지고 비교하곤 합니다. 이럴때 상황에 맞는 에러 객체를 생성하여 `instanceof`로 에러의 형을 판단할 수 있다면 공통된 에러처리를 분리 할 수도 있습니다. 
 
 ### Private Patterns
 ```javascript
+var Class = (function () {
+  var CLASSES = {}
+  var index = 0
+  
+  function Class (value) {
+    this.id = Class.name + index++
+    CLASSES[this] = {
+      value: value
+    }
+  }
+  
+  Object.assign(Class.prototype, {
+    toString: function () {
+      return this.id
+    },
+    
+    getValue () {
+      return CLASSES[this].value
+    }
+  })
+  
+  return Class
+})()
 
+new Class(123).getValue() // 123
+new Class(456).getValue() // 456
 ```
+`ES5`까지는 클래스에서 `private`변수를 사용하기 위해서는 매번 생성되는 객체마다 `id`와 `index`를 조합하여 객체에 저장하는 방식으로 사용하곤 했었습니다. 즉시 실행 함수로 
+클래스 선언문을 감싸고 그 안에서 클래스를 선언하고 `closure`영역에 객체를 하나 두어 매번 생성되는 인스턴스를 저장하는 방법이죠. 이렇게 되면 외부에서는 해당 객체의 내부 프로퍼티에 접근할 수가 없게 되고 
+클래스는 내부 프로퍼티들을 `은닉화` 할 수 있습니다. 
+
+```javascript
+const Class = (() => {
+  const PRIVATE = Symbol()
+  
+  return class {
+    constructor (value) {
+      this[PRIVATE] = {value}
+    }
+    
+    get value () {
+      return this[PRIVATE].value
+    }
+    
+    set value (value) {
+      const PRIVATE = this[PRIVATE]
+      if (PRIVATE.value !== value) {
+        PRIVATE.value = value
+      }
+    }
+  }
+})()
+
+new Class(123).value // 123
+new Class(456).value // 456
+```
+`ES6`의 [`Symbol`](https://imcts.github.io/ES6-SYMBOL/)과 클래스 구문을 활용하면 좀 더 편리하게 `private`를 구현할 수 있습니다. 하지만 `Symbol`을 사용하기 때문에 
+`console.log`를 사용하여 객체를 들여다 보면 프로퍼티가 보일 뿐더러 `Reflect.ownKeys`메소드를 사용하면 해당 인스턴스의 `Symbol`값 마저도 구할 수 있기 때문에 정확한 `은닉화`라고 보기는 어렵습니다. 
+
+```javascript
+const Class = (() => {
+  const CLASSES = new Map()
+  
+  return class {
+    constructor (value) {
+      CLASSES.set(this, {value})
+    }
+    
+    get value () {
+      return CLASSES.get(this).value
+    }
+    
+    set value (value) {
+      const PRIVATE = CLASSES.get(this)
+      if (PRIVATE.value !== value) {
+        PRIVATE.value = value
+      }
+    }
+  }
+})()
+
+new Class(123).value
+```  
+`ES6`의 `Map`은 그 어떤 값이라도 `key`로 지정할 수 있는 표현력이 좋은 자료구조이므로 객체 인스턴스의 주소값 또한 `key`로 사용할 수 있습니다. 
+`Map`을 사용하면 클래스 인스턴스의 `은닉화`를 확실하게 할 수 있게 됩니다. `Map`이 아닌 `WeekMap`을 사용한다면 
+해당 객체의 인스턴스가 그 어떤 객체도 참조하지 않을때(`GC대상일때`) `CLASSES`에서도 제거되므로 더 편리하게 사용할 수 있습니다. 
 
