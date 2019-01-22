@@ -2,23 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55d7771c-0815-409c-ab6d-8f157d014b9d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/2019-01-21-ES6-METHODS.md" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/_posts/2019-01-07-ES6-CLASS-METHOD.md" afterPath="$PROJECT_DIR$/_posts/2019-01-07-ES6-CLASS-METHOD.md" />
-      <change beforePath="$PROJECT_DIR$/_site/ES6-CLASS-METHOD/index.html" afterPath="$PROJECT_DIR$/_site/ES6-CLASS-METHOD/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/about/index.html" afterPath="$PROJECT_DIR$/_site/about/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/category/algorithm/index.html" afterPath="$PROJECT_DIR$/_site/category/algorithm/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/category/css/index.html" afterPath="$PROJECT_DIR$/_site/category/css/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/category/html/index.html" afterPath="$PROJECT_DIR$/_site/category/html/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/category/java/index.html" afterPath="$PROJECT_DIR$/_site/category/java/index.html" />
+      <change beforePath="$PROJECT_DIR$/_posts/2019-01-21-ES6-METHODS.md" afterPath="$PROJECT_DIR$/_posts/2019-01-21-ES6-STRING-ARRAY-METHODS.md" />
+      <change beforePath="$PROJECT_DIR$/_site/ES6-METHODS/index.html" afterPath="" />
       <change beforePath="$PROJECT_DIR$/_site/category/js/index.html" afterPath="$PROJECT_DIR$/_site/category/js/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/category/math/index.html" afterPath="$PROJECT_DIR$/_site/category/math/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/category/project/index.html" afterPath="$PROJECT_DIR$/_site/category/project/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/category/tool/index.html" afterPath="$PROJECT_DIR$/_site/category/tool/index.html" />
       <change beforePath="$PROJECT_DIR$/_site/feed.xml" afterPath="$PROJECT_DIR$/_site/feed.xml" />
       <change beforePath="$PROJECT_DIR$/_site/index.html" afterPath="$PROJECT_DIR$/_site/index.html" />
       <change beforePath="$PROJECT_DIR$/_site/search.json" afterPath="$PROJECT_DIR$/_site/search.json" />
-      <change beforePath="$PROJECT_DIR$/_site/series/index.html" afterPath="$PROJECT_DIR$/_site/series/index.html" />
       <change beforePath="$PROJECT_DIR$/_site/sitemap.xml" afterPath="$PROJECT_DIR$/_site/sitemap.xml" />
       <change beforePath="$PROJECT_DIR$/_site/tags/index.html" afterPath="$PROJECT_DIR$/_site/tags/index.html" />
     </list>
@@ -31,21 +21,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="2019-01-21-ES6-METHODS.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/_posts/2019-01-21-ES6-METHODS.md">
+      <file leaf-file-name="2019-01-21-ES6-STRING-ARRAY-METHODS.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_posts/2019-01-21-ES6-STRING-ARRAY-METHODS.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="511">
-                <caret line="165" column="107" lean-forward="false" selection-start-line="165" selection-start-column="107" selection-end-line="165" selection-end-column="107" />
+              <first_editor relative-caret-position="15">
+                <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="32" />
                 <folding>
-                  <marker date="1548173201785" expanded="true" signature="442:544" ph="//..." />
-                  <marker date="1548173201785" expanded="true" signature="485:544" ph="//..." />
-                  <marker date="1548173201785" expanded="true" signature="529:544" ph="//..." />
-                  <marker date="1548173201785" expanded="true" signature="1381:1418" ph="{...}" />
-                  <marker date="1548173201785" expanded="true" signature="1448:1479" ph="{...}" />
-                  <marker date="1548173201785" expanded="true" signature="1830:1849" ph="{...}" />
-                  <marker date="1548173201785" expanded="true" signature="1870:1886" ph="//..." />
-                  <marker date="1548173201785" expanded="true" signature="3610:3612" ph="{...}" />
+                  <marker date="1548173478499" expanded="true" signature="483:585" ph="//..." />
+                  <marker date="1548173478499" expanded="true" signature="526:585" ph="//..." />
+                  <marker date="1548173478499" expanded="true" signature="570:585" ph="//..." />
+                  <marker date="1548173478499" expanded="true" signature="1422:1459" ph="{...}" />
+                  <marker date="1548173478499" expanded="true" signature="1489:1520" ph="{...}" />
+                  <marker date="1548173478499" expanded="true" signature="1871:1890" ph="{...}" />
+                  <marker date="1548173478499" expanded="true" signature="1911:1927" ph="//..." />
+                  <marker date="1548173478499" expanded="true" signature="3651:3653" ph="{...}" />
                 </folding>
               </first_editor>
               <second_editor />
@@ -106,6 +96,7 @@
         <option value="$PROJECT_DIR$/project/bear/README.md" />
         <option value="$PROJECT_DIR$/_posts/2019-01-07-ES6-CLASS-METHOD.md" />
         <option value="$PROJECT_DIR$/_posts/2019-01-21-ES6-METHODS.md" />
+        <option value="$PROJECT_DIR$/_posts/2019-01-21-ES6-STRING-ARRAY-METHODS.md" />
       </list>
     </option>
   </component>
@@ -313,7 +304,7 @@
       <workItem from="1547532233079" duration="7486000" />
       <workItem from="1547560376742" duration="3553000" />
       <workItem from="1548141344018" duration="6146000" />
-      <workItem from="1548170641407" duration="2159000" />
+      <workItem from="1548170641407" duration="2434000" />
     </task>
     <task id="LOCAL-00001" summary="add bears">
       <created>1545550852267</created>
@@ -354,7 +345,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68190000" />
+    <option name="totallyTimeSpent" value="68465000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="946" extended-state="0" />
@@ -369,7 +360,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32902467" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19506463" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2561692" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.123931624" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -406,20 +397,20 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_posts/2019-01-21-ES6-METHODS.md">
+    <entry file="file://$PROJECT_DIR$/_posts/2019-01-21-ES6-STRING-ARRAY-METHODS.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
             <folding>
-              <marker date="1548173201785" expanded="true" signature="442:544" ph="//..." />
-              <marker date="1548173201785" expanded="true" signature="485:544" ph="//..." />
-              <marker date="1548173201785" expanded="true" signature="529:544" ph="//..." />
-              <marker date="1548173201785" expanded="true" signature="1381:1418" ph="{...}" />
-              <marker date="1548173201785" expanded="true" signature="1448:1479" ph="{...}" />
-              <marker date="1548173201785" expanded="true" signature="1830:1849" ph="{...}" />
-              <marker date="1548173201785" expanded="true" signature="1870:1886" ph="//..." />
-              <marker date="1548173201785" expanded="true" signature="3610:3612" ph="{...}" />
+              <marker date="1548173478499" expanded="true" signature="483:585" ph="//..." />
+              <marker date="1548173478499" expanded="true" signature="526:585" ph="//..." />
+              <marker date="1548173478499" expanded="true" signature="570:585" ph="//..." />
+              <marker date="1548173478499" expanded="true" signature="1422:1459" ph="{...}" />
+              <marker date="1548173478499" expanded="true" signature="1489:1520" ph="{...}" />
+              <marker date="1548173478499" expanded="true" signature="1871:1890" ph="{...}" />
+              <marker date="1548173478499" expanded="true" signature="1911:1927" ph="//..." />
+              <marker date="1548173478499" expanded="true" signature="3651:3653" ph="{...}" />
             </folding>
           </first_editor>
           <second_editor />
@@ -716,20 +707,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2019-01-21-ES6-METHODS.md">
+    <entry file="file://$PROJECT_DIR$/_posts/2019-01-21-ES6-STRING-ARRAY-METHODS.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="511">
-            <caret line="165" column="107" lean-forward="false" selection-start-line="165" selection-start-column="107" selection-end-line="165" selection-end-column="107" />
+          <first_editor relative-caret-position="15">
+            <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="32" />
             <folding>
-              <marker date="1548173201785" expanded="true" signature="442:544" ph="//..." />
-              <marker date="1548173201785" expanded="true" signature="485:544" ph="//..." />
-              <marker date="1548173201785" expanded="true" signature="529:544" ph="//..." />
-              <marker date="1548173201785" expanded="true" signature="1381:1418" ph="{...}" />
-              <marker date="1548173201785" expanded="true" signature="1448:1479" ph="{...}" />
-              <marker date="1548173201785" expanded="true" signature="1830:1849" ph="{...}" />
-              <marker date="1548173201785" expanded="true" signature="1870:1886" ph="//..." />
-              <marker date="1548173201785" expanded="true" signature="3610:3612" ph="{...}" />
+              <marker date="1548173478499" expanded="true" signature="483:585" ph="//..." />
+              <marker date="1548173478499" expanded="true" signature="526:585" ph="//..." />
+              <marker date="1548173478499" expanded="true" signature="570:585" ph="//..." />
+              <marker date="1548173478499" expanded="true" signature="1422:1459" ph="{...}" />
+              <marker date="1548173478499" expanded="true" signature="1489:1520" ph="{...}" />
+              <marker date="1548173478499" expanded="true" signature="1871:1890" ph="{...}" />
+              <marker date="1548173478499" expanded="true" signature="1911:1927" ph="//..." />
+              <marker date="1548173478499" expanded="true" signature="3651:3653" ph="{...}" />
             </folding>
           </first_editor>
           <second_editor />
