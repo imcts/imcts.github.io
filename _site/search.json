@@ -1,8 +1,15 @@
 [
   
     {
+      "title"    : "ES6 - METHODS",
+      "tags"     : "javascript, methods, and extends",
+      "url"      : "/ES6-METHODS/",
+      "date"     : "21 Jan 2019"
+    } ,
+  
+    {
       "title"    : "ES6 - CLASS",
-      "tags"     : "javascript, method, and extends",
+      "tags"     : "javascript, classes, and extends",
       "url"      : "/ES6-CLASS-METHOD/",
       "date"     : "07 Jan 2019"
     } ,

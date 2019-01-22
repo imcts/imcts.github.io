@@ -7,7 +7,7 @@ main-class: 'js'
 description: 'ES6 Basic Study'
 tags: 
 - javascript
-- method
+- classes
 - extends
 
 introduction: '- javascript class -'

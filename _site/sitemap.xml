@@ -63,6 +63,10 @@
     
     
         <url>
+            <loc>http://localhost:4000/ES6-METHODS/</loc>
+        </url>
+  
+        <url>
             <loc>http://localhost:4000/ES6-CLASS-METHOD/</loc>
         </url>
   
