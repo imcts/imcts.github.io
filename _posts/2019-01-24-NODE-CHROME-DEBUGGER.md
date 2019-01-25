@@ -4,7 +4,7 @@ layout: post
 title: Debugging Node.js with Chrome.
 date: 2019-01-24 20:00:00
 image: '/assets/img/'
-description: 'tool'
+description: 'How to debug Node.js with Chrome inspector.'
 main-class: 'tool'
 tags: 
 - Node.js
