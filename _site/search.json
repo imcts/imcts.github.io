@@ -1,6 +1,13 @@
 [
   
     {
+      "title"    : "Debugging Node.js with Chrome.",
+      "tags"     : "Node.js and Debugging",
+      "url"      : "/node-debugger/",
+      "date"     : "25 Jan 2019"
+    } ,
+  
+    {
       "title"    : "ES6 - THE NEW METHODS OF STRING AND ARRAY",
       "tags"     : "javascript, methods, and extends",
       "url"      : "/ES6-STRING-ARRAY-METHODS/",

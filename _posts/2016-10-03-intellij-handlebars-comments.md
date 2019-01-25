@@ -4,7 +4,7 @@ layout: post
 title: IntelliJ 유용한 설정들 !
 date: 2016-10-03 20:00:00
 image: '/assets/img/'
-description: 'pattern'
+description: 'tool'
 main-class: 'tool'
 tags: 
 - intelliJ

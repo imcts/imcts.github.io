@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>IntelliJ 유용한 설정들 !</title>
+    <title>Debugging Node.js with Chrome.</title>
     <meta name="description" content="tool">
 
     <!-- Google Authorship Markup -->
@@ -14,23 +14,23 @@
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@imcts">
-    <meta name="twitter:title" content="IntelliJ 유용한 설정들 !">
+    <meta name="twitter:title" content="Debugging Node.js with Chrome.">
     <meta name="twitter:description" content="tool">
-    
+
     <meta property="twitter:image:src" content="http://localhost:4000/assets/img/">
-    
+
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="http://localhost:4000/intellij-handlebars-comments/">
-    <meta property="og:title" content="IntelliJ 유용한 설정들 !">
-    
+    <meta property="og:url" content="http://localhost:4000/node-debugger/">
+    <meta property="og:title" content="Debugging Node.js with Chrome.">
+
     <meta property="og:image" content="http://localhost:4000/assets/img/">
-    
+
     <meta property="og:description" content="tool">
     <meta property="og:site_name" content="Dolen - developer Front End">
 
     <!-- Social: Google+ / Schema.org  -->
-    <meta itemprop="name" content="IntelliJ 유용한 설정들 !"/>
+    <meta itemprop="name" content="Debugging Node.js with Chrome."/>
     <meta itemprop="description" content="tool">
     <meta itemprop="image" content="http://localhost:4000/assets/img/blog-image.png"/>
 
@@ -45,7 +45,7 @@
     <meta name="theme-color" content="">
 
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="http://localhost:4000/intellij-handlebars-comments/">
+    <link rel="canonical" href="http://localhost:4000/node-debugger/">
     <link rel="alternate" type="application/rss+xml" title="Dolen - developer Front End" href="http://localhost:4000/feed.xml" />
 </head>
 
@@ -74,13 +74,13 @@
 <nav id="navigation">
   <h2>MENU</h2>
   <ul>
-    
+
       <li><a href="http://localhost:4000/">Home</a></li>
-    
+
       <li><a href="http://localhost:4000/tags">Tags</a></li>
-    
+
       <li><a href="http://localhost:4000/project/resume/index.html">Resume</a></li>
-    
+
   </ul>
 </nav>
 </aside>
@@ -91,145 +91,71 @@
 
 <header class="header-post" role="banner">
      <div class="content">
-        
-            <time itemprop="datePublished" datetime="2016-10-04T05:00:00+09:00" class="date">04 Oct 2016</time>
-        
-        <h1 class="post-title" itemprop="name">IntelliJ 유용한 설정들 !</h1>
+
+            <time itemprop="datePublished" datetime="2019-01-25T05:00:00+09:00" class="date">25 Jan 2019</time>
+
+        <h1 class="post-title" itemprop="name">Debugging Node.js with Chrome.</h1>
         <p itemprop="description" class="subtitle">tool</p>
     </div>
 </header>
         <section class="post">
 
             <article role="article" id="post" class="post-content" itemprop="articleBody">
-                <h3 id="--handlebars로-주석을-변경하는-방법-">- Handlebars로 주석을 변경하는 방법 !!</h3>
+                <h2 id="debugging">Debugging</h2>
+<p>자바스크립트로 개발하다보면 <code class="highlighter-rouge">console.log</code>함수나 <code class="highlighter-rouge">debugger</code>를 사용하여 디버깅 하는 경우가 많이 있습니다. 웹브라우저에서는 <code class="highlighter-rouge">Chrome</code>개발자 도구가 워낙 잘 지원해주기 때문에 편리하게 사용하고 있지만
+<code class="highlighter-rouge">Node.js</code>서버에서의 디버깅은 크게 신경쓰지 않고 <code class="highlighter-rouge">console.log</code>만 사용하여 디버깅하곤 했습니다. 하지만 <code class="highlighter-rouge">console.log</code>만을 사용하여 디버깅할 경우 생산성이 많이 저하 되고 시간도 오래 걸리므로
+<code class="highlighter-rouge">Node.js</code>에서 쉽게 디버깅하는 방법에 대해 알아보고 정리하고자 합니다.</p>
 
-<p>Handlebars 를 프로젝트에 적용해서 사용하다 보면, html 태그에 주석을 달아서 처리해야 할 일이 있지요 ?</p>
+<h3 id="chrome-inspector">Chrome Inspector</h3>
+<p><img src="/resources/images/node-chrome-debugger/debugger1.png" alt="이미지" />
+이미지와 같은 구조를 갖는 <a href="https://github.com/imcts/express-boiler-plate"><code class="highlighter-rouge">Node Express</code></a> 프로젝트를 생성 합니다.</p>
 
-<pre><code class="language-code">&lt;!--HTML 주석 입니다--&gt;
-</code></pre>
+<p><img src="/resources/images/node-chrome-debugger/debugger2.png" alt="이미지" />
+크롬 브라우저를 실행하여 주소창에 <code class="highlighter-rouge">chrome://inspect</code>을 입력합니다.</p>
 
-<p>보통 html에서는 이렇게 주석처리를 해서 사용하게 되는데요.</p>
+<p><img src="/resources/images/node-chrome-debugger/debugger3.png" alt="이미지" />
+기본적으로 디버깅 포트는 <code class="highlighter-rouge">9229</code>로 설정되어 있습니다. <code class="highlighter-rouge">configue</code>버튼을 선택하여 <code class="highlighter-rouge">localhost:9229</code>를 입력 합니다.</p>
 
-<p>handlebars에서는 그렇지 않거든요.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// default 9229 port
+node <span class="nt">--inspect</span> bin/www
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'{ {!----} }'</span> <span class="o">&lt;--</span> <span class="err">이렇게</span> <span class="err">잘</span> <span class="err">보여집니다</span><span class="p">.</span> <span class="err">주석때문에</span> <span class="err">안보이길래</span> <span class="err">중괄호</span> <span class="err">시작과</span> <span class="err">끝을</span> <span class="p">{</span> <span class="err">한칸씩</span> <span class="err">띄웠습니다</span><span class="p">.</span> <span class="p">}</span> 
+// custom port
+node <span class="nt">--inspect</span>:port bin/www
 </code></pre></div></div>
+<p><code class="highlighter-rouge">--inspect</code>옵션을 추가하여 <code class="highlighter-rouge">debugging</code>모드의 <code class="highlighter-rouge">node</code>서버를 실행합니다.</p>
 
-<p>근데 매번 주석할때마다 저걸 다 치려면 너무 힘이 들어요 :(..</p>
+<p><img src="/resources/images/node-chrome-debugger/debugger4.png" alt="이미지" />
+<code class="highlighter-rouge">chrome://inspect</code>화면을 새로고침하면 방금 실행한 노드서버가 노출되는 것을 확인할 수 있습니다.</p>
 
-<pre><code class="language-code">Block Select + (Command + /)
-</code></pre>
+<p><img src="/resources/images/node-chrome-debugger/debugger5.png" alt="이미지" />
+<code class="highlighter-rouge">inspect</code>를 클릭하면 <code class="highlighter-rouge">debugger</code>화면이 노출되는데 좌측 폴더 목록에 <code class="highlighter-rouge">workspace</code>가 비어있습니다.</p>
 
-<p>그래서 이렇게 주석 단축키를 눌러보면 항상 HTML주석이 달립니다.</p>
+<p><img src="/resources/images/node-chrome-debugger/debugger6.png" alt="이미지" />
+<code class="highlighter-rouge">+Add folder to workspace</code>를 선택하여 <code class="highlighter-rouge">local</code>경로의 프로젝트 <code class="highlighter-rouge">root</code>경로를 선택합니다.</p>
 
-<p>그래서 포기하고 그냥 쓰는 분도 봤는데요.</p>
+<p><img src="/resources/images/node-chrome-debugger/debugger7.png" alt="이미지" />
+작업하고 있는 <code class="highlighter-rouge">project</code>의 폴더목록이 전부 추가된 것을 확인할 수 있습니다.</p>
 
-<p>이걸 변경해 봅시다 !</p>
+<p><img src="/resources/images/node-chrome-debugger/debugger8.png" alt="이미지" />
+<code class="highlighter-rouge">chrome inspector</code>에서 <code class="highlighter-rouge">debugger</code>를 입력 후 화면을 새로고침 했을때 정상적으로 동작하는 것을 확인할 수 있습니다.</p>
 
-<pre><code class="language-code">Preferences -&gt; language &amp; frameworks -&gt; javascript -&gt; templates
-</code></pre>
-
-<p><img src="/resources/images/intellij/intellij1.png" alt="이미지" /></p>
-
-<p>위처럼 수정해 주시면 정상적으로 주석이 handlebars 용으로 달리게 됩니다 ! :)</p>
-
-<h3 id="--live-template">- Live Template</h3>
-
-<p>front-end 개발자로서 작업하면서 가장 많이 치는 코드가 뭘까요 ?</p>
-
-<p>저는 이겁니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">();</span>
-</code></pre></div></div>
-
-<p>매번 저거 다 치려다 보면 너무 힘이 든데요 T ^T..</p>
-
-<p>저걸 쉽게 칠 수 있도록 해봅시다 !</p>
-
-<pre><code class="language-code">Preferences -&gt; Editor -&gt; Live Templates
-</code></pre>
-
-<p><img src="/resources/images/intellij/imtellij2.png" alt="이미지" /></p>
-
-<p>이런식으로 설정하면</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">csl</span> <span class="o">+</span> <span class="nx">TAP</span> <span class="o">-&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="c1">//cursor위치);</span>
-</code></pre></div></div>
-
-<p>로 이용할 수 있습니다 !</p>
-
-<p>각자 편한것들을 등록해서 사용해 보도록 해요 :)</p>
-
-<h3 id="--auto-code-style">- Auto Code Style</h3>
-
-<p>코드를 치다보면 꽤나 귀찮은 작업들이 있을때가 많지요 ??</p>
-
-<p>예를 들면 저 같은 경우에는 = 를 정렬 시키는걸 아주 좋아하는데요.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">const</span> <span class="nx">testA</span>  <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
-          <span class="nx">testAA</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
-          
-          
-    <span class="kd">const</span> <span class="nx">object</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="na">a</span><span class="p">:</span>   <span class="mi">333</span><span class="p">,</span>
-        <span class="na">aaa</span><span class="p">:</span> <span class="mi">444</span><span class="p">,</span>
-        <span class="na">aa</span><span class="p">:</span>  <span class="mi">555</span>
-    <span class="p">};</span>
-    
-    
-</code></pre></div></div>
-
-<p>이런식으로 말이죠 !</p>
-
-<p>물론 이렇게 사용하지 않는 분들도 있지만, 개인적으로 javascript object의 선언이나 그런것들은 보기 명확해지는 경향이 있더라구요.</p>
-
-<p>근데 매번 스페이스 쳐가면서 indent 맞춰주기에는 너무 힘이 드니까 좀더 쉬운 방법을 찾아 봅시다 !</p>
-
-<pre><code class="language-code">Preferences -&gt; Editor -&gt; Code Style -&gt; JavaScript &gt; Other
-</code></pre>
-
-<p><img src="/resources/images/intellij/intellij3.png" alt="이미지" /></p>
-
-<p>이 화면으로 가셔서 본인이 편한대로 설정해 주시구요 !</p>
-
-<p>변경하고 싶은 코드들을 블록 해 주시구요 !</p>
-
-<pre><code class="language-code">Command + option + L 
-</code></pre>
-
-<p>을 눌러주시면 내가 설정해놓은 컨벤션 대로 코드가 수정이 됩니다 !</p>
-
-<h3 id="--power-code">- Power Code</h3>
-
-<p>불꽃 타이핑 !! 불꽃 타이핑을 쳐봅시다아 !!</p>
-
-<p><strong><a href="https://plugins.jetbrains.com/plugin/8251?pr=">불꽃 타이핑 플러그인</a></strong> 여기에 들어가서 플러그인 적용법을 확인할 수 있습니다.</p>
-
-<pre><code class="language-code">Preferences -&gt; Appearance &amp; Behavior -&gt; POWER MODE II
-</code></pre>
-
-<p><img src="/resources/images/intellij/intellij4.png" alt="이미지" /></p>
-
-<p>해당 설정화면에서 다양한 효과들을 설정할 수 있습니다.</p>
-
-<p><img src="/resources/images/intellij/intellij5.png" alt="이미지" /></p>
-
-<p><strong>적용샷!!</strong> 입니다.</p>
+<p><img src="/resources/images/node-chrome-debugger/debugger9.png" alt="이미지" />
+<code class="highlighter-rouge">inspector</code>에서 변경한 코드가 <code class="highlighter-rouge">local</code>의 실제 파일에도 반영되는 것을 확인할 수 있습니다.</p>
 
 
             </article>
 
             <section class="share">
     <h3>Share</h3>
-    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20http://localhost:4000/intellij-handlebars-comments/%20via%20&#64;imcts&hashtags=intelliJ,"
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20http://localhost:4000/node-debugger/%20via%20&#64;imcts&hashtags=Node.js,Debugging,"
     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
         <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
     </a>
-    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/intellij-handlebars-comments/"
+    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/node-debugger/"
     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
         <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
     </a>
-    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:4000/intellij-handlebars-comments/"
+    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:4000/node-debugger/"
     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
         <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
     </a>
@@ -259,7 +185,7 @@
         disqus_loaded = true;
         var disqus_shortname = 'dolen';
         var disqus_title = '';
-        var disqus_url = '/intellij-handlebars-comments/';
+        var disqus_url = '/node-debugger/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
