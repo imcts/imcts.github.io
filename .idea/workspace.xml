@@ -2,39 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55d7771c-0815-409c-ab6d-8f157d014b9d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/images/node-debugger/debugger10.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/images/node-debugger/debugger11.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/images/node-debugger/debugger12.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/images/node-debugger/debugger13.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/images/node-debugger/debugger14.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/images/node-debugger/debugger15.png" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/_posts/2019-01-24-NODE-CHROME-DEBUGGER.md" afterPath="$PROJECT_DIR$/_posts/2019-01-24-NODE-DEBUGGER.md" />
-      <change beforePath="$PROJECT_DIR$/_site/about/index.html" afterPath="$PROJECT_DIR$/_site/about/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/category/algorithm/index.html" afterPath="$PROJECT_DIR$/_site/category/algorithm/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/category/css/index.html" afterPath="$PROJECT_DIR$/_site/category/css/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/category/html/index.html" afterPath="$PROJECT_DIR$/_site/category/html/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/category/java/index.html" afterPath="$PROJECT_DIR$/_site/category/java/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/category/js/index.html" afterPath="$PROJECT_DIR$/_site/category/js/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/category/math/index.html" afterPath="$PROJECT_DIR$/_site/category/math/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/category/project/index.html" afterPath="$PROJECT_DIR$/_site/category/project/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/category/tool/index.html" afterPath="$PROJECT_DIR$/_site/category/tool/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/feed.xml" afterPath="$PROJECT_DIR$/_site/feed.xml" />
-      <change beforePath="$PROJECT_DIR$/_site/index.html" afterPath="$PROJECT_DIR$/_site/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/node-debugger/index.html" afterPath="$PROJECT_DIR$/_site/node-debugger/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/search.json" afterPath="$PROJECT_DIR$/_site/search.json" />
-      <change beforePath="$PROJECT_DIR$/_site/series/index.html" afterPath="$PROJECT_DIR$/_site/series/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/sitemap.xml" afterPath="$PROJECT_DIR$/_site/sitemap.xml" />
-      <change beforePath="$PROJECT_DIR$/_site/tags/index.html" afterPath="$PROJECT_DIR$/_site/tags/index.html" />
-      <change beforePath="$PROJECT_DIR$/resources/images/node-chrome-debugger/debugger1.png" afterPath="$PROJECT_DIR$/resources/images/node-debugger/debugger1.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/node-chrome-debugger/debugger2.png" afterPath="$PROJECT_DIR$/resources/images/node-debugger/debugger2.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/node-chrome-debugger/debugger3.png" afterPath="$PROJECT_DIR$/resources/images/node-debugger/debugger3.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/node-chrome-debugger/debugger4.png" afterPath="$PROJECT_DIR$/resources/images/node-debugger/debugger4.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/node-chrome-debugger/debugger5.png" afterPath="$PROJECT_DIR$/resources/images/node-debugger/debugger5.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/node-chrome-debugger/debugger6.png" afterPath="$PROJECT_DIR$/resources/images/node-debugger/debugger6.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/node-chrome-debugger/debugger7.png" afterPath="$PROJECT_DIR$/resources/images/node-debugger/debugger7.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/node-chrome-debugger/debugger8.png" afterPath="$PROJECT_DIR$/resources/images/node-debugger/debugger8.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/node-chrome-debugger/debugger9.png" afterPath="$PROJECT_DIR$/resources/images/node-debugger/debugger9.png" />
+      <change beforePath="$PROJECT_DIR$/_posts/2016-11-27-file-upload.md" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,15 +13,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="2019-01-24-NODE-DEBUGGER.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/_posts/2019-01-24-NODE-DEBUGGER.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="505">
-                <caret line="76" column="36" lean-forward="false" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
-                <folding />
-              </first_editor>
-              <second_editor />
+      <file leaf-file-name="test.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/project/memo/js/test.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="287">
+              <caret line="128" column="17" lean-forward="true" selection-start-line="128" selection-start-column="17" selection-end-line="128" selection-end-column="17" />
+              <folding>
+                <marker date="1526044871671" expanded="true" signature="2202:2220" ph="..." />
+                <marker date="1526044871671" expanded="true" signature="2536:2630" ph="..." />
+                <marker date="1526044871671" expanded="true" signature="5631:5725" ph="..." />
+                <marker date="1526044871671" expanded="true" signature="5771:5789" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -116,6 +86,7 @@
         <option value="$PROJECT_DIR$/_posts/2019-01-24-node-debugger.md" />
         <option value="$PROJECT_DIR$/_posts/2019-01-24-NODE-CHROME-DEBUGGER.md" />
         <option value="$PROJECT_DIR$/_posts/2019-01-24-NODE-DEBUGGER.md" />
+        <option value="$PROJECT_DIR$/project/memo/js/test.js" />
       </list>
     </option>
   </component>
@@ -167,24 +138,6 @@
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
               <item name="_posts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-              <item name="node-debugger" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -346,7 +299,7 @@
       <workItem from="1548141344018" duration="6146000" />
       <workItem from="1548170641407" duration="2552000" />
       <workItem from="1548392313305" duration="296000" />
-      <workItem from="1548403522419" duration="5147000" />
+      <workItem from="1548403522419" duration="5912000" />
     </task>
     <task id="LOCAL-00001" summary="add bears">
       <created>1545550852267</created>
@@ -387,11 +340,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74026000" />
+    <option name="totallyTimeSpent" value="74791000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="946" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -405,7 +357,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25499412" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22100122" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22100122" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -836,11 +788,45 @@
     <entry file="file://$PROJECT_DIR$/_posts/2019-01-24-NODE-DEBUGGER.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="505">
-            <caret line="76" column="36" lean-forward="false" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
+          <first_editor relative-caret-position="1140">
+            <caret line="76" column="21" lean-forward="false" selection-start-line="76" selection-start-column="21" selection-end-line="76" selection-end-column="21" />
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/memo/views/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/memo/stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1276">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/memo/image/close.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/memo/js/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="128" column="17" lean-forward="true" selection-start-line="128" selection-start-column="17" selection-end-line="128" selection-end-column="17" />
+          <folding>
+            <marker date="1526044871671" expanded="true" signature="2202:2220" ph="..." />
+            <marker date="1526044871671" expanded="true" signature="2536:2630" ph="..." />
+            <marker date="1526044871671" expanded="true" signature="5631:5725" ph="..." />
+            <marker date="1526044871671" expanded="true" signature="5771:5789" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
