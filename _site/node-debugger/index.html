@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Debugging Node.js with Chrome.</title>
-    <meta name="description" content="tool">
+    <title>Debugging Node.js.</title>
+    <meta name="description" content="How to debug Node.js">
 
     <!-- Google Authorship Markup -->
     <link rel="author" href="https://plus.google.com/+imcts?rel=author">
@@ -14,24 +14,24 @@
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@imcts">
-    <meta name="twitter:title" content="Debugging Node.js with Chrome.">
-    <meta name="twitter:description" content="tool">
-
+    <meta name="twitter:title" content="Debugging Node.js.">
+    <meta name="twitter:description" content="How to debug Node.js">
+    
     <meta property="twitter:image:src" content="http://localhost:4000/assets/img/">
-
+    
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="http://localhost:4000/node-debugger/">
-    <meta property="og:title" content="Debugging Node.js with Chrome.">
-
+    <meta property="og:url" content="http://localhost:4000/NODE-DEBUGGER/">
+    <meta property="og:title" content="Debugging Node.js.">
+    
     <meta property="og:image" content="http://localhost:4000/assets/img/">
-
-    <meta property="og:description" content="tool">
+    
+    <meta property="og:description" content="How to debug Node.js">
     <meta property="og:site_name" content="Dolen - developer Front End">
 
     <!-- Social: Google+ / Schema.org  -->
-    <meta itemprop="name" content="Debugging Node.js with Chrome."/>
-    <meta itemprop="description" content="tool">
+    <meta itemprop="name" content="Debugging Node.js."/>
+    <meta itemprop="description" content="How to debug Node.js">
     <meta itemprop="image" content="http://localhost:4000/assets/img/blog-image.png"/>
 
     <!-- Windows 8 Tile Icons -->
@@ -45,7 +45,7 @@
     <meta name="theme-color" content="">
 
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="http://localhost:4000/node-debugger/">
+    <link rel="canonical" href="http://localhost:4000/NODE-DEBUGGER/">
     <link rel="alternate" type="application/rss+xml" title="Dolen - developer Front End" href="http://localhost:4000/feed.xml" />
 </head>
 
@@ -74,13 +74,13 @@
 <nav id="navigation">
   <h2>MENU</h2>
   <ul>
-
+    
       <li><a href="http://localhost:4000/">Home</a></li>
-
+    
       <li><a href="http://localhost:4000/tags">Tags</a></li>
-
+    
       <li><a href="http://localhost:4000/project/resume/index.html">Resume</a></li>
-
+    
   </ul>
 </nav>
 </aside>
@@ -91,71 +91,89 @@
 
 <header class="header-post" role="banner">
      <div class="content">
-
+        
             <time itemprop="datePublished" datetime="2019-01-25T05:00:00+09:00" class="date">25 Jan 2019</time>
-
-        <h1 class="post-title" itemprop="name">Debugging Node.js with Chrome.</h1>
-        <p itemprop="description" class="subtitle">tool</p>
+        
+        <h1 class="post-title" itemprop="name">Debugging Node.js.</h1>
+        <p itemprop="description" class="subtitle">How to debug Node.js</p>
     </div>
 </header>
         <section class="post">
 
             <article role="article" id="post" class="post-content" itemprop="articleBody">
                 <h2 id="debugging">Debugging</h2>
-<p>자바스크립트로 개발하다보면 <code class="highlighter-rouge">console.log</code>함수나 <code class="highlighter-rouge">debugger</code>를 사용하여 디버깅 하는 경우가 많이 있습니다. 웹브라우저에서는 <code class="highlighter-rouge">Chrome</code>개발자 도구가 워낙 잘 지원해주기 때문에 편리하게 사용하고 있지만
-<code class="highlighter-rouge">Node.js</code>서버에서의 디버깅은 크게 신경쓰지 않고 <code class="highlighter-rouge">console.log</code>만 사용하여 디버깅하곤 했습니다. 하지만 <code class="highlighter-rouge">console.log</code>만을 사용하여 디버깅할 경우 생산성이 많이 저하 되고 시간도 오래 걸리므로
+<p>자바스크립트로 개발하다보면 <code class="highlighter-rouge">console.log</code>함수나 <code class="highlighter-rouge">debugger</code>를 사용하여 디버깅 하는 경우가 많이 있습니다. 웹브라우저에서는 <code class="highlighter-rouge">Chrome</code>개발자 도구가 워낙 잘 지원해주기 때문에 편리하게 사용하고 있지만 
+<code class="highlighter-rouge">Node.js</code>서버에서의 디버깅은 크게 신경쓰지 않고 <code class="highlighter-rouge">console.log</code>만 사용하여 디버깅하곤 했습니다. 하지만 <code class="highlighter-rouge">console.log</code>만을 사용하여 디버깅할 경우 생산성이 많이 저하 되고 시간도 오래 걸리므로 
 <code class="highlighter-rouge">Node.js</code>에서 쉽게 디버깅하는 방법에 대해 알아보고 정리하고자 합니다.</p>
 
 <h3 id="chrome-inspector">Chrome Inspector</h3>
-<p><img src="/resources/images/node-chrome-debugger/debugger1.png" alt="이미지" />
-이미지와 같은 구조를 갖는 <a href="https://github.com/imcts/express-boiler-plate"><code class="highlighter-rouge">Node Express</code></a> 프로젝트를 생성 합니다.</p>
+<p><img src="/resources/images/node-debugger/debugger1.png" alt="이미지" />
+<code class="highlighter-rouge">Chrome</code>에서 디버깅을 수행하기 위해 이미지와 같은 구조를 갖는 <a href="https://github.com/imcts/express-boiler-plate"><code class="highlighter-rouge">Node Express</code></a> 프로젝트를 생성 합니다.</p>
 
-<p><img src="/resources/images/node-chrome-debugger/debugger2.png" alt="이미지" />
+<p><img src="/resources/images/node-debugger/debugger2.png" alt="이미지" />
 크롬 브라우저를 실행하여 주소창에 <code class="highlighter-rouge">chrome://inspect</code>을 입력합니다.</p>
 
-<p><img src="/resources/images/node-chrome-debugger/debugger3.png" alt="이미지" />
+<p><img src="/resources/images/node-debugger/debugger3.png" alt="이미지" />
 기본적으로 디버깅 포트는 <code class="highlighter-rouge">9229</code>로 설정되어 있습니다. <code class="highlighter-rouge">configue</code>버튼을 선택하여 <code class="highlighter-rouge">localhost:9229</code>를 입력 합니다.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// default 9229 port
 node <span class="nt">--inspect</span> bin/www
 
 // custom port
-node <span class="nt">--inspect</span>:port bin/www
+node <span class="nt">--inspect</span><span class="o">=</span>port bin/www
 </code></pre></div></div>
 <p><code class="highlighter-rouge">--inspect</code>옵션을 추가하여 <code class="highlighter-rouge">debugging</code>모드의 <code class="highlighter-rouge">node</code>서버를 실행합니다.</p>
 
-<p><img src="/resources/images/node-chrome-debugger/debugger4.png" alt="이미지" />
+<p><img src="/resources/images/node-debugger/debugger4.png" alt="이미지" />
 <code class="highlighter-rouge">chrome://inspect</code>화면을 새로고침하면 방금 실행한 노드서버가 노출되는 것을 확인할 수 있습니다.</p>
 
-<p><img src="/resources/images/node-chrome-debugger/debugger5.png" alt="이미지" />
+<p><img src="/resources/images/node-debugger/debugger5.png" alt="이미지" />
 <code class="highlighter-rouge">inspect</code>를 클릭하면 <code class="highlighter-rouge">debugger</code>화면이 노출되는데 좌측 폴더 목록에 <code class="highlighter-rouge">workspace</code>가 비어있습니다.</p>
 
-<p><img src="/resources/images/node-chrome-debugger/debugger6.png" alt="이미지" />
+<p><img src="/resources/images/node-debugger/debugger6.png" alt="이미지" />
 <code class="highlighter-rouge">+Add folder to workspace</code>를 선택하여 <code class="highlighter-rouge">local</code>경로의 프로젝트 <code class="highlighter-rouge">root</code>경로를 선택합니다.</p>
 
-<p><img src="/resources/images/node-chrome-debugger/debugger7.png" alt="이미지" />
+<p><img src="/resources/images/node-debugger/debugger7.png" alt="이미지" />
 작업하고 있는 <code class="highlighter-rouge">project</code>의 폴더목록이 전부 추가된 것을 확인할 수 있습니다.</p>
 
-<p><img src="/resources/images/node-chrome-debugger/debugger8.png" alt="이미지" />
+<p><img src="/resources/images/node-debugger/debugger8.png" alt="이미지" />
 <code class="highlighter-rouge">chrome inspector</code>에서 <code class="highlighter-rouge">debugger</code>를 입력 후 화면을 새로고침 했을때 정상적으로 동작하는 것을 확인할 수 있습니다.</p>
 
-<p><img src="/resources/images/node-chrome-debugger/debugger9.png" alt="이미지" />
+<p><img src="/resources/images/node-debugger/debugger9.png" alt="이미지" />
 <code class="highlighter-rouge">inspector</code>에서 변경한 코드가 <code class="highlighter-rouge">local</code>의 실제 파일에도 반영되는 것을 확인할 수 있습니다.</p>
 
+<p>좀 더 자세한 내용은 <a href="https://nodejs.org/api/debugger.html">Debugger Document</a>에서 확인할 수 있습니다.</p>
+
+<h3 id="intellij-inspector">IntelliJ Inspector</h3>
+<p><img src="/resources/images/node-debugger/debugger10.png" alt="이미지" />
+<code class="highlighter-rouge">IntellJ</code>에서 <code class="highlighter-rouge">NodeJs</code>를 디버깅하기 위해 <code class="highlighter-rouge">Preference -&gt; Plugins</code>메뉴에서 <code class="highlighter-rouge">NodeJs</code>플러그인을 설치해 줍니다.</p>
+
+<p><img src="/resources/images/node-debugger/debugger11.png" alt="이미지" />
+우측 상단의 <code class="highlighter-rouge">Edit Configuration</code>을 클릭합니다.</p>
+
+<p><img src="/resources/images/node-debugger/debugger12.png" alt="이미지" />
+<code class="highlighter-rouge">NodeJs</code>용 설정을 하나 추가하고 <code class="highlighter-rouge">entry file</code>경로를 입력 합니다.</p>
+
+<p><img src="/resources/images/node-debugger/debugger13.png" alt="이미지" />
+<code class="highlighter-rouge">Debugger</code>모드로 <code class="highlighter-rouge">express</code>를 실행합니다.</p>
+
+<p><img src="/resources/images/node-debugger/debugger14.png" alt="이미지" />
+<img src="/resources/images/node-debugger/debugger15.png" alt="이미지" />
+<code class="highlighter-rouge">Break Point</code>를 설정하여 디버깅을 수행할 수 있으며 자세한 내용은 <a href="https://www.jetbrains.com/help/idea/running-and-debugging-node-js.html">IntelliJ Debugger Document</a>에서 확인할 수 있습니다.</p>
 
             </article>
 
             <section class="share">
     <h3>Share</h3>
-    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20http://localhost:4000/node-debugger/%20via%20&#64;imcts&hashtags=Node.js,Debugging,"
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20http://localhost:4000/NODE-DEBUGGER/%20via%20&#64;imcts&hashtags=Node.js,Debugging,"
     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
         <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
     </a>
-    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/node-debugger/"
+    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/NODE-DEBUGGER/"
     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
         <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
     </a>
-    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:4000/node-debugger/"
+    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:4000/NODE-DEBUGGER/"
     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
         <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
     </a>
@@ -185,7 +203,7 @@ node <span class="nt">--inspect</span>:port bin/www
         disqus_loaded = true;
         var disqus_shortname = 'dolen';
         var disqus_title = '';
-        var disqus_url = '/node-debugger/';
+        var disqus_url = '/NODE-DEBUGGER/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
