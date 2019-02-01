@@ -2,159 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55d7771c-0815-409c-ab6d-8f157d014b9d" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/images/project.png" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/_includes/sidebar.html" afterPath="$PROJECT_DIR$/_includes/sidebar.html" />
-      <change beforePath="$PROJECT_DIR$/_layouts/default.html" afterPath="$PROJECT_DIR$/_layouts/default.html" />
-      <change beforePath="$PROJECT_DIR$/_layouts/post.html" afterPath="$PROJECT_DIR$/_layouts/post.html" />
-      <change beforePath="$PROJECT_DIR$/_posts/2016-09-14-math-hodobub.md" afterPath="$PROJECT_DIR$/_posts/2016-09-14-math-hodobub.md" />
-      <change beforePath="$PROJECT_DIR$/_posts/2016-09-25-math-ratio.md" afterPath="$PROJECT_DIR$/_posts/2016-09-25-math-ratio.md" />
-      <change beforePath="$PROJECT_DIR$/_posts/2016-09-30-math-sam-gak-ham-su.md" afterPath="$PROJECT_DIR$/_posts/2016-09-30-math-sam-gak-ham-su.md" />
-      <change beforePath="$PROJECT_DIR$/_posts/2016-10-03-intellij-handlebars-comments.md" afterPath="$PROJECT_DIR$/_posts/2016-10-03-intellij-handlebars-comments.md" />
-      <change beforePath="$PROJECT_DIR$/_posts/2016-11-12-deployd-setting.md" afterPath="$PROJECT_DIR$/_posts/2016-11-12-deployd-setting.md" />
-      <change beforePath="$PROJECT_DIR$/_posts/2017-06-10-javascript-exponent-expression.md" afterPath="$PROJECT_DIR$/_posts/2017-06-10-javascript-exponent-expression.md" />
-      <change beforePath="$PROJECT_DIR$/_posts/2019-01-24-NODE-DEBUGGER.md" afterPath="$PROJECT_DIR$/_posts/2019-01-24-NODE-DEBUGGER.md" />
-      <change beforePath="$PROJECT_DIR$/_site/ES6-ARROW_FUNCTION/index.html" afterPath="$PROJECT_DIR$/_site/ES6-ARROW_FUNCTION/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/ES6-CLASS-METHOD/index.html" afterPath="$PROJECT_DIR$/_site/ES6-CLASS-METHOD/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/ES6-DESTRUCTURING_ASSIGNMENT/index.html" afterPath="$PROJECT_DIR$/_site/ES6-DESTRUCTURING_ASSIGNMENT/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/ES6-ITERABLE-ITERATOR-FOR-OF/index.html" afterPath="$PROJECT_DIR$/_site/ES6-ITERABLE-ITERATOR-FOR-OF/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/ES6-LET-CONST-TDZ/index.html" afterPath="$PROJECT_DIR$/_site/ES6-LET-CONST-TDZ/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/ES6-PARAMETERS/index.html" afterPath="$PROJECT_DIR$/_site/ES6-PARAMETERS/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/ES6-Reflection/index.html" afterPath="$PROJECT_DIR$/_site/ES6-Reflection/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/ES6-STRING-ARRAY-METHODS/index.html" afterPath="$PROJECT_DIR$/_site/ES6-STRING-ARRAY-METHODS/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/ES6-SYMBOL/index.html" afterPath="$PROJECT_DIR$/_site/ES6-SYMBOL/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/ES6-TEMPLATE-LITERAL/index.html" afterPath="$PROJECT_DIR$/_site/ES6-TEMPLATE-LITERAL/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/about/index.html" afterPath="$PROJECT_DIR$/_site/about/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/box-model-and-position/index.html" afterPath="$PROJECT_DIR$/_site/box-model-and-position/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/canvas-clock/index.html" afterPath="$PROJECT_DIR$/_site/canvas-clock/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/canvas-cross-line/index.html" afterPath="$PROJECT_DIR$/_site/canvas-cross-line/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/canvas-draw/index.html" afterPath="$PROJECT_DIR$/_site/canvas-draw/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/canvas-tetris/index.html" afterPath="$PROJECT_DIR$/_site/canvas-tetris/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/canvas-text/index.html" afterPath="$PROJECT_DIR$/_site/canvas-text/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/css-transform/index.html" afterPath="$PROJECT_DIR$/_site/css-transform/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/deployd-setting/index.html" afterPath="$PROJECT_DIR$/_site/deployd-setting/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/feed.xml" afterPath="$PROJECT_DIR$/_site/feed.xml" />
-      <change beforePath="$PROJECT_DIR$/_site/index.html" afterPath="$PROJECT_DIR$/_site/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/intellij-handlebars-comments/index.html" afterPath="$PROJECT_DIR$/_site/intellij-handlebars-comments/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/java-generic-class/index.html" afterPath="$PROJECT_DIR$/_site/java-generic-class/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/java-interface/index.html" afterPath="$PROJECT_DIR$/_site/java-interface/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/java-lambda/index.html" afterPath="$PROJECT_DIR$/_site/java-lambda/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/java-method-reference/index.html" afterPath="$PROJECT_DIR$/_site/java-method-reference/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/java-separator/index.html" afterPath="$PROJECT_DIR$/_site/java-separator/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/java-stream/index.html" afterPath="$PROJECT_DIR$/_site/java-stream/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/javascript-build-pattern/index.html" afterPath="$PROJECT_DIR$/_site/javascript-build-pattern/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/javascript-exponent-expression/index.html" afterPath="$PROJECT_DIR$/_site/javascript-exponent-expression/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/javascript-extends/index.html" afterPath="$PROJECT_DIR$/_site/javascript-extends/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/javascript-pattern/index.html" afterPath="$PROJECT_DIR$/_site/javascript-pattern/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/lion/index.html" afterPath="$PROJECT_DIR$/_site/lion/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/math-hodobub/index.html" afterPath="$PROJECT_DIR$/_site/math-hodobub/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/math-ratio/index.html" afterPath="$PROJECT_DIR$/_site/math-ratio/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/math-sam-gak-ham-su/index.html" afterPath="$PROJECT_DIR$/_site/math-sam-gak-ham-su/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/memo/index.html" afterPath="$PROJECT_DIR$/_site/memo/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/node-debugger/index.html" afterPath="$PROJECT_DIR$/_site/node-debugger/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/panorama-viewer/index.html" afterPath="$PROJECT_DIR$/_site/panorama-viewer/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/intellij/imtellij2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/intellij/intellij1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/intellij/intellij3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/intellij/intellij4.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/intellij/intellij5.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/javascript/IEEE-745-S-E-M.jpeg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/javascript/daum_equation.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/javascript/jinsu-change-2.jpeg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/javascript/jinsu-change.jpeg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/javascript/jinsu-complement.jpeg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/javascript/magic-number.jpeg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/javascript/math-float-screen.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/javascript/normalization.jpeg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/library/deployd/1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/library/deployd/2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/library/deployd/3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/library/deployd/4.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/library/deployd/5.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/library/deployd/6.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/library/deployd/7.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/library/deployd/8.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/math/hodo_1.jpeg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/math/hodo_2.jpeg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/math/hodo_3.jpeg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/math/ratio1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/math/ratio_screen_shot.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/math/ratio_screen_shot2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/math/sam-gak-ham-su-root.jpeg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/math/sam-gak-ham-su1.jpeg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/math/sam-gak-ham-su2.jpeg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/math/sam-gak-ham-su3.jpeg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/math/sam-gak-ham-su4.jpeg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/node-debugger/debugger1.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/node-debugger/debugger10.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/node-debugger/debugger11.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/node-debugger/debugger12.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/node-debugger/debugger13.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/node-debugger/debugger14.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/node-debugger/debugger15.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/node-debugger/debugger2.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/node-debugger/debugger3.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/node-debugger/debugger4.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/node-debugger/debugger5.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/node-debugger/debugger6.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/node-debugger/debugger7.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/node-debugger/debugger8.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/node-debugger/debugger9.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/resources/images/profile/profile.jpeg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/_site/sort-bubble/index.html" afterPath="$PROJECT_DIR$/_site/sort-bubble/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/sort-insert/index.html" afterPath="$PROJECT_DIR$/_site/sort-insert/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/sort-merge/index.html" afterPath="$PROJECT_DIR$/_site/sort-merge/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/sort-quick/index.html" afterPath="$PROJECT_DIR$/_site/sort-quick/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/sort-search/index.html" afterPath="$PROJECT_DIR$/_site/sort-search/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/sort-select/index.html" afterPath="$PROJECT_DIR$/_site/sort-select/index.html" />
-      <change beforePath="$PROJECT_DIR$/_site/sort-shell/index.html" afterPath="$PROJECT_DIR$/_site/sort-shell/index.html" />
-      <change beforePath="$PROJECT_DIR$/resources/images/intellij/imtellij2.png" afterPath="$PROJECT_DIR$/images/intellij/imtellij2.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/intellij/intellij1.png" afterPath="$PROJECT_DIR$/images/intellij/intellij1.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/intellij/intellij3.png" afterPath="$PROJECT_DIR$/images/intellij/intellij3.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/intellij/intellij4.png" afterPath="$PROJECT_DIR$/images/intellij/intellij4.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/intellij/intellij5.png" afterPath="$PROJECT_DIR$/images/intellij/intellij5.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/javascript/IEEE-745-S-E-M.jpeg" afterPath="$PROJECT_DIR$/images/javascript/IEEE-745-S-E-M.jpeg" />
-      <change beforePath="$PROJECT_DIR$/resources/images/javascript/daum_equation.png" afterPath="$PROJECT_DIR$/images/javascript/daum_equation.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/javascript/jinsu-change-2.jpeg" afterPath="$PROJECT_DIR$/images/javascript/jinsu-change-2.jpeg" />
-      <change beforePath="$PROJECT_DIR$/resources/images/javascript/jinsu-change.jpeg" afterPath="$PROJECT_DIR$/images/javascript/jinsu-change.jpeg" />
-      <change beforePath="$PROJECT_DIR$/resources/images/javascript/jinsu-complement.jpeg" afterPath="$PROJECT_DIR$/images/javascript/jinsu-complement.jpeg" />
-      <change beforePath="$PROJECT_DIR$/resources/images/javascript/magic-number.jpeg" afterPath="$PROJECT_DIR$/images/javascript/magic-number.jpeg" />
-      <change beforePath="$PROJECT_DIR$/resources/images/javascript/math-float-screen.png" afterPath="$PROJECT_DIR$/images/javascript/math-float-screen.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/javascript/normalization.jpeg" afterPath="$PROJECT_DIR$/images/javascript/normalization.jpeg" />
-      <change beforePath="$PROJECT_DIR$/resources/images/library/deployd/1.png" afterPath="$PROJECT_DIR$/images/library/deployd/1.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/library/deployd/2.png" afterPath="$PROJECT_DIR$/images/library/deployd/2.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/library/deployd/3.png" afterPath="$PROJECT_DIR$/images/library/deployd/3.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/library/deployd/4.png" afterPath="$PROJECT_DIR$/images/library/deployd/4.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/library/deployd/5.png" afterPath="$PROJECT_DIR$/images/library/deployd/5.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/library/deployd/6.png" afterPath="$PROJECT_DIR$/images/library/deployd/6.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/library/deployd/7.png" afterPath="$PROJECT_DIR$/images/library/deployd/7.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/library/deployd/8.png" afterPath="$PROJECT_DIR$/images/library/deployd/8.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/math/hodo_1.jpeg" afterPath="$PROJECT_DIR$/images/math/hodo_1.jpeg" />
-      <change beforePath="$PROJECT_DIR$/resources/images/math/hodo_2.jpeg" afterPath="$PROJECT_DIR$/images/math/hodo_2.jpeg" />
-      <change beforePath="$PROJECT_DIR$/resources/images/math/hodo_3.jpeg" afterPath="$PROJECT_DIR$/images/math/hodo_3.jpeg" />
-      <change beforePath="$PROJECT_DIR$/resources/images/math/ratio1.jpg" afterPath="$PROJECT_DIR$/images/math/ratio1.jpg" />
-      <change beforePath="$PROJECT_DIR$/resources/images/math/ratio_screen_shot.png" afterPath="$PROJECT_DIR$/images/math/ratio_screen_shot.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/math/ratio_screen_shot2.png" afterPath="$PROJECT_DIR$/images/math/ratio_screen_shot2.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/math/sam-gak-ham-su-root.jpeg" afterPath="$PROJECT_DIR$/images/math/sam-gak-ham-su-root.jpeg" />
-      <change beforePath="$PROJECT_DIR$/resources/images/math/sam-gak-ham-su1.jpeg" afterPath="$PROJECT_DIR$/images/math/sam-gak-ham-su1.jpeg" />
-      <change beforePath="$PROJECT_DIR$/resources/images/math/sam-gak-ham-su2.jpeg" afterPath="$PROJECT_DIR$/images/math/sam-gak-ham-su2.jpeg" />
-      <change beforePath="$PROJECT_DIR$/resources/images/math/sam-gak-ham-su3.jpeg" afterPath="$PROJECT_DIR$/images/math/sam-gak-ham-su3.jpeg" />
-      <change beforePath="$PROJECT_DIR$/resources/images/math/sam-gak-ham-su4.jpeg" afterPath="$PROJECT_DIR$/images/math/sam-gak-ham-su4.jpeg" />
-      <change beforePath="$PROJECT_DIR$/resources/images/node-debugger/debugger1.png" afterPath="$PROJECT_DIR$/images/node-debugger/debugger1.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/node-debugger/debugger10.png" afterPath="$PROJECT_DIR$/images/node-debugger/debugger10.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/node-debugger/debugger11.png" afterPath="$PROJECT_DIR$/images/node-debugger/debugger11.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/node-debugger/debugger12.png" afterPath="$PROJECT_DIR$/images/node-debugger/debugger12.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/node-debugger/debugger13.png" afterPath="$PROJECT_DIR$/images/node-debugger/debugger13.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/node-debugger/debugger14.png" afterPath="$PROJECT_DIR$/images/node-debugger/debugger14.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/node-debugger/debugger15.png" afterPath="$PROJECT_DIR$/images/node-debugger/debugger15.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/node-debugger/debugger2.png" afterPath="$PROJECT_DIR$/images/node-debugger/debugger2.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/node-debugger/debugger3.png" afterPath="$PROJECT_DIR$/images/node-debugger/debugger3.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/node-debugger/debugger4.png" afterPath="$PROJECT_DIR$/images/node-debugger/debugger4.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/node-debugger/debugger5.png" afterPath="$PROJECT_DIR$/images/node-debugger/debugger5.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/node-debugger/debugger6.png" afterPath="$PROJECT_DIR$/images/node-debugger/debugger6.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/node-debugger/debugger7.png" afterPath="$PROJECT_DIR$/images/node-debugger/debugger7.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/node-debugger/debugger8.png" afterPath="$PROJECT_DIR$/images/node-debugger/debugger8.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/node-debugger/debugger9.png" afterPath="$PROJECT_DIR$/images/node-debugger/debugger9.png" />
-      <change beforePath="$PROJECT_DIR$/resources/images/profile/profile.jpeg" afterPath="$PROJECT_DIR$/images/profile/profile.jpeg" />
+      <change beforePath="$PROJECT_DIR$/images/project.jpg" afterPath="$PROJECT_DIR$/images/remains/remain.jpg" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -168,8 +18,8 @@
       <file leaf-file-name="sidebar.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_includes/sidebar.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="91" column="49" lean-forward="true" selection-start-line="91" selection-start-column="49" selection-end-line="91" selection-end-column="49" />
+            <state relative-caret-position="137">
+              <caret line="55" column="48" lean-forward="false" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -352,6 +202,17 @@
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="remains" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -370,17 +231,18 @@
     <property name="SearchEverywhereHistoryKey" value="clock/index.html&#9;FILE&#9;file:///Users/kakao/Documents/dolen/blog/project/html/canvas/clock/index.html&#10;webjeda-logo-big.jpg&#9;FILE&#9;file:///Users/kakao/Documents/dolen/blog/images/webjeda-logo-big.jpg&#10;webjeda-log&#9;FILE&#9;file:///Users/kakao/Documents/dolen/blog/images/webjeda-logo-big.jpg" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images/remains" />
+      <recent name="$PROJECT_DIR$/images" />
+      <recent name="$PROJECT_DIR$/images/intellij" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/resources/images/node-debugger" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/images" />
       <recent name="$PROJECT_DIR$/_layouts" />
       <recent name="$PROJECT_DIR$/_posts" />
       <recent name="$PROJECT_DIR$/project/bear" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/images" />
-      <recent name="$PROJECT_DIR$/images/intellij" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/resources/images/node-debugger" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -519,7 +381,7 @@
       <workItem from="1548392313305" duration="296000" />
       <workItem from="1548403522419" duration="5912000" />
       <workItem from="1549003612215" duration="1812000" />
-      <workItem from="1549008441463" duration="2590000" />
+      <workItem from="1549008441463" duration="2722000" />
     </task>
     <task id="LOCAL-00001" summary="add bears">
       <created>1545550852267</created>
@@ -560,7 +422,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90664000" />
+    <option name="totallyTimeSpent" value="90796000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -573,7 +435,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="946" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -587,7 +448,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25499412" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23137973" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23137973" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -623,16 +484,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_posts/2018-06-04-panorama-viewer.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="105">
-            <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2018-11-03-ES6-LET-CONST-TDZ.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -1089,10 +940,15 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/images/remains/remain.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_includes/sidebar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="91" column="49" lean-forward="true" selection-start-line="91" selection-start-column="49" selection-end-line="91" selection-end-column="49" />
+        <state relative-caret-position="137">
+          <caret line="55" column="48" lean-forward="false" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
           <folding />
         </state>
       </provider>
