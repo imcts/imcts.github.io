@@ -57,12 +57,11 @@
   var isCSS1Compat = ((document.compatMode || "") === "CSS1Compat");
 
   function setSidebarStyle (position, top, left, width) {
-    Object.assign(postNavigator.style, {
-      position: position,
-      top: top,
-      left: left,
-      width: width
-    })
+    var style = postNavigator.style;
+    style.position = position;
+    style.top = top;
+    style.left = left;
+    style.width = width;
   }
 
   function onScroll () {
