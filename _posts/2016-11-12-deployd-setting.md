@@ -43,7 +43,7 @@ dpd create [폴더명]
 
 deployd 라고 이름짓고 생성해보겠습니다.  
 
-![이미지](/resources/images/library/deployd/1.png)  
+![이미지](/images/library/deployd/1.png)  
 
 폴더가 예쁘게 만들어졌죠 ? 
 이제 해당 폴더로 이동 한 후 실행 시키면 됩니다.
@@ -55,34 +55,34 @@ dpd -d
 
 dpd로 실행하면 별도의 dash board창이 오픈되지는 않고, dpd -d 로 실행하시면 dashboard 페이지가 등장합니다. 
 
-![이미지](/resources/images/library/deployd/2.png)  
+![이미지](/images/library/deployd/2.png)  
   
 그러면 이제 DB Collection (RDB 기준으로는 TABLE) 을 생성해볼까요 ? 
 
-![이미지](/resources/images/library/deployd/3.png)  
+![이미지](/images/library/deployd/3.png)  
 
 Collection을 클릭합니다.   
 
-![이미지](/resources/images/library/deployd/4.png)
+![이미지](/images/library/deployd/4.png)
 
 원하는 컬렉션명을 적어주신 후 엔터를 입력하는 것만으로 테이블 생성이 완료 됩니다.  
 이제 Properties를 클릭하여 column을 생성할 차례 입니다.  
 
-![이미지](/resources/images/library/deployd/5.png)
+![이미지](/images/library/deployd/5.png)
 
 컬럼별로 데이터 타입을 지정할 수 있으니 원하는 타입의 데이터 column을 설정하시면 됩니다.  
 이제 데이터를 넣어볼까요 ?    
 
-![이미지](/resources/images/library/deployd/6.png)
+![이미지](/images/library/deployd/6.png)
 
 데이터 타입에 맞춰서 입력하시면 됩니다.   
 mongodb 특성상 ID는 자동으로 입력해 주니 신경쓰지 맙시다. 
 
-![이미지](/resources/images/library/deployd/7.png)
+![이미지](/images/library/deployd/7.png)
 
 API를 기본적으로 제공해 주니 저대로 request를 요청하면 됩니다.   
 GET요청을 한번 해볼까요 ??   
 
-![이미지](/resources/images/library/deployd/8.png)
+![이미지](/images/library/deployd/8.png)
 
 deployd 였습니다. :)

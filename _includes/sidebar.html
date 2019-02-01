@@ -1,4 +1,4 @@
-<div class="col-md-4 mt20">
+<div id="post-navigator" class="col-md-4 mt20">
   <div class="post-img">
     <img width="600" src="{{site.baseurl}}/images/{{page.img}}" alt="{{page.title}}">
   </div>
@@ -35,3 +35,65 @@
   <br>
 
 </div>
+
+
+<script>
+  var MIN_WIDTH_OF_PC_VERSION = 992;
+  var POST_SIDE_BAR_HEIGHT = 87;
+  var POST_SIDE_BAR_PADDING_LEFT = 15;
+  var POST_SIDE_BAR_MARGIN_TOP = 20;
+  var CONTAINER_PADDING_LEFT = 20;
+
+  var container = document.getElementById('container');
+  var post = document.getElementById('post');
+  var postNavigator = document.getElementById('post-navigator');
+
+  var postNavigatorWidth = postNavigator.offsetWidth;
+  var postWidth = post.offsetWidth;
+  var postMarginLeft = +window.getComputedStyle(container)['margin-left'].split('px')[0];
+
+  /** for getting scroll position Y **/
+  var supportPageOffset = window.pageXOffset !== undefined;
+  var isCSS1Compat = ((document.compatMode || "") === "CSS1Compat");
+
+  function setSidebarStyle (position, top, left, width) {
+    Object.assign(postNavigator.style, {
+      position: position,
+      top: top,
+      left: left,
+      width: width
+    })
+  }
+
+  function onScroll () {
+    var position = '';
+    var top = '';
+    var left = '';
+    var width = '33.33333333%';
+
+    if (document.body.offsetWidth < MIN_WIDTH_OF_PC_VERSION) {
+      width = '';
+    } else {
+      var y = supportPageOffset
+        ? window.pageYOffset : isCSS1Compat
+        ? document.documentElement.scrollTop : document.body.scrollTop;
+
+      if (y >= POST_SIDE_BAR_HEIGHT) {
+        position = 'fixed';
+        top = POST_SIDE_BAR_MARGIN_TOP + 'px';
+        left = (postMarginLeft + postWidth + CONTAINER_PADDING_LEFT + POST_SIDE_BAR_PADDING_LEFT) + 'px';
+        width = postNavigatorWidth + 'px';
+      }
+    }
+    setSidebarStyle(position, top, left, width);
+  }
+
+  window.addEventListener('scroll', onScroll);
+  window.addEventListener('resize', function () {
+    postNavigatorWidth = postNavigator.offsetWidth;
+    postWidth = post.offsetWidth;
+    postMarginLeft = +window.getComputedStyle(container)['margin-left'].split('px')[0];
+
+    onScroll();
+  });
+</script>

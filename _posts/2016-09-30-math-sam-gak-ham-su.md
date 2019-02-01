@@ -7,7 +7,7 @@ img: math.jpg
 
 ### 제곱근에 대하여 !
 
-![루트](/resources/images/math/sam-gak-ham-su-root.jpeg)
+![루트](/images/math/sam-gak-ham-su-root.jpeg)
 
 간단 간단하게 정리하면서 지나가겠습니다.
  
@@ -44,7 +44,7 @@ img: math.jpg
   
 ### 피타고라스의 정리 !  
   
-![피타고라스의 정리](/resources/images/math/sam-gak-ham-su2.jpeg)
+![피타고라스의 정리](/images/math/sam-gak-ham-su2.jpeg)
 
 `피타고라스의 정리`도 봐두면 좋습니다. [피타고라스의 정리](http://mathbang.net/130) 
 
@@ -52,8 +52,8 @@ img: math.jpg
 
 ### 삼각함수 
 
-![싸인, 코싸인, 탄젠트](/resources/images/math/sam-gak-ham-su3.jpeg)
-![싸인, 코싸인, 탄젠트](/resources/images/math/sam-gak-ham-su4.jpeg)
+![싸인, 코싸인, 탄젠트](/images/math/sam-gak-ham-su3.jpeg)
+![싸인, 코싸인, 탄젠트](/images/math/sam-gak-ham-su4.jpeg)
 
 
 `삼각비`라고 합니다. 

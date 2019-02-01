@@ -17,7 +17,7 @@ IEEE-754 표기법 중 32BIT를 사용하는 단정도와 64BIT를 사용하는 
 
 ### 3. 양수를 표현할때 
 먼저 정수를 저장하는 방법에 대해 알아보도록 하죠. 43이라는 값을 32비트로 저장하려면 먼저 2진수로 변환해야 합니다.  
-![이미지](/resources/images/javascript/jinsu-change.jpeg)
+![이미지](/images/javascript/jinsu-change.jpeg)
 이처럼 10진수 43을 2진수로 표현할 수 있고, 그를 8진수나 16진수등으로 변경할 수도 있습니다.  
 43이라는 정수값을 2진수로 변경하게 되면 101011(2)로 표기할 수 있고, 자바스크립트로 간단하게 사용하고자 한다면 toString을 사용하여 쉽게 구할 수도 있습니다.  
 
@@ -33,7 +33,7 @@ var nubmer = 43..toString(2); // 101011
 ### 3. 음수를 표현할때 
 음수를 표현하는 방법은 여러가지 방법이 존재해왔습니다.  
 
-![이미지](/resources/images/javascript/jinsu-complement.jpeg)
+![이미지](/images/javascript/jinsu-complement.jpeg)
 
 `부호 절대값 방법(Sign Magnitude)`: 부호 비트를 제외한 수를 양수값으로 읽고, 부호비트에 따라 + - 를 인식하는 방법입니다.  (이진수 계산이 되지 않기 때문에 컴퓨터에서 사용하지 않습니다.)  
 <br>
@@ -64,20 +64,20 @@ var nubmer = 43..toString(2); // 101011
 
 ### 4. 부동소수점 표기 방법 
 `부동 소수 표현식`
-![이미지](/resources/images/javascript/math-float-screen.png)
+![이미지](/images/javascript/math-float-screen.png)
 
 `s(Sign)`: 부호비트를 나타냅니다. (양수일때: 0, 음수일때: 1)  
 `M(Mantissa)`: 가수부를 나타냅니다. (유효숫자)  
 `E(Exponent)`: 지수부를 나타냅니다.  
 
-![이미지](/resources/images/javascript/IEEE-745-S-E-M.jpeg)
+![이미지](/images/javascript/IEEE-745-S-E-M.jpeg)
 
 단정도 방식에서는 `sign`비트를 1비트로 `Exponent`를 8비트로 `Mantissa`를 23비트로 표현합니다.  
 배정도 방식에서는 `sign`비트를 1비트로 `Exponent`를 11비트로 `Mantissa`를 52비트로 표현합니다.  
 
 오늘은 43.6875라는 실수값이 어떻게 저장되는지에 대해 보도록 하겠습니다.  
 
-![이미지](/resources/images/javascript/jinsu-change-2.jpeg)
+![이미지](/images/javascript/jinsu-change-2.jpeg)
 
 먼저 2진수로 변환하는 과정을 거쳐서 101011.1011(2)라는 값을 얻습니다.  
 
@@ -86,13 +86,13 @@ var nubmer = 43..toString(2); // 101011
 
 `Exponent`를 구하기 위해 `정규화` 과정을 거칩니다. 
 
-![이미지](/resources/images/javascript/normalization.jpeg)
+![이미지](/images/javascript/normalization.jpeg)
 
 `정규화`란 2진수의 제일 왼쪽의 값이 1이 나오도록 소수점을 이동시키는 지수표현 방법을 말합니다.  
 
 정규화 과정을 마친 후 `매직넘버`를 구합니다.  
 
-![이미지](/resources/images/javascript/magic-number.jpeg)
+![이미지](/images/javascript/magic-number.jpeg)
 
 
 `매직넘버`란 지수부에 음수가 들어가지 않게 하기위해 더해주는 수로서, 정규화되어진 지수의 값 5와 매직넘버 127을 더한 값 10진수 132를 구합니다.  

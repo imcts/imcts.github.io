@@ -41,7 +41,7 @@ Preferences -> language & frameworks -> javascript -> templates
 ```  
 
 
-![이미지](/resources/images/intellij/intellij1.png)
+![이미지](/images/intellij/intellij1.png)
 
 
 위처럼 수정해 주시면 정상적으로 주석이 handlebars 용으로 달리게 됩니다 ! :)
@@ -69,7 +69,7 @@ console.log();
 Preferences -> Editor -> Live Templates
 ```  
 
-![이미지](/resources/images/intellij/imtellij2.png)
+![이미지](/images/intellij/imtellij2.png)
 
 이런식으로 설정하면 
 
@@ -115,7 +115,7 @@ csl + TAP -> console.log(//cursor위치);
 Preferences -> Editor -> Code Style -> JavaScript > Other
 ```  
 
-![이미지](/resources/images/intellij/intellij3.png)
+![이미지](/images/intellij/intellij3.png)
 
 이 화면으로 가셔서 본인이 편한대로 설정해 주시구요 !
 
@@ -141,12 +141,12 @@ Command + option + L
 Preferences -> Appearance & Behavior -> POWER MODE II
 ```  
 
-![이미지](/resources/images/intellij/intellij4.png)
+![이미지](/images/intellij/intellij4.png)
 
 해당 설정화면에서 다양한 효과들을 설정할 수 있습니다.
 
 
-![이미지](/resources/images/intellij/intellij5.png)
+![이미지](/images/intellij/intellij5.png)
 
 **적용샷!!** 입니다.
 

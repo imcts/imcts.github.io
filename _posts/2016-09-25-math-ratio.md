@@ -67,7 +67,7 @@ img.style.marginTop  = img.height / 2;
 
 가로가 몇이 들어올지 세로가 몇이 들어올지 알 수 없을때, 이미지의 가로값과 세로값에 따라서 중앙 정렬을 하게 되면 이미지가 뭉개지는 현상이 발생하죠 ?
 
-![이미지가 깨지는 것](/resources/images/math/ratio_screen_shot.png)
+![이미지가 깨지는 것](/images/math/ratio_screen_shot.png)
 
 바로 이렇게 말이죠 !
 
@@ -94,7 +94,7 @@ img.style.marginTop  = img.height / 2;
 
 이게 `비례식` 입니다.
 
-![비례식](/resources/images/math/ratio1.jpg)
+![비례식](/images/math/ratio1.jpg)
 
  
  
@@ -185,7 +185,7 @@ function setImagePosition(parent, src) {
 원본 이미지가 1280px * 722px로 테스트해볼까요 ?
 
 
-![결과이미지](/resources/images/math/ratio_screen_shot2.png)
+![결과이미지](/images/math/ratio_screen_shot2.png)
 
 
 예쁘게 중앙에 정렬되었죠 :) 

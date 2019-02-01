@@ -16,7 +16,7 @@ img: math.jpg
  
 그럼 한번 구해볼까요 ? 
 
-![이미지](/resources/images/math/hodo_1.jpeg)
+![이미지](/images/math/hodo_1.jpeg)
 
 
 `π(원주율)`: 원주율이란 `원의둘레`가 `지름`보다 몇배나 큰지를 나타난 비례값이에요. 그걸 공식으로 나타내본다면 `π = 원의둘레 / 지름`
@@ -32,7 +32,7 @@ img: math.jpg
 호도법은 여기에서 시작 됩니다. 
 
 
-![이미지](/resources/images/math/hodo_2.jpeg)
+![이미지](/images/math/hodo_2.jpeg)
 
 
 위의 그림을 보면 원뿔이 하나 있는데요, 반지름을 `r`이라고 하고 원뿔의 둘레를 `l`이라고 명명해요. 
@@ -53,7 +53,7 @@ img: math.jpg
 `Θ * r = l` 이 되는것이죠. 이걸 꼭 기억하셔야 합니다. 
 
 
-![이미지](/resources/images/math/hodo_3.jpeg) 
+![이미지](/images/math/hodo_3.jpeg) 
 
 
 그리고 위 이미지를 볼까요 ? 거의 다 왔습니다. :) 

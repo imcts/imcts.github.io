@@ -5,8 +5,8 @@
     <description>Developer</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 01 Feb 2019 16:13:34 +0900</pubDate>
-    <lastBuildDate>Fri, 01 Feb 2019 16:13:34 +0900</lastBuildDate>
+    <pubDate>Fri, 01 Feb 2019 17:55:57 +0900</pubDate>
+    <lastBuildDate>Fri, 01 Feb 2019 17:55:57 +0900</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -17,15 +17,15 @@
 &lt;code class=&quot;highlighter-rouge&quot;&gt;Node.js&lt;/code&gt;에서 쉽게 디버깅하는 방법에 대해 알아보고 정리하고자 합니다.&lt;/p&gt;
 
 &lt;h3 id=&quot;chrome-inspector&quot;&gt;Chrome Inspector&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/resources/images/node-debugger/debugger1.png&quot; alt=&quot;이미지&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;/images/node-debugger/debugger1.png&quot; alt=&quot;이미지&quot; /&gt;
 &lt;code class=&quot;highlighter-rouge&quot;&gt;Chrome&lt;/code&gt;에서 디버깅을 수행하기 위해 이미지와 같은 구조를 갖는 &lt;a href=&quot;https://github.com/imcts/express-boiler-plate&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Node Express&lt;/code&gt;&lt;/a&gt; 프로젝트를 생성 합니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;img src=&quot;/resources/images/node-debugger/debugger2.png&quot; alt=&quot;이미지&quot; /&gt;
+&lt;img src=&quot;/images/node-debugger/debugger2.png&quot; alt=&quot;이미지&quot; /&gt;
 크롬 브라우저를 실행하여 주소창에 &lt;code class=&quot;highlighter-rouge&quot;&gt;chrome://inspect&lt;/code&gt;을 입력합니다.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;img src=&quot;/resources/images/node-debugger/debugger3.png&quot; alt=&quot;이미지&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;/images/node-debugger/debugger3.png&quot; alt=&quot;이미지&quot; /&gt;&lt;br /&gt;
 기본적으로 디버깅 포트는 &lt;code class=&quot;highlighter-rouge&quot;&gt;9229&lt;/code&gt;로 설정되어 있습니다. &lt;code class=&quot;highlighter-rouge&quot;&gt;configue&lt;/code&gt;버튼을 선택하여 &lt;code class=&quot;highlighter-rouge&quot;&gt;localhost:9229&lt;/code&gt;를 입력 합니다.
 &lt;br /&gt;&lt;/p&gt;
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// default 9229 port
@@ -36,41 +36,41 @@ node &lt;span class=&quot;nt&quot;&gt;--inspect&lt;/span&gt;&lt;span class=&quot
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;--inspect&lt;/code&gt;옵션을 추가하여 &lt;code class=&quot;highlighter-rouge&quot;&gt;debugging&lt;/code&gt;모드의 &lt;code class=&quot;highlighter-rouge&quot;&gt;node&lt;/code&gt;서버를 실행합니다. 
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;img src=&quot;/resources/images/node-debugger/debugger4.png&quot; alt=&quot;이미지&quot; /&gt;
+&lt;img src=&quot;/images/node-debugger/debugger4.png&quot; alt=&quot;이미지&quot; /&gt;
 &lt;code class=&quot;highlighter-rouge&quot;&gt;chrome://inspect&lt;/code&gt;화면을 새로고침하면 방금 실행한 노드서버가 노출되는 것을 확인할 수 있습니다. 
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;img src=&quot;/resources/images/node-debugger/debugger5.png&quot; alt=&quot;이미지&quot; /&gt;
+&lt;img src=&quot;/images/node-debugger/debugger5.png&quot; alt=&quot;이미지&quot; /&gt;
 &lt;code class=&quot;highlighter-rouge&quot;&gt;inspect&lt;/code&gt;를 클릭하면 &lt;code class=&quot;highlighter-rouge&quot;&gt;debugger&lt;/code&gt;화면이 노출되는데 좌측 폴더 목록에 &lt;code class=&quot;highlighter-rouge&quot;&gt;workspace&lt;/code&gt;가 비어있습니다. 
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;img src=&quot;/resources/images/node-debugger/debugger6.png&quot; alt=&quot;이미지&quot; /&gt;
+&lt;img src=&quot;/images/node-debugger/debugger6.png&quot; alt=&quot;이미지&quot; /&gt;
 &lt;code class=&quot;highlighter-rouge&quot;&gt;+Add folder to workspace&lt;/code&gt;를 선택하여 &lt;code class=&quot;highlighter-rouge&quot;&gt;local&lt;/code&gt;경로의 프로젝트 &lt;code class=&quot;highlighter-rouge&quot;&gt;root&lt;/code&gt;경로를 선택합니다.
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;img src=&quot;/resources/images/node-debugger/debugger7.png&quot; alt=&quot;이미지&quot; /&gt;
+&lt;img src=&quot;/images/node-debugger/debugger7.png&quot; alt=&quot;이미지&quot; /&gt;
 &lt;br /&gt;작업하고 있는 &lt;code class=&quot;highlighter-rouge&quot;&gt;project&lt;/code&gt;의 폴더목록이 전부 추가된 것을 확인할 수 있습니다. 
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;img src=&quot;/resources/images/node-debugger/debugger8.png&quot; alt=&quot;이미지&quot; /&gt;
+&lt;img src=&quot;/images/node-debugger/debugger8.png&quot; alt=&quot;이미지&quot; /&gt;
 &lt;code class=&quot;highlighter-rouge&quot;&gt;chrome inspector&lt;/code&gt;에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;debugger&lt;/code&gt;를 입력 후 화면을 새로고침 했을때 정상적으로 동작하는 것을 확인할 수 있습니다. 
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;img src=&quot;/resources/images/node-debugger/debugger9.png&quot; alt=&quot;이미지&quot; /&gt;
+&lt;img src=&quot;/images/node-debugger/debugger9.png&quot; alt=&quot;이미지&quot; /&gt;
 &lt;code class=&quot;highlighter-rouge&quot;&gt;inspector&lt;/code&gt;에서 변경한 코드가 &lt;code class=&quot;highlighter-rouge&quot;&gt;local&lt;/code&gt;의 실제 파일에도 반영되는 것을 확인할 수 있습니다.&lt;/p&gt;
 
 &lt;p&gt;좀 더 자세한 내용은 &lt;a href=&quot;https://nodejs.org/api/debugger.html&quot;&gt;Debugger Document&lt;/a&gt;에서 확인할 수 있습니다.&lt;/p&gt;
 
 &lt;h3 id=&quot;intellij-inspector&quot;&gt;IntelliJ Inspector&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/resources/images/node-debugger/debugger10.png&quot; alt=&quot;이미지&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;/images/node-debugger/debugger10.png&quot; alt=&quot;이미지&quot; /&gt;
 &lt;code class=&quot;highlighter-rouge&quot;&gt;IntellJ&lt;/code&gt;에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;NodeJs&lt;/code&gt;를 디버깅하기 위해 &lt;code class=&quot;highlighter-rouge&quot;&gt;Preference -&amp;gt; Plugins&lt;/code&gt;메뉴에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;NodeJs&lt;/code&gt;플러그인을 설치해 줍니다.
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;img src=&quot;/resources/images/node-debugger/debugger11.png&quot; alt=&quot;이미지&quot; /&gt;
+&lt;img src=&quot;/images/node-debugger/debugger11.png&quot; alt=&quot;이미지&quot; /&gt;
 우측 상단의 &lt;code class=&quot;highlighter-rouge&quot;&gt;Edit Configuration&lt;/code&gt;을 클릭합니다. 
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;img src=&quot;/resources/images/node-debugger/debugger12.png&quot; alt=&quot;이미지&quot; /&gt;
+&lt;img src=&quot;/images/node-debugger/debugger12.png&quot; alt=&quot;이미지&quot; /&gt;
 &lt;code class=&quot;highlighter-rouge&quot;&gt;NodeJs&lt;/code&gt;용 설정을 하나 추가하고 &lt;code class=&quot;highlighter-rouge&quot;&gt;entry file&lt;/code&gt;경로를 입력 합니다. 
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;img src=&quot;/resources/images/node-debugger/debugger13.png&quot; alt=&quot;이미지&quot; /&gt;
+&lt;img src=&quot;/images/node-debugger/debugger13.png&quot; alt=&quot;이미지&quot; /&gt;
 &lt;code class=&quot;highlighter-rouge&quot;&gt;Debugger&lt;/code&gt;모드로 &lt;code class=&quot;highlighter-rouge&quot;&gt;express&lt;/code&gt;를 실행합니다. 
 &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;img src=&quot;/resources/images/node-debugger/debugger14.png&quot; alt=&quot;이미지&quot; /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;img src=&quot;/resources/images/node-debugger/debugger15.png&quot; alt=&quot;이미지&quot; /&gt;
+&lt;img src=&quot;/images/node-debugger/debugger14.png&quot; alt=&quot;이미지&quot; /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;/images/node-debugger/debugger15.png&quot; alt=&quot;이미지&quot; /&gt;
 &lt;code class=&quot;highlighter-rouge&quot;&gt;Break Point&lt;/code&gt;를 설정하여 디버깅을 수행할 수 있으며 자세한 내용은 &lt;a href=&quot;https://www.jetbrains.com/help/idea/running-and-debugging-node-js.html&quot;&gt;IntelliJ Debugger Document&lt;/a&gt;에서 확인할 수 있습니다.&lt;/p&gt;
 </description>
         <pubDate>Fri, 25 Jan 2019 05:00:00 +0900</pubDate>
