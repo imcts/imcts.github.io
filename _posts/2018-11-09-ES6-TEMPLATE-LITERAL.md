@@ -1,16 +1,8 @@
 ---
-
 layout: post
 title: ES6 - TEMPLATE LITERAL
 date: 2018-11-09 02:00:00
-image: '/assets/img/'
-main-class: 'js'
-description: 'ES6 Basic Study'
-tags: 
-- javascript
-- template literal
-
-introduction: '- javascript template literal -'
+img: javascript.jpg
 ---
 
 ### 1. String 객체를 생성

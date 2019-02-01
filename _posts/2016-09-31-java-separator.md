@@ -2,17 +2,10 @@
 layout: post
 title: JAVA 가변인자와 ENUM
 date: 2016-09-31 21:00:00
-image: '/assets/img/'
-description: '가변인자 ENUM'
-main-class: 'java'
-tags: 
-- 가변인자
-- ENUM
-
-introduction: '-generic class method-'
+img: java.png
 ---
 
-### - 가변인자
+### 가변인자
 
 ```java
 public class Gabyun {
@@ -32,7 +25,7 @@ public class Gabyun {
 }
 ```
 
-**가변인자**란 동일한 타입의 매개변수를 배열로 넘겨받아 사용하는 매개변수 입니다. 
+`가변인자`란 동일한 타입의 매개변수를 배열로 넘겨받아 사용하는 매개변수 입니다. 
 
 ```js
 const fnc = (...args) => {
@@ -46,7 +39,7 @@ Javascrip의 spread operator 와 동일 하다고 보면 됩니다.
 
 
 
-### - ENUM 
+### ENUM 
 
 ````java
 public class Enum {

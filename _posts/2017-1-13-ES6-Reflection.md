@@ -2,14 +2,7 @@
 layout: post
 title: ES6 - REFLECTION
 date: 2017-1-13 02:00:00
-image: '/assets/img/'
-main-class: 'js'
-description: 'javascript reflection'
-tags: 
-- javascript
-- template literal
-
-introduction: '- javascript reflection -'
+img: javascript.jpg
 ---
 
 ### 1. Reflection의 정의

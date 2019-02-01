@@ -1,19 +1,11 @@
 ---
-
 layout: post
 title: IntelliJ 유용한 설정들 !
 date: 2016-10-03 20:00:00
-image: '/assets/img/'
-description: 'tool'
-main-class: 'tool'
-tags: 
-- intelliJ
-
-introduction: '- intelliJ plugin -'
-
+img: tool.png
 ---
 
-### - Handlebars로 주석을 변경하는 방법 !! 
+### Handlebars로 주석을 변경하는 방법 !! 
 
 Handlebars 를 프로젝트에 적용해서 사용하다 보면, html 태그에 주석을 달아서 처리해야 할 일이 있지요 ? 
 
@@ -57,7 +49,7 @@ Preferences -> language & frameworks -> javascript -> templates
  
  
  
-### - Live Template 
+### Live Template 
 
 front-end 개발자로서 작업하면서 가장 많이 치는 코드가 뭘까요 ? 
 
@@ -90,7 +82,7 @@ csl + TAP -> console.log(//cursor위치);
 각자 편한것들을 등록해서 사용해 보도록 해요 :) 
 
 
-### - Auto Code Style
+### Auto Code Style
 
 코드를 치다보면 꽤나 귀찮은 작업들이 있을때가 많지요 ?? 
 
@@ -139,7 +131,7 @@ Command + option + L
  
  
 
-### - Power Code 
+### Power Code 
 
 불꽃 타이핑 !! 불꽃 타이핑을 쳐봅시다아 !! 
 

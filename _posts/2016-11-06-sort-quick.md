@@ -1,20 +1,11 @@
 ---
-
 layout: post
 title: Algorithm - Quick Sort 
 date: 2016-11-06 20:00:00
-image: '/assets/img/'
-description: 'zz'
-main-class: 'algorithm'
-tags: 
-- algorithm
-- sort
-
-introduction: '- JAVASCRIPT Quick Sort  -'
-
+img: algorithm.png
 ---
 
-**[Quick Sort View](https://visualgo.net/sorting)**
+[Quick Sort View](https://visualgo.net/sorting)
 
 
 ```js

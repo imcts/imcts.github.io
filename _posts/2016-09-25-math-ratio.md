@@ -2,18 +2,12 @@
 layout: post
 title: 수포자가 필요해서 정리하는 수학공식
 date: 2016-09-25 20:00:00
-image: '/assets/img/'
-description: '비례식, 이미지 정렬' 
-main-class: 'math'
-tags: 
-- 비례식
-categories:
-introduction: '-비례식, 이미지 정렬-' 
+img: math.jpg 
 ---
 
 가로값:세로값 = 변경된가로값:세로값;
 
-**비례식**에대해 알아보게된 이유는 별다른게 아니었습니다. 필요했기 때문이죠. 
+`비례식`에대해 알아보게된 이유는 별다른게 아니었습니다. 필요했기 때문이죠. 
 
 ```html
 <div id="parent" class="parent">
@@ -23,7 +17,7 @@ introduction: '-비례식, 이미지 정렬-'
 
 위와 같은 상황이었을때 이미지를 상황에 따라서 가운데 정렬을 하고 싶었거든요. 
 
-물론 **css**를 사용하여 정렬할 수도 있습니다. 
+물론 `css`를 사용하여 정렬할 수도 있습니다. 
 
 이미지 태그를 사용하는게 아니라, 백그라운드를 사용하는게 그것이지요.
 
@@ -98,7 +92,7 @@ img.style.marginTop  = img.height / 2;
 
 그걸 하기 위해 비례식이 필요합니다 ! 
 
-이게 **비례식** 입니다.
+이게 `비례식` 입니다.
 
 ![비례식](/resources/images/math/ratio1.jpg)
 
@@ -197,4 +191,4 @@ function setImagePosition(parent, src) {
 예쁘게 중앙에 정렬되었죠 :) 
 
 
-**비례식** 이었습니다.
+`비례식` 이었습니다.

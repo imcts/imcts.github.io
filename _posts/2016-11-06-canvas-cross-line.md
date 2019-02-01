@@ -1,17 +1,7 @@
 ---
-
 layout: post
 title: HTML5 CANVAS CROSS LINE
 date: 2016-11-06 22:00:00
-image: '/assets/img/'
-description: 'HTML5 CANVAS CROSS LINE'
-main-class: 'js'
-tags: 
-- cross line
-- canvas
-
-introduction: '- HTML5 CANVAS CLOCK -'
-
+img: javascript.jpg
 ---
-
-<iframe width="1024" height="700" src="/project/html/canvas/cross-line/index.html" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="700" src="/project/html/canvas/cross-line/index.html" frameborder="0" allowfullscreen></iframe>

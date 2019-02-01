@@ -1,231 +1,27 @@
-<!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/BlogPosting" class="post-js">
-    <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>ES6 - INTRODUCE, LET, CONST</title>
-    <meta name="description" content="ES6 Basic Study">
-
-    <!-- Google Authorship Markup -->
-    <link rel="author" href="https://plus.google.com/+imcts?rel=author">
-
-    <!-- Social: Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@imcts">
-    <meta name="twitter:title" content="ES6 - INTRODUCE, LET, CONST">
-    <meta name="twitter:description" content="ES6 Basic Study">
-    
-    <meta property="twitter:image:src" content="http://localhost:4000/assets/img/">
-    
-
-    <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="http://localhost:4000/ES6-LET-CONST-TDZ/">
-    <meta property="og:title" content="ES6 - INTRODUCE, LET, CONST">
-    
-    <meta property="og:image" content="http://localhost:4000/assets/img/">
-    
-    <meta property="og:description" content="ES6 Basic Study">
-    <meta property="og:site_name" content="Dolen - developer Front End">
-
-    <!-- Social: Google+ / Schema.org  -->
-    <meta itemprop="name" content="ES6 - INTRODUCE, LET, CONST"/>
-    <meta itemprop="description" content="ES6 Basic Study">
-    <meta itemprop="image" content="http://localhost:4000/assets/img/blog-image.png"/>
-
-    <!-- Windows 8 Tile Icons -->
-    <meta name="application-name" content="dolen Blog">
-    <meta name="msapplication-TileColor" content="#0562DC">
-    <meta name="msapplication-square70x70logo" content="smalltile.png" />
-    <meta name="msapplication-square150x150logo" content="mediumtile.png" />
-    <meta name="msapplication-wide310x150logo" content="widetile.png" />
-    <meta name="msapplication-square310x310logo" content="largetile.png" />
-    <!-- Android Lolipop Theme Color -->
-    <meta name="theme-color" content="">
-
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="http://localhost:4000/ES6-LET-CONST-TDZ/">
-    <link rel="alternate" type="application/rss+xml" title="Dolen - developer Front End" href="http://localhost:4000/feed.xml" />
-</head>
-
-    <body>
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" display="none" version="1.1"><defs><symbol id="icon-menu" viewBox="0 0 1024 1024"><path class="path1" d="M128 213.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 725.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 469.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5z"/></symbol><symbol id="icon-search" viewBox="0 0 951 1024"><path class="path1" d="M658.286 475.429q0-105.714-75.143-180.857t-180.857-75.143-180.857 75.143-75.143 180.857 75.143 180.857 180.857 75.143 180.857-75.143 75.143-180.857zM950.857 950.857q0 29.714-21.714 51.429t-51.429 21.714q-30.857 0-51.429-21.714l-196-195.429q-102.286 70.857-228 70.857-81.714 0-156.286-31.714t-128.571-85.714-85.714-128.571-31.714-156.286 31.714-156.286 85.714-128.571 128.571-85.714 156.286-31.714 156.286 31.714 128.571 85.714 85.714 128.571 31.714 156.286q0 125.714-70.857 228l196 196q21.143 21.143 21.143 51.429z"/></symbol><symbol id="icon-close" viewBox="0 0 805 1024"><path class="path1" d="M741.714 755.429q0 22.857-16 38.857l-77.714 77.714q-16 16-38.857 16t-38.857-16l-168-168-168 168q-16 16-38.857 16t-38.857-16l-77.714-77.714q-16-16-16-38.857t16-38.857l168-168-168-168q-16-16-16-38.857t16-38.857l77.714-77.714q16-16 38.857-16t38.857 16l168 168 168-168q16-16 38.857-16t38.857 16l77.714 77.714q16 16 16 38.857t-16 38.857l-168 168 168 168q16 16 16 38.857z"/></symbol><symbol id="icon-twitter" viewBox="0 0 951 1024"><path class="path1" d="M925.714 233.143q-38.286 56-92.571 95.429 0.571 8 0.571 24 0 74.286-21.714 148.286t-66 142-105.429 120.286-147.429 83.429-184.571 31.143q-154.857 0-283.429-82.857 20 2.286 44.571 2.286 128.571 0 229.143-78.857-60-1.143-107.429-36.857t-65.143-91.143q18.857 2.857 34.857 2.857 24.571 0 48.571-6.286-64-13.143-106-63.714t-42-117.429v-2.286q38.857 21.714 83.429 23.429-37.714-25.143-60-65.714t-22.286-88q0-50.286 25.143-93.143 69.143 85.143 168.286 136.286t212.286 56.857q-4.571-21.714-4.571-42.286 0-76.571 54-130.571t130.571-54q80 0 134.857 58.286 62.286-12 117.143-44.571-21.143 65.714-81.143 101.714 53.143-5.714 106.286-28.571z"/></symbol><symbol id="icon-facebook" viewBox="0 0 585 1024"><path class="path1" d="M548 6.857v150.857h-89.714q-49.143 0-66.286 20.571t-17.143 61.714v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571q0-106.286 59.429-164.857t158.286-58.571q84 0 130.286 6.857z"/></symbol><symbol id="icon-google-plus" viewBox="0 0 951 1024"><path class="path1" d="M420 454.857q0 20.571 18.286 40.286t44.286 38.857 51.714 42 44 59.429 18.286 81.143q0 51.429-27.429 98.857-41.143 69.714-120.571 102.571t-170.286 32.857q-75.429 0-140.857-23.714t-98-78.571q-21.143-34.286-21.143-74.857 0-46.286 25.429-85.714t67.714-65.714q74.857-46.857 230.857-57.143-18.286-24-27.143-42.286t-8.857-41.714q0-20.571 12-48.571-26.286 2.286-38.857 2.286-84.571 0-142.571-55.143t-58-139.714q0-46.857 20.571-90.857t56.571-74.857q44-37.714 104.286-56t124.286-18.286h238.857l-78.857 50.286h-74.857q42.286 36 64 76t21.714 91.429q0 41.143-14 74t-33.714 53.143-39.714 37.143-34 35.143-14 37.714zM336.571 400q21.714 0 44.571-9.429t37.714-24.857q30.286-32.571 30.286-90.857 0-33.143-9.714-71.429t-27.714-74-48.286-59.143-66.857-23.429q-24 0-47.143 11.143t-37.429 30q-26.857 33.714-26.857 91.429 0 26.286 5.714 55.714t18 58.857 29.714 52.857 42.857 38.286 55.143 14.857zM337.714 898.857q33.143 0 63.714-7.429t56.571-22.286 41.714-41.714 15.714-62.286q0-14.286-4-28t-8.286-24-15.429-23.714-16.857-20-22-19.714-20.857-16.571-23.714-17.143-20.857-14.857q-9.143-1.143-27.429-1.143-30.286 0-60 4t-61.429 14.286-55.429 26.286-39.143 42.571-15.429 60.286q0 40 20 70.571t52.286 47.429 68 25.143 72.857 8.286zM800.571 398.286h121.714v61.714h-121.714v125.143h-60v-125.143h-121.143v-61.714h121.143v-124h60v124z"/></symbol></defs></svg>
-
-        <header class="bar-header">
-    <h1 class="logo">
-        <a href="/"></a>
-    </h1>
-</header>
-<div class="search-wrapper">
-    <div class="search-form">
-        <input type="text" class="search-field" placeholder="Search...">
-        <svg class="icon-remove-sign"><use xlink:href="#icon-close"></use></svg>
-        <ul class="search-results search-list"></ul>
-    </div>
-</div>
-
-<div id="fade" class="overlay"></div>
-<a id="slide" class="slideButton fade">
-    <svg id="open" class="icon-menu"><use xlink:href="#icon-menu"></use></svg>
-    <svg id="close" class="icon-menu"><use xlink:href="#icon-close"></use></svg>
-</a>
-<aside id="sidebar">
-<nav id="navigation">
-  <h2>MENU</h2>
-  <ul>
-    
-      <li><a href="http://localhost:4000/">Home</a></li>
-    
-      <li><a href="http://localhost:4000/tags">Tags</a></li>
-    
-      <li><a href="http://localhost:4000/project/resume/index.html">Resume</a></li>
-    
-  </ul>
-</nav>
-</aside>
-<a id="search" class="dosearch">
-    <svg class="icon-menu icon-search"><use xlink:href="#icon-search"></use></svg>
-</a>
-
-
-<header class="header-post" role="banner">
-     <div class="content">
-        
-            <time itemprop="datePublished" datetime="2018-11-03T20:00:00+09:00" class="date">03 Nov 2018</time>
-        
-        <h1 class="post-title" itemprop="name">ES6 - INTRODUCE, LET, CONST</h1>
-        <p itemprop="description" class="subtitle">ES6 Basic Study</p>
-    </div>
-</header>
-        <section class="post">
-
-            <article role="article" id="post" class="post-content" itemprop="articleBody">
-                <h3 id="1-ecmascript">1. ECMAScript</h3>
-<p><strong>ECMA</strong>란 European Computer Manufactures Association에서 출발하여 <strong>1994</strong>년에 정보 통신 기술 표준 연구회의 의미로서 변경된 기관명 입니다. 
-그 결과 더이상 ECMA는 단어의 앞글자를 따서 만들어진 글자가 아닌 그 자체로의 의미를 가지게 됩니다. 
-이 협회는 다양한 언어나 규격에 대한 표준을 정의하게 되는데 그 중 하나가 ECMA-262 입니다.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">판</th>
-      <th style="text-align: center">출판일</th>
-      <th style="text-align: left">특징</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center">1</td>
-      <td style="text-align: center">1997년 6월</td>
-      <td style="text-align: left">초판</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">2</td>
-      <td style="text-align: center">1998년 6월</td>
-      <td style="text-align: left">ISO/IEC 16262 국제 표준과 완전히 동일한 규격을 적용</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">3</td>
-      <td style="text-align: center">1999년 12월</td>
-      <td style="text-align: left">정규 표현식, 문자열 처리, 제어문, 예외처리, 오류 정의, 수치형 출력 포맷팅등 언어로서의 <br />기능 추가</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">4</td>
-      <td style="text-align: center">-</td>
-      <td style="text-align: left">정치적 차이 및 이슈 및 너무 급격한 변화에 대해 반대가 심하여 폐기되었다. <br /> 이때 만들어진 스펙은 5판의 기본이 되었다.</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">5</td>
-      <td style="text-align: center">2009년 12월</td>
-      <td style="text-align: left">더 정확한 오류검사 지원, “strict mode”지원, Object.define 지원 등을 함으로써 read only <br />property등을 만들 수 있도록 변경되었다.</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">6</td>
-      <td style="text-align: center">2015년 6월</td>
-      <td style="text-align: left">Class, Module등의 기능을 지원한다. “ECMAScript Harmony”, “ES6 Harmony”, <br />“ECMAScript 2015”등으로 불리워진다.</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">7</td>
-      <td style="text-align: center">2016년 3월</td>
-      <td style="text-align: left">Array.prototype.includes, 지수연산(**) 스펙을 추가</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">8</td>
-      <td style="text-align: center">2017년 6월</td>
-      <td style="text-align: left">Async Await및 Object.entries, String.padStart, String.padEnd 추가</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>3판 출시 이후 5판 출시까지 10년이 걸렸습니다. 그 후 6판까지 다시 7년이라는 시간이 지나는 바람에 6판이 출시될때에는 많은 변화가 있었는데요. 
-앞으로 ECMA측은 매년 새로운 표준을 정의 하며 두번 다시 6판처럼 많은 변화가 일어날 일은 없을거라고 하였습니다. 또한 자바스크립트는 하위버전의 모든것을 그대로 유지하는 것을 약속 했으니 
-기존 코드로 작성되어 있던 모든 브라우저도 문제 없이 동작하겠네요.</p>
-
-<h3 id="2-호이스팅hoisting">2. 호이스팅(Hoisting)</h3>
-<p>자바스크립트의 호이스팅이란 함수 선언식으로 선언된 함수와 변수를 함수 스코프의 최상단으로 끌어 올리는 것을 말 합니다.<br />
-즉, <code class="highlighter-rouge">var</code>로 선언된 변수나 <code class="highlighter-rouge">function f () {}</code>로 선언된 함수는 현재 스코프의 최상단으로 끌어 올려 진다는 이야기 입니다.</p>
-
-<h4 id="변수의-호이스팅">변수의 호이스팅</h4>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// undefined</span>
+<!DOCTYPE html> <html> <head> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Begin Jekyll SEO tag v2.5.0 --> <title>ES6 - INTRODUCE, LET, CONST | Dolen’s blog</title> <meta name="generator" content="Jekyll v3.8.5" /> <meta property="og:title" content="ES6 - INTRODUCE, LET, CONST" /> <meta property="og:locale" content="en_US" /> <meta name="description" content="1. ECMAScript ECMA란 European Computer Manufactures Association에서 출발하여 1994년에 정보 통신 기술 표준 연구회의 의미로서 변경된 기관명 입니다. 그 결과 더이상 ECMA는 단어의 앞글자를 따서 만들어진 글자가 아닌 그 자체로의 의미를 가지게 됩니다. 이 협회는 다양한 언어나 규격에 대한 표준을 정의하게 되는데 그 중 하나가 ECMA-262 입니다." /> <meta property="og:description" content="1. ECMAScript ECMA란 European Computer Manufactures Association에서 출발하여 1994년에 정보 통신 기술 표준 연구회의 의미로서 변경된 기관명 입니다. 그 결과 더이상 ECMA는 단어의 앞글자를 따서 만들어진 글자가 아닌 그 자체로의 의미를 가지게 됩니다. 이 협회는 다양한 언어나 규격에 대한 표준을 정의하게 되는데 그 중 하나가 ECMA-262 입니다." /> <link rel="canonical" href="http://localhost:4000/ES6-LET-CONST-TDZ/" /> <meta property="og:url" content="http://localhost:4000/ES6-LET-CONST-TDZ/" /> <meta property="og:site_name" content="Dolen’s blog" /> <meta property="og:type" content="article" /> <meta property="article:published_time" content="2018-11-03T20:00:00+09:00" /> <script type="application/ld+json"> {"description":"1. ECMAScript ECMA란 European Computer Manufactures Association에서 출발하여 1994년에 정보 통신 기술 표준 연구회의 의미로서 변경된 기관명 입니다. 그 결과 더이상 ECMA는 단어의 앞글자를 따서 만들어진 글자가 아닌 그 자체로의 의미를 가지게 됩니다. 이 협회는 다양한 언어나 규격에 대한 표준을 정의하게 되는데 그 중 하나가 ECMA-262 입니다.","@type":"BlogPosting","url":"http://localhost:4000/ES6-LET-CONST-TDZ/","headline":"ES6 - INTRODUCE, LET, CONST","dateModified":"2018-11-03T20:00:00+09:00","datePublished":"2018-11-03T20:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/ES6-LET-CONST-TDZ/"},"@context":"http://schema.org"}</script> <!-- End Jekyll SEO tag --> <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> --> <link rel="stylesheet" href="/css/main.css"> <link rel="alternate" type="application/rss+xml" title="Dolen's blog" href="http://localhost:4000/feed.xml"> <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> </head> <body> <header class="site-header"> <nav class="navbar navbar-default"> <div class="container-fluid"> <!-- Brand and toggle get grouped for better mobile display --> <div class="navbar-header"> <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="navbar-brand" href="/">Dolen's blog</a> </div> <!-- Collect the nav links, forms, and other content for toggling --> <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1"> <ul class="nav navbar-nav navbar-right"> <li><a href="/about/">About</a></li> <li><a href="/contact/">Contact</a></li> </ul> </div><!-- /.navbar-collapse --> </div><!-- /.container-fluid --> </nav> </header> <div class="container"> <div class="wrapper"> <div class="row"> <div class="col-md-8"> <article class="post" itemscope itemtype="http://schema.org/BlogPosting"> <header class="post-header"> <h1 class="post-title" itemprop="name headline">ES6 - INTRODUCE, LET, CONST</h1> <p class="post-meta"><time datetime="2018-11-03T20:00:00+09:00" itemprop="datePublished">Nov 3, 2018</time></p> </header> <div class="post-content" itemprop="articleBody"> <h3 id="1-ecmascript">1. ECMAScript</h3> <p><strong>ECMA</strong>란 European Computer Manufactures Association에서 출발하여 <strong>1994</strong>년에 정보 통신 기술 표준 연구회의 의미로서 변경된 기관명 입니다. 그 결과 더이상 ECMA는 단어의 앞글자를 따서 만들어진 글자가 아닌 그 자체로의 의미를 가지게 됩니다. 이 협회는 다양한 언어나 규격에 대한 표준을 정의하게 되는데 그 중 하나가 ECMA-262 입니다.</p> <table class="table table-striped table-hover"> <thead> <tr> <th style="text-align: center">판</th> <th style="text-align: center">출판일</th> <th style="text-align: left">특징</th> </tr> </thead> <tbody> <tr> <td style="text-align: center">1</td> <td style="text-align: center">1997년 6월</td> <td style="text-align: left">초판</td> </tr> <tr> <td style="text-align: center">2</td> <td style="text-align: center">1998년 6월</td> <td style="text-align: left">ISO/IEC 16262 국제 표준과 완전히 동일한 규격을 적용</td> </tr> <tr> <td style="text-align: center">3</td> <td style="text-align: center">1999년 12월</td> <td style="text-align: left">정규 표현식, 문자열 처리, 제어문, 예외처리, 오류 정의, 수치형 출력 포맷팅등 언어로서의 <br />기능 추가</td> </tr> <tr> <td style="text-align: center">4</td> <td style="text-align: center">-</td> <td style="text-align: left">정치적 차이 및 이슈 및 너무 급격한 변화에 대해 반대가 심하여 폐기되었다. <br /> 이때 만들어진 스펙은 5판의 기본이 되었다.</td> </tr> <tr> <td style="text-align: center">5</td> <td style="text-align: center">2009년 12월</td> <td style="text-align: left">더 정확한 오류검사 지원, “strict mode”지원, Object.define 지원 등을 함으로써 read only <br />property등을 만들 수 있도록 변경되었다.</td> </tr> <tr> <td style="text-align: center">6</td> <td style="text-align: center">2015년 6월</td> <td style="text-align: left">Class, Module등의 기능을 지원한다. “ECMAScript Harmony”, “ES6 Harmony”, <br />“ECMAScript 2015”등으로 불리워진다.</td> </tr> <tr> <td style="text-align: center">7</td> <td style="text-align: center">2016년 3월</td> <td style="text-align: left">Array.prototype.includes, 지수연산(**) 스펙을 추가</td> </tr> <tr> <td style="text-align: center">8</td> <td style="text-align: center">2017년 6월</td> <td style="text-align: left">Async Await및 Object.entries, String.padStart, String.padEnd 추가</td> </tr> </tbody> </table> <p>3판 출시 이후 5판 출시까지 10년이 걸렸습니다. 그 후 6판까지 다시 7년이라는 시간이 지나는 바람에 6판이 출시될때에는 많은 변화가 있었는데요. 앞으로 ECMA측은 매년 새로운 표준을 정의 하며 두번 다시 6판처럼 많은 변화가 일어날 일은 없을거라고 하였습니다. 또한 자바스크립트는 하위버전의 모든것을 그대로 유지하는 것을 약속 했으니 기존 코드로 작성되어 있던 모든 브라우저도 문제 없이 동작하겠네요.</p> <h3 id="2-호이스팅hoisting">2. 호이스팅(Hoisting)</h3> <p>자바스크립트의 호이스팅이란 함수 선언식으로 선언된 함수와 변수를 함수 스코프의 최상단으로 끌어 올리는 것을 말 합니다. 즉, <code class="highlighter-rouge">var</code>로 선언된 변수나 <code class="highlighter-rouge">function f () {}</code>로 선언된 함수는 현재 스코프의 최상단으로 끌어 올려 진다는 이야기 입니다.</p> <h4 id="변수의-호이스팅">변수의 호이스팅</h4> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// undefined</span>
 
 <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// global scope</span>
-</code></pre></div></div>
-<p>먼저 변수의 호이스팅을 볼까요? <code class="highlighter-rouge">global scope</code>에 <code class="highlighter-rouge">var a</code>가 선언되기 전에 a를 호출을 하면 <code class="highlighter-rouge">undefined</code>가 출력 된다는 것이지요. 
-형 안전언어 (safe language)를 사용하던 개발자분들에게는 퍽이나 당황스러운 상황인 거죠. 변수를 선언하기 전에 사용하면 값이 할당되어 있다는 것은 꽤나 충격적인 일이니까요.<br />
-<br /></p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
+</code></pre></div></div> <p>먼저 변수의 호이스팅을 볼까요? <code class="highlighter-rouge">global scope</code>에 <code class="highlighter-rouge">var a</code>가 선언되기 전에 a를 호출을 하면 <code class="highlighter-rouge">undefined</code>가 출력 된다는 것이지요. 형 안전언어 (safe language)를 사용하던 개발자분들에게는 퍽이나 당황스러운 상황인 거죠. 변수를 선언하기 전에 사용하면 값이 할당되어 있다는 것은 꽤나 충격적인 일이니까요.<br /> <br /></p> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// undefined</span>
 
 <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// global scope</span>
-</code></pre></div></div>
-<p>처음의 코드의 실행 부분이 <code class="highlighter-rouge">undefined</code>가 출력되었던 이유는 다음과 같습니다. 자바스크립트는 현재 스코프의 모든 변수들을 읽어들여 최상단에서 해당 변수들을 선언하고 <code class="highlighter-rouge">undefined</code>를 할당하기 때문이죠. 
-이런 동작은 자바스크립트 개발자들에게는 너무나 당연한 동작인 반면 처음 자바스크립트를 접하는 개발자들의 경우에는 당황하게 되는 요소기도 합니다.</p>
-
-<h4 id="함수의-호이스팅">함수의 호이스팅</h4>
-<p>다음은 함수의 호이스팅도 한번 볼까요?</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">F</span><span class="p">()</span>
+</code></pre></div></div> <p>처음의 코드의 실행 부분이 <code class="highlighter-rouge">undefined</code>가 출력되었던 이유는 다음과 같습니다. 자바스크립트는 현재 스코프의 모든 변수들을 읽어들여 최상단에서 해당 변수들을 선언하고 <code class="highlighter-rouge">undefined</code>를 할당하기 때문이죠. 이런 동작은 자바스크립트 개발자들에게는 너무나 당연한 동작인 반면 처음 자바스크립트를 접하는 개발자들의 경우에는 당황하게 되는 요소기도 합니다.</p> <h4 id="함수의-호이스팅">함수의 호이스팅</h4> <p>다음은 함수의 호이스팅도 한번 볼까요?</p> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">F</span><span class="p">()</span>
 
 <span class="kd">function</span> <span class="nx">F</span> <span class="p">()</span> <span class="p">{}</span>
-</code></pre></div></div>
-<p>함수또한 변수와 마찬가지로 함수 선언식으로 구현된 함수라면 현재 스코프의 최상단으로 끌어 올려지게 됩니다. 변수의 호이스팅을 보고 오니 별로 어렵진 않죠?</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">F</span><span class="p">();</span> <span class="c1">// TypeError: F is not a constructor</span>
+</code></pre></div></div> <p>함수또한 변수와 마찬가지로 함수 선언식으로 구현된 함수라면 현재 스코프의 최상단으로 끌어 올려지게 됩니다. 변수의 호이스팅을 보고 오니 별로 어렵진 않죠?</p> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">F</span><span class="p">();</span> <span class="c1">// TypeError: F is not a constructor</span>
 
 <span class="kd">var</span> <span class="nx">F</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">F</span> <span class="p">()</span> <span class="p">{};</span>
-</code></pre></div></div>
-<p>하지만 이렇게 작성하면 <code class="highlighter-rouge">TypeError</code>를 출력하게 되니 조심하셔야 해요. 자바스크립트에서 함수는 값으로 전달될 수 있는 일급객체로서 변수에 할당될 수 있기 때문인데요.<br />
-위처럼 함수를 변수에 할당하게 되면 함수는 값으로 처리되어, 호이스팅 되지 않기 때문입니다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">F</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
+</code></pre></div></div> <p>하지만 이렇게 작성하면 <code class="highlighter-rouge">TypeError</code>를 출력하게 되니 조심하셔야 해요. 자바스크립트에서 함수는 값으로 전달될 수 있는 일급객체로서 변수에 할당될 수 있기 때문인데요.<br /> 위처럼 함수를 변수에 할당하게 되면 함수는 값으로 처리되어, 호이스팅 되지 않기 때문입니다.</p> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">F</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
 
 <span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">F</span><span class="p">();</span> <span class="c1">// TypeError: F is not a constructor</span>
 <span class="nx">F</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">F</span> <span class="p">()</span> <span class="p">{};</span>
-</code></pre></div></div>
-<p>이렇게 해석되기 때문이죠.</p>
-
-<h3 id="3-var-선언식의-문제점">3. var 선언식의 문제점</h3>
-
-<h4 id="중복-선언">중복 선언</h4>
-
-<p>기존 변수 선언식 <code class="highlighter-rouge">var</code>의 문제점은 뭘까요? 첫번째로는 중복으로 선언이 가능하다는 점 입니다.</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">12345</span><span class="p">;</span>
+</code></pre></div></div> <p>이렇게 해석되기 때문이죠.</p> <h3 id="3-var-선언식의-문제점">3. var 선언식의 문제점</h3> <h4 id="중복-선언">중복 선언</h4> <p>기존 변수 선언식 <code class="highlighter-rouge">var</code>의 문제점은 뭘까요? 첫번째로는 중복으로 선언이 가능하다는 점 입니다.</p> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">12345</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// 12345</span>
 
 <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">56789</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// 56789</span>
-</code></pre></div></div>
-<p>위 코드와 같이 같은 스코프 내에 있음에도 불구하고 지속적으로 같은 변수를 선언할 수 있게 되는거죠. <code class="highlighter-rouge">var</code> 변수 선언식으로 작성 되었기 때문에 호이스팅되어 동작에 문제가 없다는 것은 
-위의 <code class="highlighter-rouge">호이스팅</code>으로 인해 알게 되었지만, 자바스크립트를 능숙하게 사용하지 않는 개발자가 접했을때에는 충분히 당황하게 될만한 코드임에는 분명 합니다. 추후에 하나의 코드를 지워야할때 어떤 var를 지워야할지도 
-알 수 없게 될 수 있겠네요.</p>
-
-<h4 id="함수-스코프">함수 스코프</h4>
-<p>두번째로는 변수의 스코프가 함수 스코프를 참조 한다는 것입니다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">f</span> <span class="p">()</span> <span class="p">{</span>
+</code></pre></div></div> <p>위 코드와 같이 같은 스코프 내에 있음에도 불구하고 지속적으로 같은 변수를 선언할 수 있게 되는거죠. <code class="highlighter-rouge">var</code> 변수 선언식으로 작성 되었기 때문에 호이스팅되어 동작에 문제가 없다는 것은 위의 <code class="highlighter-rouge">호이스팅</code>으로 인해 알게 되었지만, 자바스크립트를 능숙하게 사용하지 않는 개발자가 접했을때에는 충분히 당황하게 될만한 코드임에는 분명 합니다. 추후에 하나의 코드를 지워야할때 어떤 var를 지워야할지도 알 수 없게 될 수 있겠네요.</p> <h4 id="함수-스코프">함수 스코프</h4> <p>두번째로는 변수의 스코프가 함수 스코프를 참조 한다는 것입니다.</p> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">f</span> <span class="p">()</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
        <span class="kd">var</span> <span class="nx">color</span> <span class="o">=</span> <span class="s2">"blue"</span><span class="p">;</span>
     <span class="p">}</span>
@@ -234,16 +30,7 @@
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">color</span><span class="p">);</span> <span class="c1">// blue</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="c1">// 10 </span>
 <span class="p">}</span>
-</code></pre></div></div>
-<p>조건문 안에서 선언된 변수가 조건문의 블록스코프 밖에서 사용되어지고 반복문의 초기값에 선언된 변수가 반복문의 블록스코프를 벗어난 후에도 사용될 수 있다는 것이죠.
-이로 인해 기존의 자바스크립트는 백엔드 개발자 분들에게는 두려움의 세계였던 것이기도 합니다. 실제로 잘 모르는 상태로 접근한다면 중복 선언된 변수를 사용하거나 없어졌다고 생각했던 변수가 함수 스코프에 남아 있기 때문에 
-오류를 발생시키는 등의 일도 빈번했었죠. 물론 이 외에도 var를 붙이지 않고 값을 사용하면 window에 값이 적용되는 등 버그가 있는등 수없이 많은 문제가 재기되어 왔었습니다.</p>
-
-<h3 id="4-const-let">4. const, let</h3>
-
-<p>그렇다면 <code class="highlighter-rouge">ES6</code>에 추가된 많은 기능 중 오늘 정리할 <code class="highlighter-rouge">let</code>과 <code class="highlighter-rouge">const</code>의 사용법을 먼저 알아볼까요?</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 선언</span>
+</code></pre></div></div> <p>조건문 안에서 선언된 변수가 조건문의 블록스코프 밖에서 사용되어지고 반복문의 초기값에 선언된 변수가 반복문의 블록스코프를 벗어난 후에도 사용될 수 있다는 것이죠. 이로 인해 기존의 자바스크립트는 백엔드 개발자 분들에게는 두려움의 세계였던 것이기도 합니다. 실제로 잘 모르는 상태로 접근한다면 중복 선언된 변수를 사용하거나 없어졌다고 생각했던 변수가 함수 스코프에 남아 있기 때문에 오류를 발생시키는 등의 일도 빈번했었죠. 물론 이 외에도 var를 붙이지 않고 값을 사용하면 window에 값이 적용되는 등 버그가 있는등 수없이 많은 문제가 재기되어 왔었습니다.</p> <h3 id="4-const-let">4. const, let</h3> <p>그렇다면 <code class="highlighter-rouge">ES6</code>에 추가된 많은 기능 중 오늘 정리할 <code class="highlighter-rouge">let</code>과 <code class="highlighter-rouge">const</code>의 사용법을 먼저 알아볼까요?</p> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 선언</span>
 <span class="kd">let</span> <span class="nx">value</span><span class="p">;</span>
 
 <span class="c1">// 할당</span>
@@ -257,26 +44,12 @@
 
 <span class="c1">// 선언</span>
 <span class="kd">const</span> <span class="nx">finalValue1</span><span class="p">;</span> <span class="c1">// Uncaught SyntaxError: Missing initializer in const declaration</span>
-</code></pre></div></div>
-<p><code class="highlighter-rouge">let</code>의 경우에는 기존의 <code class="highlighter-rouge">var</code> 선언식처럼 선언문과 할당문을 나누어서 사용할 수 있으며, 값의 재할당도 얼마든지 가능 합니다. 정말 변하는 값을 담는 수인 변수의 역할로 사용할 수 있습니다.<br />
-<code class="highlighter-rouge">const</code>의 경우에는 상수이기 때문에 선언과 동시에 값을 할당해야 하며 한번 값을 한번하게 되면 두번 다시 변경할 수 없습니다.</p>
-
-<h4 id="중복선언-불가">중복선언 불가</h4>
-<p><code class="highlighter-rouge">var</code>표현식의 문제점이었던 중복 선언에는 어떤지 한번 볼까요 ?</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">value</span><span class="p">;</span>
+</code></pre></div></div> <p><code class="highlighter-rouge">let</code>의 경우에는 기존의 <code class="highlighter-rouge">var</code> 선언식처럼 선언문과 할당문을 나누어서 사용할 수 있으며, 값의 재할당도 얼마든지 가능 합니다. 정말 변하는 값을 담는 수인 변수의 역할로 사용할 수 있습니다.<br /> <code class="highlighter-rouge">const</code>의 경우에는 상수이기 때문에 선언과 동시에 값을 할당해야 하며 한번 값을 한번하게 되면 두번 다시 변경할 수 없습니다.</p> <h4 id="중복선언-불가">중복선언 불가</h4> <p><code class="highlighter-rouge">var</code>표현식의 문제점이었던 중복 선언에는 어떤지 한번 볼까요 ?</p> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">value</span><span class="p">;</span>
 
 <span class="kd">let</span> <span class="nx">value</span><span class="p">;</span> <span class="c1">// Uncaught SyntaxError: Identifier 'value' has already been declared</span>
 
 <span class="kd">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="s1">'value'</span><span class="p">;</span> <span class="c1">// Uncaught SyntaxError: Identifier 'value' has already been declared</span>
-</code></pre></div></div>
-<p>보다시피 동일한 스코프에서 중복하여 같은 변수를 선언하개 되면, 중복 선언 에러를 발생시키며 프로그램이 종료 됩니다. 이는 <code class="highlighter-rouge">let</code>과 <code class="highlighter-rouge">const</code>모두 동일합니다.<br />
-즉, <code class="highlighter-rouge">let</code>또는 <code class="highlighter-rouge">const</code>로 선언된 변수가 있다면 또 다시 같은 변수를 선언할시 무조건 중복 선언 에러를 발생시킵니다.</p>
-
-<h4 id="블록-스코프">블록 스코프</h4>
-<p><code class="highlighter-rouge">let</code>과 <code class="highlighter-rouge">const</code>는 함수 스코프가 아닌 블록 스코프를 변수의 유효 범위로 생성 합니다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">value</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</code></pre></div></div> <p>보다시피 동일한 스코프에서 중복하여 같은 변수를 선언하개 되면, 중복 선언 에러를 발생시키며 프로그램이 종료 됩니다. 이는 <code class="highlighter-rouge">let</code>과 <code class="highlighter-rouge">const</code>모두 동일합니다.<br /> 즉, <code class="highlighter-rouge">let</code>또는 <code class="highlighter-rouge">const</code>로 선언된 변수가 있다면 또 다시 같은 변수를 선언할시 무조건 중복 선언 에러를 발생시킵니다.</p> <h4 id="블록-스코프">블록 스코프</h4> <p><code class="highlighter-rouge">let</code>과 <code class="highlighter-rouge">const</code>는 함수 스코프가 아닌 블록 스코프를 변수의 유효 범위로 생성 합니다.</p> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">value</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="nx">value</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
@@ -290,106 +63,20 @@
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span> <span class="c1">// Chrome: 10</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span> <span class="c1">// Safari, Firefox, Opera : ReferenceError: i is not defined</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value2</span><span class="p">);</span> <span class="c1">// value2 is not defined</span>
-</code></pre></div></div>
-<p><code class="highlighter-rouge">let</code>과 <code class="highlighter-rouge">const</code>는 블록 스코프 안에서 사용되는 경우 해당 블록에 대한 별도의 정적 스코프를 생성 합니다. 
-그로인해 중복 선언의 개념이 아닌 새로운 스코프에 변수를 선언하는 개념으로 생각하면 됩니다. 그렇기 때문에 조건문 안에서 출력된 <code class="highlighter-rouge">value</code>는 조건문 밖에서 선언된 <code class="highlighter-rouge">value</code>와 중복 선언에 대한 오류를 발생시키지 않고 
-상위 변수를 가리는(shading) 역할을 수행하게 됩니다. 마찬가지로 반복문의 블록 스코프 안에서 선언된 <code class="highlighter-rouge">value2</code>는 블록 스코프 밖에서 사용되는 경우 비선언 에러를 발생시키게 됩니다.<br />
-재미있는 것은 반복문의 초기값 영역에서 선언된 <code class="highlighter-rouge">let i</code>의 경우 현재 시간 크롬에서는 에러를 발생시키지 않고 정상적으로 10을 출력하고 있다는 점이네요. <strong>(예전에는 안됐었는데)</strong></p>
-
-<h4 id="조건문에서의-블록-스코프">조건문에서의 블록 스코프</h4>
-<p>조건문에서 블록 스코프를 만들지 않고도 변수를 선언할 수 있을까요?</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+</code></pre></div></div> <p><code class="highlighter-rouge">let</code>과 <code class="highlighter-rouge">const</code>는 블록 스코프 안에서 사용되는 경우 해당 블록에 대한 별도의 정적 스코프를 생성 합니다. 그로인해 중복 선언의 개념이 아닌 새로운 스코프에 변수를 선언하는 개념으로 생각하면 됩니다. 그렇기 때문에 조건문 안에서 출력된 <code class="highlighter-rouge">value</code>는 조건문 밖에서 선언된 <code class="highlighter-rouge">value</code>와 중복 선언에 대한 오류를 발생시키지 않고 상위 변수를 가리는(shading) 역할을 수행하게 됩니다. 마찬가지로 반복문의 블록 스코프 안에서 선언된 <code class="highlighter-rouge">value2</code>는 블록 스코프 밖에서 사용되는 경우 비선언 에러를 발생시키게 됩니다.<br /> 재미있는 것은 반복문의 초기값 영역에서 선언된 <code class="highlighter-rouge">let i</code>의 경우 현재 시간 크롬에서는 에러를 발생시키지 않고 정상적으로 10을 출력하고 있다는 점이네요. <strong>(예전에는 안됐었는데)</strong></p> <h4 id="조건문에서의-블록-스코프">조건문에서의 블록 스코프</h4> <p>조건문에서 블록 스코프를 만들지 않고도 변수를 선언할 수 있을까요?</p> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span>
   <span class="kd">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// Unexpected token const</span>
-</code></pre></div></div>
-<p><code class="highlighter-rouge">let</code>이나 <code class="highlighter-rouge">const</code>는 반드시 블록 스코프를 자신의 정적 스코프 영역으로 삼아야 하므로 조건문에 블록 스코프가 없는 경우라면 에러를 발생 시키는 것을 알 수 있습니다.</p>
-
-<h4 id="tdz-temporal-dead-zone">TDZ (Temporal Dead Zone)</h4>
-<p>임시 죽음 공간이라 불리워지는 이 공간은 변수를 선언하기 직전에 호출하면 에러를 발생시키는 영역입니다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// TDZ</span>
+</code></pre></div></div> <p><code class="highlighter-rouge">let</code>이나 <code class="highlighter-rouge">const</code>는 반드시 블록 스코프를 자신의 정적 스코프 영역으로 삼아야 하므로 조건문에 블록 스코프가 없는 경우라면 에러를 발생 시키는 것을 알 수 있습니다.</p> <h4 id="tdz-temporal-dead-zone">TDZ (Temporal Dead Zone)</h4> <p>임시 죽음 공간이라 불리워지는 이 공간은 변수를 선언하기 직전에 호출하면 에러를 발생시키는 영역입니다.</p> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// TDZ</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// value is not defined // TDZ</span>
 <span class="c1">// TDZ</span>
 <span class="kd">let</span> <span class="nx">value</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-</code></pre></div></div>
-<p>위 코드처럼 변수가 실제로 선언되기 직전 변수를 호출하면 그 즉시 프로그램을 종료하는 영역이라고 생각하면 됩니다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</code></pre></div></div> <p>위 코드처럼 변수가 실제로 선언되기 직전 변수를 호출하면 그 즉시 프로그램을 종료하는 영역이라고 생각하면 됩니다.</p> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// value is not defined</span>
   <span class="kd">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div></div>
-<p>마찬가지로 상위에 변수가 선언되어 있더라도, 자바스크립트는 새로운 블록을 만나는 순간 새로운 블록 스코프를 생성하므로 비선언 에러를 발생시키며 프로그램을 종료 합니다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typeof</span> <span class="nx">unDefinededValue</span><span class="p">;</span> <span class="c1">// undefined</span>
+</code></pre></div></div> <p>마찬가지로 상위에 변수가 선언되어 있더라도, 자바스크립트는 새로운 블록을 만나는 순간 새로운 블록 스코프를 생성하므로 비선언 에러를 발생시키며 프로그램을 종료 합니다.</p> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typeof</span> <span class="nx">unDefinededValue</span><span class="p">;</span> <span class="c1">// undefined</span>
 
 <span class="k">typeof</span> <span class="nx">value</span><span class="p">;</span> <span class="c1">// value is not defined</span>
 <span class="kd">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-</code></pre></div></div>
-<p>마지막으로 어떤 값이 오더라도 에러를 발생시키지 않는 <code class="highlighter-rouge">typeof</code> 조차도 <code class="highlighter-rouge">TDZ</code>에는 에러를 발생 시키는 걸 볼 수 있습니다.</p>
-
-            </article>
-
-            <section class="share">
-    <h3>Share</h3>
-    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20http://localhost:4000/ES6-LET-CONST-TDZ/%20via%20&#64;imcts&hashtags=javascript,ES6 Introduce,TDZ,let,const,"
-    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
-        <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
-    </a>
-    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/ES6-LET-CONST-TDZ/"
-    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
-        <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
-    </a>
-    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:4000/ES6-LET-CONST-TDZ/"
-    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
-        <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
-    </a>
-</section>
-            <section class="author" itemprop="author">
-    <div class="details" itemscope itemtype="http://schema.org/Person">
-        <img itemprop="image" class="img-rounded" src="/resources/images/profile/profile.jpeg" alt="">
-        <p class="def">Author</p>
-        <h3 class="name">
-            <a itemprop="name" href="https://github.com/imcts">dolen</a>
-        </h3>
-        <p class="desc">Front-End Developer</p>
-        <p><a itemprop="email" class="email" href="mailto:dolen.sirupe@gmail.com">dolen.sirupe@gmail.com</a></p>
-        <p><a itemprop="github" class="github" href="https://github.com/imcts">github.com/imcts</a></p>
-    </div>
-</section>
-
-            <section class="comments">
-    <h3>Comments</h3>
-    <div id="disqus_thread"></div>
-</section>
-<script type="text/javascript">
-    var disqus_loaded = false;
-
-    function load_disqus()
-    {
-        disqus_loaded = true;
-        var disqus_shortname = 'dolen';
-        var disqus_title = '';
-        var disqus_url = '/ES6-LET-CONST-TDZ/';
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        var ldr = document.getElementById('disqus_loader');
-    };
-    window.onscroll = function(e) {
-        if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 800)) {
-            //hit bottom of page
-            if (disqus_loaded==false)
-                load_disqus()
-        }
-    };
-</script>
-            <footer>
-    <p>Dolen. Front-End Developer.</p>
-</footer>
-<script src="/assets/js/main.js"></script>
-        </section>
-    </body>
-</html>
+</code></pre></div></div> <p>마지막으로 어떤 값이 오더라도 에러를 발생시키지 않는 <code class="highlighter-rouge">typeof</code> 조차도 <code class="highlighter-rouge">TDZ</code>에는 에러를 발생 시키는 걸 볼 수 있습니다.</p> </div> </article> <div class="row"> <div id="disqus_thread"></div> <script defer> (function() { var d = document, s = d.createElement('script'); s.src = '//dolen.disqus.com/embed.js'; s.setAttribute('data-timestamp', +new Date()); (d.head || d.body).appendChild(s); })(); </script> <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> </div> <div class="row"> <ul class="pager"> <li><a class="next" href="/ES6-TEMPLATE-LITERAL/">&laquo; ES6 - TEMPLATE LITERAL</a></li> <li><a class="previous" href="/panorama-viewer/">CSS Panorama Viewer &raquo;</a></li> </ul> </div> </div> <div class="col-md-4 mt20"> <div class="post-img"> <img width="600" src="/images/javascript.jpg" alt="ES6 - INTRODUCE, LET, CONST"> </div> <div class="mt10 recent"> <h4>Previous post</h4> <div> <p><a href="/panorama-viewer/">CSS Panorama Viewer</a> <small>&nbsp;&nbsp;11 May 2018</small> </p> </div> <h4>Next post</h4> <div> <p><a href="/ES6-TEMPLATE-LITERAL/">ES6 - TEMPLATE LITERAL</a> <small>&nbsp;&nbsp;09 Nov 2018</small> </p> </div> </div> <br> </div> </div> </div> </div> <footer> <div class="container"> <div class="row p20"> <div class="col-md-4 text-center mt25" > </div> <div class="col-md-4 text-center mt25"> <a target="_blank" href="https://www.facebook.com/taesan.choi"><li class="social facebook"><i class="fa fa-facebook-square"></i></li></a> <a target="_blank" href="http://github.com/imcts"><li class="social github"><i class="fa fa-github-square"></i></li></a> <a target="_blank" href="mailto:imcts@nate.com"><li class="social email"><i class="fa fa-envelope"></i></li></a> </div> </div> </div> </footer> <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script> <script src="/js/bootstrap.min.js"></script> <!-- Google Analytics Tracking code --> <script> (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-83979019-1', 'auto'); ga('send', 'pageview'); </script> </body> </html>

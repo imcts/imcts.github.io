@@ -2,19 +2,10 @@
 layout: post
 title: 자바스크립트 상속.
 date: 2016-10-01 20:00:00
-image: '/assets/img/'
-description: 'Extends'
-main-class: 'js'
-tags: 
-- extends
-- prototype
-
-introduction: '- javascript extends -'
+img: javascript.jpg
 ---
 
-
-
-**자바스크립트의 상속**을 정리해보겠습니다.
+`자바스크립트의 상속`을 정리해보겠습니다.
 
 예전에 정리해두었던건데, 영 마구잡이식이어서 블로그도 새로 만들었고 되새김질도 하는 김에 정리해봅니다. 
 
@@ -23,7 +14,7 @@ introduction: '- javascript extends -'
 
 
 
-### - 기본적인 상속
+### 기본적인 상속
 
 
 
@@ -121,7 +112,7 @@ console.log(c.arr, p.arr); // 두개가 같은것을 바라보게 된다.
 
 
 
-### - 생성자 빌려쓰기의 다중상속
+### 생성자 빌려쓰기의 다중상속
 
 위에서 언급했듯이, 부모 객체를 자식의 프로토타입에 덮어씌우는 상속은 꽤나 많은 문제점을 일으킬 수 있습니다. 
 
@@ -295,7 +286,7 @@ Child.prototype = Parent2.prototype;
  
  
 
-### - Proxy 타입의 완벽한 상속 
+### Proxy 타입의 완벽한 상속 
 
 ```js
 function Parent(name) {

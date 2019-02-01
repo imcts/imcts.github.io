@@ -3,16 +3,7 @@
 layout: post
 title: ES6 - ITERABLE ITERATOR
 date: 2018-11-28 00:00:00
-image: '/assets/img/'
-main-class: 'js'
-description: 'ES6 Basic Study'
-tags: 
-- javascript
-- Iterable
-- Iterator
-- for - of
-
-introduction: '- javascript iterable iterator -'
+img: javascript.jpg
 ---
 
 ### Duck Typing

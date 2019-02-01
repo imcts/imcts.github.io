@@ -2,15 +2,7 @@
 layout: post
 title: ES6 - PARAMETERS
 date: 2018-12-14 00:00:00
-image: '/assets/img/'
-main-class: 'js'
-description: 'ES6 Basic Study'
-tags: 
-- javascript
-- rest
-- default value
-
-introduction: '- javascript parameters -'
+img: javascript.jpg
 ---
 
 ### Default Parameter

@@ -1,0 +1,37 @@
+<div class="col-md-4 mt20">
+  <div class="post-img">
+    <img width="600" src="{{site.baseurl}}/images/{{page.img}}" alt="{{page.title}}">
+  </div>
+
+
+  <div class="mt10 recent">
+    {% if page.previous %}
+    <h4>Previous post</h4>
+    <div>
+      <p><a href="{{ page.previous.url }}">{{ page.previous.title }}</a>
+        <small>&nbsp;&nbsp;{{ page.previous.date | date_to_string }}</small>
+      </p>
+    </div>
+    {% endif %}
+
+    {% if page.next %}
+    <h4>Next post</h4>
+    <div>
+      <p><a href="{{ page.next.url }}">{{ page.next.title }}</a>
+        <small>&nbsp;&nbsp;{{ page.next.date | date_to_string }}</small>
+      </p>
+    </div>
+    {% endif %}
+  </div>
+  {% if site.fb-like-box %}
+  <div class="mt10">
+    <div class="fb-page" data-href="https://www.facebook.com/webjeda/" data-width="400" data-small-header="true"
+         data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true">
+      <blockquote cite="https://www.facebook.com/webjeda/" class="fb-xfbml-parse-ignore"><a href="{{site.fb-page-url}}">{{site.fb-page-title}}</a>
+      </blockquote>
+    </div>
+  </div>
+  {% endif %}
+  <br>
+
+</div>

@@ -1,16 +1,8 @@
 ---
-
 layout: post
 title: ES6 - ARROW FUNCTION
 date: 2018-11-17 02:00:00
-image: '/assets/img/'
-main-class: 'js'
-description: 'ES6 Basic Study'
-tags: 
-- javascript
-- arrow function
-
-introduction: '- javascript arrow function -'
+img: javascript.jpg
 ---
 
 ### 1. The Arrow Function

@@ -1,20 +1,11 @@
 ---
-
 layout: post
 title: Algorithm - Bubble Sort 
 date: 2016-11-06 20:00:00
-image: '/assets/img/'
-description: 'zz'
-main-class: 'algorithm'
-tags: 
-- algorithm
-- sort
-
-introduction: '- JAVASCRIPT Bubble Sort  -'
-
+img: algorithm.png
 ---
 
-**[Bubble Sort View](https://visualgo.net/sorting)**
+[Bubble Sort View](https://visualgo.net/sorting)
 
 
 ```js
@@ -67,4 +58,3 @@ new Arr().bubbleSort();
 
 저 - cnt 를 해주느냐와 안해주느냐의 차이는 실제 약 100회 이상의 루프 감소효과가 발생했습니다.
 
-  

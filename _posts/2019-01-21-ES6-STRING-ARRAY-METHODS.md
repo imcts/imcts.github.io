@@ -2,15 +2,7 @@
 layout: post
 title: ES6 - THE NEW METHODS OF STRING AND ARRAY
 date: 2019-01-21 00:00:00
-image: '/assets/img/'
-main-class: 'js'
-description: 'ES6 Basic Study'
-tags: 
-- javascript
-- methods
-- extends
-
-introduction: '- The new methods of String and Array -'
+img: javascript.jpg
 ---
 
 ## String

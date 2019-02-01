@@ -2,17 +2,7 @@
 layout: post
 title: ES6 - INTRODUCE, LET, CONST
 date: 2018-11-03 20:00
-image: '/assets/img/'
-main-class: 'js'
-description: 'ES6 Basic Study'
-tags: 
-- javascript
-- ES6 Introduce
-- TDZ
-- let
-- const
-
-introduction: '- ES6 Basic Study -'
+img: javascript.jpg
 ---
 
 ### 1. ECMAScript
@@ -31,6 +21,7 @@ introduction: '- ES6 Basic Study -'
 | 6   |2015년 6월    | Class, Module등의 기능을 지원한다. "ECMAScript Harmony", "ES6 Harmony", <br>"ECMAScript 2015"등으로 불리워진다.|
 | 7   |2016년 3월    | Array.prototype.includes, 지수연산(**) 스펙을 추가|
 | 8   |2017년 6월    | Async Await및 Object.entries, String.padStart, String.padEnd 추가|
+{: .table .table-striped .table-hover}
 
 3판 출시 이후 5판 출시까지 10년이 걸렸습니다. 그 후 6판까지 다시 7년이라는 시간이 지나는 바람에 6판이 출시될때에는 많은 변화가 있었는데요. 
 앞으로 ECMA측은 매년 새로운 표준을 정의 하며 두번 다시 6판처럼 많은 변화가 일어날 일은 없을거라고 하였습니다. 또한 자바스크립트는 하위버전의 모든것을 그대로 유지하는 것을 약속 했으니 
@@ -38,7 +29,7 @@ introduction: '- ES6 Basic Study -'
 
 
 ### 2. 호이스팅(Hoisting)
-자바스크립트의 호이스팅이란 함수 선언식으로 선언된 함수와 변수를 함수 스코프의 최상단으로 끌어 올리는 것을 말 합니다.  
+자바스크립트의 호이스팅이란 함수 선언식으로 선언된 함수와 변수를 함수 스코프의 최상단으로 끌어 올리는 것을 말 합니다. 
 즉, `var`로 선언된 변수나 `function f () {}`로 선언된 함수는 현재 스코프의 최상단으로 끌어 올려 진다는 이야기 입니다.  
 
 #### 변수의 호이스팅

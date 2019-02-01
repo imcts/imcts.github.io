@@ -2,15 +2,7 @@
 layout: post
 title: ES6 - CLASS
 date: 2019-01-07 00:00:00
-image: '/assets/img/'
-main-class: 'js'
-description: 'ES6 Basic Study'
-tags: 
-- javascript
-- classes
-- extends
-
-introduction: '- javascript class -'
+img: javascript.jpg
 ---
 
 ### Class

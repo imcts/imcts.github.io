@@ -1,21 +1,11 @@
 ---
-
 layout: post
 title: Algorithm - Merge Sort 
 date: 2016-11-06 20:00:00
-image: '/assets/img/'
-description: 'zz'
-main-class: 'algorithm'
-tags: 
-- algorithm
-- sort
-
-introduction: '- JAVASCRIPT Merge Sort  -'
-
+img: algorithm.png
 ---
 
-
-**[Merge Sort View](https://visualgo.net/sorting)**
+[Merge Sort View](https://visualgo.net/sorting)
 
 
 ```js

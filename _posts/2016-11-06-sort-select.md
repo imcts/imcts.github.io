@@ -1,20 +1,11 @@
 ---
-
 layout: post
 title: Algorithm - Select Sort 
 date: 2016-11-06 20:00:00
-image: '/assets/img/'
-description: 'zz'
-main-class: 'algorithm'
-tags: 
-- algorithm
-- sort
-
-introduction: '- JAVASCRIPT Select Sort  -'
-
+img: algorithm.png
 ---
 
-**[Select Sort View](https://visualgo.net/sorting)**
+[Select Sort View](https://visualgo.net/sorting)
 
 
 ```js
@@ -96,4 +87,3 @@ new Arr().selectSort();
 
 그 숫자를 배열의 0, 1,.... 순으로 스왑하며 정렬합니다.
 
-  

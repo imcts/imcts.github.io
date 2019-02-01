@@ -1,115 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/BlogPosting" class="post-js">
-    <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>ES6 - REFLECTION</title>
-    <meta name="description" content="javascript reflection">
-
-    <!-- Google Authorship Markup -->
-    <link rel="author" href="https://plus.google.com/+imcts?rel=author">
-
-    <!-- Social: Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@imcts">
-    <meta name="twitter:title" content="ES6 - REFLECTION">
-    <meta name="twitter:description" content="javascript reflection">
-    
-    <meta property="twitter:image:src" content="http://localhost:4000/assets/img/">
-    
-
-    <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="http://localhost:4000/ES6-Reflection/">
-    <meta property="og:title" content="ES6 - REFLECTION">
-    
-    <meta property="og:image" content="http://localhost:4000/assets/img/">
-    
-    <meta property="og:description" content="javascript reflection">
-    <meta property="og:site_name" content="Dolen - developer Front End">
-
-    <!-- Social: Google+ / Schema.org  -->
-    <meta itemprop="name" content="ES6 - REFLECTION"/>
-    <meta itemprop="description" content="javascript reflection">
-    <meta itemprop="image" content="http://localhost:4000/assets/img/blog-image.png"/>
-
-    <!-- Windows 8 Tile Icons -->
-    <meta name="application-name" content="dolen Blog">
-    <meta name="msapplication-TileColor" content="#0562DC">
-    <meta name="msapplication-square70x70logo" content="smalltile.png" />
-    <meta name="msapplication-square150x150logo" content="mediumtile.png" />
-    <meta name="msapplication-wide310x150logo" content="widetile.png" />
-    <meta name="msapplication-square310x310logo" content="largetile.png" />
-    <!-- Android Lolipop Theme Color -->
-    <meta name="theme-color" content="">
-
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="http://localhost:4000/ES6-Reflection/">
-    <link rel="alternate" type="application/rss+xml" title="Dolen - developer Front End" href="http://localhost:4000/feed.xml" />
-</head>
-
-    <body>
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" display="none" version="1.1"><defs><symbol id="icon-menu" viewBox="0 0 1024 1024"><path class="path1" d="M128 213.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 725.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 469.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5z"/></symbol><symbol id="icon-search" viewBox="0 0 951 1024"><path class="path1" d="M658.286 475.429q0-105.714-75.143-180.857t-180.857-75.143-180.857 75.143-75.143 180.857 75.143 180.857 180.857 75.143 180.857-75.143 75.143-180.857zM950.857 950.857q0 29.714-21.714 51.429t-51.429 21.714q-30.857 0-51.429-21.714l-196-195.429q-102.286 70.857-228 70.857-81.714 0-156.286-31.714t-128.571-85.714-85.714-128.571-31.714-156.286 31.714-156.286 85.714-128.571 128.571-85.714 156.286-31.714 156.286 31.714 128.571 85.714 85.714 128.571 31.714 156.286q0 125.714-70.857 228l196 196q21.143 21.143 21.143 51.429z"/></symbol><symbol id="icon-close" viewBox="0 0 805 1024"><path class="path1" d="M741.714 755.429q0 22.857-16 38.857l-77.714 77.714q-16 16-38.857 16t-38.857-16l-168-168-168 168q-16 16-38.857 16t-38.857-16l-77.714-77.714q-16-16-16-38.857t16-38.857l168-168-168-168q-16-16-16-38.857t16-38.857l77.714-77.714q16-16 38.857-16t38.857 16l168 168 168-168q16-16 38.857-16t38.857 16l77.714 77.714q16 16 16 38.857t-16 38.857l-168 168 168 168q16 16 16 38.857z"/></symbol><symbol id="icon-twitter" viewBox="0 0 951 1024"><path class="path1" d="M925.714 233.143q-38.286 56-92.571 95.429 0.571 8 0.571 24 0 74.286-21.714 148.286t-66 142-105.429 120.286-147.429 83.429-184.571 31.143q-154.857 0-283.429-82.857 20 2.286 44.571 2.286 128.571 0 229.143-78.857-60-1.143-107.429-36.857t-65.143-91.143q18.857 2.857 34.857 2.857 24.571 0 48.571-6.286-64-13.143-106-63.714t-42-117.429v-2.286q38.857 21.714 83.429 23.429-37.714-25.143-60-65.714t-22.286-88q0-50.286 25.143-93.143 69.143 85.143 168.286 136.286t212.286 56.857q-4.571-21.714-4.571-42.286 0-76.571 54-130.571t130.571-54q80 0 134.857 58.286 62.286-12 117.143-44.571-21.143 65.714-81.143 101.714 53.143-5.714 106.286-28.571z"/></symbol><symbol id="icon-facebook" viewBox="0 0 585 1024"><path class="path1" d="M548 6.857v150.857h-89.714q-49.143 0-66.286 20.571t-17.143 61.714v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571q0-106.286 59.429-164.857t158.286-58.571q84 0 130.286 6.857z"/></symbol><symbol id="icon-google-plus" viewBox="0 0 951 1024"><path class="path1" d="M420 454.857q0 20.571 18.286 40.286t44.286 38.857 51.714 42 44 59.429 18.286 81.143q0 51.429-27.429 98.857-41.143 69.714-120.571 102.571t-170.286 32.857q-75.429 0-140.857-23.714t-98-78.571q-21.143-34.286-21.143-74.857 0-46.286 25.429-85.714t67.714-65.714q74.857-46.857 230.857-57.143-18.286-24-27.143-42.286t-8.857-41.714q0-20.571 12-48.571-26.286 2.286-38.857 2.286-84.571 0-142.571-55.143t-58-139.714q0-46.857 20.571-90.857t56.571-74.857q44-37.714 104.286-56t124.286-18.286h238.857l-78.857 50.286h-74.857q42.286 36 64 76t21.714 91.429q0 41.143-14 74t-33.714 53.143-39.714 37.143-34 35.143-14 37.714zM336.571 400q21.714 0 44.571-9.429t37.714-24.857q30.286-32.571 30.286-90.857 0-33.143-9.714-71.429t-27.714-74-48.286-59.143-66.857-23.429q-24 0-47.143 11.143t-37.429 30q-26.857 33.714-26.857 91.429 0 26.286 5.714 55.714t18 58.857 29.714 52.857 42.857 38.286 55.143 14.857zM337.714 898.857q33.143 0 63.714-7.429t56.571-22.286 41.714-41.714 15.714-62.286q0-14.286-4-28t-8.286-24-15.429-23.714-16.857-20-22-19.714-20.857-16.571-23.714-17.143-20.857-14.857q-9.143-1.143-27.429-1.143-30.286 0-60 4t-61.429 14.286-55.429 26.286-39.143 42.571-15.429 60.286q0 40 20 70.571t52.286 47.429 68 25.143 72.857 8.286zM800.571 398.286h121.714v61.714h-121.714v125.143h-60v-125.143h-121.143v-61.714h121.143v-124h60v124z"/></symbol></defs></svg>
-
-        <header class="bar-header">
-    <h1 class="logo">
-        <a href="/"></a>
-    </h1>
-</header>
-<div class="search-wrapper">
-    <div class="search-form">
-        <input type="text" class="search-field" placeholder="Search...">
-        <svg class="icon-remove-sign"><use xlink:href="#icon-close"></use></svg>
-        <ul class="search-results search-list"></ul>
-    </div>
-</div>
-
-<div id="fade" class="overlay"></div>
-<a id="slide" class="slideButton fade">
-    <svg id="open" class="icon-menu"><use xlink:href="#icon-menu"></use></svg>
-    <svg id="close" class="icon-menu"><use xlink:href="#icon-close"></use></svg>
-</a>
-<aside id="sidebar">
-<nav id="navigation">
-  <h2>MENU</h2>
-  <ul>
-    
-      <li><a href="http://localhost:4000/">Home</a></li>
-    
-      <li><a href="http://localhost:4000/tags">Tags</a></li>
-    
-      <li><a href="http://localhost:4000/project/resume/index.html">Resume</a></li>
-    
-  </ul>
-</nav>
-</aside>
-<a id="search" class="dosearch">
-    <svg class="icon-menu icon-search"><use xlink:href="#icon-search"></use></svg>
-</a>
-
-
-<header class="header-post" role="banner">
-     <div class="content">
-        
-            <time itemprop="datePublished" datetime="2017-01-13T11:00:00+09:00" class="date">13 Jan 2017</time>
-        
-        <h1 class="post-title" itemprop="name">ES6 - REFLECTION</h1>
-        <p itemprop="description" class="subtitle">javascript reflection</p>
-    </div>
-</header>
-        <section class="post">
-
-            <article role="article" id="post" class="post-content" itemprop="articleBody">
-                <h3 id="1-reflection의-정의">1. Reflection의 정의</h3>
-<p>ES6의 Reflection을 알아보기 전에 먼저 자바의 Reflection의 개념에 대해서 알아보겠습니다.<br />
-<strong>Reflection</strong>이란 사전적으로 <strong>‘거울에 비친 그림자, 반사’</strong>등의 의미로 사용 되는 단어 입니다.<br />
-조금만 생각해 보자면, Reflection은 사전적 의미를 그대로 따른다고 볼 수 있습니다.</p>
-
-<p>Reflection은 객체의 형태를 모르고, 메모리만 알고 있더라도 그 형태를 알아낼 수 있게 해주는 프로그래밍 기법이라고 볼 수 있습니다.<br />
-만약 객체의 메모리만 알고 있고, 그 메모리의 주체의 형태를 모른다고 가정해 볼까요.</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Test</span> <span class="o">{</span>
+<!DOCTYPE html> <html> <head> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Begin Jekyll SEO tag v2.5.0 --> <title>ES6 - REFLECTION | Dolen’s blog</title> <meta name="generator" content="Jekyll v3.8.5" /> <meta property="og:title" content="ES6 - REFLECTION" /> <meta property="og:locale" content="en_US" /> <meta name="description" content="1. Reflection의 정의 ES6의 Reflection을 알아보기 전에 먼저 자바의 Reflection의 개념에 대해서 알아보겠습니다. Reflection이란 사전적으로 ‘거울에 비친 그림자, 반사’등의 의미로 사용 되는 단어 입니다. 조금만 생각해 보자면, Reflection은 사전적 의미를 그대로 따른다고 볼 수 있습니다." /> <meta property="og:description" content="1. Reflection의 정의 ES6의 Reflection을 알아보기 전에 먼저 자바의 Reflection의 개념에 대해서 알아보겠습니다. Reflection이란 사전적으로 ‘거울에 비친 그림자, 반사’등의 의미로 사용 되는 단어 입니다. 조금만 생각해 보자면, Reflection은 사전적 의미를 그대로 따른다고 볼 수 있습니다." /> <link rel="canonical" href="http://localhost:4000/ES6-Reflection/" /> <meta property="og:url" content="http://localhost:4000/ES6-Reflection/" /> <meta property="og:site_name" content="Dolen’s blog" /> <meta property="og:type" content="article" /> <meta property="article:published_time" content="2017-01-13T11:00:00+09:00" /> <script type="application/ld+json"> {"description":"1. Reflection의 정의 ES6의 Reflection을 알아보기 전에 먼저 자바의 Reflection의 개념에 대해서 알아보겠습니다. Reflection이란 사전적으로 ‘거울에 비친 그림자, 반사’등의 의미로 사용 되는 단어 입니다. 조금만 생각해 보자면, Reflection은 사전적 의미를 그대로 따른다고 볼 수 있습니다.","@type":"BlogPosting","url":"http://localhost:4000/ES6-Reflection/","headline":"ES6 - REFLECTION","dateModified":"2017-01-13T11:00:00+09:00","datePublished":"2017-01-13T11:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/ES6-Reflection/"},"@context":"http://schema.org"}</script> <!-- End Jekyll SEO tag --> <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> --> <link rel="stylesheet" href="/css/main.css"> <link rel="alternate" type="application/rss+xml" title="Dolen's blog" href="http://localhost:4000/feed.xml"> <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> </head> <body> <header class="site-header"> <nav class="navbar navbar-default"> <div class="container-fluid"> <!-- Brand and toggle get grouped for better mobile display --> <div class="navbar-header"> <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="navbar-brand" href="/">Dolen's blog</a> </div> <!-- Collect the nav links, forms, and other content for toggling --> <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1"> <ul class="nav navbar-nav navbar-right"> <li><a href="/about/">About</a></li> <li><a href="/contact/">Contact</a></li> </ul> </div><!-- /.navbar-collapse --> </div><!-- /.container-fluid --> </nav> </header> <div class="container"> <div class="wrapper"> <div class="row"> <div class="col-md-8"> <article class="post" itemscope itemtype="http://schema.org/BlogPosting"> <header class="post-header"> <h1 class="post-title" itemprop="name headline">ES6 - REFLECTION</h1> <p class="post-meta"><time datetime="2017-01-13T11:00:00+09:00" itemprop="datePublished">Jan 13, 2017</time></p> </header> <div class="post-content" itemprop="articleBody"> <h3 id="1-reflection의-정의">1. Reflection의 정의</h3> <p>ES6의 Reflection을 알아보기 전에 먼저 자바의 Reflection의 개념에 대해서 알아보겠습니다.<br /> <strong>Reflection</strong>이란 사전적으로 <strong>‘거울에 비친 그림자, 반사’</strong>등의 의미로 사용 되는 단어 입니다.<br /> 조금만 생각해 보자면, Reflection은 사전적 의미를 그대로 따른다고 볼 수 있습니다.</p> <p>Reflection은 객체의 형태를 모르고, 메모리만 알고 있더라도 그 형태를 알아낼 수 있게 해주는 프로그래밍 기법이라고 볼 수 있습니다.<br /> 만약 객체의 메모리만 알고 있고, 그 메모리의 주체의 형태를 모른다고 가정해 볼까요.</p> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Test</span> <span class="o">{</span>
     <span class="kd">private</span> <span class="n">String</span> <span class="n">value</span><span class="o">;</span>
      
     <span class="kd">public</span> <span class="n">String</span> <span class="nf">getValue</span><span class="o">()</span> <span class="o">{</span>
@@ -127,13 +16,7 @@
     <span class="o">}</span>
 <span class="o">}</span>
 
-</code></pre></div></div>
-
-<p>위의 경우에는 컴파일 에러가 발생하게 됩니다.<br />
-Object class에는 getValue() 메소드가 존재하지 않기 때문이죠.<br />
-<br /></p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">A</span> <span class="o">{</span>
+</code></pre></div></div> <p>위의 경우에는 컴파일 에러가 발생하게 됩니다.<br /> Object class에는 getValue() 메소드가 존재하지 않기 때문이죠.<br /> <br /></p> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">A</span> <span class="o">{</span>
     <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
     <span class="kd">private</span> <span class="n">String</span> <span class="n">gender</span><span class="o">;</span>
 
@@ -157,11 +40,7 @@ Object class에는 getValue() 메소드가 존재하지 않기 때문이죠.<br 
         <span class="k">return</span> <span class="n">str</span><span class="o">;</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div></div>
-
-<p>그렇다면 이번에는 A라는 class를 정의해보고 알아보도록 하겠습니다.</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Relection</span> <span class="o">{</span>
+</code></pre></div></div> <p>그렇다면 이번에는 A라는 class를 정의해보고 알아보도록 하겠습니다.</p> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Relection</span> <span class="o">{</span>
 
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Throwable</span><span class="o">{</span>
 
@@ -205,9 +84,7 @@ Object class에는 getValue() 메소드가 존재하지 않기 때문이죠.<br 
         <span class="o">}</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div></div>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>com.company.java8.java.java8.mains.A : constructor name
+</code></pre></div></div> <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>com.company.java8.java.java8.mains.A : constructor name
 java.lang.String arg0 : param
 java.lang.String arg1 : param
 class java.lang.String : type
@@ -236,57 +113,16 @@ hashCode : name
 getClass : name
 notify : name
 notifyAll : name
-</code></pre></div></div>
-
-<p>보다시피, 우리는 객체를 참조하여 해당 객체의 클래스 정보를 모두 가져와서 확인할 수 있을 수 있다는것을 확인하였습니다.<br />
-어떻게 이런일이 가능할지에 대해서 잠시 알아볼까요.<br />
-우선은 컴파일과 인터프리터 과정에 대해서 살짝 이해할 필요가 있습니다.<br />
-<br />
-우리는 자바로 프로그래밍 코드를 작성하게 되는데, 그 결과로는 항상 <strong>ClassName.java</strong> 파일이 생성되게 됩니다.<br />
-<strong>.java</strong> 파일을 사용하여 <strong>compile</strong>과정을 거치게 되면, JVM이 읽어들일 수 있는 기계어인, 바이트 코드로 변환시키게 되어 <strong>ClassName.class</strong> 파일을 생성하게 됩니다.<br />
-그러면 <strong>java.exe</strong> 프로그램이 JVM을 기동시키면서 인터프리터 방식으로 해당 기계어를 한라인씩 읽어들여 OS에 맞는 기계어로 컴파일해주게 되고 그 코드를 사용하여 Application을 실행하게 됩니다.<br />
-매번 코드가 실행될 때마다 말이죠.<br />
-<br />
-즉, 코드상에서는 모든 객체가 상속받고 있는 Object의 형태로 메소드의 매개변수를 전달받을 수 있게 된다는 이야기도 됩니다. 매번 <strong>.class</strong>의 바이트 코드를 읽어들여 OS에 맞는 기계어로 매번 다시 컴파일 하고 실행시키기 때문이죠.<br />
-<br />
-모든 객체가 상속받고 있는 Object의 형태로 메소드의 매개변수를 전달받을 수 있다는 것은 그 어떤 것도 전달받을 수 있게 됨과 동시에, 그 어떤것이 넘어오는지 모를 수도 있다는 이야기이기도 하지요.<br />
-그래서 객체의 주소값을 가지고 해당 객체의 형태를 알아낼 필요가 있을 때가 있습니다.<br />
-그리고 이 방식을 <strong>Reflection</strong> 이라고 하는거지요.</p>
-
-<p>그럼 어떻게 런타임중의 객체의 메모리만으로 해당 정보를 알아낼 수 있느냐에 대한 고민 또한 해볼 필요가 있게 됩니다.<br />
-자바의 클래스 파일들은 앞서 말씀드렸다 시피 <strong>.class</strong>파일로 컴파일되어 static 영역에 존재하게 되는데요.<br />
-이 이야기는 객체의 이름을 알 수 있다면 static 영역에 존재하는 언제든 클래스의 구조를 얻어낼 수 있다는 이야기이기도 합니다.</p>
-
-<p>그렇다면, 상식적으로 내가 프로그래밍을 하고 있는데 메소드에 전달되어질 매개변수의 형을 모를 때가 있을까요 ?? 의외로 많이 존재하며 알게 모르게 많이 사용되고 있다고 합니다.</p>
-
-<p>대표적으로 IDE의 자동완성기능이나 스프링의 BeanFactory, 또는 Annotaion등에서 사용되어 집니다.<br />
-부착되어질 클래스가 어느 클래스인지는 모르지만, 일단 작성 하고 런타임에서 확인하여 적용시키는 것이죠.</p>
-
-<p>또한 이 Reflection의 기능과 REST API를 적용시키면 Spring One Controller도 구현할 수 있게 됩니다.</p>
-
-<h3 id="2-es6---reflect">2. ES6 - Reflect</h3>
-<p>자 그렇다면 ES6의 객체 리플렉션 (객체 프로퍼티를 들여다보고 조작하는 등의 프로그래밍)에 대해서 알아보겠습니다.</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">r</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Reflect</span><span class="p">();</span> <span class="c1">//Reflect is not a constructor</span>
+</code></pre></div></div> <p>보다시피, 우리는 객체를 참조하여 해당 객체의 클래스 정보를 모두 가져와서 확인할 수 있을 수 있다는것을 확인하였습니다.<br /> 어떻게 이런일이 가능할지에 대해서 잠시 알아볼까요.<br /> 우선은 컴파일과 인터프리터 과정에 대해서 살짝 이해할 필요가 있습니다.<br /> <br /> 우리는 자바로 프로그래밍 코드를 작성하게 되는데, 그 결과로는 항상 <strong>ClassName.java</strong> 파일이 생성되게 됩니다.<br /> <strong>.java</strong> 파일을 사용하여 <strong>compile</strong>과정을 거치게 되면, JVM이 읽어들일 수 있는 기계어인, 바이트 코드로 변환시키게 되어 <strong>ClassName.class</strong> 파일을 생성하게 됩니다.<br /> 그러면 <strong>java.exe</strong> 프로그램이 JVM을 기동시키면서 인터프리터 방식으로 해당 기계어를 한라인씩 읽어들여 OS에 맞는 기계어로 컴파일해주게 되고 그 코드를 사용하여 Application을 실행하게 됩니다.<br /> 매번 코드가 실행될 때마다 말이죠.<br /> <br /> 즉, 코드상에서는 모든 객체가 상속받고 있는 Object의 형태로 메소드의 매개변수를 전달받을 수 있게 된다는 이야기도 됩니다. 매번 <strong>.class</strong>의 바이트 코드를 읽어들여 OS에 맞는 기계어로 매번 다시 컴파일 하고 실행시키기 때문이죠.<br /> <br /> 모든 객체가 상속받고 있는 Object의 형태로 메소드의 매개변수를 전달받을 수 있다는 것은 그 어떤 것도 전달받을 수 있게 됨과 동시에, 그 어떤것이 넘어오는지 모를 수도 있다는 이야기이기도 하지요.<br /> 그래서 객체의 주소값을 가지고 해당 객체의 형태를 알아낼 필요가 있을 때가 있습니다.<br /> 그리고 이 방식을 <strong>Reflection</strong> 이라고 하는거지요.</p> <p>그럼 어떻게 런타임중의 객체의 메모리만으로 해당 정보를 알아낼 수 있느냐에 대한 고민 또한 해볼 필요가 있게 됩니다.<br /> 자바의 클래스 파일들은 앞서 말씀드렸다 시피 <strong>.class</strong>파일로 컴파일되어 static 영역에 존재하게 되는데요.<br /> 이 이야기는 객체의 이름을 알 수 있다면 static 영역에 존재하는 언제든 클래스의 구조를 얻어낼 수 있다는 이야기이기도 합니다.</p> <p>그렇다면, 상식적으로 내가 프로그래밍을 하고 있는데 메소드에 전달되어질 매개변수의 형을 모를 때가 있을까요 ?? 의외로 많이 존재하며 알게 모르게 많이 사용되고 있다고 합니다.</p> <p>대표적으로 IDE의 자동완성기능이나 스프링의 BeanFactory, 또는 Annotaion등에서 사용되어 집니다.<br /> 부착되어질 클래스가 어느 클래스인지는 모르지만, 일단 작성 하고 런타임에서 확인하여 적용시키는 것이죠.</p> <p>또한 이 Reflection의 기능과 REST API를 적용시키면 Spring One Controller도 구현할 수 있게 됩니다.</p> <h3 id="2-es6---reflect">2. ES6 - Reflect</h3> <p>자 그렇다면 ES6의 객체 리플렉션 (객체 프로퍼티를 들여다보고 조작하는 등의 프로그래밍)에 대해서 알아보겠습니다.</p> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">r</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Reflect</span><span class="p">();</span> <span class="c1">//Reflect is not a constructor</span>
 <span class="nb">Reflect</span><span class="p">();</span> <span class="c1">// Reflect is not a function</span>
-</code></pre></div></div>
-<p>Reflect는 함수 객체가 아니므로 호출할 수 없고 new 연산자를 이용하여 생성할 수도 없습니다.</p>
-
-<h4 id="1-reflectapply">1. Reflect.apply</h4>
-<p><strong>Object.prototype.apply</strong>와 동일한 기능을 합니다. 
-매개변수는 총 3가지를 전달하게 되는데, <strong>(fnc, bindObject, [params])</strong> 순으로 전달 됩니다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">fnc</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+</code></pre></div></div> <p>Reflect는 함수 객체가 아니므로 호출할 수 없고 new 연산자를 이용하여 생성할 수도 없습니다.</p> <h4 id="1-reflectapply">1. Reflect.apply</h4> <p><strong>Object.prototype.apply</strong>와 동일한 기능을 합니다. 매개변수는 총 3가지를 전달하게 되는데, <strong>(fnc, bindObject, [params])</strong> 순으로 전달 됩니다.</p> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">fnc</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">test</span><span class="p">);</span> 
 <span class="p">}</span>
 
 <span class="nb">Reflect</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">fnc</span><span class="p">,</span> <span class="p">{</span><span class="na">test</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]);</span> <span class="c1">// 1, 2, 3</span>
 
 <span class="nx">fnc</span><span class="p">.</span><span class="nx">apply</span><span class="p">({</span><span class="na">test</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]);</span> <span class="c1">//1, 2, 3 </span>
-</code></pre></div></div>
-
-<h4 id="2-reflectconstructor">2. Reflect.constructor</h4>
-<p>new 연산자를 사용하여 객체를 생성하는것과 동일한 효과를 냅니다.</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Test</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+</code></pre></div></div> <h4 id="2-reflectconstructor">2. Reflect.constructor</h4> <p>new 연산자를 사용하여 객체를 생성하는것과 동일한 효과를 냅니다.</p> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Test</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">a</span> <span class="o">=</span> <span class="nx">a</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">b</span> <span class="o">=</span> <span class="nx">b</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">f</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
@@ -308,15 +144,7 @@ notifyAll : name
 <span class="nx">Test2</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">c</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">f</span><span class="p">());</span> <span class="c1">//1, 2, 3</span>
-</code></pre></div></div>
-<p><strong>new</strong> 와 동일하게 prototype 체이닝을 상속합니다. 매개변수로 전달되는 인자는 총 3가지이며</p>
-<ol>
-  <li>첫번째 인자는 타깃 생성자가 됩니다.</li>
-  <li>두번째 인자는 첫번째 생성자의 매개변수입니다.</li>
-  <li>세번째 인자는 타깃 생성자의 prototype으로 사용할 생성자 입니다.</li>
-</ol>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Test1</span> <span class="p">{</span>
+</code></pre></div></div> <p><strong>new</strong> 와 동일하게 prototype 체이닝을 상속합니다. 매개변수로 전달되는 인자는 총 3가지이며</p> <ol> <li>첫번째 인자는 타깃 생성자가 됩니다.</li> <li>두번째 인자는 첫번째 생성자의 매개변수입니다.</li> <li>세번째 인자는 타깃 생성자의 prototype으로 사용할 생성자 입니다.</li> </ol> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Test1</span> <span class="p">{</span>
   <span class="kd">constructor</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">a</span> <span class="o">=</span> <span class="nx">a</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">b</span> <span class="o">=</span> <span class="nx">b</span><span class="p">;</span>
@@ -338,13 +166,7 @@ notifyAll : name
 
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nb">Reflect</span><span class="p">.</span><span class="nx">construct</span><span class="p">(</span><span class="nx">Test1</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="nx">Test2</span><span class="p">);</span> <span class="c1">//1, 2, 30</span>
-</code></pre></div></div>
-
-<p>두번째로 전달된 객체는 prototype으로서의 기능만 수행하기 때문에 constructor 함수는 실행되지 않습니다.</p>
-
-<h4 id="3-reflectdefineproperty">3. Reflect.defineProperty</h4>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
+</code></pre></div></div> <p>두번째로 전달된 객체는 prototype으로서의 기능만 수행하기 때문에 constructor 함수는 실행되지 않습니다.</p> <h4 id="3-reflectdefineproperty">3. Reflect.defineProperty</h4> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
 <span class="nb">Reflect</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s1">'person'</span><span class="p">,</span> <span class="p">{</span>
 	<span class="na">value</span><span class="p">:</span> <span class="p">{</span>
 		<span class="na">name</span><span class="p">:</span> <span class="s1">'dolen'</span><span class="p">,</span>
@@ -355,30 +177,12 @@ notifyAll : name
 <span class="nb">Reflect</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s1">'person'</span><span class="p">,</span> <span class="p">{</span>
 	<span class="na">value</span><span class="p">:</span> <span class="mi">3</span>
 <span class="p">});</span> <span class="c1">//false</span>
-</code></pre></div></div>
-
-<p>객체의 property를 정의 합니다. 매게변수는 총 3가지가 전달 되어야 합니다.</p>
-
-<ol>
-  <li>property의 주체가 될 객체</li>
-  <li>property의 key value</li>
-  <li>셋팅 되어질 property Object . (반드시 { value: ‘value’ } 의 형태로 입력 합니다.</li>
-</ol>
-
-<p>함수가 실행된 결과는 Boolean 으로 전달되게 되며, 한번 정의되어 있는 Property는 다시 선언하더라도 정의되지 않습니다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+</code></pre></div></div> <p>객체의 property를 정의 합니다. 매게변수는 총 3가지가 전달 되어야 합니다.</p> <ol> <li>property의 주체가 될 객체</li> <li>property의 key value</li> <li>셋팅 되어질 property Object . (반드시 { value: ‘value’ } 의 형태로 입력 합니다.</li> </ol> <p>함수가 실행된 결과는 Boolean 으로 전달되게 되며, 한번 정의되어 있는 Property는 다시 선언하더라도 정의되지 않습니다.</p> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">a</span><span class="p">:</span> <span class="mi">3</span>
 <span class="p">};</span>
 
 <span class="nx">obj</span><span class="p">.</span><span class="nx">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// 이러한 행위를 차단할 수 있는 것이지요.</span>
-</code></pre></div></div>
-
-<p>이로써 객체 <strong>property</strong>의 <strong>override</strong>를 막을 수 있는 효과를 얻을 수 있습니다.</p>
-
-<h4 id="4-reflectget">4. Reflect.get</h4>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+</code></pre></div></div> <p>이로써 객체 <strong>property</strong>의 <strong>override</strong>를 막을 수 있는 효과를 얻을 수 있습니다.</p> <h4 id="4-reflectget">4. Reflect.get</h4> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
 	<span class="na">x</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> 
 	<span class="na">y</span><span class="p">:</span> <span class="p">{</span>
 		<span class="na">yx</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -388,13 +192,7 @@ notifyAll : name
 
 <span class="nb">Reflect</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s1">'x'</span><span class="p">);</span> <span class="c1">//1</span>
 <span class="nb">Reflect</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">);</span> <span class="c1">//{yx: 2, yy: 3} </span>
-</code></pre></div></div>
-
-<p>get 함수는 말 그대로 객체의 property의 값을 가져오는 역할을 수행합니다.<br />
-예를 들어 Reflect.get(obj, ‘y’).get(obj, ‘yx’); 이런식의 동작은 불가능 합니다.<br />
-단순히 객체의 값안에 있는 키를 사용한 getter로서만 동작 합니다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Test</span> <span class="p">{</span>
+</code></pre></div></div> <p>get 함수는 말 그대로 객체의 property의 값을 가져오는 역할을 수행합니다.<br /> 예를 들어 Reflect.get(obj, ‘y’).get(obj, ‘yx’); 이런식의 동작은 불가능 합니다.<br /> 단순히 객체의 값안에 있는 키를 사용한 getter로서만 동작 합니다.</p> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Test</span> <span class="p">{</span>
 	<span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
 		<span class="k">this</span><span class="p">.</span><span class="nx">_a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
 	<span class="p">}</span>
@@ -405,19 +203,9 @@ notifyAll : name
 
 <span class="nb">Reflect</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s1">'_a'</span><span class="p">);</span> <span class="c1">//3 </span>
 <span class="nb">Reflect</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">);</span> <span class="c1">//이런식의 동작은 Maximum call stack 을 발생 시킵니다.  </span>
-</code></pre></div></div>
-
-<p>Class의 경우또한 객체이기 때문에, key를 사용해서 property를 취하는건 가능하지만, getter 또는 setter를 실행시키지는 못합니다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+</code></pre></div></div> <p>Class의 경우또한 객체이기 때문에, key를 사용해서 property를 취하는건 가능하지만, getter 또는 setter를 실행시키지는 못합니다.</p> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
 <span class="nb">Reflect</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 2 </span>
-</code></pre></div></div>
-
-<p>배열의 경우에는 두번째 인자로 배열의 인덱스 값을 전달 합니다.</p>
-
-<h4 id="5-reflectgetownpropertydescriptor">5. Reflect.getOwnPropertyDescriptor</h4>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+</code></pre></div></div> <p>배열의 경우에는 두번째 인자로 배열의 인덱스 값을 전달 합니다.</p> <h4 id="5-reflectgetownpropertydescriptor">5. Reflect.getOwnPropertyDescriptor</h4> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
 	<span class="na">x</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> 
 	<span class="na">y</span><span class="p">:</span> <span class="p">{</span>
 		<span class="na">yx</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -434,25 +222,13 @@ notifyAll : name
 <span class="nb">Reflect</span><span class="p">.</span><span class="nx">getOwnPropertyDescriptor</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s1">'z'</span><span class="p">);</span> <span class="c1">//undefined </span>
 
 <span class="nb">Reflect</span><span class="p">.</span><span class="nx">getOwnPropertyDescriptor</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">//Object {value: 1, writable: true, enumerable: true, configurable: true}</span>
-</code></pre></div></div>
-
-<p>getOwnPropertyDescriptor함수는 내가 가지고 있는 속성의 상세 설명을 얻을 수 있는 함수입니다.<br />
-선언되어 있지 않은 속성은 자동으로 undefined를 return 하며 배열의 경우에는 전달받은 index를 사용하여 value의 속성을 전달합니다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertyDescriptor</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">//Object {value: "e", writable: false, enumerable: true, configurable: false}</span>
+</code></pre></div></div> <p>getOwnPropertyDescriptor함수는 내가 가지고 있는 속성의 상세 설명을 얻을 수 있는 함수입니다.<br /> 선언되어 있지 않은 속성은 자동으로 undefined를 return 하며 배열의 경우에는 전달받은 index를 사용하여 value의 속성을 전달합니다.</p> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertyDescriptor</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">//Object {value: "e", writable: false, enumerable: true, configurable: false}</span>
 <span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertyDescriptor</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">//Object {value: "r", writable: false, enumerable: true, configurable: false}</span>
 <span class="nb">Object</span><span class="p">.</span><span class="nx">getOwnPropertyDescriptor</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">//Object {value: "r", writable: false, enumerable: true, configurable: false}</span>
 
 
 <span class="nb">Reflect</span><span class="p">.</span><span class="nx">getOwnPropertyDescriptor</span><span class="p">(</span><span class="s1">'error'</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">//TypeError: Reflect.getOwnPropertyDescriptor called on non-object</span>
-</code></pre></div></div>
-
-<p>Object가 가지고 있는 함수와 다른점은 객체가 생성되지 않았을 경우에는 TypeError를 발생시킵니다.<br />
-Object가 아니기 때문이죠 !</p>
-
-<h5 id="6-reflectgetprototypeof">6. Reflect.getPrototypeOf</h5>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Test</span> <span class="p">{</span>
+</code></pre></div></div> <p>Object가 가지고 있는 함수와 다른점은 객체가 생성되지 않았을 경우에는 TypeError를 발생시킵니다.<br /> Object가 아니기 때문이죠 !</p> <h5 id="6-reflectgetprototypeof">6. Reflect.getPrototypeOf</h5> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Test</span> <span class="p">{</span>
 	<span class="nx">getTest</span><span class="p">()</span> <span class="p">{</span>
 
 	<span class="p">}</span>
@@ -470,18 +246,7 @@ Object가 아니기 때문이죠 !</p>
 <span class="nb">Reflect</span><span class="p">.</span><span class="nx">getPrototypeOf</span><span class="p">(</span><span class="nx">t2</span><span class="p">);</span> <span class="c1">// Test {} Test prototype</span>
 <span class="nb">Reflect</span><span class="p">.</span><span class="nx">getPrototypeOf</span><span class="p">({});</span> <span class="c1">// Object {}  Object Prototype</span>
 <span class="nb">Reflect</span><span class="p">.</span><span class="nx">getPrototypeOf</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span><span class="p">);</span> <span class="c1">// null</span>
-</code></pre></div></div>
-
-<p>getPrototypeOf 함수는 대상 객체의 prototype을 return 합니다.<br />
-위 코드에서 보여지듯이 {} 일반 객체를 전달하면 Object의 prototype을 return 합니다.<br />
-Test를 상속받은 Test2를 전달하면 Test2의 Prototype을 return 합니다.<br />
-Test를 전달하면 마찬가지로 Test의 Prototype을 return 합니다.
-만약 매개변수로 prototype을 전달한다면 null을 return 합니다.<br />
-전달한 객체의 Prototype을 얻어오는 함수로 활용할 수 있습니다.  (예를 들자면 inherit function의 구축등에서)</p>
-
-<h4 id="7-reflecthas">7. Reflect.has</h4>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+</code></pre></div></div> <p>getPrototypeOf 함수는 대상 객체의 prototype을 return 합니다.<br /> 위 코드에서 보여지듯이 {} 일반 객체를 전달하면 Object의 prototype을 return 합니다.<br /> Test를 상속받은 Test2를 전달하면 Test2의 Prototype을 return 합니다.<br /> Test를 전달하면 마찬가지로 Test의 Prototype을 return 합니다. 만약 매개변수로 prototype을 전달한다면 null을 return 합니다.<br /> 전달한 객체의 Prototype을 얻어오는 함수로 활용할 수 있습니다. (예를 들자면 inherit function의 구축등에서)</p> <h4 id="7-reflecthas">7. Reflect.has</h4> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
 	<span class="na">x</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> 
 	<span class="na">y</span><span class="p">:</span> <span class="p">{</span>
 		<span class="na">yx</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -495,34 +260,19 @@ Test를 전달하면 마찬가지로 Test의 Prototype을 return 합니다.
 
 <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'data-test'</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> 
 <span class="nb">Reflect</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">attributes</span><span class="p">,</span> <span class="s1">'data-test'</span><span class="p">);</span> <span class="c1">//true </span>
-</code></pre></div></div>
-
-<p>has 함수는 객체에 해당 key값이 존재하는지를 판단해줍니다.</p>
-
-<h4 id="8-reflectpreventextensions">8. Reflect.preventExtensions</h4>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
+</code></pre></div></div> <p>has 함수는 객체에 해당 key값이 존재하는지를 판단해줍니다.</p> <h4 id="8-reflectpreventextensions">8. Reflect.preventExtensions</h4> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
 
 <span class="nb">Reflect</span><span class="p">.</span><span class="nx">isExtensible</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span> <span class="c1">// === true</span>
 
 <span class="nb">Reflect</span><span class="p">.</span><span class="nx">preventExtensions</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
 
 <span class="nb">Reflect</span><span class="p">.</span><span class="nx">isExtensible</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span> <span class="c1">// === false</span>
-</code></pre></div></div>
-
-<p>preventExtensions 함수는 객체를 확장불가능한 상태로 변경합니다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Reflect</span><span class="p">.</span><span class="nx">preventExtensions</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</code></pre></div></div> <p>preventExtensions 함수는 객체를 확장불가능한 상태로 변경합니다.</p> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Reflect</span><span class="p">.</span><span class="nx">preventExtensions</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 <span class="c1">// TypeError: 1 is not an object</span>
 
 <span class="nb">Object</span><span class="p">.</span><span class="nx">preventExtensions</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 <span class="c1">// 1</span>
-</code></pre></div></div>
-
-<p>Object에 있는 preventExtensions함수와 다른점은 객체가 아닐 경우 Type Error를 발생합니다.</p>
-
-<h4 id="9-reflectisextensible">9. Reflect.isExtensible</h4>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
+</code></pre></div></div> <p>Object에 있는 preventExtensions함수와 다른점은 객체가 아닐 경우 Type Error를 발생합니다.</p> <h4 id="9-reflectisextensible">9. Reflect.isExtensible</h4> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
 <span class="nb">Reflect</span><span class="p">.</span><span class="nx">isExtensible</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span> <span class="c1">// === true </span>
 
 <span class="nb">Reflect</span><span class="p">.</span><span class="nx">preventExtensions</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span> <span class="c1">//교체 불가능한 객체로 변경</span>
@@ -537,13 +287,7 @@ Test를 전달하면 마찬가지로 Test의 Prototype을 return 합니다.
 <span class="nb">Object</span><span class="p">.</span><span class="nx">freeze</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span> 
 
 <span class="nb">Reflect</span><span class="p">.</span><span class="nx">isExtensible</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span> <span class="c1">// false</span>
-</code></pre></div></div>
-
-<p>Reflect.isExtensible 함수는 객체가 현재 확장 가능한 상태인지를 return해 줍니다.</p>
-
-<h4 id="10-reflectownkeys">10. Reflect.ownKeys</h4>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+</code></pre></div></div> <p>Reflect.isExtensible 함수는 객체가 현재 확장 가능한 상태인지를 return해 줍니다.</p> <h4 id="10-reflectownkeys">10. Reflect.ownKeys</h4> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
 	<span class="na">x</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> 
 	<span class="na">y</span><span class="p">:</span> <span class="p">{</span>
 		<span class="na">yx</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -565,14 +309,7 @@ Test를 전달하면 마찬가지로 Test의 Prototype을 return 합니다.
 
 <span class="nb">Reflect</span><span class="p">.</span><span class="nx">ownKeys</span><span class="p">(</span><span class="nx">obj2</span><span class="p">);</span> <span class="c1">// key2, Symbol(test)</span>
 
-</code></pre></div></div>
-
-<p>Reflect.ownKeys 는 객체의 key배열을 얻어옵니다.<br />
-해당 객체에 지정되어있는 모든 속성의 key값을 얻어올 수 있으며 Symbol key 또한 얻어올 수 있습니다.</p>
-
-<h4 id="11-reflectset">11. Reflect.set</h4>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Object</span>
+</code></pre></div></div> <p>Reflect.ownKeys 는 객체의 key배열을 얻어옵니다.<br /> 해당 객체에 지정되어있는 모든 속성의 key값을 얻어올 수 있으며 Symbol key 또한 얻어올 수 있습니다.</p> <h4 id="11-reflectset">11. Reflect.set</h4> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Object</span>
 <span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
 <span class="nb">Reflect</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s2">"prop"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">);</span> <span class="c1">// true</span>
 <span class="nx">obj</span><span class="p">.</span><span class="nx">prop</span><span class="p">;</span> <span class="c1">// "value"</span>
@@ -590,14 +327,7 @@ Test를 전달하면 마찬가지로 Test의 Prototype을 return 합니다.
 <span class="nb">Reflect</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span> <span class="c1">// true , Object {undefined: undefined}</span>
 <span class="nb">Reflect</span><span class="p">.</span><span class="nx">getOwnPropertyDescriptor</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s2">"undefined"</span><span class="p">);</span> 
 <span class="c1">// { value: undefined, writable: true, enumerable: true, configurable: true }</span>
-</code></pre></div></div>
-
-<p>Reflect.set 함수는 객체의 property의 value를 설정하는 함수입니다.<br />
-간단하게 전달된 객체의 key값을 이용하여 값을 저장하는 방식을 취하며, 배열의 경우 length property를 사용하여 길이를 줄여줄 수도 있습니다.<br />
-만약 Reflect.set 함수를 사용할때 아무런 인자도 전달하지 않는다면, undefined가 key값으로 undefined가 value로 지정되게 됩니다.</p>
-
-<h4 id="12-reflectsetprototypeof">12. Reflect.setPrototypeOf</h4>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
+</code></pre></div></div> <p>Reflect.set 함수는 객체의 property의 value를 설정하는 함수입니다.<br /> 간단하게 전달된 객체의 key값을 이용하여 값을 저장하는 방식을 취하며, 배열의 경우 length property를 사용하여 길이를 줄여줄 수도 있습니다.<br /> 만약 Reflect.set 함수를 사용할때 아무런 인자도 전달하지 않는다면, undefined가 key값으로 undefined가 value로 지정되게 됩니다.</p> <h4 id="12-reflectsetprototypeof">12. Reflect.setPrototypeOf</h4> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
 
 <span class="nb">Reflect</span><span class="p">.</span><span class="nx">setPrototypeOf</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="kc">null</span><span class="p">);</span> <span class="c1">//true </span>
 
@@ -606,89 +336,12 @@ Test를 전달하면 마찬가지로 Test의 Prototype을 return 합니다.
 <span class="nx">obj</span><span class="p">.</span><span class="nx">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> 
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span> <span class="c1">//obj.__proto__ = null 과 동일 합니다. </span>
-</code></pre></div></div>
-
-<p>setPrototypeOf함수는 객체의 prototype을 지정해줍니다.<br />
-객체의 prototype = null로 설정하게 되면 해당 객체의 prototype chaining 은 끊어지게 되며, 객체의 properties 는 null value로 지정됩니다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
+</code></pre></div></div> <p>setPrototypeOf함수는 객체의 prototype을 지정해줍니다.<br /> 객체의 prototype = null로 설정하게 되면 해당 객체의 prototype chaining 은 끊어지게 되며, 객체의 properties 는 null value로 지정됩니다.</p> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
 
 <span class="nb">Reflect</span><span class="p">.</span><span class="nx">preventExtensions</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span> <span class="c1">//true</span>
 
 <span class="nb">Reflect</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s1">'test'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">33</span><span class="p">);});</span> <span class="c1">//false</span>
-</code></pre></div></div>
-
-<p>마찬가지로 객체가 확장되지 못할경우에는 set properties를 설정할 수가 없습니다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">target</span> <span class="o">=</span> <span class="p">{};</span>
+</code></pre></div></div> <p>마찬가지로 객체가 확장되지 못할경우에는 set properties를 설정할 수가 없습니다.</p> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">target</span> <span class="o">=</span> <span class="p">{};</span>
 <span class="kd">const</span> <span class="nx">proto</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">target</span><span class="p">);</span>
 <span class="nb">Reflect</span><span class="p">.</span><span class="nx">setPrototypeOf</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="nx">proto</span><span class="p">);</span> <span class="c1">// false</span>
-</code></pre></div></div>
-
-<p>만약 prototype chain 사이클이 발생하면 false를 반환하게 됩니다.</p>
-
-<p>이상으로 Reflection과 ES6 Reflecttion에 대해 알아보았습니다.  :)</p>
-
-            </article>
-
-            <section class="share">
-    <h3>Share</h3>
-    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20http://localhost:4000/ES6-Reflection/%20via%20&#64;imcts&hashtags=javascript,template literal,"
-    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
-        <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
-    </a>
-    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/ES6-Reflection/"
-    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
-        <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
-    </a>
-    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:4000/ES6-Reflection/"
-    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
-        <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
-    </a>
-</section>
-            <section class="author" itemprop="author">
-    <div class="details" itemscope itemtype="http://schema.org/Person">
-        <img itemprop="image" class="img-rounded" src="/resources/images/profile/profile.jpeg" alt="">
-        <p class="def">Author</p>
-        <h3 class="name">
-            <a itemprop="name" href="https://github.com/imcts">dolen</a>
-        </h3>
-        <p class="desc">Front-End Developer</p>
-        <p><a itemprop="email" class="email" href="mailto:dolen.sirupe@gmail.com">dolen.sirupe@gmail.com</a></p>
-        <p><a itemprop="github" class="github" href="https://github.com/imcts">github.com/imcts</a></p>
-    </div>
-</section>
-
-            <section class="comments">
-    <h3>Comments</h3>
-    <div id="disqus_thread"></div>
-</section>
-<script type="text/javascript">
-    var disqus_loaded = false;
-
-    function load_disqus()
-    {
-        disqus_loaded = true;
-        var disqus_shortname = 'dolen';
-        var disqus_title = '';
-        var disqus_url = '/ES6-Reflection/';
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        var ldr = document.getElementById('disqus_loader');
-    };
-    window.onscroll = function(e) {
-        if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 800)) {
-            //hit bottom of page
-            if (disqus_loaded==false)
-                load_disqus()
-        }
-    };
-</script>
-            <footer>
-    <p>Dolen. Front-End Developer.</p>
-</footer>
-<script src="/assets/js/main.js"></script>
-        </section>
-    </body>
-</html>
+</code></pre></div></div> <p>만약 prototype chain 사이클이 발생하면 false를 반환하게 됩니다.</p> <p>이상으로 Reflection과 ES6 Reflecttion에 대해 알아보았습니다. :)</p> </div> </article> <div class="row"> <div id="disqus_thread"></div> <script defer> (function() { var d = document, s = d.createElement('script'); s.src = '//dolen.disqus.com/embed.js'; s.setAttribute('data-timestamp', +new Date()); (d.head || d.body).appendChild(s); })(); </script> <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> </div> <div class="row"> <ul class="pager"> <li><a class="next" href="/javascript-exponent-expression/">&laquo; 자바스크립트 숫자 표현 방식</a></li> <li><a class="previous" href="/javascript-build-pattern/">빌더 패턴. &raquo;</a></li> </ul> </div> </div> <div class="col-md-4 mt20"> <div class="post-img"> <img width="600" src="/images/javascript.jpg" alt="ES6 - REFLECTION"> </div> <div class="mt10 recent"> <h4>Previous post</h4> <div> <p><a href="/javascript-build-pattern/">빌더 패턴.</a> <small>&nbsp;&nbsp;28 Dec 2016</small> </p> </div> <h4>Next post</h4> <div> <p><a href="/javascript-exponent-expression/">자바스크립트 숫자 표현 방식</a> <small>&nbsp;&nbsp;10 Jun 2017</small> </p> </div> </div> <br> </div> </div> </div> </div> <footer> <div class="container"> <div class="row p20"> <div class="col-md-4 text-center mt25" > </div> <div class="col-md-4 text-center mt25"> <a target="_blank" href="https://www.facebook.com/taesan.choi"><li class="social facebook"><i class="fa fa-facebook-square"></i></li></a> <a target="_blank" href="http://github.com/imcts"><li class="social github"><i class="fa fa-github-square"></i></li></a> <a target="_blank" href="mailto:imcts@nate.com"><li class="social email"><i class="fa fa-envelope"></i></li></a> </div> </div> </div> </footer> <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script> <script src="/js/bootstrap.min.js"></script> <!-- Google Analytics Tracking code --> <script> (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-83979019-1', 'auto'); ga('send', 'pageview'); </script> </body> </html>

@@ -1,16 +1,8 @@
 ---
-
 layout: post
 title: ES6 - DESTRUCTURING ASSIGNMENT 
 date: 2018-11-23 00:00:00
-image: '/assets/img/'
-main-class: 'js'
-description: 'ES6 Basic Study'
-tags: 
-- javascript
-- destructuring assignment
-
-introduction: '- javascript destructuring assignment -'
+img: javascript.jpg
 ---
 
 해체 할당이란 배열이나 객체의 값을 해체하여 새로운 변수에 할당하는 표현식 입니다. ES6에 추가되었으며 활용도가 가장 높은 기능 중 하나이죠. 

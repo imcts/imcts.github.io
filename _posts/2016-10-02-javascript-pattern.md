@@ -2,21 +2,15 @@
 layout: post
 title: 자바스크립트 디자인 패턴.
 date: 2016-10-02 20:00:00
-image: '/assets/img/'
-description: 'pattern'
-main-class: 'js'
-tags: 
-- pattern
-
-introduction: '- javascript pattern -'
+img: pattern.jpg
 ---
 
-**패턴에 관해서** 정리해 볼까요 ? 
+`패턴에 관해서` 정리해 볼까요 ? 
 
 
-### - SingleTon Pattern
+### SingleTon Pattern
 
-**싱글톤 패턴**이란 전역적으로 단 하나의 객체만을 두고 사용하는 방식을 말합니다.
+`싱글톤 패턴`이란 전역적으로 단 하나의 객체만을 두고 사용하는 방식을 말합니다.
 
 ```js
 var obj = {};
@@ -130,9 +124,9 @@ prototype을 놓치게 되었던 원인은 함수를 재정의하기 때문인�
 
 
 
-### - Factory Pattern
+### Factory Pattern
 
-**팩토리 패턴**이란 공장을 생각하시면 편합니다. 
+`팩토리 패턴`이란 공장을 생각하시면 편합니다. 
 
 자동차를 만들고 싶은데, 어떤 자동차를 만들것인지만 지정해주면 공장안에서 물건을 만들어주는 거라고 생각하시면 되지요. :)
 
@@ -176,9 +170,9 @@ var car = Car.factory('ten');
  
 
 
-### - Decoration Pattern
+### Decoration Pattern
 
-**데코레이션 패턴**이란 생산라인을 만들어두고, 필요한 옵션들을 데코레이션 한다고 생각하시면 편합니다 ! 
+`데코레이션 패턴`이란 생산라인을 만들어두고, 필요한 옵션들을 데코레이션 한다고 생각하시면 편합니다 ! 
 
 ```js
 function Sale(p) {
@@ -234,9 +228,9 @@ console.log(sale.getPrice());
 
 
 
-### - Validator Pattern
+### Validator Pattern
 
-**유효성 검사**패턴은 form작업을 할때 정말 많이 사용되는 작업들 입니다.
+`유효성 검사`패턴은 form작업을 할때 정말 많이 사용되는 작업들 입니다.
 
 ```js
 function Validator() {}
@@ -308,9 +302,9 @@ if(index)
 
 
 
-### - Facade Pattern
+### Facade Pattern
 
-**[퍼사드 패턴](https://ko.wikipedia.org/wiki/%ED%8D%BC%EC%82%AC%EB%93%9C_%ED%8C%A8%ED%84%B4)**이란 건물의 정면이라는 뜻을 가지고 있어요 ! 
+[퍼사드 패턴](https://ko.wikipedia.org/wiki/%ED%8D%BC%EC%82%AC%EB%93%9C_%ED%8C%A8%ED%84%B4)이란 건물의 정면이라는 뜻을 가지고 있어요 ! 
 
 예를 들어 건물에 들어가서 어떤곳으로 진입하게 된다는 의미로도 쓰일 수 있는거죠. 
 
@@ -335,9 +329,9 @@ function stop(e) {
 
 
 
-### - Observer Pattern
+### Observer Pattern
 
-**옵저버 패턴**입니다. 
+`옵저버 패턴`입니다. 
 
 웹 서비스를 제공하는 프로그래머라면 반드시 알고 있어야만 하는 패턴입니다.
 
