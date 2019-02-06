@@ -1,25 +1,21 @@
-const Model = class extends Set {
-  constructor (props) {
-    super()
-    this._props = Object.assign(Object.create(null), props)
-  }
+const Model = (() => {
+  const PRIVATE = new Map()
 
-  // For Subject
-  addListener (v) {
-    super.add(v)
-  }
+  return class extends Observer {
+    constructor (props) {
+      super()
+      PRIVATE.set(this, Object.assign(Object.create(null), props))
+    }
 
-  removeListener (v) {
-    super.delete(v)
-  }
+    get (key) {
+      return PRIVATE.get(this)[key]
+    }
 
-  notify () {
-    this.forEach(v => v.listen(this))
+    set (key, value) {
+      const props = PRIVATE.get(this)
+      if (props[key] !== value) {
+        props[key] = value
+      }
+    }
   }
-
-  // For Observer
-  listen () {throw 1}
-  has () {throw 1}
-  delete () {throw 1}
-  add () {throw 1}
-}
+})()

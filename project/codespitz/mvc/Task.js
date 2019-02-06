@@ -12,19 +12,19 @@ const Task = class extends Model {
   }
 
   toggle () {
-    this._props.complete = !this._props.complete
+    this.set('complete', !this.get('complete'))
     this.notify()
   }
 
   add (title) {
     const task = new Task(title)
-    this._props.list.push(task)
-    this.addListener(task)
+    this.get('list').push(task)
+    task.addListener(this)
     this.notify()
   }
 
   remove (task) {
-    const list = this._props.list
+    const list = this.get('list')
     if (!list.includes(task)) {
       return
     }
@@ -36,15 +36,15 @@ const Task = class extends Model {
   list () {
     return {
       task: this,
-      list: this._props.list.map(task => task.list())
+      list: this.get('list').map(task => task.list())
     }
   }
 
   get title () {
-    return this._props.title
+    return this.get('title')
   }
 
   get isComplete () {
-    return this._props.complete
+    return this.get('complete')
   }
 }

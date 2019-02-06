@@ -3,5 +3,5 @@ const View = class {
     this.controller = controller
   }
 
-  render () {throw 1}
+  render (data) {throw 1}
 }
