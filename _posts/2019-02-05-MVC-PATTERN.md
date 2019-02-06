@@ -242,7 +242,7 @@ const Task = class extends Model {
     <input id="new-task">
 </main>
 {% endhighlight %}
-`View`를 구성하기 전에 먼저 화면의 `Interface`를 작 합니다. 
+`View`를 구성하기 전에 먼저 화면의 `Interface`를 작성 합니다. 
 
 > 1. [aside](https://www.w3schools.com/tags/tag_aside.asp)태그는 `folder`목록을 표현할 영역 입니다.
 > 2. [main](https://www.w3schools.com/tags/tag_main.asp)태그는 선택된 폴더의 `Task`를 표현할 영역 입니다. 
