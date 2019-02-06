@@ -25,10 +25,10 @@ img: pattern.jpg
 ![이미지](/images/2019-02-05-MVC-PATTERN/mvc2.png) <br>
 근래에 우리가 알고 있는 많은 프레임워크들에서 가장 많이 사용되고 있는 `MVC`패턴은 `제왕적 컨트롤러`방식의 `MVC Pattern` 입니다.  
 <br>
-`Controller`는 자신이 소비 `Model`과 `View`를 생성하거나 섭외해야할 책임을 갖습니다. 상용 서비스에서는 `service`나 `dispatcher`를 통하여 `Model`을 제공 받기도 합니다.   
+`Controller`는 자신이 소비할 `Model`과 `View`를 생성하거나 섭외해야할 책임을 갖습니다. 상용 서비스에서는 `service`나 `dispatcher`를 통하여 `Model`을 제공 받기도 합니다.   
 <br>
 `Model`은 순수한 데이터를 표현하며 자신이 소유하고 있는 데이터의 변경이 일어날때마다 `Controller`에게 알려야 할 책임을 갖습니다. 
-보통 `MVC`패턴을 구성을할 떄 `Model`은 `Controller`를 직접적으로 알지 못하므로 `Observer Pattern`을 활용하여 `Controller`에게 상태를 알리게 됩니다.  
+보통 `MVC`패턴을 구성을할 때 `Model`은 `Controller`를 직접적으로 알지 못하므로 `Observer Pattern`을 활용하여 `Controller`에게 상태를 알리게 됩니다.  
 <br>
 `View`는 `Controller`가 전달해준 `Model`을 기반으로 화면을 구성 하고 `User Interaction`을 받아들입니다.  
 <br>
@@ -46,7 +46,7 @@ img: pattern.jpg
 프로그램에 변화가 발생했을때 대응하기가 쉽지 않습니다. 우리는 보통 서로 다른 두 객체의 `변화율`이 다를때 각 역할에 맞는 객체로 분리하고 두 객체 사이에 `protocol`을 둡니다. `MVC`패턴에서는 `protocol`역할을 담당하는 객체가 바로 
 `Controller`입니다.  
 <br>
-그럼 왜 `제왕적 컨트롤러`라고 불릴까. `Router`가 `Controller`를 생성하긴 하지만 `Router`는 초기의 진입점 역할만 해 줄뿐 모든 책임은 `Controller`에게 있습니다. 
+그럼 왜 `제왕적 컨트롤러`라고 불릴까요. `Router`가 `Controller`를 생성하긴 하지만 `Router`는 초기의 진입점 역할만 해 줄뿐 모든 책임은 `Controller`에게 있습니다. 
 `Model`과 `View`의 생성 및 연동의 책임을 `Controller`가 전부 갖기 때문입니다.  
 <br>
 `Controller`는 너무 많은 책임을 갖기 때문에 엄청나게 거대해질 수 밖에 없습니다. 
@@ -196,7 +196,7 @@ const Task = class extends Model {
 <br>
 `Task Tree`내부의 어느곳에서 변화가 일어나면 지속적으로 상위 `Task`에게 전파하게 되며 최상단의 `Task`는 `Controller`에게 보고해야 하는 책임을 갖게 됩니다.  
 <br>
-`Controller`는 `Task`에게서 변경 이벤트가 발생하면 화면을 재구성할 수 있도록 `View`에게 요 합니다. 
+`Controller`는 `Task`에게서 변경 이벤트가 발생하면 화면을 재구성할 수 있도록 `View`에게 요청 합니다. 
 
 > 1. `constructor`에서는 할일을 나타내는 `title`과 `Task`의 완료여부를 나타내는 `complete`와 하위 목록을 나타내는 `list`를 저장 합니다.
 > 2. `listen`은 `Sub Task`에서 이벤트가 발생하면 호출되며 자신을 구독하고 있는 다른 `observer`에게 상태를 전파합니다. 
