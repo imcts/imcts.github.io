@@ -557,5 +557,5 @@ router.set('index', new IndexController(router))
 `MVC Pattern`을 사용하는 이유는 단순히 코드를 짧고 간결하게 작성하는 것에 있지 않고 `관심사별로 코드를 나누고 관리`함으로써 프로그램의 `변화`에 쉽게 대응할 수 있게 되는 점에 있습니다. 
 
 
-- [CodeSpitz 76 MVC 패턴](https://www.youtube.com/watch?v=cZUBuiPaogw&t=1041s)에서 확인할 수 있습니다.
-- [예제코드](https://github.com/imcts/imcts.github.io/tree/master/project/codespitz/mvc)
+> [CodeSpitz 76 MVC 패턴](https://www.youtube.com/watch?v=cZUBuiPaogw&t=1041s)  
+> [예제코드](https://github.com/imcts/imcts.github.io/tree/master/project/codespitz/mvc)
