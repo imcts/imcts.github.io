@@ -106,7 +106,7 @@ const Observer = class extends Set {
 <h3>Model</h3>
 ````javascript
 const Model = (() => {
-  const PRIVATE = new Map()
+  const PRIVATE = new WeakMap()
 
   return class extends Observer {
     constructor (props) {
@@ -127,7 +127,7 @@ const Model = (() => {
   }
 })()
 ````
-`Model`은 순수한 데이터를 표현합니다. 자바스크립트는 언어적으로 `은닉화`를 지원하지 않기 때문에 `closure`를 활용하여 내부에 `Map`을 활용한 `PRIVATE`변수를 선언 합니다. 
+`Model`은 순수한 데이터를 표현합니다. 자바스크립트는 언어적으로 `은닉화`를 지원하지 않기 때문에 `closure`를 활용하여 내부에 `WeakMap`을 활용한 `PRIVATE`변수를 선언 합니다. 
 `Model`이 인스턴스화 되면 해당 객체를 `key`로 사용하여 `properties`를 저장하고 사용할 수 있도록 `은닉화`하여 `properties`를 외부에서 사용할 수 없도록 합니다.   
 
 > 1. `constructor`에서는 전달받은 `properties`를 `PRIVATE`에 저장 합니다. 

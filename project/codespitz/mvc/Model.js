@@ -1,5 +1,5 @@
 const Model = (() => {
-  const PRIVATE = new Map()
+  const PRIVATE = new WeakMap()
 
   return class extends Observer {
     constructor (props) {
