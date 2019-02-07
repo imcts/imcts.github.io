@@ -560,5 +560,5 @@ router.set('index', new IndexController(router))
 <br>
 <br>
 <h3>Where are the references?</h3>
-> [CodeSpitz 76 MVC 패턴](https://www.youtube.com/watch?v=cZUBuiPaogw&t=1041s)  
+> [CodeSpitz 79 MVC 패턴](https://www.youtube.com/watch?v=cZUBuiPaogw&t=1041s)  
 > [Example Codes](https://github.com/imcts/imcts.github.io/tree/master/project/codespitz/mvc)
