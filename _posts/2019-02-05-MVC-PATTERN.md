@@ -557,6 +557,8 @@ router.set('index', new IndexController(router))
 우리는 `TODO`라는 큰 프로그램을 10가지 관심사로 분리하여 작성할 수 있었습니다. 그리고 각 역할에 맞는 코드를 작성하고 조합했을 뿐인데도 `TODO`리스트를 완성할 수 있었습니다. 
 `MVC Pattern`을 사용하는 이유는 단순히 코드를 짧고 간결하게 작성하는 것에 있지 않고 `관심사별로 코드를 나누고 관리`함으로써 프로그램의 `변화`에 쉽게 대응할 수 있게 되는 점에 있습니다. 
 
-
+<br>
+<br>
+<h3>Where are the references?</h3>
 > [CodeSpitz 76 MVC 패턴](https://www.youtube.com/watch?v=cZUBuiPaogw&t=1041s)  
-> [예제코드](https://github.com/imcts/imcts.github.io/tree/master/project/codespitz/mvc)
+> [Example Codes](https://github.com/imcts/imcts.github.io/tree/master/project/codespitz/mvc)
