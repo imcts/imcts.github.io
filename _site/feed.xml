@@ -5,8 +5,8 @@
     <description>Developer</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 06 Feb 2019 22:09:09 +0900</pubDate>
-    <lastBuildDate>Wed, 06 Feb 2019 22:09:09 +0900</lastBuildDate>
+    <pubDate>Thu, 07 Feb 2019 23:07:31 +0900</pubDate>
+    <lastBuildDate>Thu, 07 Feb 2019 23:07:31 +0900</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -120,7 +120,7 @@
 
 &lt;h3&gt;Model&lt;/h3&gt;
 &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;PRIVATE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;PRIVATE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;WeakMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 
   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Observer&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;constructor&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -141,8 +141,9 @@
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;})()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Model&lt;/code&gt;은 순수한 데이터를 표현합니다. 자바스크립트는 언어적으로 &lt;code class=&quot;highlighter-rouge&quot;&gt;은닉화&lt;/code&gt;를 지원하지 않기 때문에 &lt;code class=&quot;highlighter-rouge&quot;&gt;closure&lt;/code&gt;를 활용하여 내부에 &lt;code class=&quot;highlighter-rouge&quot;&gt;Map&lt;/code&gt;을 활용한 &lt;code class=&quot;highlighter-rouge&quot;&gt;PRIVATE&lt;/code&gt;변수를 선언 합니다. 
-&lt;code class=&quot;highlighter-rouge&quot;&gt;Model&lt;/code&gt;이 인스턴스화 되면 해당 객체를 &lt;code class=&quot;highlighter-rouge&quot;&gt;key&lt;/code&gt;로 사용하여 &lt;code class=&quot;highlighter-rouge&quot;&gt;properties&lt;/code&gt;를 저장하고 사용할 수 있도록 &lt;code class=&quot;highlighter-rouge&quot;&gt;은닉화&lt;/code&gt;하여 &lt;code class=&quot;highlighter-rouge&quot;&gt;properties&lt;/code&gt;를 외부에서 사용할 수 없도록 합니다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Model&lt;/code&gt;은 순수한 데이터를 표현합니다. 자바스크립트는 언어적으로 &lt;code class=&quot;highlighter-rouge&quot;&gt;은닉화&lt;/code&gt;를 지원하지 않으므로 &lt;code class=&quot;highlighter-rouge&quot;&gt;WeakMap&lt;/code&gt;과 &lt;code class=&quot;highlighter-rouge&quot;&gt;closure&lt;/code&gt;를 활용하여 &lt;code class=&quot;highlighter-rouge&quot;&gt;PRIVATE&lt;/code&gt;변수를 선언 합니다.&lt;br /&gt;
+&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;Model&lt;/code&gt;이 인스턴스화 되면 해당 객체를 &lt;code class=&quot;highlighter-rouge&quot;&gt;key&lt;/code&gt;로 사용하여 &lt;code class=&quot;highlighter-rouge&quot;&gt;properties&lt;/code&gt;를 저장하고 사용할 수 있도록 &lt;code class=&quot;highlighter-rouge&quot;&gt;은닉화&lt;/code&gt;하고 외부에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;properties&lt;/code&gt;에 접근할 수 없도록 합니다.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;ol&gt;
@@ -263,7 +264,7 @@
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;new-task&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/main&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;View&lt;/code&gt;를 구성하기 전에 먼저 화면의 &lt;code class=&quot;highlighter-rouge&quot;&gt;Interface&lt;/code&gt;를 작 합니다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;View&lt;/code&gt;를 구성하기 전에 먼저 화면의 &lt;code class=&quot;highlighter-rouge&quot;&gt;Interface&lt;/code&gt;를 작성 합니다.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;ol&gt;
