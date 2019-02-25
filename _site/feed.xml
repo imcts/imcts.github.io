@@ -5,8 +5,8 @@
     <description>Developer</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 25 Feb 2019 13:25:24 +0900</pubDate>
-    <lastBuildDate>Mon, 25 Feb 2019 13:25:24 +0900</lastBuildDate>
+    <pubDate>Mon, 25 Feb 2019 13:42:35 +0900</pubDate>
+    <lastBuildDate>Mon, 25 Feb 2019 13:42:35 +0900</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -15,7 +15,7 @@
 
 &lt;iframe width=&quot;100%&quot; height=&quot;730&quot; style=&quot;max-width: 100%; margin-top: 0px&quot; src=&quot;/project/codespitz/line-game2&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
-        <pubDate>Mon, 25 Feb 2019 05:00:00 +0900</pubDate>
+        <pubDate>Sun, 24 Feb 2019 05:00:00 +0900</pubDate>
         <link>http://localhost:4000/BLOCK-LINE-GAME/</link>
         <guid isPermaLink="true">http://localhost:4000/BLOCK-LINE-GAME/</guid>
         

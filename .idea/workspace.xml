@@ -2,28 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55d7771c-0815-409c-ab6d-8f157d014b9d" name="Default" comment="공백 제거">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/choitaesan.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_posts/2019-02-24-BLOCK-LINE-GAME.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/codespitz/line-game2/constant/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/codespitz/line-game2/controller/Game.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/codespitz/line-game2/image/block0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/codespitz/line-game2/image/block1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/codespitz/line-game2/image/block2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/codespitz/line-game2/image/block3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/codespitz/line-game2/image/block4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/codespitz/line-game2/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/codespitz/line-game2/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/codespitz/line-game2/model/Block.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/codespitz/line-game2/protocol/Message.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/codespitz/line-game2/renderer/BlockRenderer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/codespitz/line-game2/renderer/DivRenderer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/codespitz/line-game2/renderer/Renderer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/codespitz/line-game2/renderer/SectionRenderer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2019-02-24-BLOCK-LINE-GAME.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2019-02-24-BLOCK-LINE-GAME.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/feed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_site/feed.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,23 +28,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_posts/2019-02-24-BLOCK-LINE-GAME.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="135">
-                <caret line="9" selection-start-line="9" selection-end-line="9" />
+              <first_editor relative-caret-position="45">
+                <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
               </first_editor>
               <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/project/codespitz/line-game2/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="28" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -167,8 +139,8 @@
         <option value="$PROJECT_DIR$/project/codespitz/mvc/FolderController.js" />
         <option value="$PROJECT_DIR$/project/memo/js/test.js" />
         <option value="$PROJECT_DIR$/project/bear/src/view/component/list/CartList.js" />
-        <option value="$PROJECT_DIR$/_posts/2019-02-24-BLOCK-LINE-GAME.md" />
         <option value="$PROJECT_DIR$/project/codespitz/line-game2/index.html" />
+        <option value="$PROJECT_DIR$/_posts/2019-02-24-BLOCK-LINE-GAME.md" />
       </list>
     </option>
   </component>
@@ -189,7 +161,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -224,6 +195,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -359,7 +331,8 @@
       <workItem from="1550035725193" duration="641000" />
       <workItem from="1550387308724" duration="260000" />
       <workItem from="1550898921538" duration="145000" />
-      <workItem from="1551068387269" duration="337000" />
+      <workItem from="1551068387269" duration="501000" />
+      <workItem from="1551068960405" duration="171000" />
     </task>
     <task id="LOCAL-00001" summary="add bears">
       <created>1545550852267</created>
@@ -442,7 +415,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134057000" />
+    <option name="totallyTimeSpent" value="134392000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -454,10 +427,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="2560" height="1340" extended-state="6" />
+    <frame x="0" y="23" width="2560" height="1340" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.175139" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17633042" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
@@ -473,7 +446,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.32902467" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.25801283" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.25801283" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32902467" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
@@ -937,20 +910,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2019-02-24-BLOCK-LINE-GAME.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="135">
-            <caret line="9" selection-start-line="9" selection-end-line="9" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/project/codespitz/line-game2/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/codespitz/line-game2/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="28" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="28" />
+    <entry file="file://$PROJECT_DIR$/_posts/2019-02-24-BLOCK-LINE-GAME.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="45">
+            <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
