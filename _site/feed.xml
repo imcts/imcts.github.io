@@ -5,9 +5,22 @@
     <description>Developer</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 07 Feb 2019 23:17:12 +0900</pubDate>
-    <lastBuildDate>Thu, 07 Feb 2019 23:17:12 +0900</lastBuildDate>
+    <pubDate>Mon, 25 Feb 2019 13:25:24 +0900</pubDate>
+    <lastBuildDate>Mon, 25 Feb 2019 13:25:24 +0900</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>OOP LINE-GAME</title>
+        <description>&lt;p&gt;프로시저 형태로 게임을 작성해보고 점층적으로 &lt;code class=&quot;highlighter-rouge&quot;&gt;OOP&lt;/code&gt;방식으로 개선해나가며 학습하기 위한 게임 입니다.&lt;/p&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;730&quot; style=&quot;max-width: 100%; margin-top: 0px&quot; src=&quot;/project/codespitz/line-game2&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Mon, 25 Feb 2019 05:00:00 +0900</pubDate>
+        <link>http://localhost:4000/BLOCK-LINE-GAME/</link>
+        <guid isPermaLink="true">http://localhost:4000/BLOCK-LINE-GAME/</guid>
+        
+        
+      </item>
     
       <item>
         <title>MVC PATTERN</title>
@@ -615,7 +628,7 @@
 &lt;br /&gt;&lt;/p&gt;
 &lt;h3&gt;Where are the references?&lt;/h3&gt;
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=cZUBuiPaogw&amp;amp;t=1041s&quot;&gt;CodeSpitz 76 MVC 패턴&lt;/a&gt;&lt;br /&gt;
+  &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=cZUBuiPaogw&amp;amp;t=1041s&quot;&gt;CodeSpitz 79 MVC 패턴&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://github.com/imcts/imcts.github.io/tree/master/project/codespitz/mvc&quot;&gt;Example Codes&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
@@ -2116,244 +2129,6 @@ node &lt;span class=&quot;nt&quot;&gt;--inspect&lt;/span&gt;&lt;span class=&quot
         <pubDate>Fri, 09 Nov 2018 11:00:00 +0900</pubDate>
         <link>http://localhost:4000/ES6-TEMPLATE-LITERAL/</link>
         <guid isPermaLink="true">http://localhost:4000/ES6-TEMPLATE-LITERAL/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>ES6 - INTRODUCE, LET, CONST</title>
-        <description>&lt;h3 id=&quot;1-ecmascript&quot;&gt;1. ECMAScript&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;ECMA&lt;/strong&gt;란 European Computer Manufactures Association에서 출발하여 &lt;strong&gt;1994&lt;/strong&gt;년에 정보 통신 기술 표준 연구회의 의미로서 변경된 기관명 입니다. 
-그 결과 더이상 ECMA는 단어의 앞글자를 따서 만들어진 글자가 아닌 그 자체로의 의미를 가지게 됩니다. 
-이 협회는 다양한 언어나 규격에 대한 표준을 정의하게 되는데 그 중 하나가 ECMA-262 입니다.&lt;/p&gt;
-
-&lt;table class=&quot;table table-striped table-hover&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;판&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;출판일&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;특징&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1997년 6월&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;초판&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1998년 6월&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;ISO/IEC 16262 국제 표준과 완전히 동일한 규격을 적용&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1999년 12월&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;정규 표현식, 문자열 처리, 제어문, 예외처리, 오류 정의, 수치형 출력 포맷팅등 언어로서의 &lt;br /&gt;기능 추가&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;-&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;정치적 차이 및 이슈 및 너무 급격한 변화에 대해 반대가 심하여 폐기되었다. &lt;br /&gt; 이때 만들어진 스펙은 5판의 기본이 되었다.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2009년 12월&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;더 정확한 오류검사 지원, “strict mode”지원, Object.define 지원 등을 함으로써 read only &lt;br /&gt;property등을 만들 수 있도록 변경되었다.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;6&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2015년 6월&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Class, Module등의 기능을 지원한다. “ECMAScript Harmony”, “ES6 Harmony”, &lt;br /&gt;“ECMAScript 2015”등으로 불리워진다.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;7&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2016년 3월&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Array.prototype.includes, 지수연산(**) 스펙을 추가&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;8&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2017년 6월&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Async Await및 Object.entries, String.padStart, String.padEnd 추가&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;3판 출시 이후 5판 출시까지 10년이 걸렸습니다. 그 후 6판까지 다시 7년이라는 시간이 지나는 바람에 6판이 출시될때에는 많은 변화가 있었는데요. 
-앞으로 ECMA측은 매년 새로운 표준을 정의 하며 두번 다시 6판처럼 많은 변화가 일어날 일은 없을거라고 하였습니다. 또한 자바스크립트는 하위버전의 모든것을 그대로 유지하는 것을 약속 했으니 
-기존 코드로 작성되어 있던 모든 브라우저도 문제 없이 동작하겠네요.&lt;/p&gt;
-
-&lt;h3 id=&quot;2-호이스팅hoisting&quot;&gt;2. 호이스팅(Hoisting)&lt;/h3&gt;
-&lt;p&gt;자바스크립트의 호이스팅이란 함수 선언식으로 선언된 함수와 변수를 함수 스코프의 최상단으로 끌어 올리는 것을 말 합니다. 
-즉, &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt;로 선언된 변수나 &lt;code class=&quot;highlighter-rouge&quot;&gt;function f () {}&lt;/code&gt;로 선언된 함수는 현재 스코프의 최상단으로 끌어 올려 진다는 이야기 입니다.&lt;/p&gt;
-
-&lt;h4 id=&quot;변수의-호이스팅&quot;&gt;변수의 호이스팅&lt;/h4&gt;
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// undefined&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// global scope&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;먼저 변수의 호이스팅을 볼까요? &lt;code class=&quot;highlighter-rouge&quot;&gt;global scope&lt;/code&gt;에 &lt;code class=&quot;highlighter-rouge&quot;&gt;var a&lt;/code&gt;가 선언되기 전에 a를 호출을 하면 &lt;code class=&quot;highlighter-rouge&quot;&gt;undefined&lt;/code&gt;가 출력 된다는 것이지요. 
-형 안전언어 (safe language)를 사용하던 개발자분들에게는 퍽이나 당황스러운 상황인 거죠. 변수를 선언하기 전에 사용하면 값이 할당되어 있다는 것은 꽤나 충격적인 일이니까요.&lt;br /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;undefined&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// undefined&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// global scope&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;처음의 코드의 실행 부분이 &lt;code class=&quot;highlighter-rouge&quot;&gt;undefined&lt;/code&gt;가 출력되었던 이유는 다음과 같습니다. 자바스크립트는 현재 스코프의 모든 변수들을 읽어들여 최상단에서 해당 변수들을 선언하고 &lt;code class=&quot;highlighter-rouge&quot;&gt;undefined&lt;/code&gt;를 할당하기 때문이죠. 
-이런 동작은 자바스크립트 개발자들에게는 너무나 당연한 동작인 반면 처음 자바스크립트를 접하는 개발자들의 경우에는 당황하게 되는 요소기도 합니다.&lt;/p&gt;
-
-&lt;h4 id=&quot;함수의-호이스팅&quot;&gt;함수의 호이스팅&lt;/h4&gt;
-&lt;p&gt;다음은 함수의 호이스팅도 한번 볼까요?&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;F&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;함수또한 변수와 마찬가지로 함수 선언식으로 구현된 함수라면 현재 스코프의 최상단으로 끌어 올려지게 됩니다. 변수의 호이스팅을 보고 오니 별로 어렵진 않죠?&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// TypeError: F is not a constructor&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;F&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;F&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;하지만 이렇게 작성하면 &lt;code class=&quot;highlighter-rouge&quot;&gt;TypeError&lt;/code&gt;를 출력하게 되니 조심하셔야 해요. 자바스크립트에서 함수는 값으로 전달될 수 있는 일급객체로서 변수에 할당될 수 있기 때문인데요.&lt;br /&gt;
-위처럼 함수를 변수에 할당하게 되면 함수는 값으로 처리되어, 호이스팅 되지 않기 때문입니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;F&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;undefined&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// TypeError: F is not a constructor&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;F&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;F&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;이렇게 해석되기 때문이죠.&lt;/p&gt;
-
-&lt;h3 id=&quot;3-var-선언식의-문제점&quot;&gt;3. var 선언식의 문제점&lt;/h3&gt;
-
-&lt;h4 id=&quot;중복-선언&quot;&gt;중복 선언&lt;/h4&gt;
-
-&lt;p&gt;기존 변수 선언식 &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt;의 문제점은 뭘까요? 첫번째로는 중복으로 선언이 가능하다는 점 입니다.&lt;/p&gt;
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12345&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 12345&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;56789&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 56789&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;위 코드와 같이 같은 스코프 내에 있음에도 불구하고 지속적으로 같은 변수를 선언할 수 있게 되는거죠. &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt; 변수 선언식으로 작성 되었기 때문에 호이스팅되어 동작에 문제가 없다는 것은 
-위의 &lt;code class=&quot;highlighter-rouge&quot;&gt;호이스팅&lt;/code&gt;으로 인해 알게 되었지만, 자바스크립트를 능숙하게 사용하지 않는 개발자가 접했을때에는 충분히 당황하게 될만한 코드임에는 분명 합니다. 추후에 하나의 코드를 지워야할때 어떤 var를 지워야할지도 
-알 수 없게 될 수 있겠네요.&lt;/p&gt;
-
-&lt;h4 id=&quot;함수-스코프&quot;&gt;함수 스코프&lt;/h4&gt;
-&lt;p&gt;두번째로는 변수의 스코프가 함수 스코프를 참조 한다는 것입니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-       &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;blue&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
-
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// blue&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 10 &lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;조건문 안에서 선언된 변수가 조건문의 블록스코프 밖에서 사용되어지고 반복문의 초기값에 선언된 변수가 반복문의 블록스코프를 벗어난 후에도 사용될 수 있다는 것이죠.
-이로 인해 기존의 자바스크립트는 백엔드 개발자 분들에게는 두려움의 세계였던 것이기도 합니다. 실제로 잘 모르는 상태로 접근한다면 중복 선언된 변수를 사용하거나 없어졌다고 생각했던 변수가 함수 스코프에 남아 있기 때문에 
-오류를 발생시키는 등의 일도 빈번했었죠. 물론 이 외에도 var를 붙이지 않고 값을 사용하면 window에 값이 적용되는 등 버그가 있는등 수없이 많은 문제가 재기되어 왔었습니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;4-const-let&quot;&gt;4. const, let&lt;/h3&gt;
-
-&lt;p&gt;그렇다면 &lt;code class=&quot;highlighter-rouge&quot;&gt;ES6&lt;/code&gt;에 추가된 많은 기능 중 오늘 정리할 &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt;과 &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt;의 사용법을 먼저 알아볼까요?&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 선언&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// 할당&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'variable'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// 재할당&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'variable2'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// 선언 및 할당&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;finalValue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'finalValue'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// 선언&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;finalValue1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Uncaught SyntaxError: Missing initializer in const declaration&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt;의 경우에는 기존의 &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt; 선언식처럼 선언문과 할당문을 나누어서 사용할 수 있으며, 값의 재할당도 얼마든지 가능 합니다. 정말 변하는 값을 담는 수인 변수의 역할로 사용할 수 있습니다.&lt;br /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt;의 경우에는 상수이기 때문에 선언과 동시에 값을 할당해야 하며 한번 값을 한번하게 되면 두번 다시 변경할 수 없습니다.&lt;/p&gt;
-
-&lt;h4 id=&quot;중복선언-불가&quot;&gt;중복선언 불가&lt;/h4&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt;표현식의 문제점이었던 중복 선언에는 어떤지 한번 볼까요 ?&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Uncaught SyntaxError: Identifier 'value' has already been declared&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'value'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Uncaught SyntaxError: Identifier 'value' has already been declared&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;보다시피 동일한 스코프에서 중복하여 같은 변수를 선언하개 되면, 중복 선언 에러를 발생시키며 프로그램이 종료 됩니다. 이는 &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt;과 &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt;모두 동일합니다.&lt;br /&gt;
-즉, &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt;또는 &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt;로 선언된 변수가 있다면 또 다시 같은 변수를 선언할시 무조건 중복 선언 에러를 발생시킵니다.&lt;/p&gt;
-
-&lt;h4 id=&quot;블록-스코프&quot;&gt;블록 스코프&lt;/h4&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt;과 &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt;는 함수 스코프가 아닌 블록 스코프를 변수의 유효 범위로 생성 합니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 2&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 1&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Chrome: 10&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Safari, Firefox, Opera : ReferenceError: i is not defined&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// value2 is not defined&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt;과 &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt;는 블록 스코프 안에서 사용되는 경우 해당 블록에 대한 별도의 정적 스코프를 생성 합니다. 
-그로인해 중복 선언의 개념이 아닌 새로운 스코프에 변수를 선언하는 개념으로 생각하면 됩니다. 그렇기 때문에 조건문 안에서 출력된 &lt;code class=&quot;highlighter-rouge&quot;&gt;value&lt;/code&gt;는 조건문 밖에서 선언된 &lt;code class=&quot;highlighter-rouge&quot;&gt;value&lt;/code&gt;와 중복 선언에 대한 오류를 발생시키지 않고 
-상위 변수를 가리는(shading) 역할을 수행하게 됩니다. 마찬가지로 반복문의 블록 스코프 안에서 선언된 &lt;code class=&quot;highlighter-rouge&quot;&gt;value2&lt;/code&gt;는 블록 스코프 밖에서 사용되는 경우 비선언 에러를 발생시키게 됩니다.&lt;br /&gt;
-재미있는 것은 반복문의 초기값 영역에서 선언된 &lt;code class=&quot;highlighter-rouge&quot;&gt;let i&lt;/code&gt;의 경우 현재 시간 크롬에서는 에러를 발생시키지 않고 정상적으로 10을 출력하고 있다는 점이네요. &lt;strong&gt;(예전에는 안됐었는데)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;조건문에서의-블록-스코프&quot;&gt;조건문에서의 블록 스코프&lt;/h4&gt;
-&lt;p&gt;조건문에서 블록 스코프를 만들지 않고도 변수를 선언할 수 있을까요?&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Unexpected token const&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt;이나 &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt;는 반드시 블록 스코프를 자신의 정적 스코프 영역으로 삼아야 하므로 조건문에 블록 스코프가 없는 경우라면 에러를 발생 시키는 것을 알 수 있습니다.&lt;/p&gt;
-
-&lt;h4 id=&quot;tdz-temporal-dead-zone&quot;&gt;TDZ (Temporal Dead Zone)&lt;/h4&gt;
-&lt;p&gt;임시 죽음 공간이라 불리워지는 이 공간은 변수를 선언하기 직전에 호출하면 에러를 발생시키는 영역입니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// TDZ&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// value is not defined // TDZ&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// TDZ&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;위 코드처럼 변수가 실제로 선언되기 직전 변수를 호출하면 그 즉시 프로그램을 종료하는 영역이라고 생각하면 됩니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// value is not defined&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;마찬가지로 상위에 변수가 선언되어 있더라도, 자바스크립트는 새로운 블록을 만나는 순간 새로운 블록 스코프를 생성하므로 비선언 에러를 발생시키며 프로그램을 종료 합니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;unDefinededValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// undefined&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// value is not defined&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;마지막으로 어떤 값이 오더라도 에러를 발생시키지 않는 &lt;code class=&quot;highlighter-rouge&quot;&gt;typeof&lt;/code&gt; 조차도 &lt;code class=&quot;highlighter-rouge&quot;&gt;TDZ&lt;/code&gt;에는 에러를 발생 시키는 걸 볼 수 있습니다.&lt;/p&gt;
-</description>
-        <pubDate>Sat, 03 Nov 2018 20:00:00 +0900</pubDate>
-        <link>http://localhost:4000/ES6-LET-CONST-TDZ/</link>
-        <guid isPermaLink="true">http://localhost:4000/ES6-LET-CONST-TDZ/</guid>
         
         
       </item>
