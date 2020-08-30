@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="55d7771c-0815-409c-ab6d-8f157d014b9d" name="Default" comment="공백 제거">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/choitaesan.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/choitaesan.xml" afterDir="false" />
+    <list default="true" id="55d7771c-0815-409c-ab6d-8f157d014b9d" name="Default" comment="이력서 업데이트">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/bear/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/bear/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/resume/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/resume/css/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/resume/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/resume/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -12,6 +11,11 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -28,16 +32,15 @@
     <select />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project/resume/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="281" column="12" lean-forward="true" selection-start-line="281" selection-start-column="12" selection-end-line="281" selection-end-column="12" />
+            <state relative-caret-position="781">
+              <caret line="93" column="47" lean-forward="true" selection-start-line="93" selection-start-column="47" selection-end-line="93" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -46,17 +49,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>제왕적</find>
-      <find>View`에게 요</find>
-      <find>Inter</find>
-      <find>Interface</find>
-      <find>Map</find>
-      <find>은닉화</find>
-      <find>toggle</find>
-      <find>title</find>
-      <find>requestAni</find>
-      <find>start(</find>
-      <find>start</find>
       <find>drawGraph</find>
       <find>setInterval</find>
       <find>setBlock</find>
@@ -76,15 +68,26 @@
       <find>this.</find>
       <find>BEAR_COUNT_CHANGED</find>
       <find>OCJP</find>
+      <find>span</find>
+      <find>&lt;span class=&quot;label label-default&quot;&gt;Default&lt;/span&gt;</find>
+      <find>자동차</find>
+      <find>Devleop</find>
+      <find>Develop</find>
+      <find>Map Api</find>
+      <find>상품평 개편</find>
+      <find>티켓 인증</find>
+      <find>티켓 인증</find>
+      <find>카카오톡 티켓 인증</find>
+      <find>재학중</find>
     </findStrings>
     <dirStrings>
-      <dir>$PROJECT_DIR$/_posts</dir>
       <dir>$PROJECT_DIR$/_sass</dir>
       <dir>$PROJECT_DIR$/_includes</dir>
       <dir>$PROJECT_DIR$</dir>
       <dir>$PROJECT_DIR$/_layouts</dir>
       <dir>$PROJECT_DIR$/project/codespitz/mvc</dir>
       <dir>$PROJECT_DIR$/project/bear/src</dir>
+      <dir>$PROJECT_DIR$/_posts</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -95,6 +98,7 @@
       <list>
         <option value="$PROJECT_DIR$/project/bear/src/index.js" />
         <option value="$PROJECT_DIR$/project/bear/src/core/View.js" />
+        <option value="$PROJECT_DIR$/project/resume/css/index.css" />
         <option value="$PROJECT_DIR$/project/resume/index.html" />
       </list>
     </option>
@@ -110,8 +114,8 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
-    <option name="width" value="2560" />
-    <option name="height" value="1334" />
+    <option name="width" value="1680" />
+    <option name="height" value="944" />
   </component>
   <component name="ProjectId" id="1R56BlEkfpC3N3CtrcqgNzC9FSj" />
   <component name="ProjectView">
@@ -120,6 +124,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -130,18 +135,25 @@
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="resume" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="resume" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -316,7 +328,11 @@
       <workItem from="1574834254267" duration="4000" />
       <workItem from="1577925333630" duration="3000" />
       <workItem from="1579589630510" duration="85000" />
-      <workItem from="1582872367142" duration="1624000" />
+      <workItem from="1582872367142" duration="2472000" />
+      <workItem from="1583912904873" duration="224000" />
+      <workItem from="1583980065875" duration="356000" />
+      <workItem from="1597593103169" duration="564000" />
+      <workItem from="1598783388326" duration="8367000" />
     </task>
     <task id="LOCAL-00001" summary="add bears">
       <created>1545550852267</created>
@@ -395,11 +411,18 @@
       <option name="project" value="LOCAL" />
       <updated>1549548149413</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="이력서 업데이트">
+      <created>1582876364617</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1582876364617</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10902000" />
+    <option name="totallyTimeSpent" value="21261000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -411,10 +434,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="944" extended-state="6" />
+    <frame x="0" y="23" width="2560" height="1333" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.25213677" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.110802226" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -431,9 +454,13 @@
       <window_info anchor="bottom" id="Reviews" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.14084508" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.09669621" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="13" />
+      <window_info anchor="bottom" id="Anonymous Apex" order="14" />
+      <window_info anchor="bottom" id="Log Analyzer" order="15" />
+      <window_info anchor="bottom" id="SOQL Query" order="16" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -492,7 +519,8 @@
     <MESSAGE value="코드리뷰 반영" />
     <MESSAGE value="글 수정" />
     <MESSAGE value="공백 제거" />
-    <option name="LAST_COMMIT_MESSAGE" value="공백 제거" />
+    <MESSAGE value="이력서 업데이트" />
+    <option name="LAST_COMMIT_MESSAGE" value="이력서 업데이트" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/project/bear/src/api/index.js">
@@ -688,10 +716,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/project/resume/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="361" column="1" lean-forward="true" selection-start-line="361" selection-start-column="1" selection-end-line="361" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/block.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="249" column="15" lean-forward="true" selection-start-line="249" selection-start-column="15" selection-end-line="249" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/elements.markdown">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="127">
+            <caret line="172" column="9" selection-start-line="172" selection-start-column="9" selection-end-line="172" selection-end-column="9" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2016-11-06-sort-insert.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2016-11-06-sort-merge.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2016-11-06-canvas-draw.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="105">
+            <caret line="7" selection-start-line="7" selection-end-line="7" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2016-09-25-math-ratio.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/elevator/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/project/resume/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="281" column="12" lean-forward="true" selection-start-line="281" selection-start-column="12" selection-end-line="281" selection-end-column="12" />
+        <state relative-caret-position="781">
+          <caret line="93" column="47" lean-forward="true" selection-start-line="93" selection-start-column="47" selection-end-line="93" selection-end-column="47" />
         </state>
       </provider>
     </entry>

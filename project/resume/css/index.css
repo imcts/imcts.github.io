@@ -369,3 +369,9 @@ body {
     line-height: 30px;
     vertical-align: middle;
 }
+
+.resume__project__list__role__item::before {
+    content: '-';
+    padding-left: 5px;
+    padding-right: 5px;
+}
