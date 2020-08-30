@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="55d7771c-0815-409c-ab6d-8f157d014b9d" name="Default" comment="이력서 업데이트">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/resume/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/resume/css/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/resume/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/resume/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,8 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project/resume/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="781">
-              <caret line="93" column="47" lean-forward="true" selection-start-line="93" selection-start-column="47" selection-end-line="93" selection-end-column="47" />
+            <state relative-caret-position="617">
+              <caret line="341" column="87" selection-start-line="341" selection-start-column="87" selection-end-line="341" selection-end-column="87" />
             </state>
           </provider>
         </entry>
@@ -49,12 +48,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>drawGraph</find>
-      <find>setInterval</find>
-      <find>setBlock</find>
-      <find>blocks[</find>
-      <find>getChangeBlock</find>
-      <find>calcRow</find>
       <find>drawArc</find>
       <find>minuteReverse</find>
       <find>secondReverse</find>
@@ -79,15 +72,21 @@
       <find>티켓 인증</find>
       <find>카카오톡 티켓 인증</find>
       <find>재학중</find>
+      <find>상세 프로</find>
+      <find>contact</find>
+      <find>resume</find>
+      <find>resume/index</find>
+      <find>650px</find>
+      <find>650</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/_sass</dir>
-      <dir>$PROJECT_DIR$/_includes</dir>
-      <dir>$PROJECT_DIR$</dir>
-      <dir>$PROJECT_DIR$/_layouts</dir>
       <dir>$PROJECT_DIR$/project/codespitz/mvc</dir>
       <dir>$PROJECT_DIR$/project/bear/src</dir>
       <dir>$PROJECT_DIR$/_posts</dir>
+      <dir>$PROJECT_DIR$/_layouts</dir>
+      <dir>$PROJECT_DIR$/_includes</dir>
+      <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -99,6 +98,8 @@
         <option value="$PROJECT_DIR$/project/bear/src/index.js" />
         <option value="$PROJECT_DIR$/project/bear/src/core/View.js" />
         <option value="$PROJECT_DIR$/project/resume/css/index.css" />
+        <option value="$PROJECT_DIR$/contact.md" />
+        <option value="$PROJECT_DIR$/_site/contact/index.html" />
         <option value="$PROJECT_DIR$/project/resume/index.html" />
       </list>
     </option>
@@ -131,24 +132,6 @@
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="resume" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="resume" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -332,7 +315,7 @@
       <workItem from="1583912904873" duration="224000" />
       <workItem from="1583980065875" duration="356000" />
       <workItem from="1597593103169" duration="564000" />
-      <workItem from="1598783388326" duration="8367000" />
+      <workItem from="1598783388326" duration="8970000" />
     </task>
     <task id="LOCAL-00001" summary="add bears">
       <created>1545550852267</created>
@@ -418,11 +401,25 @@
       <option name="project" value="LOCAL" />
       <updated>1582876364617</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="이력서 업데이트">
+      <created>1598796339648</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1598796339648</updated>
+    </task>
+    <task id="LOCAL-00014" summary="이력서 업데이트">
+      <created>1598796846116</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1598796846116</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21261000" />
+    <option name="totallyTimeSpent" value="21864000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -452,12 +449,12 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Reviews" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32957292" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.09669621" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.23851733" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="13" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.14665592" />
       <window_info anchor="bottom" id="Anonymous Apex" order="14" />
       <window_info anchor="bottom" id="Log Analyzer" order="15" />
       <window_info anchor="bottom" id="SOQL Query" order="16" />
@@ -781,10 +778,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/_layouts/post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/contact/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contact.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="45">
+            <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="17" lean-forward="true" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/project/resume/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="781">
-          <caret line="93" column="47" lean-forward="true" selection-start-line="93" selection-start-column="47" selection-end-line="93" selection-end-column="47" />
+        <state relative-caret-position="617">
+          <caret line="341" column="87" selection-start-line="341" selection-start-column="87" selection-end-line="341" selection-end-column="87" />
         </state>
       </provider>
     </entry>
