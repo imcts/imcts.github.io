@@ -38,12 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project/resume/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="459" column="43" selection-start-line="459" selection-start-column="43" selection-end-line="459" selection-end-column="43" />
-              <caret line="488" column="43" selection-start-line="488" selection-start-column="43" selection-end-line="488" selection-end-column="43" />
-              <caret line="521" column="43" selection-start-line="521" selection-start-column="43" selection-end-line="521" selection-end-column="43" />
-              <caret line="553" column="43" selection-start-line="553" selection-start-column="43" selection-end-line="553" selection-end-column="43" />
-              <caret line="174" column="70" selection-start-line="174" selection-start-column="70" selection-end-line="174" selection-end-column="70" />
+            <state relative-caret-position="527">
+              <caret line="158" column="74" selection-start-line="158" selection-start-column="74" selection-end-line="158" selection-end-column="74" />
             </state>
           </provider>
         </entry>
@@ -52,7 +48,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>arc</find>
       <find>subscribe</find>
       <find>this._model.</find>
       <find>click</find>
@@ -80,8 +75,9 @@
       <find>650px</find>
       <find>650</find>
       <find>병원가기</find>
-      <find>(주) 쿠팡</find>
       <find>포</find>
+      <find>쿠팡</find>
+      <find>(주) 쿠팡</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/_sass</dir>
@@ -128,7 +124,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -141,6 +136,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -319,7 +315,8 @@
       <workItem from="1583912904873" duration="224000" />
       <workItem from="1583980065875" duration="356000" />
       <workItem from="1597593103169" duration="564000" />
-      <workItem from="1598783388326" duration="9265000" />
+      <workItem from="1598783388326" duration="9736000" />
+      <workItem from="1605160455436" duration="121000" />
     </task>
     <task id="LOCAL-00001" summary="add bears">
       <created>1545550852267</created>
@@ -433,11 +430,18 @@
       <option name="project" value="LOCAL" />
       <updated>1598797118987</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="이력서 업데이트">
+      <created>1598797899557</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1598797899557</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22159000" />
+    <option name="totallyTimeSpent" value="22751000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -449,10 +453,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="2560" height="1333" extended-state="6" />
+    <frame x="0" y="23" width="2560" height="1334" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.110802226" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.083796665" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -469,7 +473,7 @@
       <window_info anchor="bottom" id="Reviews" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32957292" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.23851733" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.18438004" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.14665592" />
@@ -829,12 +833,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/project/resume/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="459" column="43" selection-start-line="459" selection-start-column="43" selection-end-line="459" selection-end-column="43" />
-          <caret line="488" column="43" selection-start-line="488" selection-start-column="43" selection-end-line="488" selection-end-column="43" />
-          <caret line="521" column="43" selection-start-line="521" selection-start-column="43" selection-end-line="521" selection-end-column="43" />
-          <caret line="553" column="43" selection-start-line="553" selection-start-column="43" selection-end-line="553" selection-end-column="43" />
-          <caret line="174" column="70" selection-start-line="174" selection-start-column="70" selection-end-line="174" selection-end-column="70" />
+        <state relative-caret-position="527">
+          <caret line="158" column="74" selection-start-line="158" selection-start-column="74" selection-end-line="158" selection-end-column="74" />
         </state>
       </provider>
     </entry>
