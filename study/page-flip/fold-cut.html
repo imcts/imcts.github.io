@@ -1,0 +1,691 @@
+<title>접힌 선으로 자르기</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap">
+<style>
+  :root {
+    --bg: #eef1f5;
+    --panel: #ffffff;
+    --ink: #1c2330;
+    --muted: #5b6676;
+    --line: #d3d9e2;
+    --p1: #e3e7ed;
+    --p2: #cddffb;
+    --p3: #fde0ae;
+    --p4: #cfeed7;
+    --fold: #cf2f47;
+    --pt-p: #cf2f47;
+    --pt-f: #2b67de;
+    --edge: #a8690f;
+    --alpha: #6a43d6;
+    --teal: #0b8079;
+    --btn: #f3f5f8;
+    --btn-hover: #e6eaf0;
+    --code-bg: #f5f7fa;
+    --grid: rgba(28, 35, 48, 0.08);
+    --dim: 0.18;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #11151c;
+      --panel: #1a2029;
+      --ink: #e6ebf2;
+      --muted: #98a4b5;
+      --line: #2c3543;
+      --p1: #2a313d;
+      --p2: #1f3a66;
+      --p3: #5e4519;
+      --p4: #1e4a2b;
+      --fold: #ff6b80;
+      --pt-p: #ff6b80;
+      --pt-f: #6fa3ff;
+      --edge: #f2b54e;
+      --alpha: #a98bff;
+      --teal: #3fd1c6;
+      --btn: #232a35;
+      --btn-hover: #2c3542;
+      --code-bg: #141922;
+      --grid: rgba(255, 255, 255, 0.08);
+      --dim: 0.24;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #11151c;
+    --panel: #1a2029;
+    --ink: #e6ebf2;
+    --muted: #98a4b5;
+    --line: #2c3543;
+    --p1: #2a313d;
+    --p2: #1f3a66;
+    --p3: #5e4519;
+    --p4: #1e4a2b;
+    --fold: #ff6b80;
+    --pt-p: #ff6b80;
+    --pt-f: #6fa3ff;
+    --edge: #f2b54e;
+    --alpha: #a98bff;
+    --teal: #3fd1c6;
+    --btn: #232a35;
+    --btn-hover: #2c3542;
+    --code-bg: #141922;
+    --grid: rgba(255, 255, 255, 0.08);
+    --dim: 0.24;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    padding-inline: 16px;
+    padding-block: 20px 40px;
+  }
+  .wrap { max-width: 1240px; margin: 0 auto; display: grid; gap: 14px; }
+  header { display: grid; gap: 4px; }
+  header .series { margin: 0; font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 14px; }
+  header .series a { color: var(--muted); }
+  header .series b { color: var(--ink); }
+  header h1 { margin: 0; font-size: 24px; letter-spacing: -0.01em; text-wrap: balance; }
+  header p.lead { margin: 0; color: var(--muted); max-width: 70ch; }
+
+  .grid { display: grid; grid-template-columns: minmax(0, 1fr) 400px; gap: 16px; align-items: start; }
+  @media (max-width: 980px) { .grid { grid-template-columns: minmax(0, 1fr); } }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+  .card h2 { margin: 0 0 8px; font-size: 13px; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; }
+  .side { display: grid; gap: 12px; }
+  .wrap > *, .grid > *, .side > *, .sec > *, .step-text > *, .txt > * { min-width: 0; }
+
+  .step-no { font-family: "IBM Plex Mono", ui-monospace, monospace; color: var(--muted); font-size: 13px; }
+  .step-title { margin: 2px 0 10px; font-size: 20px; text-wrap: balance; }
+  .step-text { display: grid; gap: 10px; min-height: 12em; }
+  .step-text p { margin: 0; }
+  .step-text .eq { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 14px; background: var(--code-bg); border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; overflow-x: auto; overflow-wrap: anywhere; }
+  .nav { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+  button {
+    font: inherit; font-size: 14px; color: var(--ink);
+    background: var(--btn); border: 1px solid var(--line); border-radius: 6px;
+    padding: 7px 14px; cursor: pointer;
+  }
+  button:hover { background: var(--btn-hover); }
+  button.primary { background: var(--ink); color: var(--panel); border-color: var(--ink); }
+  button:disabled { opacity: 0.4; cursor: default; }
+  button:focus-visible, input:focus-visible, li:focus-visible { outline: 2px solid var(--pt-f); outline-offset: 2px; }
+  .steps { margin: 14px 0 0; padding-left: 24px; display: grid; gap: 2px; }
+  .steps li { cursor: pointer; color: var(--muted); font-size: 14px; }
+  .steps li.on { color: var(--ink); font-weight: 700; }
+  .steps li:hover { color: var(--ink); }
+
+  b.p { color: var(--pt-p); }
+  b.f { color: var(--pt-f); }
+  b.fold { color: var(--fold); }
+  b.a { color: var(--alpha); }
+  b.t { color: var(--teal); }
+  b.e { color: var(--edge); }
+
+  .nums { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 3px 14px; font-size: 14px; }
+  .nums dt { color: var(--muted); }
+  .nums dd { margin: 0; font-family: "IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; text-align: right; }
+
+  pre.code { margin: 0; background: var(--code-bg); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; overflow-x: auto; font: 500 12.5px/1.65 "IBM Plex Mono", ui-monospace, monospace; color: var(--ink); }
+  pre.code .c { color: var(--muted); }
+
+  svg text { font-family: "IBM Plex Sans KR", "Apple SD Gothic Neo", system-ui, sans-serif; }
+  .lbl { font-size: 22px; font-weight: 700; paint-order: stroke; stroke: var(--panel); stroke-width: 6px; stroke-linejoin: round; }
+  .lbl.s { font-size: 18px; font-weight: 500; }
+  .grp { transition: opacity 0.25s ease; }
+  .grp.off { display: none; }
+  .grp.dim { opacity: var(--dim); }
+  @media (prefers-reduced-motion: reduce) { .grp { transition: none; } }
+</style>
+<style>
+  :root { --bar: rgba(28, 35, 48, 0.13); --num: rgba(28, 35, 48, 0.3); }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bar: rgba(255, 255, 255, 0.13); --num: rgba(255, 255, 255, 0.32); }
+  }
+  :root[data-theme="dark"] { --bar: rgba(255, 255, 255, 0.13); --num: rgba(255, 255, 255, 0.32); }
+
+  .step-text ul { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
+  .fit { position: relative; width: 100%; overflow: hidden; }
+  .fit > .inner { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+  .book { position: absolute; left: 90px; top: 110px; width: 1000px; height: 700px; }
+  .layer { position: absolute; left: 0; top: 0; width: 1000px; height: 700px; }
+  .page { position: absolute; top: 0; width: 500px; height: 700px; box-sizing: border-box; }
+  .page::before { content: ""; position: absolute; left: 44px; right: 44px; top: 96px; bottom: 70px; background: repeating-linear-gradient(to bottom, var(--bar) 0 14px, transparent 14px 50px); }
+  .page .cap { position: absolute; left: 24px; top: 18px; font-size: 22px; font-weight: 700; color: var(--muted); }
+  .page .big { position: absolute; inset: 0; display: grid; place-items: center; font-size: 170px; font-weight: 700; color: var(--num); }
+  .pg1 { left: 0; background: var(--p1); }
+  .pg4 { left: 500px; background: var(--p4); }
+  .pg2 { left: 500px; background: var(--p2); }
+  .pg3 { left: 0; background: var(--p3); transform-origin: 0 0; outline: 3px solid var(--edge); outline-offset: -3px; }
+  .pg3 .cap { color: var(--edge); }
+  svg.ov { position: absolute; left: 0; top: 0; touch-action: none; cursor: grab; }
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="series"><a href="a-prime.html" target="_blank" rel="noopener">1. A′ 구하고 돌리기</a><a href="clip-basics.html" target="_blank" rel="noopener">2. clip-path 기초</a><b>3. 접힌 선으로 자르기</b></p>
+    <h1>접힌 선으로 2 · 3 페이지 자르기</h1>
+    <p class="lead">접힌 선이 책 맨 위와 맨 아래에 닿는 두 점 S, E 를 중학교 일차식으로 구하고, 그 두 점으로 clip-path 다각형을 만들어 2 · 3 페이지를 자릅니다. "다음" 을 누르며 보세요.</p>
+  </header>
+
+  <div class="grid">
+    <section class="card" style="padding:8px">
+      <div class="fit" data-w="1340" data-h="920">
+        <div class="inner" style="width:1340px;height:920px">
+          <div class="book">
+            <div class="page pg1"><span class="big">1</span><span class="cap">1 페이지</span></div>
+            <div class="page pg4"><span class="big">4</span><span class="cap">4 페이지</span></div>
+            <div class="layer" id="pages">
+              <div class="page pg2"><span class="big">2</span><span class="cap">2 페이지</span></div>
+              <div class="page pg3" id="page3"><span class="big">3</span><span class="cap">3 페이지</span></div>
+            </div>
+          </div>
+          <svg class="ov" id="ov" width="1340" height="920" viewBox="-90 -110 1340 920" role="img" aria-label="접힌 선과 S, E, 자르는 다각형">
+            <defs>
+              <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--muted)"></path></marker>
+            </defs>
+            <rect x="0" y="0" width="1000" height="700" fill="none" style="stroke:var(--line)" stroke-width="2"></rect>
+
+            <g id="g-poly" class="grp">
+              <polygon id="poly" style="fill:var(--teal);stroke:var(--teal)" fill-opacity="0.1" stroke-width="4" stroke-dasharray="12 8"></polygon>
+              <g id="polyN"></g>
+            </g>
+
+            <g id="g-rows" class="grp">
+              <line x1="-60" y1="0" x2="1240" y2="0" style="stroke:var(--teal)" stroke-width="2.5" stroke-dasharray="4 6"></line>
+              <line x1="-60" y1="700" x2="1240" y2="700" style="stroke:var(--teal)" stroke-width="2.5" stroke-dasharray="4 6"></line>
+              <text class="lbl s" x="-60" y="-16" style="fill:var(--teal)">책 맨 위 줄 (y = 0)</text>
+              <text class="lbl s" x="-60" y="740" style="fill:var(--teal)">책 맨 아래 줄 (y = 700)</text>
+            </g>
+
+            <g id="g-axes" class="grp">
+              <line x1="0" y1="-66" x2="230" y2="-66" style="stroke:var(--muted)" stroke-width="3" marker-end="url(#arr)"></line>
+              <text class="lbl s" x="244" y="-59" style="fill:var(--muted)">x 가 커짐</text>
+              <line x1="-62" y1="40" x2="-62" y2="260" style="stroke:var(--muted)" stroke-width="3" marker-end="url(#arr)"></line>
+              <text class="lbl s" x="-62" y="292" text-anchor="middle" style="fill:var(--muted)">y 가</text>
+              <text class="lbl s" x="-62" y="316" text-anchor="middle" style="fill:var(--muted)">커짐</text>
+            </g>
+
+            <g id="g-fold" class="grp">
+              <line id="fold" style="stroke:var(--fold)" stroke-width="4"></line>
+              <text id="tFold" class="lbl s" style="fill:var(--fold)">접힌 선</text>
+            </g>
+
+            <g id="g-triPF" class="grp">
+              <line id="pfH" style="stroke:var(--ink)" stroke-width="3.5"></line>
+              <line id="pfV" style="stroke:var(--ink)" stroke-width="3.5"></line>
+              <text id="tpfH" class="lbl s" text-anchor="middle" style="fill:var(--ink)"></text>
+              <text id="tpfV" class="lbl s" text-anchor="end" style="fill:var(--ink)"></text>
+            </g>
+
+            <g id="g-triFold" class="grp">
+              <line id="fH" style="stroke:var(--alpha)" stroke-width="4"></line>
+              <line id="fV" style="stroke:var(--alpha)" stroke-width="4"></line>
+              <text id="tfH" class="lbl s" text-anchor="middle" style="fill:var(--alpha)"></text>
+              <text id="tfV" class="lbl s" style="fill:var(--alpha)"></text>
+            </g>
+
+            <g id="g-SEq" class="grp">
+              <circle id="qS" r="12" fill="none" style="stroke:var(--teal)" stroke-width="4"></circle>
+              <text id="tqS" class="lbl" style="fill:var(--teal)">S ?</text>
+              <circle id="qE" r="12" fill="none" style="stroke:var(--teal)" stroke-width="4"></circle>
+              <text id="tqE" class="lbl" text-anchor="end" style="fill:var(--teal)">E ?</text>
+            </g>
+
+            <g id="g-SE" class="grp">
+              <circle id="dotS" r="11" style="fill:var(--teal)"></circle>
+              <text id="tagS" class="lbl s" style="fill:var(--teal)"></text>
+              <circle id="dotE" r="11" style="fill:var(--teal)"></circle>
+              <text id="tagE" class="lbl s" text-anchor="end" style="fill:var(--teal)"></text>
+            </g>
+
+            <line id="lPF" style="stroke:var(--muted)" stroke-width="3" stroke-dasharray="8 7"></line>
+            <circle id="dotM" r="9" style="fill:var(--fold)"></circle>
+            <text id="tagM" class="lbl" text-anchor="end" style="fill:var(--fold)">M</text>
+            <circle id="dotP" r="11" style="fill:var(--pt-p)"></circle>
+            <text id="tagP" class="lbl" style="fill:var(--pt-p)">P</text>
+            <circle id="ringF" r="24" fill="none" style="stroke:var(--pt-f)" stroke-width="3" opacity="0.5"></circle>
+            <circle id="dotF" r="11" style="fill:var(--pt-f)"></circle>
+            <text id="tagF" class="lbl" style="fill:var(--pt-f)">F</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <div class="side">
+      <section class="card">
+        <span class="step-no" id="stepNo"></span>
+        <h2 class="step-title" id="stepTitle"></h2>
+        <div class="step-text" id="stepText"></div>
+        <div class="nav">
+          <button type="button" id="prev">이전</button>
+          <button type="button" id="next" class="primary">다음</button>
+          <button type="button" id="reset">예시 숫자로</button>
+        </div>
+        <ol class="steps" id="stepList"></ol>
+      </section>
+
+      <section class="card">
+        <h2>지금 숫자</h2>
+        <dl class="nums" id="nums"></dl>
+      </section>
+    </div>
+  </div>
+
+  <section class="card">
+    <h2>코드로 옮기면 (주석 숫자는 예시 값)</h2>
+<pre class="code"><span class="c">&lt;!-- 책 상자. 좌표는 전부 책 왼쪽 위 (0, 0) 기준 --&gt;</span>
+&lt;div class="book"&gt;                 <span class="c">&lt;!-- 1000 × 700 --&gt;</span>
+  &lt;div class="page page1"&gt;&lt;/div&gt;
+  &lt;div class="page page4"&gt;&lt;/div&gt;
+  &lt;div class="pages"&gt;              <span class="c">&lt;!-- 책 크기 부모. 돌리지 않음. clip-path 는 여기 --&gt;</span>
+    &lt;div class="page page2"&gt;&lt;/div&gt;
+    &lt;div class="page page3"&gt;&lt;/div&gt;  <span class="c">&lt;!-- 첫 번째 문서대로 A′ 에 두고 돌림 --&gt;</span>
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+<pre class="code" style="margin-top:10px"><span class="c">// P, F 는 { x, y } 좌표. H 는 책 세로 700</span>
+const M = { x: (P.x + F.x) / 2, y: (P.y + F.y) / 2 };   <span class="c">// (880, 290)</span>
+
+const pfSlope = (F.y - P.y) / (F.x - P.x);   <span class="c">// P–F 기울기      −0.75</span>
+const a = -1 / pfSlope;                      <span class="c">// 접힌 선 기울기   1.333</span>
+const b = M.y - a * M.x;                     <span class="c">// M 을 지나게     −883.3   →  접힌 선 y = a x + b</span>
+
+const S = { x: (0 - b) / a, y: 0 };          <span class="c">// 맨 위 줄 y = 0     (662.5, 0)</span>
+const E = { x: (H - b) / a, y: H };          <span class="c">// 맨 아래 줄 y = 700  (1187.5, 700)</span>
+
+<span class="c">// 수평으로 끌면(F.y === P.y) 접힌 선이 세로선이라 기울기를 못 구한다. 이때는 S.x = E.x = M.x</span>
+if (F.y === P.y) {
+  S.x = M.x;
+  E.x = M.x;
+}
+
+<span class="c">// 2 · 3 페이지를 담은 부모에 건다: S → E → 책 왼쪽 아래 → 책 왼쪽 위</span>
+pages.style.clipPath = `polygon(${S.x}px 0px, ${E.x}px ${H}px, 0px ${H}px, 0px 0px)`;</pre>
+  </section>
+</div>
+
+<script>
+  (() => {
+    const $ = (id) => document.getElementById(id);
+    const NS = 'http://www.w3.org/2000/svg';
+    const W = 1000;
+    const H = 700;
+    const SPINE = 500;
+    const A = { x: W, y: 0 };
+    const EX_P = { x: W, y: 200 };
+    const EX_F = { x: 760, y: 380 };
+    let P = { ...EX_P };
+    let F = { ...EX_F };
+    let step = 0;
+    let drag = null;
+
+    const set = (id, attrs) => {
+      const el = $(id);
+      Object.keys(attrs).forEach((k) => el.setAttribute(k, attrs[k]));
+    };
+    const pts = (list) => list.map((p) => `${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
+    const dist = (a, b) => Math.hypot(a.x - b.x, a.y - b.y);
+    const fmt = (v, d = 1) => {
+      const n = Number(v.toFixed(d));
+
+      return (Object.is(n, -0) ? 0 : n).toString().replace('-', '−');
+    };
+    const par = (v, d = 1) => (v < -1e-9 ? `(${fmt(v, d)})` : fmt(v, d));
+    const pt = (q) => `(${fmt(q.x)}, ${fmt(q.y)})`;
+    const num = (v) => Number(v.toFixed(2)).toString();
+
+    // 좁은 화면에서는 그림을 통째로 줄인다
+    const fit = document.querySelector('.fit');
+    let k = 1;
+    const resize = () => {
+      k = Math.min(1, fit.clientWidth / Number(fit.dataset.w));
+      fit.style.height = `${Number(fit.dataset.h) * k}px`;
+      fit.firstElementChild.style.transform = `scale(${k})`;
+    };
+    new ResizeObserver(resize).observe(fit);
+    resize();
+
+    // 손가락은 책 가운데 맨 위 · 맨 아래 점에서 P 까지 거리보다 멀리 못 간다(종이가 안 늘어난다). P 보다 왼쪽에만 둔다
+    const project = (q, c, r) => {
+      const d = dist(q, c);
+
+      return d <= r ? q : { x: c.x + (q.x - c.x) * r / d, y: c.y + (q.y - c.y) * r / d };
+    };
+    const clampF = (q) => {
+      let f = { x: q.x, y: q.y };
+      const top = { x: SPINE, y: 0 };
+      const bottom = { x: SPINE, y: H };
+
+      for (let i = 0; i < 10; i += 1) {
+        f = { x: Math.min(Math.max(f.x, -80), P.x - 20), y: Math.min(Math.max(f.y, -100), 800) };
+        f = project(f, top, dist(P, top));
+        f = project(f, bottom, dist(P, bottom));
+      }
+
+      return f;
+    };
+
+    const calc = () => {
+      const dx = F.x - P.x;
+      const dy = F.y - P.y;
+      const M = { x: (P.x + F.x) / 2, y: (P.y + F.y) / 2 };
+      // 높이 차이가 0.5 픽셀도 안 되면 수평으로 끈 것으로 본다(접힌 선 = 세로선)
+      const vertical = Math.abs(dy) < 0.5;
+      const pfSlope = dy / dx;
+      const a = vertical ? Infinity : -1 / pfSlope;
+      const b = vertical ? NaN : M.y - a * M.x;
+      const xAt = (y) => (vertical ? M.x : (y - b) / a);
+      const S = { x: xAt(0), y: 0 };
+      const E = { x: xAt(H), y: H };
+      const poly = [S, E, { x: 0, y: H }, { x: 0, y: 0 }];
+      // 3 페이지 자리(첫 번째 문서): A′ 에 두고 접힌 선 각도의 2배만큼 돌린다
+      const len = Math.hypot(dx, dy);
+      const alpha = Math.atan(dy / -dx) * 180 / Math.PI;
+      const AH = (A.x - S.x) * (-dx / len);
+      const A2 = { x: A.x + 2 * AH * dx / len, y: A.y + 2 * AH * dy / len };
+
+      return { dx, dy, M, vertical, pfSlope, a, b, xAt, S, E, poly, A2, rot: -2 * alpha };
+    };
+
+    const STEPS = [
+      {
+        title: '구할 것: 접힌 선 위의 두 점 S, E',
+        full: ['g-fold', 'g-rows', 'g-SEq'],
+        dim: [],
+        clip: false,
+        text: (c) => `<p>첫 번째 문서에서 P, F, M 과 접힌 선을 정했습니다.</p>
+          <div class="eq">P = ${pt(P)}<br>F = ${pt(F)}<br>M = P 와 F 의 중점 = ${pt(c.M)}</div>
+          <p><b class="fold">접힌 선</b>은 M 을 지나고 P–F 와 직각인 선입니다.</p>
+          <p>2 페이지와 3 페이지를 이 접힌 선에서 자르려면 접힌 선 위의 점 두 개가 필요합니다. 두 점을 이렇게 정합니다.</p>
+          <ul>
+            <li><b class="t">S</b>: 접힌 선이 책 맨 위 줄과 만나는 점</li>
+            <li><b class="t">E</b>: 접힌 선이 책 맨 아래 줄과 만나는 점</li>
+          </ul>
+          <p>이 문서는 S 와 E 를 구하고, 두 점으로 clip-path 를 만들어 자르는 것까지 봅니다.</p>`,
+      },
+      {
+        title: '좌표와 기울기',
+        full: ['g-axes', 'g-rows', 'g-fold'],
+        dim: [],
+        clip: false,
+        text: () => `<p>화면 좌표는 왼쪽 위가 (0, 0) 이고, 오른쪽으로 갈수록 x 가 커지고 <b>아래로 갈수록 y 가 커집니다</b>. 책은 가로 1000, 세로 700 이라서 책 맨 위 줄은 y = 0, 맨 아래 줄은 y = 700 입니다.</p>
+          <p><b>기울기</b>는 선을 따라 가로로 1 갈 때 세로로 얼마 가는지입니다. 세로로 간 양 ÷ 가로로 간 양으로 구합니다. 중학교 일차함수 y = a x + b 의 a 입니다.</p>
+          <p>화면에서는 아래가 + 입니다. 그래서 기울기가 + 면 오른쪽으로 갈수록 내려가고, − 면 오른쪽으로 갈수록 올라갑니다.</p>`,
+      },
+      {
+        title: 'P–F 의 기울기',
+        full: ['g-triPF', 'g-fold'],
+        dim: [],
+        clip: false,
+        text: (c) => (c.vertical
+          ? `<p>P 에서 F 로 가면 가로로 ${fmt(c.dx)}, 세로로 0 갑니다. 세로가 0 이라 P–F 는 가로선이고 기울기는 0 입니다.</p>`
+          : `<p>P 에서 F 로 가면 가로로 얼마, 세로로 얼마 가는지 셉니다. 그림의 검은 직각삼각형입니다.</p>
+          <div class="eq">가로 = F 의 x − P 의 x = ${fmt(F.x)} − ${fmt(P.x)} = ${fmt(c.dx)}<br>세로 = F 의 y − P 의 y = ${fmt(F.y)} − ${fmt(P.y)} = ${fmt(c.dy)}</div>
+          <div class="eq">P–F 기울기 = 세로 ÷ 가로 = ${par(c.dy)} ÷ ${par(c.dx)} = ${fmt(c.pfSlope, 3)}</div>
+          <p>${c.pfSlope < 0 ? '− 라서 P–F 는 오른쪽으로 갈수록 올라가는 선입니다.' : '+ 라서 P–F 는 오른쪽으로 갈수록 내려가는 선입니다.'}</p>`),
+      },
+      {
+        title: '접힌 선의 기울기',
+        full: ['g-triFold', 'g-fold'],
+        dim: ['g-triPF'],
+        clip: false,
+        text: (c) => (c.vertical
+          ? `<p>P–F 가 가로선이라, 직각인 접힌 선은 똑바른 세로선입니다. 세로선은 가로로 전혀 안 움직여서 세로 ÷ 가로 를 하면 0 으로 나누게 됩니다. 그래서 기울기를 구할 수 없습니다. 이 경우는 6 단계에서 따로 봅니다.</p>`
+          : `<p>접힌 선은 P–F 와 직각입니다. P–F 의 직각삼각형(가로 ${fmt(c.dx)}, 세로 ${fmt(c.dy)})을 90° 돌려 접힌 선 위에 놓으면, <b>가로와 세로가 서로 바뀌어</b> 가로 ${fmt(c.dy)}, 세로 ${fmt(-c.dx)} 이 됩니다. 그림의 보라색 삼각형입니다.</p>
+          <div class="eq">접힌 선 기울기 a = 세로 ÷ 가로 = ${fmt(-c.dx)} ÷ ${par(c.dy)} = ${fmt(c.a, 3)}</div>
+          <p>직각인 두 선의 기울기를 곱하면 늘 −1 입니다. ${par(c.pfSlope, 3)} × ${fmt(c.a, 3)} = −1. 그래서 이렇게 구해도 같습니다.</p>
+          <div class="eq">a = −1 ÷ (P–F 기울기) = −1 ÷ ${par(c.pfSlope, 3)} = ${fmt(c.a, 3)}</div>
+          <p>−1 을 <b>곱하는</b> 게 아니라 −1 을 기울기로 <b>나누는</b> 것입니다.</p>`),
+      },
+      {
+        title: '접힌 선의 일차식',
+        full: ['g-fold'],
+        dim: [],
+        clip: false,
+        text: (c) => (c.vertical
+          ? `<p>접힌 선이 세로선이라 y = a x + b 로 적을 수 없습니다. 대신 "x 가 항상 M 의 x" 인 선, 즉 x = ${fmt(c.M.x)} 입니다.</p>`
+          : `<p>접힌 선을 일차식 <b>y = a x + b</b> 로 적습니다. a 는 앞 단계에서 구했고, b 만 남았습니다.</p>
+          <p>접힌 선은 M ${pt(c.M)} 을 지납니다. 그러니 x 에 ${fmt(c.M.x)}, y 에 ${fmt(c.M.y)} 을 넣으면 식이 맞아야 합니다.</p>
+          <div class="eq">${fmt(c.M.y)} = ${fmt(c.a, 3)} × ${fmt(c.M.x)} + b<br>b = ${fmt(c.M.y)} − ${fmt(c.a * c.M.x)} = ${fmt(c.b)}</div>
+          <div class="eq">접힌 선: y = ${fmt(c.a, 3)} x ${c.b < 0 ? '−' : '+'} ${fmt(Math.abs(c.b))}</div>`),
+      },
+      {
+        title: 'S 와 E 구하기',
+        full: ['g-SE', 'g-rows', 'g-fold'],
+        dim: [],
+        clip: false,
+        text: (c) => {
+          const out = c.S.x > W || c.E.x > W;
+          const note = out
+            ? '<p>바깥에 있는 점이 있습니다. 접힌 선이 책 맨 위나 맨 아래에 닿기 전에 책 오른쪽 끝(x = 1000)을 먼저 지나가기 때문입니다. 그래도 괜찮습니다. 자를 때 필요한 건 접힌 선이 어디를 지나는지뿐이고, clip-path 의 점은 상자 밖이어도 됩니다(두 번째 문서 3번).</p>'
+            : '<p>지금은 두 점 모두 책 안에 있습니다.</p>';
+
+          if (c.vertical) {
+            return `<p>접힌 선이 세로선 x = ${fmt(c.M.x)} 이라, 맨 위 줄에서도 맨 아래 줄에서도 x 는 ${fmt(c.M.x)} 입니다.</p>
+              <div class="eq">S = ${pt(c.S)}<br>E = ${pt(c.E)}</div>`;
+          }
+
+          return `<p>일차식 y = a x + b 를 x 에 대해 풀면 <b>x = (y − b) ÷ a</b> 입니다. 여기에 맨 위 줄 y = 0 과 맨 아래 줄 y = 700 을 넣습니다.</p>
+          <div class="eq">S 의 x = (0 − ${par(c.b)}) ÷ ${fmt(c.a, 3)} = ${fmt(c.S.x)}<br>S = ${pt(c.S)}</div>
+          <div class="eq">E 의 x = (700 − ${par(c.b)}) ÷ ${fmt(c.a, 3)} = ${fmt(c.E.x)}<br>E = ${pt(c.E)}</div>
+          ${note}
+          <p>수평으로 끌어 접힌 선이 세로선이 되면 기울기가 없어서 이 식을 못 씁니다. 그때는 S 와 E 의 x 가 둘 다 M 의 x 입니다.</p>`;
+        },
+      },
+      {
+        title: 'clip-path 다각형 만들기',
+        full: ['g-poly', 'g-SE', 'g-fold'],
+        dim: [],
+        clip: false,
+        text: (c) => `<p>clip-path 는 다각형 안만 보이게 합니다(두 번째 문서). 남길 곳은 접힌 선의 <b>왼쪽</b>, 손가락 F 가 있는 쪽입니다. 접힌 선 오른쪽, P 가 있는 쪽은 넘어간 부분이라 지웁니다.</p>
+          <p>그래서 S 에서 접힌 선을 따라 E 로 내려간 뒤, 책 왼쪽 끝으로 돌아와 닫는 네 점으로 다각형을 만듭니다. 그림의 청록 점선입니다.</p>
+          <div class="eq">① S ${pt(c.S)}<br>② E ${pt(c.E)}<br>③ 책 왼쪽 아래 (0, 700)<br>④ 책 왼쪽 위 (0, 0)</div>
+          <pre class="code">clip-path: polygon(${num(c.S.x)}px 0px, ${num(c.E.x)}px 700px, 0px 700px, 0px 0px);</pre>`,
+      },
+      {
+        title: '2 · 3 페이지의 부모에 걸기',
+        full: ['g-fold'],
+        dim: ['g-poly'],
+        clip: true,
+        text: () => `<p>2 페이지와 3 페이지를 <b>책 크기의 부모 상자 하나</b>에 넣고, 앞 단계의 clip-path 를 그 부모에 겁니다. 부모는 돌리지 않으니 책 좌표가 그대로 맞습니다(두 번째 문서 4번).</p>
+          <p>그러면 2 페이지는 접힌 선 너머가 잘려서 그 자리로 밑에 깔린 4 페이지가 보입니다. 3 페이지도 접힌 선 너머가 잘립니다. 3 페이지를 A′ 에 두고 돌리는 건 첫 번째 문서에서 한 그대로입니다.</p>
+          <pre class="code">&lt;div class="pages"&gt;   &lt;!-- 여기에 clip-path --&gt;
+  &lt;div class="page page2"&gt;&lt;/div&gt;
+  &lt;div class="page page3"&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+          <p>다각형이 책 안만 덮기 때문에, 3 페이지가 책 위아래 밖으로 나가면 그 부분도 같이 잘립니다.</p>`,
+      },
+      {
+        title: '정리',
+        full: ['g-fold', 'g-SE'],
+        dim: [],
+        clip: true,
+        text: () => `<div class="eq">① M = P 와 F 의 중점<br>② P–F 기울기 = 세로 ÷ 가로<br>③ 접힌 선 기울기 a = −1 ÷ (P–F 기울기)<br>④ b = M 의 y − a × M 의 x<br>⑤ S 의 x = (0 − b) ÷ a, E 의 x = (700 − b) ÷ a<br>⑥ 2 · 3 페이지의 부모에 clip-path: polygon(S, E, 왼쪽 아래, 왼쪽 위)</div>
+          <p>P 와 F 를 끌어 보세요. 숫자와 자른 모양이 같이 바뀝니다.</p>`,
+      },
+    ];
+    const ALL = ['g-poly', 'g-rows', 'g-axes', 'g-fold', 'g-triPF', 'g-triFold', 'g-SEq', 'g-SE'];
+
+    const list = $('stepList');
+    STEPS.forEach((s, i) => {
+      const li = document.createElement('li');
+
+      li.textContent = s.title;
+      li.tabIndex = 0;
+      li.addEventListener('click', () => {
+        step = i;
+        draw();
+      });
+      li.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          step = i;
+          draw();
+        }
+      });
+      list.appendChild(li);
+    });
+
+    const draw = () => {
+      const c = calc();
+      const s = STEPS[step];
+      const { M, S, E } = c;
+
+      set('dotP', { cx: P.x, cy: P.y });
+      set('tagP', { x: P.x + 16, y: P.y + 8 });
+      set('dotF', { cx: F.x, cy: F.y });
+      set('ringF', { cx: F.x, cy: F.y });
+      set('tagF', { x: F.x - 40, y: F.y + 40 });
+      set('lPF', { x1: P.x, y1: P.y, x2: F.x, y2: F.y });
+      set('dotM', { cx: M.x, cy: M.y });
+      set('tagM', { x: M.x - 14, y: M.y - 14 });
+
+      // 접힌 선: y = -1500 ~ 2200 사이를 그린다
+      set('fold', { x1: c.xAt(-1500), y1: -1500, x2: c.xAt(2200), y2: 2200 });
+      set('tFold', { x: Math.max(-60, Math.min(c.xAt(120) + 14, 1150)), y: 126 });
+
+      // P–F 직각삼각형
+      set('pfH', { x1: P.x, y1: P.y, x2: F.x, y2: P.y });
+      set('pfV', { x1: F.x, y1: P.y, x2: F.x, y2: F.y });
+      set('tpfH', { x: (P.x + F.x) / 2, y: c.dy >= 0 ? P.y - 14 : P.y + 32 });
+      $('tpfH').textContent = `가로 ${fmt(c.dx)}`;
+      set('tpfV', { x: F.x - 12, y: (P.y + F.y) / 2 + 8 });
+      $('tpfV').textContent = `세로 ${fmt(c.dy)}`;
+
+      // 90° 돌려 M 에서 접힌 선을 따라 놓은 삼각형: 가로 dy, 세로 −dx
+      const Q1 = { x: M.x + c.dy, y: M.y };
+      const Q2 = { x: M.x + c.dy, y: M.y - c.dx };
+      set('fH', { x1: M.x, y1: M.y, x2: Q1.x, y2: Q1.y });
+      set('fV', { x1: Q1.x, y1: Q1.y, x2: Q2.x, y2: Q2.y });
+      set('tfH', { x: (M.x + Q1.x) / 2, y: M.y - 14 });
+      $('tfH').textContent = `가로 ${fmt(c.dy)}`;
+      set('tfV', { x: Q1.x + (c.dy >= 0 ? 12 : -150), y: (Q1.y + Q2.y) / 2 + 8 });
+      $('tfV').textContent = `세로 ${fmt(-c.dx)}`;
+
+      // S, E
+      set('qS', { cx: S.x, cy: S.y });
+      set('tqS', { x: S.x + 16, y: -18 });
+      set('qE', { cx: E.x, cy: E.y });
+      set('tqE', { x: E.x - 16, y: H + 42 });
+      set('dotS', { cx: S.x, cy: S.y });
+      set('tagS', { x: S.x + 16, y: -18 });
+      $('tagS').textContent = `S ${pt(S)}`;
+      set('dotE', { cx: E.x, cy: E.y });
+      set('tagE', { x: E.x - 16, y: H + 42 });
+      $('tagE').textContent = `E ${pt(E)}`;
+
+      // 다각형
+      set('poly', { points: pts(c.poly) });
+      const pn = $('polyN');
+
+      pn.innerHTML = '';
+      const offs = [{ x: -40, y: 36 }, { x: -44, y: -14 }, { x: 14, y: -14 }, { x: 14, y: 36 }];
+      c.poly.forEach((p, i) => {
+        const tx = document.createElementNS(NS, 'text');
+
+        tx.setAttribute('class', 'lbl');
+        tx.setAttribute('x', Math.min(p.x + offs[i].x, 1200));
+        tx.setAttribute('y', p.y + offs[i].y);
+        tx.setAttribute('style', 'fill:var(--teal)');
+        tx.textContent = '①②③④'[i];
+        pn.appendChild(tx);
+      });
+
+      // 실제 CSS: 3 페이지는 첫 번째 문서대로 놓고, 2 · 3 페이지의 부모를 자른다
+      $('page3').style.display = s.clip ? 'block' : 'none';
+      $('page3').style.transform = `translate(${num(c.A2.x)}px, ${num(c.A2.y)}px) rotate(${num(c.rot)}deg)`;
+      $('pages').style.clipPath = s.clip ? `polygon(${num(S.x)}px 0px, ${num(E.x)}px ${H}px, 0px ${H}px, 0px 0px)` : 'none';
+
+      const rows = [
+        ['P', pt(P)], ['F', pt(F)], ['M', pt(M)],
+        ['P–F 기울기', c.vertical ? '0' : fmt(c.pfSlope, 3)],
+        ['접힌 선 기울기 a', c.vertical ? '없음(세로선)' : fmt(c.a, 3)],
+        ['b', c.vertical ? '없음' : fmt(c.b)],
+        ['S', pt(S)], ['E', pt(E)],
+      ];
+      $('nums').innerHTML = rows.map(([kk, v]) => `<dt>${kk}</dt><dd>${v}</dd>`).join('');
+
+      ALL.forEach((id) => {
+        const el = $(id);
+        const on = s.full.includes(id);
+        const dim = s.dim.includes(id);
+
+        el.classList.toggle('off', !on && !dim);
+        el.classList.toggle('dim', dim && !on);
+      });
+      $('stepNo').textContent = `${step + 1} / ${STEPS.length}`;
+      $('stepTitle').textContent = s.title;
+      $('stepText').innerHTML = s.text(c);
+      $('prev').disabled = step === 0;
+      $('next').disabled = step === STEPS.length - 1;
+      [...list.children].forEach((li, i) => li.classList.toggle('on', i === step));
+    };
+
+    const ov = $('ov');
+    const toBook = (e) => {
+      const r = ov.getBoundingClientRect();
+
+      return { x: (e.clientX - r.left) / k - 90, y: (e.clientY - r.top) / k - 110 };
+    };
+    ov.addEventListener('pointerdown', (e) => {
+      const q = toBook(e);
+
+      drag = dist(q, P) < 40 ? 'P' : 'F';
+      ov.setPointerCapture(e.pointerId);
+      if (drag === 'F') {
+        F = clampF(q);
+      }
+      draw();
+    });
+    ov.addEventListener('pointermove', (e) => {
+      if (!drag) {
+        return;
+      }
+      const q = toBook(e);
+
+      if (drag === 'P') {
+        P = { x: W, y: Math.min(Math.max(q.y, 0), H) };
+      } else {
+        F = q;
+      }
+      F = clampF(F);
+      draw();
+    });
+    const stop = () => {
+      drag = null;
+    };
+    ov.addEventListener('pointerup', stop);
+    ov.addEventListener('pointercancel', stop);
+
+    $('prev').addEventListener('click', () => {
+      step = Math.max(0, step - 1);
+      draw();
+    });
+    $('next').addEventListener('click', () => {
+      step = Math.min(STEPS.length - 1, step + 1);
+      draw();
+    });
+    $('reset').addEventListener('click', () => {
+      P = { ...EX_P };
+      F = { ...EX_F };
+      draw();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.target.closest && e.target.closest('input, button, li')) {
+        return;
+      }
+      if (e.key === 'ArrowRight') $('next').click();
+      if (e.key === 'ArrowLeft') $('prev').click();
+    });
+
+    const hm = location.hash.match(/^#s(\d+)$/);
+
+    if (hm) {
+      step = Math.min(Math.max(Number(hm[1]) - 1, 0), STEPS.length - 1);
+    }
+    draw();
+  })();
+</script>

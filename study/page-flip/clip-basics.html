@@ -1,0 +1,518 @@
+<title>clip-path 기초</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap">
+<style>
+  :root {
+    --bg: #eef1f5;
+    --panel: #ffffff;
+    --ink: #1c2330;
+    --muted: #5b6676;
+    --line: #d3d9e2;
+    --p1: #e3e7ed;
+    --p2: #cddffb;
+    --p3: #fde0ae;
+    --p4: #cfeed7;
+    --fold: #cf2f47;
+    --pt-p: #cf2f47;
+    --pt-f: #2b67de;
+    --edge: #a8690f;
+    --alpha: #6a43d6;
+    --teal: #0b8079;
+    --btn: #f3f5f8;
+    --btn-hover: #e6eaf0;
+    --code-bg: #f5f7fa;
+    --grid: rgba(28, 35, 48, 0.08);
+    --dim: 0.18;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #11151c;
+      --panel: #1a2029;
+      --ink: #e6ebf2;
+      --muted: #98a4b5;
+      --line: #2c3543;
+      --p1: #2a313d;
+      --p2: #1f3a66;
+      --p3: #5e4519;
+      --p4: #1e4a2b;
+      --fold: #ff6b80;
+      --pt-p: #ff6b80;
+      --pt-f: #6fa3ff;
+      --edge: #f2b54e;
+      --alpha: #a98bff;
+      --teal: #3fd1c6;
+      --btn: #232a35;
+      --btn-hover: #2c3542;
+      --code-bg: #141922;
+      --grid: rgba(255, 255, 255, 0.08);
+      --dim: 0.24;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #11151c;
+    --panel: #1a2029;
+    --ink: #e6ebf2;
+    --muted: #98a4b5;
+    --line: #2c3543;
+    --p1: #2a313d;
+    --p2: #1f3a66;
+    --p3: #5e4519;
+    --p4: #1e4a2b;
+    --fold: #ff6b80;
+    --pt-p: #ff6b80;
+    --pt-f: #6fa3ff;
+    --edge: #f2b54e;
+    --alpha: #a98bff;
+    --teal: #3fd1c6;
+    --btn: #232a35;
+    --btn-hover: #2c3542;
+    --code-bg: #141922;
+    --grid: rgba(255, 255, 255, 0.08);
+    --dim: 0.24;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    padding-inline: 16px;
+    padding-block: 20px 40px;
+  }
+  .wrap { max-width: 1240px; margin: 0 auto; display: grid; gap: 14px; }
+  header { display: grid; gap: 4px; }
+  header .series { margin: 0; font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 14px; }
+  header .series a { color: var(--muted); }
+  header .series b { color: var(--ink); }
+  header h1 { margin: 0; font-size: 24px; letter-spacing: -0.01em; text-wrap: balance; }
+  header p.lead { margin: 0; color: var(--muted); max-width: 70ch; }
+
+  .grid { display: grid; grid-template-columns: minmax(0, 1fr) 400px; gap: 16px; align-items: start; }
+  @media (max-width: 980px) { .grid { grid-template-columns: minmax(0, 1fr); } }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+  .card h2 { margin: 0 0 8px; font-size: 13px; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; }
+  .side { display: grid; gap: 12px; }
+  .wrap > *, .grid > *, .side > *, .sec > *, .step-text > *, .txt > * { min-width: 0; }
+
+  .step-no { font-family: "IBM Plex Mono", ui-monospace, monospace; color: var(--muted); font-size: 13px; }
+  .step-title { margin: 2px 0 10px; font-size: 20px; text-wrap: balance; }
+  .step-text { display: grid; gap: 10px; min-height: 12em; }
+  .step-text p { margin: 0; }
+  .step-text .eq { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 14px; background: var(--code-bg); border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; overflow-x: auto; overflow-wrap: anywhere; }
+  .nav { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+  button {
+    font: inherit; font-size: 14px; color: var(--ink);
+    background: var(--btn); border: 1px solid var(--line); border-radius: 6px;
+    padding: 7px 14px; cursor: pointer;
+  }
+  button:hover { background: var(--btn-hover); }
+  button.primary { background: var(--ink); color: var(--panel); border-color: var(--ink); }
+  button:disabled { opacity: 0.4; cursor: default; }
+  button:focus-visible, input:focus-visible, li:focus-visible { outline: 2px solid var(--pt-f); outline-offset: 2px; }
+  .steps { margin: 14px 0 0; padding-left: 24px; display: grid; gap: 2px; }
+  .steps li { cursor: pointer; color: var(--muted); font-size: 14px; }
+  .steps li.on { color: var(--ink); font-weight: 700; }
+  .steps li:hover { color: var(--ink); }
+
+  b.p { color: var(--pt-p); }
+  b.f { color: var(--pt-f); }
+  b.fold { color: var(--fold); }
+  b.a { color: var(--alpha); }
+  b.t { color: var(--teal); }
+  b.e { color: var(--edge); }
+
+  .nums { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 3px 14px; font-size: 14px; }
+  .nums dt { color: var(--muted); }
+  .nums dd { margin: 0; font-family: "IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; text-align: right; }
+
+  pre.code { margin: 0; background: var(--code-bg); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; overflow-x: auto; font: 500 12.5px/1.65 "IBM Plex Mono", ui-monospace, monospace; color: var(--ink); }
+  pre.code .c { color: var(--muted); }
+
+  svg text { font-family: "IBM Plex Sans KR", "Apple SD Gothic Neo", system-ui, sans-serif; }
+  .lbl { font-size: 22px; font-weight: 700; paint-order: stroke; stroke: var(--panel); stroke-width: 6px; stroke-linejoin: round; }
+  .lbl.s { font-size: 18px; font-weight: 500; }
+  .grp { transition: opacity 0.25s ease; }
+  .grp.off { display: none; }
+  .grp.dim { opacity: var(--dim); }
+  @media (prefers-reduced-motion: reduce) { .grp { transition: none; } }
+</style>
+<style>
+  .wrap { max-width: 1120px; }
+  .sec { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 22px; align-items: start; }
+  @media (max-width: 900px) { .sec { grid-template-columns: minmax(0, 1fr); } }
+  .sec h2.big { font-size: 19px; font-weight: 700; color: var(--ink); letter-spacing: 0; margin: 0 0 10px; text-wrap: balance; }
+  .txt { display: grid; gap: 10px; max-width: 62ch; align-content: start; }
+  .txt p { margin: 0; }
+  .txt ul { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
+  .fit { position: relative; width: 100%; overflow: hidden; }
+  .fit > .inner { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+  .box {
+    position: absolute; left: 60px; top: 60px; width: 400px; height: 280px; box-sizing: border-box;
+    background-color: var(--p3);
+    background-image: linear-gradient(var(--grid) 2px, transparent 2px), linear-gradient(90deg, var(--grid) 2px, transparent 2px);
+    background-size: 40px 40px;
+  }
+  .box .word { position: absolute; inset: 0; display: grid; place-items: center; font-size: 66px; font-weight: 700; color: var(--edge); }
+  .box.ghost { opacity: 0.22; }
+  .outline { position: absolute; left: 60px; top: 60px; width: 400px; height: 280px; border: 2px dashed var(--muted); box-sizing: border-box; pointer-events: none; }
+  svg.ov { position: absolute; left: 0; top: 0; overflow: hidden; touch-action: none; }
+  .ctl { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .ctl label { font-weight: 500; }
+  .ctl input[type="range"] { flex: 1 1 200px; accent-color: var(--fold); }
+  .ctl output { font-family: "IBM Plex Mono", ui-monospace, monospace; min-width: 3em; }
+  .panel-t { position: absolute; top: 0; width: 300px; font-size: 15px; font-weight: 700; line-height: 1.35; }
+  .panel-t small { display: block; font-weight: 400; color: var(--muted); font-size: 13px; }
+  .panel { position: absolute; top: 62px; width: 300px; height: 300px; background: var(--p1); border: 1px solid var(--line); box-sizing: border-box; overflow: hidden; }
+  .layer { position: absolute; left: 0; top: 0; width: 300px; height: 300px; }
+  .child {
+    position: absolute; left: 60px; top: 30px; width: 180px; height: 240px; transform-origin: 0 0; box-sizing: border-box;
+    background-color: var(--p3);
+    background-image: linear-gradient(var(--grid) 2px, transparent 2px), linear-gradient(90deg, var(--grid) 2px, transparent 2px);
+    background-size: 30px 30px; border: 2px solid var(--edge);
+  }
+  .child .word { position: absolute; inset: 0; display: grid; place-items: center; font-size: 34px; font-weight: 700; color: var(--edge); }
+  .child.ghost { opacity: 0.2; }
+  .vline { position: absolute; left: 149px; top: 0; width: 3px; height: 300px; background: var(--fold); }
+  .sum { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+  .sum code, .txt code { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 13.5px; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 0 5px; }
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="series"><a href="a-prime.html" target="_blank" rel="noopener">1. A′ 구하고 돌리기</a><b>2. clip-path 기초</b><a href="fold-cut.html" target="_blank" rel="noopener">3. 접힌 선으로 자르기</a></p>
+    <h1>clip-path 기초</h1>
+    <p class="lead">CSS clip-path 로 요소의 일부만 보이게 자르는 법을 예제로 봅니다. 점을 직접 끌어 보면서 읽으세요. 세 번째 문서에서 2 페이지와 3 페이지를 자를 때 이 네 가지를 그대로 씁니다.</p>
+  </header>
+
+  <!-- 1 -->
+  <section class="card sec" id="sec1">
+    <div class="txt">
+      <h2 class="big">1. clip-path 가 하는 일</h2>
+      <p>clip-path 는 요소에서 <b>보일 부분을 모양으로 정합니다</b>. 모양 안은 보이고, 밖은 안 보입니다.</p>
+      <p>안 보이게 될 뿐, 요소의 크기와 자리는 그대로입니다. 점선 테두리가 원래 요소 자리이고, 잘린 뒤에도 그대로 있습니다.</p>
+      <div class="ctl"><button type="button" id="t1">clip-path 끄기</button></div>
+      <pre class="code" id="css1"></pre>
+    </div>
+    <div class="fit" data-w="520" data-h="400">
+      <div class="inner" style="width:520px;height:400px">
+        <div class="box" id="box1"><div class="word">요소</div></div>
+        <div class="outline"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="card sec" id="sec2">
+    <div class="txt">
+      <h2 class="big">2. polygon 으로 점 찍기</h2>
+      <p>모양은 <code>polygon(x y, x y, …)</code> 처럼 점으로 적습니다. 점 하나는 <b>x y</b> 이고, 점끼리는 쉼표로 나눕니다.</p>
+      <p>적은 순서대로 점을 잇고, 마지막 점은 첫 점과 이어서 닫습니다. <b>그 다각형 안만 보입니다.</b></p>
+      <p>좌표는 <b>clip-path 를 건 그 요소의 왼쪽 위가 (0, 0)</b> 입니다. 오른쪽이 x, 아래가 y 입니다. 이 예제 요소는 가로 400, 세로 280 입니다.</p>
+      <p>번호 붙은 점을 끌어 보세요. 아래 CSS 가 같이 바뀝니다. 흐린 부분이 잘려서 안 보이는 곳입니다.</p>
+      <div class="ctl">
+        <button type="button" data-preset="full">전체</button>
+        <button type="button" data-preset="tri">삼각형</button>
+        <button type="button" data-preset="half">왼쪽 반</button>
+        <button type="button" data-preset="slant">비스듬히</button>
+      </div>
+      <pre class="code" id="css2"></pre>
+    </div>
+    <div class="fit" data-w="520" data-h="400">
+      <div class="inner" style="width:520px;height:400px">
+        <div class="box ghost"><div class="word">요소</div></div>
+        <div class="box" id="box2"><div class="word">요소</div></div>
+        <div class="outline"></div>
+        <svg class="ov" id="ov2" width="520" height="400" viewBox="-60 -60 520 400" aria-label="clip-path 점을 끌어 옮기는 곳">
+          <g id="ticks2"></g>
+          <polygon id="poly2" fill="none" style="stroke:var(--fold)" stroke-width="3"></polygon>
+          <g id="handles2"></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="card sec" id="sec3">
+    <div class="txt">
+      <h2 class="big">3. 점은 요소 밖에 있어도 된다</h2>
+      <p>polygon 의 점은 <b>요소 밖</b>이어도 됩니다. −1000 처럼 마이너스여도 되고, 요소보다 커도 됩니다. 요소 밖에는 원래 그릴 게 없으니, 요소 안에서 다각형과 겹치는 부분만 보입니다.</p>
+      <p>그래서 <b>어떤 선의 왼쪽을 통째로 남기기</b>가 쉽습니다.</p>
+      <ul>
+        <li>점 ① ② 는 선 위의 두 점입니다. 여기서는 맨 위(y = 0)와 맨 아래(y = 280)에 찍었습니다.</li>
+        <li>점 ③ ④ 는 그 두 점에서 왼쪽으로 멀리 간 점입니다(x = −1000).</li>
+        <li>네 점을 이은 다각형이 선의 왼쪽을 전부 덮어서, 선 왼쪽만 보입니다.</li>
+      </ul>
+      <p>① ② 를 좌우로 끌어 보세요. 선이 기울어도 그 왼쪽만 남습니다.</p>
+      <pre class="code" id="css3"></pre>
+    </div>
+    <div class="fit" data-w="520" data-h="400">
+      <div class="inner" style="width:520px;height:400px">
+        <div class="box ghost"><div class="word">요소</div></div>
+        <div class="box" id="box3"><div class="word">요소</div></div>
+        <div class="outline"></div>
+        <svg class="ov" id="ov3" width="520" height="400" viewBox="-60 -60 520 400" aria-label="자르는 선의 두 점을 끌어 옮기는 곳">
+          <polygon id="poly3" style="fill:var(--fold);stroke:var(--fold)" fill-opacity="0.08" stroke-width="2.5" stroke-dasharray="8 6"></polygon>
+          <line id="line3" style="stroke:var(--fold)" stroke-width="4"></line>
+          <g id="handles3"></g>
+          <text class="lbl s" x="-52" y="-30" style="fill:var(--fold)">③ ④ 는 왼쪽 멀리(x = −1000)</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="card sec" id="sec4">
+    <div class="txt">
+      <h2 class="big">4. 돌린 요소에 걸면 모양도 같이 돈다</h2>
+      <p>clip-path 의 좌표는 <b>그 요소 자기 기준</b>입니다. 그래서 요소를 rotate 로 돌리면 clip-path 모양도 같이 돕니다.</p>
+      <p>두 그림 모두 주황 요소를 같은 각도로 돌리고, 빨간 세로선 왼쪽만 남기려고 한 것입니다. 각도를 바꿔 보세요.</p>
+      <ul>
+        <li><b>왼쪽</b>: 돌린 요소 자신에 clip-path 를 걸었습니다. 자르는 선이 요소와 같이 돌아가서 빨간 선과 어긋납니다.</li>
+        <li><b>오른쪽</b>: 돌리지 않은 부모 상자에 clip-path 를 걸고, 그 안의 요소만 돌렸습니다. 자르는 선이 빨간 선에 그대로 있습니다.</li>
+      </ul>
+      <p>화면에 고정된 선으로 자르고 싶으면 <b>돌리지 않은 부모에 겁니다</b>. 3 페이지가 바로 이 경우입니다.</p>
+      <div class="ctl">
+        <label for="deg4">돌리는 각도</label>
+        <input type="range" id="deg4" min="0" max="80" step="1" value="35">
+        <output id="deg4v" for="deg4">35°</output>
+      </div>
+      <pre class="code" id="css4"></pre>
+    </div>
+    <div class="fit" data-w="640" data-h="370">
+      <div class="inner" style="width:640px;height:370px">
+        <div class="panel-t" style="left:0">돌린 요소 자신에 걸기<small>자르는 선이 같이 돈다</small></div>
+        <div class="panel" style="left:0">
+          <div class="child ghost" id="g4a"><div class="word">요소</div></div>
+          <div class="child" id="c4a"><div class="word">요소</div></div>
+          <div class="vline"></div>
+        </div>
+        <div class="panel-t" style="left:340px">돌리지 않은 부모에 걸기<small>자르는 선이 그대로</small></div>
+        <div class="panel" style="left:340px">
+          <div class="child ghost" id="g4b"><div class="word">요소</div></div>
+          <div class="layer" id="l4b">
+            <div class="child" id="c4b"><div class="word">요소</div></div>
+          </div>
+          <div class="vline"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>정리</h2>
+    <ul class="sum">
+      <li>clip-path 는 요소에서 보일 부분만 모양으로 정합니다. 요소의 크기와 자리는 그대로입니다.</li>
+      <li><code>polygon(x y, x y, …)</code> 은 적은 순서대로 점을 잇고 닫은 다각형 안만 보이게 합니다.</li>
+      <li>좌표는 clip-path 를 건 요소의 왼쪽 위가 (0, 0) 이고, 오른쪽이 x, 아래가 y 입니다.</li>
+      <li>점은 요소 밖이어도 됩니다. 선 위 두 점과, 거기서 한쪽으로 멀리 간 두 점으로 선 한쪽을 통째로 남길 수 있습니다.</li>
+      <li>돌린 요소에 걸면 모양도 같이 돕니다. 화면 기준 선으로 자르려면 돌리지 않은 부모에 겁니다.</li>
+    </ul>
+  </section>
+</div>
+
+<script>
+  (() => {
+    const $ = (id) => document.getElementById(id);
+    const NS = 'http://www.w3.org/2000/svg';
+    const BW = 400;
+    const BH = 280;
+
+    // 좁은 화면에서는 예제를 통째로 줄인다
+    const fits = [...document.querySelectorAll('.fit')];
+    const resize = () => fits.forEach((f) => {
+      const w = Number(f.dataset.w);
+      const h = Number(f.dataset.h);
+      const k = Math.min(1, f.clientWidth / w);
+
+      f.style.height = `${h * k}px`;
+      f.firstElementChild.style.transform = `scale(${k})`;
+      f.dataset.k = String(k);
+    });
+    new ResizeObserver(resize).observe(document.body);
+    resize();
+
+    const toBox = (svg, e) => {
+      const r = svg.getBoundingClientRect();
+      const k = Number(svg.closest('.fit').dataset.k) || 1;
+
+      return { x: (e.clientX - r.left) / k - 60, y: (e.clientY - r.top) / k - 60 };
+    };
+    const css = (list) => `clip-path: polygon(${list.map((p) => `${Math.round(p.x)}px ${Math.round(p.y)}px`).join(', ')});`;
+    const pts = (list) => list.map((p) => `${p.x},${p.y}`).join(' ');
+    const el = (tag, attrs, parent) => {
+      const n = document.createElementNS(NS, tag);
+
+      Object.keys(attrs).forEach((k) => n.setAttribute(k, attrs[k]));
+      parent.appendChild(n);
+
+      return n;
+    };
+    const clamp = (v, a, b) => Math.min(Math.max(v, a), b);
+
+    // 1
+    const TRI = [{ x: 0, y: 0 }, { x: 400, y: 0 }, { x: 0, y: 280 }];
+    let on1 = true;
+    const draw1 = () => {
+      $('box1').style.clipPath = on1 ? `polygon(${TRI.map((p) => `${p.x}px ${p.y}px`).join(', ')})` : 'none';
+      $('t1').textContent = on1 ? 'clip-path 끄기' : 'clip-path 켜기';
+      $('css1').textContent = on1 ? `.box {\n  width: 400px;\n  height: 280px;\n  ${css(TRI)}\n}` : '.box {\n  width: 400px;\n  height: 280px;\n}';
+    };
+    $('t1').addEventListener('click', () => {
+      on1 = !on1;
+      draw1();
+    });
+    draw1();
+
+    // 2
+    const PRESETS = {
+      full: [{ x: 0, y: 0 }, { x: 400, y: 0 }, { x: 400, y: 280 }, { x: 0, y: 280 }],
+      tri: [{ x: 200, y: 0 }, { x: 400, y: 280 }, { x: 0, y: 280 }],
+      half: [{ x: 0, y: 0 }, { x: 200, y: 0 }, { x: 200, y: 280 }, { x: 0, y: 280 }],
+      slant: [{ x: 0, y: 0 }, { x: 300, y: 0 }, { x: 140, y: 280 }, { x: 0, y: 280 }],
+    };
+    let pts2 = PRESETS.slant.map((p) => ({ ...p }));
+    let drag2 = -1;
+    const ticks2 = $('ticks2');
+    [0, 100, 200, 300, 400].forEach((x) => {
+      el('line', { x1: x, y1: -8, x2: x, y2: 0, style: 'stroke:var(--muted)', 'stroke-width': 2 }, ticks2);
+      el('text', { x, y: -14, 'text-anchor': 'middle', class: 'lbl s', style: 'fill:var(--muted)' }, ticks2).textContent = x;
+    });
+    [100, 200].forEach((y) => {
+      el('line', { x1: -8, y1: y, x2: 0, y2: y, style: 'stroke:var(--muted)', 'stroke-width': 2 }, ticks2);
+      el('text', { x: -14, y: y + 6, 'text-anchor': 'end', class: 'lbl s', style: 'fill:var(--muted)' }, ticks2).textContent = y;
+    });
+    el('text', { x: 400, y: 314, 'text-anchor': 'end', class: 'lbl s', style: 'fill:var(--muted)' }, ticks2).textContent = '(400, 280)';
+    const draw2 = () => {
+      $('box2').style.clipPath = `polygon(${pts2.map((p) => `${p.x}px ${p.y}px`).join(', ')})`;
+      $('poly2').setAttribute('points', pts(pts2));
+      const g = $('handles2');
+
+      g.innerHTML = '';
+      pts2.forEach((p, i) => {
+        el('circle', { cx: p.x, cy: p.y, r: 12, class: 'handle', style: 'fill:var(--fold);stroke:var(--panel)', 'stroke-width': 3 }, g);
+        el('text', { x: p.x + 16, y: p.y + (p.y > 140 ? -14 : 30), class: 'lbl s', style: 'fill:var(--fold)' }, g).textContent = `${i + 1}`;
+      });
+      $('css2').textContent = css(pts2);
+    };
+    const ov2 = $('ov2');
+    ov2.addEventListener('pointerdown', (e) => {
+      const q = toBox(ov2, e);
+      let best = -1;
+      let bestD = 30;
+
+      pts2.forEach((p, i) => {
+        const d = Math.hypot(p.x - q.x, p.y - q.y);
+
+        if (d < bestD) {
+          best = i;
+          bestD = d;
+        }
+      });
+      drag2 = best;
+      if (drag2 >= 0) {
+        ov2.setPointerCapture(e.pointerId);
+      }
+    });
+    ov2.addEventListener('pointermove', (e) => {
+      if (drag2 < 0) {
+        return;
+      }
+      const q = toBox(ov2, e);
+
+      pts2[drag2] = { x: clamp(Math.round(q.x), -40, 440), y: clamp(Math.round(q.y), -40, 320) };
+      draw2();
+    });
+    const stop2 = () => {
+      drag2 = -1;
+    };
+    ov2.addEventListener('pointerup', stop2);
+    ov2.addEventListener('pointercancel', stop2);
+    document.querySelectorAll('[data-preset]').forEach((b) => b.addEventListener('click', () => {
+      pts2 = PRESETS[b.dataset.preset].map((p) => ({ ...p }));
+      draw2();
+    }));
+    draw2();
+
+    // 3
+    let top3 = 260;
+    let bottom3 = 140;
+    let drag3 = null;
+    const FAR = -1000;
+    const draw3 = () => {
+      const list = [{ x: top3, y: 0 }, { x: bottom3, y: BH }, { x: FAR, y: BH }, { x: FAR, y: 0 }];
+
+      $('box3').style.clipPath = `polygon(${list.map((p) => `${p.x}px ${p.y}px`).join(', ')})`;
+      $('poly3').setAttribute('points', pts(list));
+      const dx = bottom3 - top3;
+
+      $('line3').setAttribute('x1', top3 - dx * 0.2);
+      $('line3').setAttribute('y1', -BH * 0.2);
+      $('line3').setAttribute('x2', bottom3 + dx * 0.2);
+      $('line3').setAttribute('y2', BH * 1.2);
+      const g = $('handles3');
+
+      g.innerHTML = '';
+      [[top3, 0, '①'], [bottom3, BH, '②']].forEach(([x, y, t]) => {
+        el('circle', { cx: x, cy: y, r: 12, class: 'handle', style: 'fill:var(--fold);stroke:var(--panel)', 'stroke-width': 3 }, g);
+        el('text', { x: x + 16, y: y === 0 ? -12 : y + 30, class: 'lbl s', style: 'fill:var(--fold)' }, g).textContent = `${t} (${x}, ${y})`;
+      });
+      $('css3').textContent = `clip-path: polygon(\n  ${top3}px 0px,      /* ① 선 위, 맨 위 */\n  ${bottom3}px 280px,    /* ② 선 위, 맨 아래 */\n  -1000px 280px,  /* ③ ② 에서 왼쪽 멀리 */\n  -1000px 0px     /* ④ ① 에서 왼쪽 멀리 */\n);`;
+    };
+    const ov3 = $('ov3');
+    ov3.addEventListener('pointerdown', (e) => {
+      const q = toBox(ov3, e);
+
+      if (Math.hypot(q.x - top3, q.y) < 34) {
+        drag3 = 'top';
+      } else if (Math.hypot(q.x - bottom3, q.y - BH) < 34) {
+        drag3 = 'bottom';
+      } else {
+        drag3 = null;
+      }
+      if (drag3) {
+        ov3.setPointerCapture(e.pointerId);
+      }
+    });
+    ov3.addEventListener('pointermove', (e) => {
+      if (!drag3) {
+        return;
+      }
+      const x = clamp(Math.round(toBox(ov3, e).x), -20, 420);
+
+      if (drag3 === 'top') {
+        top3 = x;
+      } else {
+        bottom3 = x;
+      }
+      draw3();
+    });
+    const stop3 = () => {
+      drag3 = null;
+    };
+    ov3.addEventListener('pointerup', stop3);
+    ov3.addEventListener('pointercancel', stop3);
+    draw3();
+
+    // 4
+    const draw4 = () => {
+      const d = Number($('deg4').value);
+      const tf = `rotate(${d}deg)`;
+
+      $('deg4v').textContent = `${d}°`;
+      ['g4a', 'c4a', 'g4b', 'c4b'].forEach((id) => {
+        $(id).style.transform = tf;
+      });
+      // 왼쪽: 요소 자기 기준 x 90 (돌리기 전 화면 x 150) 왼쪽만
+      $('c4a').style.clipPath = 'polygon(-1000px -1000px, 90px -1000px, 90px 1000px, -1000px 1000px)';
+      // 오른쪽: 부모 기준 x 150 왼쪽만
+      $('l4b').style.clipPath = 'polygon(-1000px -1000px, 150px -1000px, 150px 1000px, -1000px 1000px)';
+      $('css4').textContent = `/* 왼쪽: 돌린 요소 자신에 */\n.child {\n  transform: rotate(${d}deg);\n  clip-path: polygon(-1000px -1000px, 90px -1000px, 90px 1000px, -1000px 1000px);\n}\n\n/* 오른쪽: 돌리지 않은 부모에 */\n.parent {\n  clip-path: polygon(-1000px -1000px, 150px -1000px, 150px 1000px, -1000px 1000px);\n}\n.parent .child {\n  transform: rotate(${d}deg);\n}`;
+    };
+    $('deg4').addEventListener('input', draw4);
+    draw4();
+  })();
+</script>

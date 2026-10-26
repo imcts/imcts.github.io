@@ -1,0 +1,497 @@
+<title>3 페이지 회전 각도</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap">
+<style>
+  :root {
+    --bg: #eef1f5;
+    --panel: #ffffff;
+    --ink: #1c2330;
+    --muted: #5b6676;
+    --line: #d3d9e2;
+    --p2: #d7e5fb;
+    --p3: #fde0ae;
+    --p4: #d3efd9;
+    --fold: #cf2f47;
+    --edge: #a8690f;
+    --pt-p: #cf2f47;
+    --pt-f: #2b67de;
+    --alpha: #6a43d6;
+    --double: #0b8079;
+    --btn: #f3f5f8;
+    --btn-hover: #e6eaf0;
+    --dim: 0.22;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #11151c;
+      --panel: #1a2029;
+      --ink: #e6ebf2;
+      --muted: #98a4b5;
+      --line: #2c3543;
+      --p2: #1f3558;
+      --p3: #5e4519;
+      --p4: #1e4a2b;
+      --fold: #ff6b80;
+      --edge: #f2b54e;
+      --pt-p: #ff6b80;
+      --pt-f: #6fa3ff;
+      --alpha: #a98bff;
+      --double: #3fd1c6;
+      --btn: #232a35;
+      --btn-hover: #2c3542;
+      --dim: 0.28;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #11151c;
+    --panel: #1a2029;
+    --ink: #e6ebf2;
+    --muted: #98a4b5;
+    --line: #2c3543;
+    --p2: #1f3558;
+    --p3: #5e4519;
+    --p4: #1e4a2b;
+    --fold: #ff6b80;
+    --edge: #f2b54e;
+    --pt-p: #ff6b80;
+    --pt-f: #6fa3ff;
+    --alpha: #a98bff;
+    --double: #3fd1c6;
+    --btn: #232a35;
+    --btn-hover: #2c3542;
+    --dim: 0.28;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    padding-inline: 16px;
+    padding-block: 20px 32px;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; display: grid; gap: 14px; }
+  header h1 { margin: 0; font-size: 22px; text-wrap: balance; }
+  header p { margin: 4px 0 0; color: var(--muted); }
+
+  .grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 16px; align-items: start; }
+  @media (max-width: 900px) { .grid { grid-template-columns: minmax(0, 1fr); } }
+
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+  .stage { padding: 8px; }
+  .stage svg { display: block; width: 100%; height: auto; max-height: 78vh; }
+
+  .step-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+  .step-no { font-family: "IBM Plex Mono", ui-monospace, monospace; color: var(--muted); font-size: 13px; }
+  .step-title { margin: 2px 0 8px; font-size: 19px; text-wrap: balance; }
+  .step-text { margin: 0; min-height: 7.5em; }
+  .step-text b.a { color: var(--alpha); }
+  .step-text b.d { color: var(--double); }
+  .nav { display: flex; gap: 8px; margin-top: 12px; }
+  button {
+    font: inherit; font-size: 14px; color: var(--ink);
+    background: var(--btn); border: 1px solid var(--line); border-radius: 6px;
+    padding: 7px 14px; cursor: pointer;
+  }
+  button:hover { background: var(--btn-hover); }
+  button.primary { background: var(--ink); color: var(--panel); border-color: var(--ink); }
+  button:disabled { opacity: 0.4; cursor: default; }
+  button:focus-visible, input:focus-visible { outline: 2px solid var(--pt-f); outline-offset: 2px; }
+
+  .slider { display: grid; gap: 6px; margin-top: 14px; }
+  .slider label { font-weight: 500; }
+  .slider input { width: 100%; accent-color: var(--alpha); }
+  .readout { display: flex; gap: 10px; flex-wrap: wrap; font-family: "IBM Plex Mono", ui-monospace, monospace; }
+  .chip { border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px; font-size: 13px; }
+  .chip.a { color: var(--alpha); }
+  .chip.d { color: var(--double); }
+
+  .steps { margin: 12px 0 0; padding-left: 22px; display: grid; gap: 2px; }
+  .steps li { cursor: pointer; color: var(--muted); font-size: 14px; }
+  .steps li.on { color: var(--ink); font-weight: 700; }
+  .steps li:hover { color: var(--ink); }
+
+  .basis { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 6px 10px; font-size: 14px; }
+  .basis dt { font-weight: 700; white-space: nowrap; }
+  .basis dt.a { color: var(--alpha); }
+  .basis dt.d { color: var(--double); }
+  .basis dt.f { color: var(--fold); }
+  .basis dd { margin: 0; color: var(--muted); }
+  .sum { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 14px; }
+  .sum b.a { color: var(--alpha); }
+  .sum b.d { color: var(--double); }
+  .card h2 { margin: 0 0 8px; font-size: 13px; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; }
+
+  svg text { font-family: "IBM Plex Sans KR", "Apple SD Gothic Neo", system-ui, sans-serif; }
+  .lbl { font-size: 17px; font-weight: 700; paint-order: stroke; stroke: var(--panel); stroke-width: 5px; stroke-linejoin: round; }
+  .small { font-size: 14px; font-weight: 500; }
+  .grp { transition: opacity 0.25s ease; }
+  .grp.off { display: none; }
+  .grp.dim { opacity: var(--dim); }
+  @media (prefers-reduced-motion: reduce) { .grp { transition: none; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>3 페이지 회전 각도</h1>
+    <p>"다음" 을 누르며 한 단계씩 보세요. 아래 슬라이더로 끄는 각도를 바꾸면 모든 각이 같이 바뀝니다.</p>
+  </header>
+
+  <div class="grid">
+    <section class="card stage">
+      <svg id="svg" viewBox="-60 -50 620 790" role="img" aria-label="오른쪽 페이지를 접을 때 생기는 각도들">
+        <defs>
+          <clipPath id="clip3"><polygon id="clip3poly" points=""></polygon></clipPath>
+        </defs>
+
+        <!-- 오른쪽 페이지(2) -->
+        <rect x="0" y="0" width="500" height="700" style="fill:var(--p2)"></rect>
+        <line x1="0" y1="0" x2="0" y2="700" style="stroke:var(--muted)" stroke-width="2" stroke-dasharray="3 5"></line>
+        <text class="lbl small" x="6" y="-14" style="fill:var(--muted)">책등</text>
+
+        <!-- 4 와 3: 마지막 단계에서 -->
+        <g id="g-page3" class="grp">
+          <polygon id="p4poly" style="fill:var(--p4)"></polygon>
+          <g clip-path="url(#clip3)">
+            <g id="p3">
+              <rect x="0" y="0" width="500" height="700" style="fill:var(--p3)" stroke="rgba(0,0,0,0.15)"></rect>
+              <text class="lbl small" x="18" y="34" style="fill:var(--ink)">3 페이지</text>
+            </g>
+          </g>
+          <circle id="dotA2" r="8" fill="none" style="stroke:var(--ink)" stroke-width="3"></circle>
+          <text id="tagA2" class="lbl" style="fill:var(--ink)">A′</text>
+        </g>
+
+        <!-- 오른쪽 끝 -->
+        <line x1="500" y1="0" x2="500" y2="700" style="stroke:var(--edge)" stroke-width="4" stroke-dasharray="10 7"></line>
+        <text class="lbl small" x="506" y="720" text-anchor="end" style="fill:var(--edge)">오른쪽 끝(세로, 점선)</text>
+
+        <g id="g-PQ" class="grp">
+          <line id="lPQ" style="stroke:var(--ink)" stroke-width="3"></line>
+        </g>
+        <g id="g-fold" class="grp">
+          <line id="lFold" style="stroke:var(--fold)" stroke-width="4"></line>
+          <polyline id="rMid" fill="none" style="stroke:var(--fold)" stroke-width="2.5"></polyline>
+          <text id="tFold" class="lbl" style="fill:var(--fold)">접힌 선</text>
+        </g>
+        <g id="g-brown" class="grp">
+          <line id="lBrown" style="stroke:var(--edge)" stroke-width="5"></line>
+          <text id="tBrown" class="lbl" style="fill:var(--edge)">넘어간 끝(실선)</text>
+        </g>
+
+        <!-- 각 -->
+        <g id="g-arcP" class="grp"><path id="aP" style="fill:var(--alpha);stroke:var(--alpha)" fill-opacity="0.18" stroke-width="3"></path><text id="taP" class="lbl" style="fill:var(--alpha)"></text></g>
+        <g id="g-X3" class="grp"><path id="aX3" style="fill:var(--double);stroke:var(--double)" fill-opacity="0.14" stroke-width="3.5"></path><text id="taX3" class="lbl" style="fill:var(--double)"></text></g>
+        <g id="g-X1" class="grp"><path id="aX1" style="fill:var(--alpha);stroke:var(--alpha)" fill-opacity="0.22" stroke-width="3"></path><text id="taX1" class="lbl" style="fill:var(--alpha)"></text></g>
+        <g id="g-X2" class="grp"><path id="aX2" style="fill:var(--alpha);stroke:var(--alpha)" fill-opacity="0.22" stroke-width="3"></path><text id="taX2" class="lbl" style="fill:var(--alpha)"></text></g>
+        <g id="g-arcA2" class="grp">
+          <line id="vA2" style="stroke:var(--double)" stroke-width="2.5" stroke-dasharray="6 5"></line>
+          <path id="aA2" style="fill:var(--double);stroke:var(--double)" fill-opacity="0.2" stroke-width="3.5"></path>
+          <text id="taA2" class="lbl" style="fill:var(--double)"></text>
+        </g>
+        <g id="g-X" class="grp">
+          <circle id="dotX" r="8" style="fill:var(--ink)"></circle>
+          <text id="tagX" class="lbl" style="fill:var(--ink)">X</text>
+        </g>
+
+        <!-- 점: 항상 -->
+        <line id="lPF" style="stroke:var(--muted)" stroke-width="3" stroke-dasharray="7 6"></line>
+        <circle id="dotP" r="10" style="fill:var(--pt-p)"></circle>
+        <text id="tagP" class="lbl" style="fill:var(--pt-p)">P</text>
+        <circle id="dotF" r="10" style="fill:var(--pt-f)"></circle>
+        <text id="tagF" class="lbl" style="fill:var(--pt-f)">F 손가락</text>
+      </svg>
+    </section>
+
+    <aside style="display:grid; gap:12px">
+      <section class="card">
+        <div class="step-head">
+          <span class="step-no" id="stepNo">1 / 6</span>
+        </div>
+        <h2 class="step-title" id="stepTitle"></h2>
+        <p class="step-text" id="stepText"></p>
+        <div class="nav">
+          <button type="button" id="prev">이전</button>
+          <button type="button" id="next" class="primary">다음</button>
+        </div>
+        <div class="slider">
+          <label for="alpha">끄는 각도 바꾸기</label>
+          <input type="range" id="alpha" min="20" max="40" step="1" value="30">
+          <div class="readout"><span class="chip a" id="rA">α = 30°</span><span class="chip d" id="rD">3 페이지 회전 = 60°</span></div>
+        </div>
+        <ol class="steps" id="stepList"></ol>
+      </section>
+
+      <section class="card">
+        <h2>각도를 어디서 재나</h2>
+        <dl class="basis">
+          <dt class="a">끈 각도 α</dt><dd>P 에서 — 가로선과 회색 점선(P → F) 사이</dd>
+          <dt class="a">접힌 선 α</dt><dd>X 에서 — 점선(오른쪽 끝)과 빨간 접힌 선 사이</dd>
+          <dt class="a">넘어간 끝 α</dt><dd>X 에서 — 빨간 접힌 선과 갈색 실선 사이</dd>
+          <dt class="d">3 페이지 2α</dt><dd>X 또는 A′ 에서 — 세로와 갈색 실선 사이</dd>
+        </dl>
+      </section>
+
+      <section class="card">
+        <h2>정리</h2>
+        <ul class="sum">
+          <li>접힌 선은 P 와 F 의 한가운데를 P → F 와 직각으로 지난다.</li>
+          <li>P → F 가 가로에서 <b class="a">α</b> 기울면, 직각인 접힌 선은 세로에서 <b class="a">α</b> 기운다.</li>
+          <li>X 에서 점선 → 접힌 선 <b class="a">α</b>, 접힌 선 → 갈색 실선 <b class="a">α</b>. 접기는 접힌 선 기준 대칭이라 둘이 같다.</li>
+          <li>그래서 점선 → 갈색 실선은 <b class="d">2α</b>. 3 페이지 왼쪽 끝은 세로로 서 있다가 갈색 실선에 겹쳐야 하니, 지금 위치에서 <b class="d">딱 2α</b> 돌린다.</li>
+          <li>위로 끌 때는 X 아래쪽 점선(P 쪽)에서 재면 똑같이 2α 다.</li>
+          <li>3 은 왼쪽 위 모서리를 A′ 에 두고 돌린 뒤, 접힌 선 너머(P 쪽)를 잘라 낸다.</li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+</div>
+
+<script>
+  (() => {
+    const $ = (id) => document.getElementById(id);
+    const W = 500;
+    const H = 700;
+    const L = 320;
+    const PY = 120;
+    const BIG = [{ x: -3000, y: -3000 }, { x: 3500, y: -3000 }, { x: 3500, y: 3700 }, { x: -3000, y: 3700 }];
+    const RIGHT_PAGE = [{ x: 0, y: 0 }, { x: W, y: 0 }, { x: W, y: H }, { x: 0, y: H }];
+
+    const set = (id, attrs) => {
+      const el = $(id);
+      Object.keys(attrs).forEach((k) => el.setAttribute(k, attrs[k]));
+    };
+    const pts = (list) => list.map((p) => `${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
+    const add = (a, b, k = 1) => ({ x: a.x + b.x * k, y: a.y + b.y * k });
+    const unit = (a, b) => {
+      const l = Math.hypot(b.x - a.x, b.y - a.y);
+
+      return { x: (b.x - a.x) / l, y: (b.y - a.y) / l };
+    };
+
+    const geo = (deg) => {
+      const r = deg * Math.PI / 180;
+      const c = Math.cos(r);
+      const s = Math.sin(r);
+      const P = { x: W, y: PY };
+      const F = { x: P.x - L * c, y: P.y + L * s };
+      const M = { x: (P.x + F.x) / 2, y: (P.y + F.y) / 2 };
+      const n = { x: -c, y: s };
+      const u = { x: s, y: c };
+      const X = { x: W, y: P.y + L / (2 * s) };
+      const side = (q) => (q.x - M.x) * n.x + (q.y - M.y) * n.y;
+      const reflect = (q) => {
+        const d = side(q);
+
+        return { x: q.x - 2 * d * n.x, y: q.y - 2 * d * n.y };
+      };
+      const A2 = reflect({ x: W, y: 0 });
+      const B2 = reflect({ x: W, y: H });
+      const dir = unit(A2, B2);
+      const phi = Math.atan2(-dir.x, dir.y) * 180 / Math.PI;
+
+      return { P, F, M, u, X, A2, dir, phi, side };
+    };
+
+    const halfClip = (poly, side, sign) => {
+      const out = [];
+
+      poly.forEach((a, i) => {
+        const b = poly[(i + 1) % poly.length];
+        const sa = side(a) * sign;
+        const sb = side(b) * sign;
+
+        if (sa >= 0) {
+          out.push(a);
+        }
+        if ((sa >= 0) !== (sb >= 0)) {
+          const t = sa / (sa - sb);
+
+          out.push({ x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t });
+        }
+      });
+
+      return out;
+    };
+
+    // 꼭짓점 V 에서 방향 d1 → d2 로 벌어진 각의 부채꼴과 이름표 자리
+    const wedge = (V, d1, d2, r, pad = 22) => {
+      const a1 = Math.atan2(d1.y, d1.x);
+      let d = Math.atan2(d2.y, d2.x) - a1;
+
+      while (d <= -Math.PI) d += 2 * Math.PI;
+      while (d > Math.PI) d -= 2 * Math.PI;
+      const p1 = { x: V.x + r * Math.cos(a1), y: V.y + r * Math.sin(a1) };
+      const p2 = { x: V.x + r * Math.cos(a1 + d), y: V.y + r * Math.sin(a1 + d) };
+      const mid = a1 + d / 2;
+
+      return {
+        d: `M ${V.x} ${V.y} L ${p1.x} ${p1.y} A ${r} ${r} 0 0 ${d > 0 ? 1 : 0} ${p2.x} ${p2.y} Z`,
+        label: { x: V.x + (r + pad) * Math.cos(mid), y: V.y + (r + pad) * Math.sin(mid) },
+      };
+    };
+    const putWedge = (pathId, textId, V, d1, d2, r, text, pad) => {
+      const w = wedge(V, d1, d2, r, pad);
+
+      set(pathId, { d: w.d });
+      set(textId, { x: w.label.x, y: w.label.y + 6, 'text-anchor': 'middle' });
+      $(textId).textContent = text;
+    };
+    const rightMark = (id, V, d1, d2, s = 18) => {
+      const a = add(V, d1, s);
+      const b = add(a, d2, s);
+      const c = add(V, d2, s);
+
+      set(id, { points: pts([a, b, c]) });
+    };
+
+    let deg = 30;
+    let step = 0;
+
+    const draw = () => {
+      const g = geo(deg);
+      const { P, F, M, u, X, A2, dir, phi } = g;
+      const up = { x: 0, y: -1 };
+      const foldUp = { x: -u.x, y: -u.y };
+      const brownUp = { x: -dir.x, y: -dir.y };
+
+      set('dotP', { cx: P.x, cy: P.y });
+      set('tagP', { x: P.x + 14, y: P.y + 6 });
+      set('dotF', { cx: F.x, cy: F.y });
+      set('tagF', { x: F.x - 40, y: F.y + 38 });
+      set('lPF', { x1: P.x, y1: P.y, x2: F.x, y2: F.y });
+      set('lPQ', { x1: P.x, y1: P.y, x2: P.x - 220, y2: P.y });
+
+      set('lFold', { x1: M.x - u.x * 2000, y1: M.y - u.y * 2000, x2: M.x + u.x * 2000, y2: M.y + u.y * 2000 });
+      rightMark('rMid', M, unit(M, P), u, 14);
+      const ft = add(M, u, -150);
+      set('tFold', { x: ft.x + 12, y: ft.y });
+
+      const bStart = add(A2, dir, -30);
+      const bEnd = add(X, dir, 40);
+      set('lBrown', { x1: bStart.x, y1: bStart.y, x2: bEnd.x, y2: bEnd.y });
+      const bt = add(F, dir, -70);
+      set('tBrown', { x: bt.x - 60, y: bt.y + 34 });
+
+      // 각들
+      putWedge('aP', 'taP', P, { x: -1, y: 0 }, unit(P, F), 70, `α ${deg}°`, 26);
+      putWedge('aX1', 'taX1', X, up, foldUp, 90, `α ${deg}°`, 26);
+      putWedge('aX2', 'taX2', X, foldUp, brownUp, 120, `α ${deg}°`, 26);
+      putWedge('aX3', 'taX3', X, up, brownUp, 170, `2α ${2 * deg}°`, 30);
+      set('dotX', { cx: X.x, cy: X.y });
+      set('tagX', { x: X.x + 12, y: X.y + 6 });
+
+      set('vA2', { x1: A2.x, y1: A2.y - 20, x2: A2.x, y2: A2.y + 120 });
+      putWedge('aA2', 'taA2', A2, { x: 0, y: 1 }, dir, 70, `2α ${2 * deg}°`, 30);
+      set('taA2', { x: A2.x - 10, y: A2.y + 112, 'text-anchor': 'end' });
+      set('dotA2', { cx: A2.x, cy: A2.y });
+      set('tagA2', { x: A2.x - 34, y: A2.y - 8 });
+
+      set('p4poly', { points: pts(halfClip(RIGHT_PAGE, g.side, -1)) });
+      set('clip3poly', { points: pts(halfClip(BIG, g.side, 1)) });
+      set('p3', { transform: `translate(${A2.x.toFixed(2)} ${A2.y.toFixed(2)}) rotate(${phi.toFixed(2)})` });
+
+      $('rA').textContent = `α = ${deg}°`;
+      $('rD').textContent = `3 페이지 회전 = ${2 * deg}°`;
+      renderStep();
+    };
+
+    const a = () => `<b class="a">${deg}°</b>`;
+    const d2 = () => `<b class="d">${2 * deg}°</b>`;
+    const STEPS = [
+      {
+        title: '상황',
+        full: [],
+        dim: [],
+        text: () => '오른쪽 페이지를 누르고 왼쪽 아래로 끌었습니다. 빨간 점 P 는 누른 높이의 페이지 오른쪽 끝, 파란 점 F 는 손가락입니다. 접으면 P 가 F 로 갑니다.',
+      },
+      {
+        title: '끈 각도 α 는 P 에서 잰다',
+        full: ['g-PQ', 'g-arcP'],
+        dim: [],
+        text: () => `P 에서 왼쪽으로 가로선을 긋습니다. 이 가로선과 회색 점선(P → F) 사이가 끈 각도 α = ${a()} 입니다.`,
+      },
+      {
+        title: '접힌 선은 세로에서 α 기운다',
+        full: ['g-fold', 'g-X', 'g-X1'],
+        dim: ['g-PQ', 'g-arcP'],
+        text: () => `빨간 접힌 선은 P 와 F 의 한가운데를 회색 점선과 직각으로 지납니다. 회색 점선이 가로에서 α 기울었으니, 직각인 접힌 선은 세로에서 α 기웁니다. 접힌 선이 오른쪽 끝(점선)과 만나는 점을 X 라고 하면, X 에서 <b>점선 → 접힌 선 = ${a()}</b> 입니다.`,
+      },
+      {
+        title: '접으면 점선이 접힌 선 너머로 넘어간다',
+        full: ['g-brown', 'g-X2', 'g-X'],
+        dim: ['g-fold', 'g-X1'],
+        text: () => `종이를 접힌 선으로 접으면 오른쪽 끝(점선)이 접힌 선 너머로 넘어가 갈색 실선이 됩니다. 접기는 접힌 선 기준 대칭이라, 넘어간 쪽도 점선 쪽과 똑같이 벌어집니다. 그래서 <b>접힌 선 → 갈색 실선 = ${a()}</b> 입니다.`,
+      },
+      {
+        title: '그래서 점선 → 갈색 실선은 2α',
+        full: ['g-X3', 'g-X1', 'g-X2', 'g-X', 'g-brown', 'g-fold'],
+        dim: [],
+        text: () => `점선 → 접힌 선 ${a()}, 접힌 선 → 갈색 실선 또 ${a()}. 합치면 <b>점선 → 갈색 실선 = ${d2()}</b> 입니다. 위로 끌 때는 X 의 아래쪽 점선(P 쪽)에서 재면 똑같이 2α 입니다.`,
+      },
+      {
+        title: '3 페이지는 지금 위치에서 딱 2α 돌린다',
+        full: ['g-page3', 'g-arcA2', 'g-brown'],
+        dim: ['g-fold', 'g-X3', 'g-X'],
+        text: () => `갈색 실선이 3 페이지의 왼쪽 끝 자리입니다. 3 페이지 왼쪽 끝은 처음에 세로로 서 있으니, 왼쪽 위 모서리를 A′ 에 두고 <b>지금 위치(세로)에서 딱 ${d2()}</b> 돌리면 갈색 실선에 겹칩니다. 그다음 접힌 선 너머(P 쪽)를 잘라 냅니다.`,
+      },
+    ];
+    const ALL = ['g-PQ', 'g-arcP', 'g-fold', 'g-brown', 'g-X', 'g-X1', 'g-X2', 'g-X3', 'g-page3', 'g-arcA2'];
+
+    const list = $('stepList');
+    STEPS.forEach((s, i) => {
+      const li = document.createElement('li');
+
+      li.textContent = s.title;
+      li.addEventListener('click', () => {
+        step = i;
+        draw();
+      });
+      list.appendChild(li);
+    });
+
+    const renderStep = () => {
+      const s = STEPS[step];
+
+      ALL.forEach((id) => {
+        const el = $(id);
+        const on = s.full.includes(id);
+        const dim = s.dim.includes(id);
+
+        el.classList.toggle('off', !on && !dim);
+        el.classList.toggle('dim', dim && !on);
+      });
+      // 흐리게 남긴 단계에선 갈색 실선 이름표를 숨겨 다른 이름표와 겹치지 않게 한다
+      $('tBrown').setAttribute('display', s.full.includes('g-brown') ? 'inline' : 'none');
+      $('stepNo').textContent = `${step + 1} / ${STEPS.length}`;
+      $('stepTitle').textContent = s.title;
+      $('stepText').innerHTML = s.text();
+      $('prev').disabled = step === 0;
+      $('next').disabled = step === STEPS.length - 1;
+      [...list.children].forEach((li, i) => li.classList.toggle('on', i === step));
+    };
+
+    $('prev').addEventListener('click', () => {
+      step = Math.max(0, step - 1);
+      draw();
+    });
+    $('next').addEventListener('click', () => {
+      step = Math.min(STEPS.length - 1, step + 1);
+      draw();
+    });
+    $('alpha').addEventListener('input', (e) => {
+      deg = Number(e.target.value);
+      draw();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') $('next').click();
+      if (e.key === 'ArrowLeft') $('prev').click();
+    });
+
+    draw();
+  })();
+</script>

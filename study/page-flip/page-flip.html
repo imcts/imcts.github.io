@@ -1,0 +1,694 @@
+<title>책장 넘기기 원리</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap">
+<style>
+  :root {
+    --bg: #eef1f5;
+    --panel: #ffffff;
+    --ink: #1c2330;
+    --muted: #5b6676;
+    --line: #d3d9e2;
+    --p1: #e3e7ed;
+    --p2: #cddffb;
+    --p3: #fde0ae;
+    --p4: #cfeed7;
+    --bar: rgba(28, 35, 48, 0.16);
+    --num: rgba(28, 35, 48, 0.38);
+    --cap: #3c4656;
+    --fold: #cf2f47;
+    --pt-p: #cf2f47;
+    --pt-f: #2b67de;
+    --edge: #a8690f;
+    --btn: #f3f5f8;
+    --btn-hover: #e6eaf0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #11151c;
+      --panel: #1a2029;
+      --ink: #e6ebf2;
+      --muted: #98a4b5;
+      --line: #2c3543;
+      --p1: #2a313d;
+      --p2: #1f3a66;
+      --p3: #5e4519;
+      --p4: #1e4a2b;
+      --bar: rgba(255, 255, 255, 0.16);
+      --num: rgba(255, 255, 255, 0.42);
+      --cap: #c9d2de;
+      --fold: #ff6b80;
+      --pt-p: #ff6b80;
+      --pt-f: #6fa3ff;
+      --edge: #f2b54e;
+      --btn: #232a35;
+      --btn-hover: #2c3542;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #11151c;
+    --panel: #1a2029;
+    --ink: #e6ebf2;
+    --muted: #98a4b5;
+    --line: #2c3543;
+    --p1: #2a313d;
+    --p2: #1f3a66;
+    --p3: #5e4519;
+    --p4: #1e4a2b;
+    --bar: rgba(255, 255, 255, 0.16);
+    --num: rgba(255, 255, 255, 0.42);
+    --cap: #c9d2de;
+    --fold: #ff6b80;
+    --pt-p: #ff6b80;
+    --pt-f: #6fa3ff;
+    --edge: #f2b54e;
+    --btn: #232a35;
+    --btn-hover: #2c3542;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+    padding-inline: 16px;
+    padding-block: 20px 32px;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; display: grid; gap: 16px; }
+  header h1 { margin: 0; font-size: 22px; letter-spacing: -0.01em; text-wrap: balance; }
+  header p { margin: 4px 0 0; color: var(--muted); }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; vertical-align: -1px; }
+
+  .grid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 16px; align-items: start; }
+  @media (max-width: 880px) { .grid { grid-template-columns: minmax(0, 1fr); } }
+
+  .stage { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 10px; }
+  .stage svg { display: block; width: 100%; height: auto; touch-action: none; cursor: grab; user-select: none; -webkit-user-select: none; }
+  .stage svg:active { cursor: grabbing; }
+
+  .buttons { display: flex; flex-wrap: wrap; gap: 8px; padding: 10px 2px 2px; }
+  button {
+    font: inherit; font-size: 13px; color: var(--ink);
+    background: var(--btn); border: 1px solid var(--line); border-radius: 6px;
+    padding: 6px 12px; cursor: pointer;
+  }
+  button:hover { background: var(--btn-hover); }
+  button:focus-visible, input:focus-visible { outline: 2px solid var(--pt-f); outline-offset: 2px; }
+
+  .fold-ctl { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 10px 2px 0; }
+  .fold-ctl label { font-weight: 500; }
+  .fold-ctl input[type="range"] { flex: 1 1 200px; accent-color: var(--fold); }
+  .fold-ctl output { font-family: "IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; min-width: 3.5em; }
+  .fold-hint { margin: 6px 2px 0; color: var(--muted); font-size: 13px; }
+
+  aside { display: grid; gap: 12px; }
+  .box { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; display: grid; gap: 8px; }
+  .box h2 { margin: 0; font-size: 12px; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; }
+
+  .legend { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+  .legend li { display: flex; align-items: center; gap: 8px; }
+  .chip { width: 22px; height: 22px; border-radius: 4px; display: grid; place-items: center; font-weight: 700; font-size: 12px; color: var(--cap); border: 1px solid var(--line); }
+
+  ol.steps { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
+
+  .nums { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; margin: 0; }
+  .nums dt { color: var(--muted); }
+  .nums dd { margin: 0; font-family: "IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; text-align: right; }
+  .nums dd.hot { color: var(--edge); font-weight: 500; }
+
+  .mini svg { width: 100%; height: auto; display: block; }
+  .mini p { margin: 0; color: var(--muted); font-size: 13px; }
+
+  .sum { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
+
+  .toggles { display: grid; gap: 8px; }
+  .toggles label { display: grid; grid-template-columns: auto 1fr; gap: 2px 8px; align-items: start; cursor: pointer; }
+  .toggles small { grid-column: 2; color: var(--muted); font-size: 12px; }
+
+  svg text { font-family: "IBM Plex Sans KR", "Apple SD Gothic Neo", system-ui, sans-serif; }
+  .bar { fill: var(--bar); }
+  .num { fill: var(--num); font-size: 120px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }
+  .cap { fill: var(--cap); font-size: 15px; font-weight: 500; }
+  .tag { font-size: 15px; font-weight: 700; paint-order: stroke; stroke: var(--panel); stroke-width: 4px; stroke-linejoin: round; }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>책장 넘기기 원리</h1>
+    <p>오른쪽 페이지를 눌러 왼쪽으로 끌어 보세요. <span class="dot" style="background:var(--pt-p)"></span> P 는 누른 높이의 페이지 오른쪽 끝(손가락이 잡고 끄는 끝), <span class="dot" style="background:var(--pt-f)"></span> F 는 지금 손가락입니다.</p>
+  </header>
+
+  <div class="grid">
+    <section class="stage">
+      <svg id="stage" viewBox="-40 -50 880 620" role="img" aria-label="두 페이지 책 위에서 오른쪽 페이지를 끌어 접는 모습">
+        <defs>
+          <clipPath id="clip2"><polygon id="clip2poly" points=""></polygon></clipPath>
+          <clipPath id="clip3"><polygon id="clip3poly" points=""></polygon></clipPath>
+          <clipPath id="clipFlap"><polygon id="clipFlapPoly" points=""></polygon></clipPath>
+        </defs>
+
+        <!-- 1: 왼쪽 페이지 -->
+        <g>
+          <rect x="0" y="0" width="400" height="500" style="fill:var(--p1)"></rect>
+          <g id="bars1"></g>
+          <text class="cap" x="22" y="30">1 · 왼쪽 페이지</text>
+          <text class="num" x="200" y="270">1</text>
+        </g>
+
+        <!-- 4: 밑에 깔린 다음 페이지 -->
+        <g>
+          <rect x="400" y="0" width="400" height="500" style="fill:var(--p4)"></rect>
+          <g id="bars4"></g>
+          <text class="cap" x="422" y="30">4 · 밑에 깔린 다음 페이지</text>
+          <text class="num" x="600" y="270">4</text>
+        </g>
+
+        <!-- 2: 넘기는 페이지 앞면. 접힌 선까지만 보이게 자른다 -->
+        <g clip-path="url(#clip2)">
+          <rect x="400" y="0" width="400" height="500" style="fill:var(--p2)"></rect>
+          <g id="bars2"></g>
+          <text class="cap" x="422" y="30">2 · 넘기는 페이지 앞면</text>
+          <text class="num" x="600" y="270">2</text>
+        </g>
+
+        <!-- 3: 넘기는 페이지 뒷면. 기울이고 옮긴 뒤 접힌 선부터 손가락까지만 보이게 자른다 -->
+        <g clip-path="url(#clip3)">
+          <g id="p3">
+            <rect x="0" y="0" width="400" height="500" style="fill:var(--p3)" stroke="rgba(0,0,0,0.12)"></rect>
+            <g id="bars3"></g>
+            <text class="cap" x="22" y="30">3 · 넘기는 페이지 뒷면</text>
+            <text class="num" x="200" y="270">3</text>
+          </g>
+        </g>
+
+        <!-- 접는 중간 과정: 접힌 선 바깥 조각을 접힌 선을 축으로 들어 올려 넘긴다. 90도 전엔 앞면 2, 넘으면 뒷면 3 -->
+        <g id="flapWrap" display="none">
+          <g clip-path="url(#clipFlap)">
+            <g id="flapFront">
+              <rect x="400" y="0" width="400" height="500" style="fill:var(--p2)" stroke="rgba(0,0,0,0.12)"></rect>
+              <g id="barsF2"></g>
+              <text class="cap" x="422" y="30">2 · 넘기는 페이지 앞면</text>
+              <text class="num" x="600" y="270">2</text>
+            </g>
+            <g id="flapBack" transform="translate(800 0) scale(-1 1)">
+              <rect x="0" y="0" width="400" height="500" style="fill:var(--p3)" stroke="rgba(0,0,0,0.12)"></rect>
+              <g id="barsF3"></g>
+              <text class="cap" x="22" y="30">3 · 넘기는 페이지 뒷면</text>
+              <text class="num" x="200" y="270">3</text>
+            </g>
+          </g>
+        </g>
+
+        <!-- 책 테두리와 책등 -->
+        <rect x="0" y="0" width="800" height="500" fill="none" style="stroke:var(--line)" stroke-width="2"></rect>
+        <line x1="400" y1="0" x2="400" y2="500" style="stroke:var(--muted)" stroke-width="1.5" stroke-dasharray="2 4"></line>
+        <text x="400" y="-14" text-anchor="middle" style="fill:var(--muted)" font-size="13">책등</text>
+
+        <!-- 보조선 -->
+        <g id="overlay">
+          <line id="edgeOrig" x1="800" y1="0" x2="800" y2="500" style="stroke:var(--edge)" stroke-width="3" stroke-dasharray="8 6"></line>
+          <text class="tag" x="828" y="556" text-anchor="end" style="fill:var(--edge)">2 의 오른쪽 끝(원래)</text>
+          <line id="edgeNew" style="stroke:var(--edge)" stroke-width="4"></line>
+          <text id="edgeNewTag" class="tag" style="fill:var(--edge)">넘어간 끝</text>
+
+          <line id="pf" style="stroke:var(--muted)" stroke-width="2" stroke-dasharray="6 6"></line>
+          <line id="fold" style="stroke:var(--fold)" stroke-width="3"></line>
+          <text id="foldTag" class="tag" style="fill:var(--fold)">접힌 선</text>
+          <circle id="mid" r="5" style="fill:var(--fold)"></circle>
+          <text id="midTag" class="tag" font-size="13" style="fill:var(--fold)">가운데</text>
+
+          <circle id="dotP" r="9" style="fill:var(--pt-p)"></circle>
+          <text id="tagP" class="tag" style="fill:var(--pt-p)">P</text>
+
+          <line id="aLine" style="stroke:var(--ink)" stroke-width="2" stroke-dasharray="3 5" opacity="0.7"></line>
+          <circle id="dotA" r="7" style="fill:var(--ink)"></circle>
+          <text id="tagA" class="tag" style="fill:var(--ink)">A</text>
+          <circle id="dotA2" r="7" fill="none" style="stroke:var(--ink)" stroke-width="3"></circle>
+          <text id="tagA2" class="tag" style="fill:var(--ink)">A′</text>
+        </g>
+
+        <!-- 3 의 출발 자리: 1 위에 겹쳐 둔다 -->
+        <g id="ghost" display="none">
+          <rect x="0" y="0" width="400" height="500" fill="none" style="stroke:var(--edge)" stroke-width="3" stroke-dasharray="10 6"></rect>
+          <circle cx="0" cy="0" r="7" style="fill:var(--edge)"></circle>
+          <text class="tag" x="12" y="56" font-size="14" style="fill:var(--edge)">3 의 출발 자리 (1 위에 겹쳐 둠)</text>
+          <line id="ghostArrow" style="stroke:var(--edge)" stroke-width="2.5" stroke-dasharray="6 5"></line>
+        </g>
+        <circle id="ringF" r="22" fill="none" style="stroke:var(--pt-f)" stroke-width="3" opacity="0.55"></circle>
+        <circle id="dotF" r="9" style="fill:var(--pt-f)"></circle>
+        <text id="tagF" class="tag" style="fill:var(--pt-f)">F 손가락</text>
+      </svg>
+
+      <div class="buttons">
+        <button type="button" id="tour">3 이 가는 길 보기</button>
+        <button type="button" id="presetFlat">수평으로 끌기</button>
+        <button type="button" id="presetTilt">비스듬히 끌기</button>
+        <button type="button" id="presetCorner">모서리 살짝</button>
+        <button type="button" id="flipAll">끝까지 넘기기</button>
+        <button type="button" id="flipBack">되돌리기</button>
+      </div>
+      <div class="fold-ctl">
+        <label for="foldDeg">접는 정도</label>
+        <input type="range" id="foldDeg" min="0" max="180" step="1" value="180">
+        <output id="foldDegVal" for="foldDeg">180°</output>
+        <button type="button" id="playFold">접히는 과정 재생</button>
+      </div>
+      <p class="fold-hint">0° 는 아직 안 접힌 상태, 180° 는 완전히 접혀 넘어온 상태입니다. 밀어 보면 2 가 접힌 선을 축으로 들려 넘어가며 뒷면 3 으로 바뀝니다.</p>
+    </section>
+
+    <aside>
+      <div class="box">
+        <h2>레이어</h2>
+        <ul class="legend">
+          <li><span class="chip" style="background:var(--p1)">1</span>왼쪽 페이지</li>
+          <li><span class="chip" style="background:var(--p2)">2</span>넘기는 페이지 앞면</li>
+          <li><span class="chip" style="background:var(--p3)">3</span>넘기는 페이지 뒷면</li>
+          <li><span class="chip" style="background:var(--p4)">4</span>밑에 깔린 다음 페이지</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h2>점</h2>
+        <ul class="legend">
+          <li><span class="chip" style="background:var(--pt-p);color:#fff;border-color:transparent">P</span>누른 높이의 페이지 오른쪽 끝</li>
+          <li><span class="chip" style="background:var(--pt-f);color:#fff;border-color:transparent">F</span>지금 손가락</li>
+          <li><span class="chip" style="background:var(--panel)">A</span>2 의 오른쪽 위 모서리</li>
+          <li><span class="chip" style="background:var(--panel)">A′</span>3 의 왼쪽 위 모서리를 둘 자리</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h2>그리는 순서</h2>
+        <ol class="steps">
+          <li>P 와 F 를 잇고, 그 가운데에서 직각으로 그은 선이 <b style="color:var(--fold)">접힌 선</b></li>
+          <li>2 는 접힌 선까지만 남기고 지운다. 지운 자리로 4 가 보인다</li>
+          <li>3 의 왼쪽 위 모서리를 A′ 에 두고, 지금 위치(세로)에서 딱 2α 돌린다. 그다음 접힌 선 너머(P 쪽)를 잘라 F 쪽만 남긴다</li>
+        </ol>
+      </div>
+
+      <div class="box">
+        <h2>지금 각도</h2>
+        <dl class="nums">
+          <dt>끈 방향이 수평에서 기운 각도</dt><dd id="nDrag">0°</dd>
+          <dt>접힌 선이 세로에서 기운 각도</dt><dd id="nFold">0°</dd>
+          <dt>3 이 기운 각도</dt><dd id="n3" class="hot">0°</dd>
+        </dl>
+      </div>
+
+      <div class="box mini">
+        <h2>왜 두 배?</h2>
+        <svg viewBox="0 0 260 190" role="img" aria-label="세로선, 접힌 선, 넘어간 끝 사이의 각도">
+          <line id="mV" style="stroke:var(--edge)" stroke-width="3" stroke-dasharray="7 5"></line>
+          <line id="mFold" style="stroke:var(--fold)" stroke-width="3"></line>
+          <line id="mEdge" style="stroke:var(--edge)" stroke-width="4"></line>
+          <path id="mArc1" fill="none" style="stroke:var(--fold)" stroke-width="2"></path>
+          <path id="mArc2" fill="none" style="stroke:var(--fold)" stroke-width="2"></path>
+          <text id="mT1" class="tag" font-size="14" style="fill:var(--fold)">α</text>
+          <text id="mT2" class="tag" font-size="14" style="fill:var(--fold)">α</text>
+          <text id="mLabV" font-size="12" style="fill:var(--muted)">원래 끝</text>
+          <text id="mLabF" font-size="12" style="fill:var(--fold)">접힌 선</text>
+          <text id="mLabE" font-size="12" style="fill:var(--edge)">넘어간 끝</text>
+        </svg>
+        <p>갈색 점선(원래 끝)에서 빨간 접힌 선까지 α. 접으면 점선이 접힌 선 너머로 넘어가 갈색 실선이 되는데, 접기는 접힌 선 기준 대칭이라 접힌 선에서 갈색 실선까지도 똑같이 α. 그래서 점선에서 갈색 실선까지 2α 이고, 3 은 지금 위치에서 딱 2α 돌려야 갈색 실선에 겹친다.</p>
+        <p>세 선이 만나는 점에서, 아래로 끌면 위쪽 점선, 위로 끌면 아래쪽 점선(P 쪽)에서 잰다. 어느 쪽이든 2α.</p>
+      </div>
+
+      <div class="box">
+        <h2>정리</h2>
+        <ul class="sum">
+          <li><b>접힌 선</b>은 P 와 F 의 한가운데를 P → F 와 직각으로 지난다.</li>
+          <li>P → F 가 가로에서 α 기울면, 직각인 접힌 선은 세로에서 α 기운다.</li>
+          <li>원래 끝(점선) → 접힌 선 α, 접힌 선 → 넘어간 끝(실선) α. 접기는 대칭이라 둘이 같다.</li>
+          <li>그래서 3 은 지금 위치(세로)에서 <b>딱 2α</b> 돌린다. 1배만 돌리면 접힌 선과 나란해질 뿐 갈색 실선에 안 겹친다.</li>
+          <li>3 의 왼쪽 위 모서리는 A′, 돌린 뒤 접힌 선 너머(P 쪽)는 잘라 낸다. 2 도 접힌 선까지만 남긴다.</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h2>자르기 켜고 끄기</h2>
+        <div class="toggles">
+          <label><input type="checkbox" id="guide" checked> 보조선 보기</label>
+          <label><input type="checkbox" id="cut2" checked> 2 자르기 <small>끄면 접힌 선 오른쪽에 2 가 남아 4 를 가린다</small></label>
+          <label><input type="checkbox" id="cut3" checked> 3 자르기 <small>끄면 3 이 접힌 선 밖으로 삐져나온다</small></label>
+          <label><input type="checkbox" id="half"> 3 을 1배만 돌려 보기 <small>틀린 경우. 갈색 실선이 원래 있어야 할 가장자리</small></label>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<script>
+  (() => {
+    const $ = (id) => document.getElementById(id);
+    const SPINE = 400;
+    const RIGHT = 800;
+    const H = 500;
+    const S = { x: SPINE, y: 0 };
+    const B = { x: SPINE, y: H };
+    const RIGHT_PAGE = [{ x: SPINE, y: 0 }, { x: RIGHT, y: 0 }, { x: RIGHT, y: H }, { x: SPINE, y: H }];
+    const BIG = [{ x: -4000, y: -4000 }, { x: 4800, y: -4000 }, { x: 4800, y: 4500 }, { x: -4000, y: 4500 }];
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    let P = { x: RIGHT, y: 330 };
+    let F = { x: 560, y: 230 };
+    let dragging = false;
+    let raf = 0;
+    let tour = null;
+
+    const dist = (a, b) => Math.hypot(a.x - b.x, a.y - b.y);
+    const pts = (list) => list.map((p) => `${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
+    const set = (id, attrs) => {
+      const el = $(id);
+      Object.keys(attrs).forEach((k) => el.setAttribute(k, attrs[k]));
+    };
+
+    // 텍스트 줄 흉내: 기울기가 눈에 보이게 한다
+    const drawBars = (id, x0) => {
+      const g = $(id);
+      const widths = [330, 300, 340, 280, 320, 250, 336, 310, 290, 200];
+      widths.forEach((w, i) => {
+        const r = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        r.setAttribute('class', 'bar');
+        r.setAttribute('x', x0 + 30);
+        r.setAttribute('y', 60 + i * 42);
+        r.setAttribute('width', w);
+        r.setAttribute('height', 12);
+        r.setAttribute('rx', 3);
+        g.appendChild(r);
+      });
+    };
+    drawBars('bars1', 0);
+    drawBars('bars2', 400);
+    drawBars('bars3', 0);
+    drawBars('bars4', 400);
+    drawBars('barsF2', 400);
+    drawBars('barsF3', 0);
+
+    // 종이는 책등에 붙어 있어 늘어날 수 없다: 손가락은 책등 위 · 아래 점에서 P 까지 거리보다 멀리 못 간다
+    const project = (q, c, r) => {
+      const d = dist(q, c);
+
+      return d <= r ? q : { x: c.x + (q.x - c.x) * r / d, y: c.y + (q.y - c.y) * r / d };
+    };
+    const clampF = (q) => {
+      let f = { x: q.x, y: q.y };
+      const rS = dist(P, S);
+      const rB = dist(P, B);
+
+      for (let i = 0; i < 8; i += 1) {
+        f = project(f, S, rS);
+        f = project(f, B, rB);
+      }
+
+      return f;
+    };
+
+    const arc = (o, r, a1, a2) => {
+      const p = (a) => ({ x: o.x - r * Math.sin(a), y: o.y + r * Math.cos(a) });
+      const s = p(a1);
+      const e = p(a2);
+
+      return `M ${s.x} ${s.y} A ${r} ${r} 0 0 1 ${e.x} ${e.y}`;
+    };
+
+    const renderMini = (alphaDeg) => {
+      const a = Math.min(Math.abs(alphaDeg), 80) * Math.PI / 180;
+      const o = { x: 180, y: 18 };
+      const L = 160;
+      const tip = (ang) => ({ x: o.x - L * Math.sin(ang), y: o.y + L * Math.cos(ang) });
+      const v = tip(0);
+      const f = tip(a);
+      const e = tip(2 * a);
+
+      set('mV', { x1: o.x, y1: o.y, x2: v.x, y2: v.y });
+      set('mFold', { x1: o.x, y1: o.y, x2: f.x, y2: f.y });
+      set('mEdge', { x1: o.x, y1: o.y, x2: e.x, y2: e.y });
+      set('mArc1', { d: arc(o, 60, 0, a) });
+      set('mArc2', { d: arc(o, 84, a, 2 * a) });
+      const t1 = { x: o.x - 70 * Math.sin(a / 2), y: o.y + 70 * Math.cos(a / 2) };
+      const t2 = { x: o.x - 98 * Math.sin(1.5 * a), y: o.y + 98 * Math.cos(1.5 * a) };
+      set('mT1', { x: t1.x - 4, y: t1.y + 5 });
+      set('mT2', { x: t2.x - 4, y: t2.y + 5 });
+      set('mLabV', { x: v.x + 6, y: Math.min(v.y, 184) });
+      set('mLabF', { x: f.x - 46, y: Math.min(f.y + 2, 184) });
+      set('mLabE', { x: Math.max(e.x - 58, 2), y: Math.min(e.y + 2, 184) });
+    };
+
+    const render = () => {
+      const guide = $('guide').checked;
+      const cut2 = $('cut2').checked;
+      const cut3 = $('cut3').checked;
+      const deg = Number($('foldDeg').value);
+
+      $('foldDegVal').textContent = `${deg}°`;
+
+      $('overlay').setAttribute('display', guide ? 'inline' : 'none');
+      set('dotF', { cx: F.x, cy: F.y });
+      set('ringF', { cx: F.x, cy: F.y });
+      set('tagF', { x: F.x - 34, y: F.y + 44 });
+
+      const dx = F.x - P.x;
+      const dy = F.y - P.y;
+      const len = Math.hypot(dx, dy);
+
+      set('dotP', { cx: P.x, cy: P.y });
+      set('tagP', { x: P.x + 14, y: P.y + 5 });
+
+      if (len < 1) {
+        set('clip2poly', { points: pts(RIGHT_PAGE) });
+        set('clip3poly', { points: '' });
+        $('flapWrap').setAttribute('display', 'none');
+        ['pf', 'fold', 'edgeNew'].forEach((id) => set(id, { x1: 0, y1: 0, x2: 0, y2: 0 }));
+        $('nDrag').textContent = '0°';
+        $('nFold').textContent = '0°';
+        $('n3').textContent = '0°';
+        renderMini(0);
+
+        return;
+      }
+
+      const n = { x: dx / len, y: dy / len };
+      const mid = { x: (P.x + F.x) / 2, y: (P.y + F.y) / 2 };
+      const side = (q) => (q.x - mid.x) * n.x + (q.y - mid.y) * n.y;
+      const reflect = (q) => {
+        const d = side(q);
+
+        return { x: q.x - 2 * d * n.x, y: q.y - 2 * d * n.y };
+      };
+      // 접는 정도 deg 만큼 접힌 선을 축으로 들어 올린 모습: 접힌 선과 직각 방향으로 cos(deg) 만큼 눌린다. 180 이면 대칭
+      const k = 1 - Math.cos(deg * Math.PI / 180);
+      const squash = (q) => {
+        const d = side(q);
+
+        return { x: q.x - k * d * n.x, y: q.y - k * d * n.y };
+      };
+      const keepSide = (poly, sign) => {
+        const out = [];
+
+        poly.forEach((a, i) => {
+          const b = poly[(i + 1) % poly.length];
+          const sa = side(a) * sign;
+          const sb = side(b) * sign;
+
+          if (sa >= 0) {
+            out.push(a);
+          }
+          if ((sa >= 0) !== (sb >= 0)) {
+            const t = sa / (sa - sb);
+
+            out.push({ x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t });
+          }
+        });
+
+        return out;
+      };
+
+      set('clip2poly', { points: pts(cut2 ? keepSide(RIGHT_PAGE, 1) : RIGHT_PAGE) });
+
+      if (deg >= 180) {
+        set('clip3poly', { points: pts(cut3 ? keepSide(BIG, 1) : BIG) });
+        $('flapWrap').setAttribute('display', 'none');
+      } else {
+        const md = mid.x * n.x + mid.y * n.y;
+        const front = Math.cos(deg * Math.PI / 180) >= 0;
+
+        set('clip3poly', { points: '' });
+        set('clipFlapPoly', { points: pts(keepSide(RIGHT_PAGE, -1)) });
+        set('flapWrap', {
+          display: 'inline',
+          transform: `matrix(${1 - k * n.x * n.x} ${-k * n.x * n.y} ${-k * n.x * n.y} ${1 - k * n.y * n.y} ${k * md * n.x} ${k * md * n.y})`,
+        });
+        $('flapFront').setAttribute('display', front ? 'inline' : 'none');
+        $('flapBack').setAttribute('display', front ? 'none' : 'inline');
+      }
+
+      let dev = Math.atan2(dy, dx) * 180 / Math.PI - 180;
+
+      while (dev <= -180) dev += 360;
+      while (dev > 180) dev -= 360;
+
+      const corner = reflect({ x: RIGHT, y: 0 });
+
+      const factor = $('half').checked ? 1 : 2;
+
+      if (tour === null) {
+        set('p3', { transform: `translate(${corner.x.toFixed(2)} ${corner.y.toFixed(2)}) rotate(${(factor * dev).toFixed(2)})` });
+        $('ghost').setAttribute('display', 'none');
+      } else {
+        // 0 ~ 0.5: 1 자리에서 A′ 까지 옮기기만, 0.5 ~ 1: A′ 를 축으로 돌리기만. 자르기는 끝난 뒤에
+        const move = Math.min(1, tour / 0.5);
+        const turn = Math.max(0, (tour - 0.5) / 0.5);
+
+        set('p3', { transform: `translate(${(corner.x * move).toFixed(2)} ${(corner.y * move).toFixed(2)}) rotate(${(2 * dev * turn).toFixed(2)})` });
+        set('clip3poly', { points: pts(BIG) });
+        $('ghost').setAttribute('display', 'inline');
+        set('ghostArrow', { x1: 0, y1: 0, x2: corner.x * move, y2: corner.y * move });
+      }
+
+      set('dotA', { cx: RIGHT, cy: 0 });
+      set('tagA', { x: RIGHT + 10, y: -8 });
+      set('dotA2', { cx: corner.x, cy: corner.y });
+      set('tagA2', { x: corner.x - 34, y: corner.y - 10 });
+      set('aLine', { x1: RIGHT, y1: 0, x2: corner.x, y2: corner.y });
+
+      // 보조선
+      const t = { x: -n.y, y: n.x };
+      set('pf', { x1: P.x, y1: P.y, x2: F.x, y2: F.y });
+      set('fold', { x1: mid.x - t.x * 3000, y1: mid.y - t.y * 3000, x2: mid.x + t.x * 3000, y2: mid.y + t.y * 3000 });
+      set('mid', { cx: mid.x, cy: mid.y });
+      set('midTag', { x: mid.x + 8, y: mid.y - 10 });
+
+      // 접힌 선 이름은 책 아래쪽, 선이 책 밑을 지나는 자리에 단다 (위쪽은 A · A′ 이름 자리)
+      // 선이 책 밑을 안 지나면(모서리만 접을 때) 가운데 점에서 선을 따라 위쪽으로 조금 간 자리에 단다
+      const xBottom = Math.abs(t.y) > 0.25 ? mid.x + t.x * ((530 - mid.y) / t.y) : null;
+      const up = t.y < 0 ? t : { x: -t.x, y: -t.y };
+      const foldTag = xBottom !== null && xBottom >= -30 && xBottom <= 780
+        ? { x: xBottom + 8, y: 530 }
+        : { x: mid.x + up.x * 80 + 10, y: mid.y + up.y * 80 };
+      set('foldTag', { x: Math.max(-30, Math.min(foldTag.x, 780)), y: foldTag.y });
+
+      const e1 = squash({ x: RIGHT, y: 0 });
+      const e2 = squash({ x: RIGHT, y: H });
+      set('edgeNew', { x1: e1.x, y1: e1.y, x2: e2.x, y2: e2.y });
+      const tagAt = { x: (e1.x + e2.x) / 2, y: (e1.y + e2.y) / 2 };
+      set('edgeNewTag', { x: Math.max(-36, Math.min(tagAt.x - 92, 740)), y: Math.max(-30, Math.min(tagAt.y, 500)) });
+
+      const word = dy < -0.5 ? ' 위로' : (dy > 0.5 ? ' 아래로' : '');
+      const alpha = Math.abs(dev);
+      $('nDrag').textContent = `${alpha.toFixed(0)}°${word}`;
+      $('nFold').textContent = `${alpha.toFixed(0)}°`;
+      $('n3').textContent = `${(factor * alpha).toFixed(0)}°`;
+      renderMini(alpha);
+    };
+
+    const toSvg = (e) => {
+      const svg = $('stage');
+      const pt = svg.createSVGPoint();
+
+      pt.x = e.clientX;
+      pt.y = e.clientY;
+
+      return pt.matrixTransform(svg.getScreenCTM().inverse());
+    };
+
+    const stage = $('stage');
+    stage.addEventListener('pointerdown', (e) => {
+      cancelAnimationFrame(raf);
+      const q = toSvg(e);
+
+      dragging = true;
+      stage.setPointerCapture(e.pointerId);
+
+      if (dist(q, F) > 36 && q.x >= SPINE && q.x <= RIGHT && q.y >= 0 && q.y <= H) {
+        P = { x: RIGHT, y: q.y };
+      }
+      F = clampF(q);
+      render();
+    });
+    stage.addEventListener('pointermove', (e) => {
+      if (dragging) {
+        F = clampF(toSvg(e));
+        render();
+      }
+    });
+    const stop = () => {
+      dragging = false;
+    };
+    stage.addEventListener('pointerup', stop);
+    stage.addEventListener('pointercancel', stop);
+
+    const animateTo = (target) => {
+      cancelAnimationFrame(raf);
+      const from = { x: F.x, y: F.y };
+      const t0 = performance.now();
+      const dur = reduceMotion ? 0 : 700;
+      const step = (now) => {
+        const k = dur ? Math.min(1, (now - t0) / dur) : 1;
+        const ease = 1 - Math.pow(1 - k, 3);
+
+        F = clampF({ x: from.x + (target.x - from.x) * ease, y: from.y + (target.y - from.y) * ease });
+        render();
+        if (k < 1) {
+          raf = requestAnimationFrame(step);
+        }
+      };
+      raf = requestAnimationFrame(step);
+    };
+
+    const preset = (p, f) => {
+      cancelAnimationFrame(raf);
+      P = p;
+      F = clampF(f);
+      render();
+    };
+
+    $('presetFlat').addEventListener('click', () => preset({ x: RIGHT, y: 250 }, { x: 520, y: 250 }));
+    $('presetTilt').addEventListener('click', () => preset({ x: RIGHT, y: 330 }, { x: 560, y: 230 }));
+    $('presetCorner').addEventListener('click', () => preset({ x: RIGHT, y: 0 }, { x: 680, y: 120 }));
+    $('flipAll').addEventListener('click', () => animateTo({ x: 2 * SPINE - RIGHT, y: P.y }));
+    $('flipBack').addEventListener('click', () => animateTo({ x: P.x, y: P.y }));
+    ['guide', 'cut2', 'cut3', 'half'].forEach((id) => $(id).addEventListener('change', render));
+    $('foldDeg').addEventListener('input', render);
+    $('tour').addEventListener('click', () => {
+      cancelAnimationFrame(raf);
+      $('foldDeg').value = '180';
+      const t0 = performance.now();
+      const dur = reduceMotion ? 0 : 3200;
+      const step = (now) => {
+        const k = dur ? Math.min(1, (now - t0) / dur) : 1;
+
+        tour = k;
+        render();
+        if (k < 1) {
+          raf = requestAnimationFrame(step);
+        } else {
+          setTimeout(() => {
+            tour = null;
+            render();
+          }, reduceMotion ? 0 : 900);
+        }
+      };
+      raf = requestAnimationFrame(step);
+    });
+    $('playFold').addEventListener('click', () => {
+      cancelAnimationFrame(raf);
+      const t0 = performance.now();
+      const dur = reduceMotion ? 0 : 2200;
+      const step = (now) => {
+        const k = dur ? Math.min(1, (now - t0) / dur) : 1;
+
+        $('foldDeg').value = String(Math.round(180 * (0.5 - 0.5 * Math.cos(Math.PI * k))));
+        render();
+        if (k < 1) {
+          raf = requestAnimationFrame(step);
+        }
+      };
+      raf = requestAnimationFrame(step);
+    });
+
+    render();
+  })();
+</script>
